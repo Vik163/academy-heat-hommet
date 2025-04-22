@@ -1,5 +1,6 @@
 {
    "presets": [
-      "@babel/preset-env" // для компиляции ES2015+ в ES5.
+      "@babel/preset-env", // для компиляции ES2015+ в ES5.
+      "@babel/preset-typescript"
    ]
 }

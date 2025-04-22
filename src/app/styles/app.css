@@ -1,0 +1,13 @@
+.app {
+   min-height: 100vh;
+   width: 100vw;
+}
+
+img {
+   opacity: 1;
+   transition: opacity 0.3s;
+}
+
+/* img[data-src] {
+   opacity: 0;
+} */

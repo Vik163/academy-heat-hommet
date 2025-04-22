@@ -1,0 +1,15 @@
+@import url(./variables.css);
+@import url(./reset.css);
+
+/* === app ==============*/
+@import url(./app.css);
+
+/* === header ==============*/
+@import url(../../blocks/header/styles/header/header.css);
+@import url(../../blocks/header/styles/navbar/navbar.css);
+
+/* === footer ==============*/
+@import url(../../blocks/footer/styles/footer.css);
+
+/* === главная страница ==============*/
+@import url(../../blocks/hommet/styles/hommet.css);

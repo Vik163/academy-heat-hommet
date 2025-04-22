@@ -1,0 +1,10 @@
+:root {
+   --bg-color: #242121;
+   --bg-header-color: #ba822c;
+   --bg-btn-color: #966925;
+   --border-btn-color: black;
+   --btn-active-color: #963f25;
+
+   --height-mobile: 360px;
+   --height-cnv-mobile: 352px;
+}
