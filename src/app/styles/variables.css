@@ -1,10 +1,25 @@
 :root {
-   --bg-color: #242121;
-   --bg-header-color: #ba822c;
-   --bg-btn-color: #966925;
-   --border-btn-color: black;
-   --btn-active-color: #963f25;
+   /* - bg ----- */
+   --bg-primary-color: #f1f1f1;
+   --bg-primary-color-light: #f2f2f2;
+   --bg-primary-color-dark: #353535;
+   --bg-primary-grey: #68676c;
+   --bg-primary-button-color-dark: #2a2a2a;
 
+   --color-red: #df0923;
+   --color-text-light: #fff;
+   --color-title: #000;
+   --color-text-dark: #333;
+
+   /* - height ----- */
    --height-mobile: 360px;
    --height-cnv-mobile: 352px;
+
+   /* - width ----- */
+   --width-block-desktop: 1200px;
+
+   --font-ms: 'Montserrat';
+   --font-mul: 'Mulish';
+   --font-rob: 'Roboto';
+   --font-int: 'Inter';
 }

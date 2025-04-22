@@ -1,8 +1,12 @@
 @import url(./variables.css);
 @import url(./reset.css);
+@import url(../../assets/fonts/fonts.css);
 
 /* === app ==============*/
 @import url(./app.css);
+
+/* === logo ==============*/
+@import url(../../blocks/logo/logo.css);
 
 /* === header ==============*/
 @import url(../../blocks/header/styles/header/header.css);

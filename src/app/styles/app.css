@@ -1,13 +1,8 @@
 .app {
    min-height: 100vh;
    width: 100vw;
+   background-color: var(--bg-primary-color);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
-
-img {
-   opacity: 1;
-   transition: opacity 0.3s;
-}
-
-/* img[data-src] {
-   opacity: 0;
-} */
