@@ -15,6 +15,11 @@
    align-items: center;
 }
 
+.header__diller-container {
+   display: flex;
+   align-items: flex-end;
+}
+
 .header__diller-info {
    display: flex;
    align-items: flex-end;
@@ -23,11 +28,11 @@
    font-size: 18px;
 }
 
-.header__diller-info::after {
-   content: '';
-   display: inline-block;
-   background-image: url('../../../../assets/icons/hommet-logo.svg');
-   background-size: 90px 28px;
+.header__diller-link {
+   height: 28px;
+}
+
+.header__diller-icon {
    width: 90px;
    height: 28px;
 }

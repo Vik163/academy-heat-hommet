@@ -17,6 +17,7 @@
          href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&family=Scada:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Condensed&display=swap"
          rel="stylesheet"
       />
+      <!-- <link rel="stylesheet" src="../app/styles/index.css" /> -->
       <title>Крепежные изделия и профили</title>
    </head>
 
@@ -24,7 +25,7 @@
       <div class="app">
          <header class="header">
             <div class="container">
-               <div class="logo">
+               <a class="logo" href="./index.html">
                   <div class="logo__container">
                      <img
                         class="logo__icon"
@@ -33,10 +34,21 @@
                      /><span class="logo__text">ИНЖЕНЕРНЫЙ ЦЕНТР</span>
                   </div>
                   <span class="logo__name">АКАДЕМИЯ ТЕПЛА</span>
+               </a>
+               <div class="header__diller-container">
+                  <span class="header__diller-info"
+                     >Официальный диллер компании &nbsp;</span
+                  >
+                  <a
+                     class="header__diller-link"
+                     href="https://hommet.ru/"
+                     target="_blank"
+                     ><img
+                        class="header__diller-icon"
+                        src="../assets/icons/hommet-logo.svg"
+                        alt="Компания Хоммет"
+                  /></a>
                </div>
-               <span class="header__diller-info"
-                  >Официфльный диллер компании &nbsp;</span
-               >
                <div class="header__phone-container">
                   <span class="header__phone">+7 (917) 014-11-69</span>
                   <button type="button" class="header__btn">
