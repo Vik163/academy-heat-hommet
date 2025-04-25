@@ -1,6 +1,6 @@
 import type webpack from 'webpack';
 
-import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { buildWebpackConfig } from './config/build/buildWebpackConfig.ts';
 const path = require('path');
 import type { BuildEnv, BuildPaths } from './config/types/config';
 
