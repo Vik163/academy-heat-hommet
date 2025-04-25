@@ -1,4 +1,6 @@
-@import url(./variables.css);
+@import url(./variables/colors.css);
+@import url(./variables/sizes.css);
+@import url(./variables/fonts.css);
 @import url(./reset.css);
 @import url(../../assets/fonts/fonts.css);
 

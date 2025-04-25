@@ -4,6 +4,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
+   gap: 20px;
 }
 
 .container {
@@ -12,17 +13,28 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   border: 1px solid red;
 }
 
-.header__logo {
-   width: 163px;
-   height: 50px;
-   border: 1px solid red;
+.header__diller-info {
+   display: flex;
+   align-items: flex-end;
+   font-family: var(--font-int);
+   font-weight: 700;
+   font-size: 18px;
+}
+
+.header__diller-info::after {
+   content: '';
+   display: inline-block;
+   background-image: url('../../../../assets/icons/hommet-logo.svg');
+   background-size: 90px 28px;
+   width: 90px;
+   height: 28px;
 }
 
 .header__phone {
    font-family: var(--font-mul);
+   color: var(--color-text-accent);
    font-weight: 900;
    font-size: 16px;
 }
@@ -35,5 +47,5 @@
    font-size: 15px;
    width: 200px;
    height: 50px;
-   border: 1px solid red;
+   margin-left: 20px;
 }

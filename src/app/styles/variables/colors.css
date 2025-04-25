@@ -8,18 +8,7 @@
 
    --color-red: #df0923;
    --color-text-light: #fff;
+   --color-text-accent: #474747;
    --color-title: #000;
    --color-text-dark: #333;
-
-   /* - height ----- */
-   --height-mobile: 360px;
-   --height-cnv-mobile: 352px;
-
-   /* - width ----- */
-   --width-block-desktop: 1200px;
-
-   --font-ms: 'Montserrat';
-   --font-mul: 'Mulish';
-   --font-rob: 'Roboto';
-   --font-int: 'Inter';
 }

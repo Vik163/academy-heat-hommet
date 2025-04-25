@@ -67,3 +67,13 @@
       url('Inter/Inter-Bold.woff2?v=3.19') format('woff2'),
       url('Inter/Inter-Bold.ttf') format('truetype');
 }
+
+@font-face {
+   font-family: 'Inter';
+   font-style: normal;
+   font-weight: 900;
+   font-display: swap;
+   src:
+      url('Inter/Inter-Black.woff2?v=3.19') format('woff2'),
+      url('Inter/Inter-Black.ttf') format('truetype');
+}

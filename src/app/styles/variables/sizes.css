@@ -1,0 +1,8 @@
+:root {
+   /* - height ----- */
+   --height-header: 50px;
+   --height-cnv-mobile: 352px;
+
+   /* - width ----- */
+   --width-block-desktop: 1200px;
+}
