@@ -20,7 +20,7 @@ export function buildLoaders(options: BuildOptions) {
 
   const cssLoader = {
     test: /\.css$/i,
-    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
+    use: ['style-loader', 'css-loader'],
   }
 
 //   const typescriptLoader = {
