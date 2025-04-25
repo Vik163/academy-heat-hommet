@@ -1,4 +1,4 @@
-import { BuildOptions } from '../../../../dev/tanks-2d/config/build/types/config'
+import { BuildOptions } from '../types/config'
 import { buildBabelLoader } from './loaders/babelLoader'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
@@ -23,18 +23,18 @@ export function buildLoaders(options: BuildOptions) {
     use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
   }
 
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-};
+//   const typescriptLoader = {
+//     test: /\.tsx?$/,
+//     use: 'ts-loader',
+//     exclude: /node_modules/,
+// };
 
-  // const codeBabelLoader = buildBabelLoader()
+  const codeBabelLoader = buildBabelLoader()
       // const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
       // const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
 
   return {
-    rules: [fileLoader, htmlLoader, typescriptLoader, cssLoader]
+    rules: [fileLoader, htmlLoader, codeBabelLoader, cssLoader]
   }
 }
