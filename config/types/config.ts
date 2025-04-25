@@ -18,4 +18,5 @@ export interface BuildOptions {
    mode: BuildMode;
    port: number;
    isDev: boolean;
+   isTsx?: boolean;
 }
