@@ -1,4 +1,4 @@
-import { BuildOptions } from "../../../../dev/tanks-2d/config/build/types/config";
+import { BuildOptions } from "../types/config";
 
 export function buildDevServer (options: BuildOptions) {
   return {
