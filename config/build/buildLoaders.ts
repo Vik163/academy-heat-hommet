@@ -4,6 +4,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export function buildLoaders(options: BuildOptions) {
   const {isDev} = options;
+  const isProd = !isDev
+
   const htmlLoader = {
     test: /\.html$/i,
     loader: 'html-loader',
@@ -20,19 +22,10 @@ export function buildLoaders(options: BuildOptions) {
 
   const cssLoader = {
     test: /\.css$/i,
-    use: ['style-loader', 'css-loader'],
+    use: [isProd ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'],
   }
 
-//   const typescriptLoader = {
-//     test: /\.tsx?$/,
-//     use: 'ts-loader',
-//     exclude: /node_modules/,
-// };
-
   const codeBabelLoader = buildBabelLoader()
-      // const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
-      // const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
-
 
   return {
     rules: [fileLoader, htmlLoader, codeBabelLoader, cssLoader]

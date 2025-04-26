@@ -1,5 +1,53 @@
 .navbar {
    width: 100%;
-   height: 40px;
+   padding: 8px 0;
    background-color: var(--bg-primary-grey);
+   font-family: var(--font-mul);
+   font-size: 16px;
+   font-weight: 700;
+}
+
+.hed {
+   margin-top: 100px;
+}
+
+.navbar__container {
+   width: var(--width-block-desktop);
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navbar__links {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   gap: 50px;
+}
+
+.navbar__links1 {
+   width: calc(var(--width-block-desktop) - 70px);
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 50px;
+}
+.navbar__links-item {
+   height: 100%;
+}
+
+.navbar__link {
+   display: inline-block;
+   color: var(--color-text-light);
+   text-align: center;
+}
+
+.navbar__link_type_contacts {
+   width: 200px;
+}
+
+.navbar__link:hover {
+   color: rgb(234, 234, 234);
 }

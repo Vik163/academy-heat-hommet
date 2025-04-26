@@ -3,8 +3,7 @@
    flex-direction: column;
    align-items: center;
    background-color: transparent;
-   padding: 0 12px;
-   width: 190px;
+   width: 170px;
    height: 100%;
    font-family: var(--font-int);
    font-weight: 900;
@@ -30,5 +29,5 @@
 
 .logo__name {
    font-size: 16px;
-   letter-spacing: 0.4px;
+   letter-spacing: 0.7px;
 }

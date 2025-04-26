@@ -1,4 +1,3 @@
-// import  { BuildOptions } from '../../types/config';
 export function buildBabelLoader () {
   return {
     test:  /\.(js|ts)$/, 
@@ -22,27 +21,5 @@ export function buildBabelLoader () {
 
 
 
-// export function buildBabelLoader({ isDev, isTsx }: BuildOptions) {
-//     const isProd = !isDev; // 13_17 улучшаем сборку
-//     return {
-//         test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/, // меняем расширения
-//         exclude: /node_modules/,
-//         use: {
-//             loader: 'babel-loader',
-//             options: {
-//                 cacheDirectory: true, //  13_17 3min улучшаем сборку
-//                 presets: ['@babel/preset-env'],
-//                 plugins: [
-//                     [
-//                         '@babel/plugin-transform-typescript', // 11_10 4min
-//                         {
-//                             isTsx,
-//                         },
-//                     ],
-//                     '@babel/plugin-transform-runtime',
-//                 ].filter(Boolean),
-//             },
-//         },
-//     };
-// }
+
 
