@@ -7,10 +7,6 @@
    font-weight: 700;
 }
 
-.hed {
-   margin-top: 100px;
-}
-
 .navbar__container {
    width: var(--width-block-desktop);
    margin: 0 auto;

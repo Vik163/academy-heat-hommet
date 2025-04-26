@@ -20,7 +20,6 @@ export const buildPlugins = (options: BuildOptions) => {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
-      favicon: paths.favicon
     }),
     // обработка типов отдельно при загрузке
     new ForkTsCheckerWebpackPlugin({
