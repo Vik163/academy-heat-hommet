@@ -17,7 +17,7 @@
    justify-content: space-around;
    gap: var(--gap);
    min-width: 100%;
-   animation: scroll 40s linear infinite;
+   animation: scroll 50s linear infinite;
 }
 
 .marquee:hover .marquee__content {

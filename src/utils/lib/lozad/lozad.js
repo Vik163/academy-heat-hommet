@@ -2,7 +2,7 @@
  * https://github.com/ApoorvSaxena/lozad.js
  * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
 
-import { loadSrc } from './loadSrc';
+import { loadSrc } from '../load-src/loadSrc';
 
 /**
  * Detect IE browser

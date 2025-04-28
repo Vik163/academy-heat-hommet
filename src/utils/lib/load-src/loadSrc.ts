@@ -1,6 +1,9 @@
 function getNameFile(str: string) {
    const arr = str.split('/');
-   return arr[arr.length - 1];
+   const index = arr.indexOf('images') + 1;
+   const address = arr.slice(index).join('/');
+
+   return address;
 }
 
 export const loadSrc = (src: string) => {
@@ -17,6 +20,7 @@ export const loadSrc = (src: string) => {
 
       return newSrc;
    }
-   //* -- data-src -------------------
-   return require('../../../' + getNameFile(src));
+
+   //* -- data-src --- srcset ----------------
+   return require('../../../' + src);
 };

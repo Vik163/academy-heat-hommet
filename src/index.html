@@ -86,8 +86,7 @@
                <div class="hommet__info animation-right">
                   <h1 class="hommet__title">
                      ПРОИЗВОДСТВО<br />
-                     СИСТЕМ МОНТАЖА<br />
-                     И ХОМУТОВ
+                     СИСТЕМ МОНТАЖА
                   </h1>
                   <p class="hommet__subtitle">
                      Надежный партнер качественного крепежа
@@ -190,11 +189,29 @@
                   </li>
                </ul>
             </div>
+            <section class="slider splide" aria-labelledby="carousel-heading">
+               <div class="splide__track slider__track">
+                  <ul class="splide__list slider__list"></ul>
+               </div>
+               <div class="splide__progress">
+                  <div class="splide__progress__bar"></div>
+               </div>
+            </section>
          </main>
          <footer class="footer"></footer>
       </div>
-      <template id="nav__link">
-         <a class="nav__link" href="#"></a>
+
+      <!--* ====== Tempalates =============== -->
+      <template id="slider-item">
+         <li class="splide__slide slider-item">
+            <a class="slider-item__link" href="#">
+               <div class="slider-item__info">
+                  <h3 class="slider-item__title"></h3>
+                  <p class="slider-item__description"></p>
+               </div>
+               <img class="slider-item__image" src="#" alt="" />
+            </a>
+         </li>
       </template>
    </body>
 </html>

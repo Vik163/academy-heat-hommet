@@ -19,4 +19,9 @@
 
 /* === главная страница ==============*/
 @import url(../../blocks/hommet/styles/hommet.css);
+
+/* === бегущая строка ==============*/
 @import url(../../blocks/marquee/marquee.css);
+
+/* === слайдер ==============*/
+@import url(../../blocks/slider/slider.css);
