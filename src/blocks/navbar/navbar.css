@@ -1,7 +1,7 @@
 .navbar {
    width: 100%;
    padding: 8px 0;
-   background-color: var(--bg-primary-grey);
+   background-color: var(--bg-primary-color-dark);
    font-family: var(--font-mul);
    font-size: 16px;
    font-weight: 700;

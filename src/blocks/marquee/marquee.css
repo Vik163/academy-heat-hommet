@@ -1,10 +1,9 @@
 .marquee {
-   --gap: 50px;
    position: relative;
    display: flex;
    overflow: hidden;
    user-select: none;
-   gap: var(--gap);
+   gap: var(--marquee-gap);
    background: var(--color-red);
    padding: 5px 0;
    border-top: 2px solid var(--bg-primary-grey);
@@ -15,14 +14,14 @@
    flex-shrink: 0;
    display: flex;
    justify-content: space-around;
-   gap: var(--gap);
+   gap: var(--marquee-gap);
    min-width: 100%;
    animation: scroll 50s linear infinite;
 }
 
-.marquee:hover .marquee__content {
+/* .marquee:hover .marquee__content {
    animation-play-state: paused;
-}
+} */
 
 .marquee__link {
    font-family: var(--font-mul);
@@ -36,6 +35,6 @@
       transform: translateX(0);
    }
    to {
-      transform: translateX(calc(-100% - var(--gap)));
+      transform: translateX(calc(-100% - var(--marquee-gap)));
    }
 }

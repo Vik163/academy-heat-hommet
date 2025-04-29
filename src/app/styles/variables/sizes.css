@@ -11,4 +11,7 @@
 
    /* - padding ----- */
    --slider_padding: 30px;
+
+   /* - gap ----- */
+   --marquee-gap: 50px;
 }
