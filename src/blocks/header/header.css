@@ -7,7 +7,7 @@
    gap: 20px;
 }
 
-.container {
+.header__container {
    max-width: var(--width-block-desktop);
    width: 100%;
    display: flex;
@@ -45,7 +45,6 @@
 }
 
 .header__btn {
-   background-color: transparent;
    font-family: var(--font-int);
    font-weight: 700;
    color: var(--color-text-light);

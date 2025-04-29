@@ -1,5 +1,5 @@
 import { loadSrc } from '@/utils/lib/load-src/loadSrc';
-import { catalogs } from '../../utils/consts/catalogs';
+import { catalogs } from '../../utils/consts/catalog/catalog';
 import Splide from '@splidejs/splide';
 
 import '@splidejs/splide/css/core';

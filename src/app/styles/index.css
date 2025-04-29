@@ -11,17 +11,21 @@
 @import url(../../blocks/logo/logo.css);
 
 /* === header ==============*/
-@import url(../../blocks/header/styles/header/header.css);
-@import url(../../blocks/header/styles/navbar/navbar.css);
+@import url(../../blocks/header/header.css);
+@import url(../../blocks/navbar/navbar.css);
 
 /* === footer ==============*/
-@import url(../../blocks/footer/styles/footer.css);
+@import url(../../blocks/footer/footer.css);
 
-/* === главная страница ==============*/
-@import url(../../blocks/hommet/styles/hommet.css);
+/*! === главная страница ==============*/
+/* === hommet ==============*/
+@import url(../../blocks/hommet/hommet.css);
 
 /* === бегущая строка ==============*/
 @import url(../../blocks/marquee/marquee.css);
 
 /* === слайдер ==============*/
 @import url(../../blocks/slider/slider.css);
+
+/* === собственное производство ==============*/
+@import url(../../blocks/own/own.css);

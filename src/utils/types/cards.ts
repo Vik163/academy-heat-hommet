@@ -5,10 +5,17 @@ export interface ICatalog {
    description: string;
 }
 
-export interface ICProduct {
+export interface Card {
    title: string;
    link: string;
    imgB: string;
    imgM: string;
+   imgL: string;
+}
+
+export interface OwnCard {
+   title: string;
+   link: string;
+   imgB: string;
    imgL: string;
 }

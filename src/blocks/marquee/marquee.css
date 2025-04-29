@@ -1,5 +1,5 @@
 .marquee {
-   --gap: 1rem;
+   --gap: 50px;
    position: relative;
    display: flex;
    overflow: hidden;

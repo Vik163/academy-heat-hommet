@@ -1,4 +1,4 @@
-import { ICatalog } from '../types/products';
+import type { ICatalog } from '../../types/cards';
 
 export const catalogs: ICatalog[] = [
    {

@@ -10,7 +10,7 @@
 }
 
 .slider-item__container {
-   padding: var(--height-slider_padding);
+   padding: var(--slider_padding);
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -24,17 +24,18 @@
 }
 
 .slider-item__container_color_light {
-   background-color: rgb(190, 189, 189);
+   background-color: var(--bg-primary-card-dark);
    color: var(--color-title);
 }
 
 .slider-item__info {
-   height: calc(var(--height-slider_item) - 80px);
+   height: 100%;
    position: relative;
 }
 
 .slider-item__title {
-   font-size: 20px;
+   font-size: var(--font-20);
+   line-height: var(--font-20);
    margin-bottom: 20px;
 }
 
@@ -46,13 +47,13 @@
 .slider-item__link {
    position: absolute;
    width: 150px;
-   height: 35px;
+   height: var(--height-btn-card);
    bottom: 0;
    left: 0;
    margin-bottom: auto;
    background-color: var(--color-red);
    text-align: center;
-   line-height: 35px;
+   line-height: var(--height-btn-card);
    color: var(--color-text-light);
 }
 

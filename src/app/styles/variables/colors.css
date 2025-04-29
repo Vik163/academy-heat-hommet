@@ -5,10 +5,12 @@
    --bg-primary-color-dark: #353535;
    --bg-primary-grey: #68676c;
    --bg-primary-button-color-dark: #2a2a2a;
+   --bg-primary-card-dark: #bebdbd;
 
    --color-red: #df0923;
    --color-text-light: #fff;
    --color-text-accent: #474747;
    --color-title: #000;
    --color-text-dark: #333;
+   --color-card-border: #d9d9de;
 }

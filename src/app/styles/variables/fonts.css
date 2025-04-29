@@ -1,6 +1,16 @@
 :root {
-   --font-ms: 'Montserrat';
    --font-mul: 'Mulish';
-   --font-rob: 'Roboto';
    --font-int: 'Inter';
+
+   --font-12: 12px;
+   --font-14: 14px;
+   --font-16: 16px;
+   --font-18: 18px;
+   --font-20: 20px;
+   --font-30: 30px;
+
+   --font-weight-norm: 400;
+   --font-weight-medium: 500;
+   --font-weight-bold: 700;
+   --font-weight-black: 700;
 }

@@ -18,7 +18,7 @@
    <body>
       <div class="app">
          <header class="header">
-            <div class="container">
+            <div class="header__container">
                <a class="logo" href="./index.html">
                   <div class="logo__container">
                      <img
@@ -117,10 +117,34 @@
                <ul class="marquee__content">
                   <li>
                      <a class="marquee__link" href="#"
-                        >Система сухого монтажа</a
+                        >Система сухого монтажа Хоммет - это монтажный профиль и
+                        крепеж к нему</a
                      >
                   </li>
                   <li>
+                     <a class="marquee__link" href="https://hommet.ru/"
+                        >Аналог систем TECE и VIEGA</a
+                     >
+                  </li>
+                  <li>
+                     <a class="marquee__link" href="#">Простота в установке</a>
+                  </li>
+                  <li>
+                     <a class="marquee__link" href="#"
+                        >Высокие эксплуатационные характеристики</a
+                     >
+                  </li>
+                  <li>
+                     <a class="marquee__link" href="https://hommet.ru/"
+                        >Гарантия долговечности и надежности</a
+                     >
+                  </li>
+                  <li>
+                     <a class="marquee__link" href="#"
+                        >Оптимальное соотношение цены и качества</a
+                     >
+                  </li>
+                  <!-- <li>
                      <a class="marquee__link" href="https://hommet.ru/"
                         >ХОММЕТ</a
                      >
@@ -150,44 +174,44 @@
                      <a class="marquee__link" href="https://hommet.ru/"
                         >ХОММЕТ</a
                      >
-                  </li>
+                  </li> -->
                </ul>
 
                <ul aria-hidden="true" class="marquee__content">
                   <li>
                      <a class="marquee__link" href="#"
-                        >Система сухого монтажа</a
+                        >Система сухого монтажа Хоммет - это монтажный профиль и
+                        крепеж к нему</a
                      >
                   </li>
                   <li>
                      <a class="marquee__link" href="https://hommet.ru/"
-                        >ХОММЕТ</a
+                        >Аналог систем TECE и VIEGA</a
+                     >
+                  </li>
+                  <li>
+                     <a class="marquee__link" href="#">Простота в установке</a>
+                  </li>
+                  <li>
+                     <a class="marquee__link" href="#"
+                        >Высокие эксплуатационные характеристики</a
+                     >
+                  </li>
+                  <li>
+                     <a class="marquee__link" href="https://hommet.ru/"
+                        >Гарантия долговечности и надежности</a
                      >
                   </li>
                   <li>
                      <a class="marquee__link" href="#"
-                        >Профессиональный крепеж</a
+                        >Оптимальное соотношение цены и качества</a
                      >
                   </li>
-                  <li>
+                  <!-- <li>
                      <a class="marquee__link" href="https://hommet.ru/"
                         >ХОММЕТ</a
                      >
-                  </li>
-                  <li>
-                     <a class="marquee__link" href="#">Промышленный крепеж</a>
-                  </li>
-                  <li>
-                     <a class="marquee__link" href="https://hommet.ru/"
-                        >ХОММЕТ</a
-                     >
-                  </li>
-                  <li><a class="marquee__link" href="#">Хомуты</a></li>
-                  <li>
-                     <a class="marquee__link" href="https://hommet.ru/"
-                        >ХОММЕТ</a
-                     >
-                  </li>
+                  </li> -->
                </ul>
             </div>
             <section class="slider splide" aria-labelledby="carousel-heading">
@@ -197,6 +221,12 @@
                <div class="splide__progress">
                   <div class="splide__progress__bar"></div>
                </div>
+            </section>
+            <section class="own app__own">
+               <h2 class="own__title animation-right">
+                  СОБСТВЕННОЕ ПРОИЗВОДСТВО
+               </h2>
+               <ul class="own__cards"></ul>
             </section>
          </main>
          <footer class="footer"></footer>
@@ -213,6 +243,17 @@
                </div>
                <img class="slider-item__image" src="#" alt="" />
             </div>
+         </li>
+      </template>
+      <template id="card">
+         <li class="card">
+            <a class="card__link" href="#">
+               <div class="card__image-container">
+                  <img class="card__image" src="#" alt="" />
+               </div>
+               <h3 class="card__title"></h3
+            ></a>
+            <button type="button" class="card__btn">Узнать цену</button>
          </li>
       </template>
    </body>
