@@ -74,9 +74,10 @@
                         <a class="navbar__link" href="#">Хомуты</a>
                      </li>
                   </ul>
-                  <a class="navbar__link navbar__link_type_contacts" href="#"
-                     >Контакты</a
-                  >
+                  <div class="navbar__info">
+                     <a class="navbar__link" href="#">Сертификаты</a>
+                     <a class="navbar__link" href="#">Контакты</a>
+                  </div>
                </div>
             </nav>
          </header>
@@ -204,13 +205,14 @@
       <!--* ====== Tempalates =============== -->
       <template id="slider-item">
          <li class="splide__slide slider-item">
-            <a class="slider-item__link" href="#">
+            <div class="slider-item__container">
                <div class="slider-item__info">
                   <h3 class="slider-item__title"></h3>
                   <p class="slider-item__description"></p>
+                  <a href="#" class="slider-item__link"> В каталог </a>
                </div>
                <img class="slider-item__image" src="#" alt="" />
-            </a>
+            </div>
          </li>
       </template>
    </body>

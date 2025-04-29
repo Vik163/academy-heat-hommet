@@ -5,43 +5,46 @@ import Splide from '@splidejs/splide';
 import '@splidejs/splide/css/core';
 
 const list = document.querySelector('.splide__list');
-const template = document.querySelector('#slider-item') as HTMLTemplateElement;
-const linkTemplate = template.content;
+const template = (document.querySelector('#slider-item') as HTMLTemplateElement)
+   .content;
 
 // построен на html-template
 export const slider = () => {
    catalogs.forEach((c, i) => {
-      const linkContainer = linkTemplate
+      const templateContainer = template
          .querySelector('.slider-item')
          ?.cloneNode(true) as HTMLLIElement;
 
-      const linkElement = linkContainer.querySelector(
-         '.slider-item__link',
-      ) as HTMLAnchorElement;
+      const container = templateContainer.querySelector(
+         '.slider-item__container',
+      ) as HTMLElement;
 
       if (i % 2 === 0)
-         linkElement.classList.add('slider-item__link_color_light');
+         container.classList.add('slider-item__container_color_light');
 
-      if (linkElement) {
-         linkElement.href = c.link;
-
-         const title = linkElement.querySelector('.slider-item__title')!;
+      if (container) {
+         const title = container.querySelector('.slider-item__title')!;
          title.textContent = c.title;
 
-         const description = linkElement.querySelector(
+         const description = container.querySelector(
             '.slider-item__description',
          )!;
          description.textContent = c.description;
 
-         const image = linkElement.querySelector(
+         const image = container.querySelector(
             '.slider-item__image',
          )! as HTMLImageElement;
          const newSrc = loadSrc(c.imgL);
          image.src = newSrc;
          image.alt = c.title;
+
+         const link = container.querySelector(
+            '.slider-item__link',
+         ) as HTMLAnchorElement;
+         link.href = c.link;
       }
       // отображаем на странице
-      list?.append(linkContainer);
+      list?.append(templateContainer);
    });
 
    // включаю слайдер

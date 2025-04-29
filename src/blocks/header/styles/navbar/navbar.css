@@ -40,8 +40,9 @@
    text-align: center;
 }
 
-.navbar__link_type_contacts {
-   width: 200px;
+.navbar__info {
+   display: flex;
+   gap: 40px;
 }
 
 .navbar__link:hover {
