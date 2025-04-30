@@ -7,6 +7,9 @@
    align-items: center;
    font-family: var(--font-int);
 }
+.destroy {
+   display: none;
+}
 
 .hommet__info {
    width: 50%;
