@@ -2,8 +2,8 @@ import { animationScrolling } from '@/utils/lib/animation-scrolling/animation-sc
 import './styles/index.css';
 import lozad from '@/utils/lib/lozad/lozad';
 import { slider } from '@/blocks/slider/slider';
-import { ownProd } from '@/blocks/own/own';
-
+import { handleOwn } from '@/blocks/own/own';
+console.log('g:', window.location.href);
 // === ленивая загрузка фотографий ==========
 const observerLazy = lozad();
 observerLazy.observe();
@@ -18,4 +18,5 @@ elementsOnRight.forEach((el) => {
 slider();
 
 // === собственное производство =====
-ownProd();
+
+handleOwn();

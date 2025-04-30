@@ -18,8 +18,15 @@ export const buildPlugins = (options: BuildOptions) => {
     }),
     // отображения отчетов о ходе выполнения во время компиляции
     new webpack.ProgressPlugin(),
+
     new HtmlWebpackPlugin({
       template: paths.html,
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/catalog.html',
+      filename: 'catalog.html',
+      chunks: ['catalog']
     }),
     // обработка типов отдельно при загрузке
     new ForkTsCheckerWebpackPlugin({

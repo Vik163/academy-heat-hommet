@@ -1,15 +1,15 @@
-.own {
+.clamps {
    width: var(--width-block-desktop);
 }
 
-.own__title {
+.clamps__title {
    font-family: var(--font-mul);
    font-size: var(--font-30);
    font-weight: 700;
    margin-bottom: 25px;
    width: 400px;
 }
-.own__container {
+.clamps__container {
    width: 100%;
    display: flex;
    flex-wrap: wrap;

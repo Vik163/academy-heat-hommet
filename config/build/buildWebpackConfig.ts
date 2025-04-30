@@ -13,10 +13,14 @@ export const buildWebpackConfig = (
 
   return {
     mode,
-    entry: paths.entry,
+    // entry: [paths.entry, paths.entry],
+    entry: {
+      main: paths.entry,
+      catalog: './src/app/catalog.ts'
+    },
     output: {
       path: paths.build,
-      filename: 'main.js',
+      filename: '[name].js',
       clean: true,
       publicPath: '/'
     },

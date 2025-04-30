@@ -1,3 +1,12 @@
+export type TypeProduct = 'clamp' | 'industr' | 'prof' | 'dms';
+export type SubType =
+   | 'pipe'
+   | 'splinker'
+   | 'stainless'
+   | 'chimneys'
+   | 'vent'
+   | 'sml';
+
 export interface ICatalog {
    title: string;
    link: string;
@@ -6,14 +15,9 @@ export interface ICatalog {
 }
 
 export interface Card {
-   title: string;
-   link: string;
-   imgB: string;
-   imgM: string;
-   imgL: string;
-}
-
-export interface OwnCard {
+   cardId: number;
+   type: TypeProduct;
+   subType?: SubType;
    title: string;
    link: string;
    imgB: string;
