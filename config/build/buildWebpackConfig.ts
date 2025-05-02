@@ -15,8 +15,8 @@ export const buildWebpackConfig = (
     mode,
     // entry: [paths.entry, paths.entry],
     entry: {
-      main: paths.entry,
-      catalog: './src/app/catalog.ts'
+      main: paths.entryMain,
+      catalog: paths.entryCatalog
     },
     output: {
       path: paths.build,

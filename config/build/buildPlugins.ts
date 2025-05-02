@@ -20,11 +20,11 @@ export const buildPlugins = (options: BuildOptions) => {
     new webpack.ProgressPlugin(),
 
     new HtmlWebpackPlugin({
-      template: paths.html,
+      template: paths.main,
       chunks: ['main']
     }),
     new HtmlWebpackPlugin({
-      template: 'src/pages/catalog.html',
+      template: paths.catalog,
       filename: 'catalog.html',
       chunks: ['catalog']
     }),

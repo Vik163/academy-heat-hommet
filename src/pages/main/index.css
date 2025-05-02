@@ -1,11 +1,11 @@
-@import url(./variables/colors.css);
-@import url(./variables/sizes.css);
-@import url(./variables/fonts.css);
-@import url(./reset.css);
+@import url(../../blocks/app/styles/variables/colors.css);
+@import url(../../blocks/app/styles/variables/sizes.css);
+@import url(../../blocks/app/styles/variables/fonts.css);
+@import url(../../blocks/app/styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
 
 /* === app ==============*/
-@import url(./app.css);
+@import url(../../blocks/app/styles/app.css);
 
 /* === logo ==============*/
 @import url(../../blocks/logo/logo.css);

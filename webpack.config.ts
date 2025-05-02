@@ -6,9 +6,11 @@ const path = require('path');
 
 export default (env: BuildEnv) => {
    const paths: BuildPaths = {
-      entry: path.resolve(__dirname, 'src', 'app', 'index.ts'),
+      entryMain: path.resolve(__dirname, './src/pages/main/index.ts'),
+      entryCatalog: path.resolve(__dirname, './src/pages/catalog/catalog.ts'),
       build: path.resolve(__dirname, 'build'),
-      html: path.resolve(__dirname, 'src', 'index.html'),
+      main: path.resolve(__dirname, './src/pages/main/index.html'),
+      catalog: path.resolve(__dirname, './src/pages/catalog/catalog.html'),
       src: path.resolve(__dirname, 'src'),
    };
 

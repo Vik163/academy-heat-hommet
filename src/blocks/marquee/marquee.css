@@ -10,10 +10,6 @@
    border-bottom: 2px solid var(--bg-primary-grey);
 }
 
-.destroy {
-   display: none;
-}
-
 .marquee__content {
    flex-shrink: 0;
    display: flex;

@@ -6,9 +6,11 @@ export interface BuildEnv {
 }
 
 export interface BuildPaths {
-   entry: string;
+   entryMain: string;
+   entryCatalog: string;
    build: string;
-   html: string;
+   main: string;
+   catalog: string;
    src: string;
    favicon?: string;
 }
