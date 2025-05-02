@@ -3,7 +3,7 @@ import { changeUrl } from '@/utils/lib/changeUrl/changeUrl';
 console.log('a:', window.location.href);
 console.log('h:', window.history);
 
-if (location.pathname !== '/') {
+if (location.pathname !== '/' && !location.pathname.endsWith('.html')) {
    console.log('location.pathname:', location.pathname);
 
    const address = __IS_DEV__
