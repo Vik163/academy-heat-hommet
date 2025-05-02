@@ -8,7 +8,7 @@ import { handleOwn } from '@/blocks/own/own';
 if (__IS_DEV__ && location.pathname !== '/') {
    console.log('isDev');
 
-   location.href = `${location.pathname}.html`;
+   location.href = `${location.pathname}.html${location.search}`;
 }
 
 // === ленивая загрузка фотографий ==========

@@ -1,5 +1,5 @@
 {
    "rewrites": [
-      { "source": "/catalog/:path*", "destination": "/catalog.html/:path*" }
+      { "source": "/catalog:path*", "destination": "/catalog.html:path*" }
    ]
 }

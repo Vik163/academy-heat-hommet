@@ -1,6 +1,8 @@
 //* ----- убирает .html в адрессной строке для разработки--------------------------
 export const changeUrl = () => {
    const newURL = location.pathname.split('.')[0];
-   // if (window.history != undefined && window.history.pushState != undefined)
-   window.history.replaceState(null, '', newURL);
+   const url = `${newURL}${location.search}`;
+   console.log('location.pathname:', location.search);
+   console.log('newURL:', newURL);
+   window.history.replaceState(null, '', url);
 };

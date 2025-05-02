@@ -46,8 +46,8 @@ export const handleCards = (
                const btn = cardTemplate.querySelector(
                   '.card__btn',
                ) as HTMLButtonElement;
-               const sType = c.subType ? `${c.subType}/` : '';
-               btn.id = `${c.type}/${sType}${c.title}`;
+               const sType = c.subType ? `${c.subType}&` : '&';
+               btn.id = `${c.type}&${sType}${c.title}`;
 
                btn.addEventListener('click', onClick);
             }
