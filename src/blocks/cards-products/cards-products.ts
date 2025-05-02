@@ -47,7 +47,7 @@ export const handleCards = (
                   '.card__btn',
                ) as HTMLButtonElement;
                const sType = c.subType ? `${c.subType}/` : '';
-               btn.id = `${c.type}/${c.title}`;
+               btn.id = `${c.type}/${sType}${c.title}`;
 
                btn.addEventListener('click', onClick);
             }
