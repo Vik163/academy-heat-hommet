@@ -4,14 +4,11 @@ import lozad from '@/utils/lib/lozad/lozad';
 import { slider } from '@/blocks/slider/slider';
 import { handleOwn } from '@/blocks/own/own';
 
-if (location.pathname !== '/') {
-   console.log('location.pathname:', location.pathname);
-
-   const address = __IS_DEV__
-      ? `${location.pathname}.html`
-      : `https://academy-heat-hommet.vercel.app${location.pathname}.html`;
-   location.href = address;
+//TODO для разрабтки ===========================
+if (__IS_DEV__ && location.pathname !== '/') {
+   location.href = `${location.pathname}.html`;
 }
+
 // === ленивая загрузка фотографий ==========
 const observerLazy = lozad();
 observerLazy.observe();

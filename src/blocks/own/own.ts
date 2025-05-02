@@ -12,10 +12,7 @@ export const handleOwn = async () => {
       const btnId = target.id;
       console.log('e:', target.id);
 
-      const address = __IS_DEV__
-         ? 'catalog'
-         : 'https://academy-heat-hommet.vercel.app/catalog.html';
-      window.location.href = address;
+      if (__IS_DEV__) window.location.href = 'catalog';
    };
 
    handleCards(ownProductionBlock, ownProductionCards, onClick);
