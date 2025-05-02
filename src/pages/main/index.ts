@@ -6,6 +6,8 @@ import { handleOwn } from '@/blocks/own/own';
 
 //TODO для разрабтки ===========================
 if (__IS_DEV__ && location.pathname !== '/') {
+   console.log('isDev');
+
    location.href = `${location.pathname}.html`;
 }
 
