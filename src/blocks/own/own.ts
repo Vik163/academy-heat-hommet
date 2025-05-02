@@ -14,7 +14,7 @@ export const handleOwn = async () => {
 
       const address = __IS_DEV__
          ? 'catalog'
-         : 'https://academy-heat-hommet.vercel.app/catalog';
+         : 'https://academy-heat-hommet.vercel.app/catalog.html';
       window.location.href = address;
    };
 
