@@ -13,7 +13,7 @@ export const handleOwn = async () => {
       console.log('e:', target.id);
 
       const address = __IS_DEV__
-         ? 'http://127.0.0.1:3000/catalog.html'
+         ? 'catalog'
          : 'https://academy-heat-hommet.vercel.app/catalog.html';
       window.location.href = address;
    };

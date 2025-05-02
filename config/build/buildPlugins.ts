@@ -21,10 +21,12 @@ export const buildPlugins = (options: BuildOptions) => {
 
     new HtmlWebpackPlugin({
       template: paths.main,
+      inject: true,
       chunks: ['main']
     }),
     new HtmlWebpackPlugin({
       template: paths.catalog,
+      inject: true,
       filename: 'catalog.html',
       chunks: ['catalog']
     }),

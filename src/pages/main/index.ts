@@ -3,9 +3,15 @@ import './index.css';
 import lozad from '@/utils/lib/lozad/lozad';
 import { slider } from '@/blocks/slider/slider';
 import { handleOwn } from '@/blocks/own/own';
-const arr = window.location.href.split('/');
-const location = arr[arr.length - 1];
-console.log('location:', location);
+
+if (location.pathname !== '/') {
+   console.log('location.pathname:', location.pathname);
+
+   const address = __IS_DEV__
+      ? `${location.pathname}.html`
+      : `https://academy-heat-hommet.vercel.app${location.pathname}.html`;
+   location.href = address;
+}
 // === ленивая загрузка фотографий ==========
 const observerLazy = lozad();
 observerLazy.observe();
