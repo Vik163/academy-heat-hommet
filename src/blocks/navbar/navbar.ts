@@ -12,6 +12,7 @@ export const setNavbar = () => {
       setLocalStorage(title, '', '');
 
       const path = getPathname();
+      console.log('path:', path);
       redirectOnPage('catalog', path);
    };
 
