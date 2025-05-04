@@ -1,35 +1,24 @@
 import { ownProductionCards } from '@/utils/consts/own-production';
 import { handleCards } from '../cards-products/cards-products';
-import catalogPage from '@/pages/catalog.html';
-import {
-   // addQueryParams,
-   getQueryParams,
-} from '@/utils/lib/query-params/query-params';
+import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
+import type { Category, ViewName } from '@/utils/types/cards';
+import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 
 const ownProductionBlock = document.querySelector('.own')!;
 
-export const handleOwn = async () => {
-   console.log(window.location.href);
+export const setOwn = async () => {
+   const onClickLink = (e: MouseEvent) => {
+      e.preventDefault();
+      const link = e.currentTarget as HTMLAnchorElement;
+      const arrBtnId = link.id.split('&');
+      const view = arrBtnId[0] as ViewName;
+      const category = arrBtnId[1] as Category;
+      const cardId = arrBtnId[2];
 
-   const onClick = (e: MouseEvent) => {
-      const target = e.target as HTMLButtonElement;
-      const btnId = target.id;
-      const arr = target.id.split('&');
+      setLocalStorage(view, category, cardId);
 
-      const params = {
-         type: arr[0],
-         stype: arr[1],
-         _id: arr[2],
-      };
-
-      // console.log(addQueryParams(params)); // сохраняет url в истории
-
-      const address = __IS_DEV__
-         ? `catalog.html${getQueryParams(params)}`
-         : `https://academy-heat-hommet.vercel.app/catalog${getQueryParams(params)}`;
-      console.log('address:', address);
-      window.location.href = address;
+      redirectOnPage('catalog');
    };
 
-   handleCards(ownProductionBlock, ownProductionCards, onClick);
+   handleCards(ownProductionBlock, ownProductionCards, onClickLink);
 };

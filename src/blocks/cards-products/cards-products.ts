@@ -1,4 +1,4 @@
-import { animationScrolling } from '@/utils/lib/animation-scrolling/animation-scrolling';
+import { animationScrolling } from '@/utils/lib/animationScrolling/animationScrolling';
 import { ObserveCallback, observeElement } from '@/utils/lib/observer/observer';
 import type { Card } from '@/utils/types/cards';
 
@@ -15,7 +15,7 @@ const template = (document.querySelector('#card') as HTMLTemplateElement)
 export const handleCards = (
    block: Element,
    cards: Card[],
-   onClick: (e: MouseEvent) => void,
+   onClickLink: (e: MouseEvent) => void,
 ) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
@@ -41,15 +41,20 @@ export const handleCards = (
                const link = cardTemplate.querySelector(
                   '.card__link',
                ) as HTMLAnchorElement;
-               link.href = c.link;
+               // link.href = c.link;
+               //* === добавляет параметры товара в id кнопки ============
+               const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
+               const cardId = c.cardId ? `${c.cardId}` : '';
+               link.id = `${c.type}&${category}${cardId}`;
+
+               link.addEventListener('click', onClickLink);
 
                const btn = cardTemplate.querySelector(
                   '.card__btn',
                ) as HTMLButtonElement;
-               const sType = c.subType ? `${c.subType}&` : '&';
-               btn.id = `${c.type}&${sType}${c.title}`;
 
-               btn.addEventListener('click', onClick);
+               //* === слушатель на кнопку ============
+               // btn.addEventListener('click', onClickLink);
             }
 
             // встраивает на странице

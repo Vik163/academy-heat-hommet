@@ -1,4 +1,4 @@
-import { loadSrc } from '@/utils/lib/load-src/loadSrc';
+import { loadSrc } from '@/utils/lib/loadSrc/loadSrc';
 import { catalogs } from '../../utils/consts/catalog/catalog';
 import Splide from '@splidejs/splide';
 
@@ -9,7 +9,7 @@ const template = (document.querySelector('#slider-item') as HTMLTemplateElement)
    .content;
 
 // построен на html-template
-export const slider = () => {
+export const setSlider = () => {
    catalogs.forEach((c, i) => {
       const templateContainer = template
          .querySelector('.slider-item')

@@ -1,25 +1,42 @@
-export type TypeProduct = 'clamp' | 'industr' | 'prof' | 'dms';
-export type SubType =
-   | 'pipe'
-   | 'splinker'
-   | 'stainless'
-   | 'chimneys'
-   | 'vent'
-   | 'sml';
+export type ViewName =
+   | 'Хомуты'
+   | 'Промышленный крепеж'
+   | 'Профессиональный крепеж'
+   | 'Система сухого монтажа';
+
+export type CategoryClamps =
+   | 'Хомуты трубные'
+   | 'Хомуты спринклерные'
+   | 'Хомуты из нержавеющей стали'
+   | 'Хомуты для водосточных систем и дымоходов'
+   | 'Хомуты для систем вентиляции'
+   | 'Крепеж для SML-систем';
+
+export type CategoryDSM = 'Система сухого монтажа';
+export type CategoryProf = 'Профессиональный крепеж';
+export type CategoryIndustrial = 'Промышленный крепеж';
+
+export type Category =
+   | CategoryClamps
+   | CategoryDSM
+   | CategoryProf
+   | CategoryIndustrial;
 
 export interface ICatalog {
-   title: string;
+   title: ViewName;
    link: string;
    imgL: string;
    description: string;
 }
 
 export interface Card {
-   cardId: number;
-   type: TypeProduct;
-   subType?: SubType;
+   cardId: string;
+   type: ViewName;
+   pathname?: string;
+   category?: Category;
    title: string;
-   link: string;
    imgB: string;
    imgL: string;
 }
+
+export type ViewProducts = Partial<Record<Category, Card[]>>;
