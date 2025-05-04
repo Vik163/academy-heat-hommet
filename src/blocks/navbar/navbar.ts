@@ -9,8 +9,10 @@ export const setNavbar = () => {
    const onClick = (e: Event, title: ViewName) => {
       e.preventDefault();
 
+      // localStorage
       setLocalStorage(title, '', '');
 
+      // получает путь и переходит на страницу
       const path = getPathname();
       redirectOnPage('catalog', path);
    };

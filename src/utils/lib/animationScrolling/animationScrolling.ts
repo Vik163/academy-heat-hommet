@@ -17,12 +17,8 @@ const classByDirections = (dir: Dir) => {
    }
 };
 
-const toggleClass: ObserveCallback = (
-   intersection,
-   el: Element,
-   direction: Dir,
-) => {
-   el.classList.toggle(classByDirections(direction), intersection);
+const toggleClass: ObserveCallback = (entry, el: Element, direction: Dir) => {
+   el.classList.toggle(classByDirections(direction), entry.isIntersecting);
 };
 
 export const animationScrolling = (el: Element, direction: Dir) => {

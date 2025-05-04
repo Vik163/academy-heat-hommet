@@ -3,14 +3,14 @@ import './index.css';
 import lozad from '@/utils/lib/lozad/lozad';
 import { setSlider } from '@/blocks/slider/slider';
 import { setOwn } from '@/blocks/own/own';
-import { setNavbar } from '@/blocks/navbar/navbar';
+import { setHeader } from '@/blocks/header/header';
 
 //TODO для разрабтки ===========================
 if (__IS_DEV__ && location.pathname !== '/') {
    location.href = `/catalog.html`;
 }
 
-setNavbar();
+setHeader();
 
 // === ленивая загрузка фотографий ==========
 const observerLazy = lozad();

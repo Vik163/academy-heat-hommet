@@ -15,9 +15,7 @@ export const getPathname = () => {
       LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    ) as Category;
 
-   console.log('view:', view);
    const pathnameView = pathnameByView[view];
-   console.log('pathnameView:', pathnameView);
    const pathnameCategory = pathnameByCategory[categoryStorage];
 
    const card = getDataById();
