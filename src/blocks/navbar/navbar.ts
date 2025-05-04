@@ -16,8 +16,6 @@ export const setNavbar = () => {
    };
 
    links.forEach((link) => {
-      link.addEventListener('click', (e) =>
-         onClick(e, link.textContent! as ViewName),
-      );
+      link.addEventListener('click', (e) => onClick(e, link.id as ViewName));
    });
 };

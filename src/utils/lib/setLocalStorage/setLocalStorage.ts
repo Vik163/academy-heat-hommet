@@ -13,8 +13,7 @@ export const setLocalStorage = (
    category: Category | '',
    cardId: string,
 ) => {
-   const str = view.replace(/\s\s+/g, ' '); //* заменяет много пробелов на один;
-   localStorage.setItem(LOCALSTORAGE_TYPE_OF_PRODUCT, str);
+   localStorage.setItem(LOCALSTORAGE_TYPE_OF_PRODUCT, view);
    localStorage.setItem(LOCALSTORAGE_CATEGORY_OF_PRODUCT, category);
    localStorage.setItem(LOCALSTORAGE_PRODUCT_ID, cardId);
 };
