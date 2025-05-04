@@ -3,6 +3,7 @@ import { handleCards } from '../cards-products/cards-products';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import type { Category, ViewName } from '@/utils/types/cards';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
+import { getPathname } from '@/utils/lib/getPathname/getPathname';
 
 const ownProductionBlock = document.querySelector('.own')!;
 
@@ -17,7 +18,8 @@ export const setOwn = async () => {
 
       setLocalStorage(view, category, cardId);
 
-      redirectOnPage('catalog');
+      const path = getPathname();
+      redirectOnPage('catalog', path);
    };
 
    handleCards(ownProductionBlock, ownProductionCards, onClickLink);

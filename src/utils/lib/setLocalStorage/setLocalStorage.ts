@@ -5,6 +5,9 @@ import {
 } from '@/utils/consts/storage';
 import type { Category, ViewName } from '@/utils/types/cards';
 
+/**
+ *  устанавливает данные товаров в localstorage
+ */
 export const setLocalStorage = (
    view: ViewName,
    category: Category | '',
