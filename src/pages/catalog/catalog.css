@@ -18,8 +18,8 @@
 @import url(../../blocks/footer/footer.css);
 
 /*! === главная страница ==============*/
-/* === hommet ==============*/
-@import url(../../blocks/hommet/hommet.css);
+/* === карточки каталога ==============*/
+@import url(../../blocks/cards-catalog/cards-catalog.css);
 
 /* === бегущая строка ==============*/
 @import url(../../blocks/marquee/marquee.css);

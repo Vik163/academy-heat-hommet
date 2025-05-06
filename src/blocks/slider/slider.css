@@ -44,7 +44,7 @@
    height: 150px;
 }
 
-.slider-item__link {
+.slider-item__btn {
    position: absolute;
    width: 150px;
    height: var(--height-btn-card);

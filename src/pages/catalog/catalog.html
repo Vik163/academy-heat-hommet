@@ -30,7 +30,7 @@
                   </div>
                   <span class="logo__name">АКАДЕМИЯ ТЕПЛА</span>
                </a>
-               <div class="header__container-center">
+               <!-- <div class="header__container-center">
                   <button
                      type="button"
                      id="catalog"
@@ -38,21 +38,20 @@
                   >
                      Каталог
                   </button>
-
-                  <div class="header__diller-container">
-                     <span class="header__diller-info"
-                        >Официальный диллер компании &nbsp;</span
-                     >
-                     <a
-                        class="header__diller-link"
-                        href="https://hommet.ru/"
-                        target="_blank"
-                        ><img
-                           class="header__diller-icon"
-                           src="../../assets/icons/hommet-logo.svg"
-                           alt="Компания Хоммет"
-                     /></a>
-                  </div>
+               </div> -->
+               <div class="header__diller-container">
+                  <span class="header__diller-info"
+                     >Официальный диллер компании &nbsp;</span
+                  >
+                  <a
+                     class="header__diller-link"
+                     href="https://hommet.ru/"
+                     target="_blank"
+                     ><img
+                        class="header__diller-icon"
+                        src="../../assets/icons/hommet-logo.svg"
+                        alt="Компания Хоммет"
+                  /></a>
                </div>
                <div class="header__phone-container">
                   <span class="header__phone">+7 (917) 014-11-69</span>
@@ -67,25 +66,46 @@
             <nav class="navbar">
                <div class="navbar__container">
                   <ul class="navbar__links">
-                     <li class="navbar__links-item">
-                        <a class="navbar__link" href="#"
-                           >Система <br />
-                           сухого монтажа</a
+                     <li
+                        class="navbar__links-item navbar__links-item_type_view"
+                     >
+                        <button
+                           id="Система сухого монтажа"
+                           type="button"
+                           class="navbar__link"
                         >
+                           Система <br />
+                           сухого монтажа
+                        </button>
                      </li>
-                     <li class="navbar__links-item">
-                        <a class="navbar__link" href="#"
-                           >Профессиональный<br />
-                           крепеж</a
+                     <li
+                        class="navbar__links-item navbar__links-item_type_view"
+                     >
+                        <button
+                           id="Профессиональный крепеж"
+                           type="button"
+                           class="navbar__link"
                         >
+                           Профессиональный <br />крепеж
+                        </button>
                      </li>
-                     <li class="navbar__links-item">
-                        <a class="navbar__link" href="#"
-                           >Промышленный <br />крепеж</a
+                     <li
+                        class="navbar__links-item navbar__links-item_type_view"
+                     >
+                        <button
+                           type="button"
+                           id="Промышленный крепеж"
+                           class="navbar__link"
                         >
+                           Промышленный<br />крепеж
+                        </button>
                      </li>
-                     <li class="navbar__links-item">
-                        <a class="navbar__link" href="#">Хомуты</a>
+                     <li
+                        class="navbar__links-item navbar__links-item_type_view"
+                     >
+                        <button type="button" id="Хомуты" class="navbar__link">
+                           Хомуты
+                        </button>
                      </li>
                   </ul>
                   <div class="navbar__info">
@@ -95,6 +115,35 @@
                </div>
             </nav>
          </header>
+         <main class="main">
+            <div class="catalog">
+               <h1 class="catalog__title">
+                  КАТАЛОГ ПРОДУКЦИИ ПРОИЗВОДСТВЕННОЙ КОМПАНИИ ХОММЕТ
+               </h1>
+               <ul class="catalog__list"></ul>
+            </div>
+         </main>
       </div>
+      <template id="card-catalog">
+         <li id="#" class="card-catalog">
+            <h3 class="card-catalog__title"></h3>
+            <div class="card-catalog__image-container">
+               <img class="card-catalog__image" src="#" alt="" />
+            </div>
+         </li>
+      </template>
+      <template id="card-product">
+         <li class="card-product">
+            <div id="#" class="card-product__link">
+               <div class="card-product__image-container">
+                  <img class="card-product__image" src="#" alt="" />
+               </div>
+               <h3 class="card-product__title"></h3>
+            </div>
+            <button id="#" type="button" class="card-product__btn">
+               Узнать цену
+            </button>
+         </li>
+      </template>
    </body>
 </html>

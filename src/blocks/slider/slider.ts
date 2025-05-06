@@ -1,5 +1,5 @@
 import { loadSrc } from '@/utils/lib/loadSrc/loadSrc';
-import { catalogs } from '../../utils/consts/products/catalogs';
+import { catalog } from '../../utils/consts/products/catalogs';
 import Splide from '@splidejs/splide';
 
 import '@splidejs/splide/css/core';
@@ -23,7 +23,7 @@ const onClickLink = (e: Event) => {
 
 // построен на html-template
 export const setSlider = () => {
-   catalogs.forEach((c, i) => {
+   catalog.forEach((c, i) => {
       const templateContainer = template
          .querySelector('.slider-item')
          ?.cloneNode(true) as HTMLLIElement;
@@ -51,13 +51,13 @@ export const setSlider = () => {
          image.src = newSrc;
          image.alt = c.title;
 
-         const link = container.querySelector(
-            '.slider-item__link',
-         ) as HTMLAnchorElement;
+         const btn = container.querySelector(
+            '.slider-item__btn',
+         ) as HTMLButtonElement;
 
-         link.id = `${c.title}`;
+         btn.id = `${c.title}`;
 
-         link.addEventListener('click', onClickLink);
+         btn.addEventListener('click', onClickLink);
       }
       // отображаем на странице
       list?.append(templateContainer);

@@ -4,7 +4,6 @@ export const changeUrl = (pathname: string) => {
    const path = `/${pathname}`;
 
    const newURL = `catalog${path}`;
-   console.log('newURL:', newURL);
    // if (window.history != undefined && window.history.pushState != undefined)
    window.history.replaceState(null, '', newURL);
 };

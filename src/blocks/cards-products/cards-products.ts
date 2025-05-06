@@ -3,8 +3,9 @@ import { ObserveCallback, observeElement } from '@/utils/lib/observer/observer';
 import type { Card } from '@/utils/types/cards';
 
 const list = document.querySelector('.cards');
-const template = (document.querySelector('#card') as HTMLTemplateElement)
-   .content;
+const template = (
+   document.querySelector('#card-product') as HTMLTemplateElement
+).content;
 
 /**
  * Универсальный блок для встраивания template карточки продукта.
@@ -20,28 +21,29 @@ export const handleCards = (
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const getCards: ObserveCallback = (intersection) => {
-      const card = document.querySelector('.card');
+      const card = document.querySelector('.card-product');
       // если нет встроенных карт, встраивает
       if (!card && intersection)
          cards.forEach((c, i) => {
             const cardTemplate = template
-               .querySelector('.card')
+               .querySelector('.card-product')
                ?.cloneNode(true) as HTMLLIElement;
 
             if (cardTemplate) {
-               const title = cardTemplate.querySelector('.card__title')!;
+               const title = cardTemplate.querySelector(
+                  '.card-product__title',
+               )!;
                title.textContent = c.title;
 
                const image = cardTemplate.querySelector(
-                  '.card__image',
+                  '.card-product__image',
                )! as HTMLImageElement;
                image.src = c.imgL;
                image.alt = c.title;
 
                const link = cardTemplate.querySelector(
-                  '.card__link',
-               ) as HTMLAnchorElement;
-               // link.href = c.link;
+                  '.card-product__link',
+               ) as HTMLButtonElement;
                //* === добавляет параметры товара в id кнопки ============
                const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
                const cardId = c.cardId ? `${c.cardId}` : '';
@@ -50,7 +52,7 @@ export const handleCards = (
                link.addEventListener('click', onClickLink);
 
                const btn = cardTemplate.querySelector(
-                  '.card__btn',
+                  '.card-product__btn',
                ) as HTMLButtonElement;
 
                //* === слушатель на кнопку ============

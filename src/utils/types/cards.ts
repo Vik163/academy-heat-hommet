@@ -22,11 +22,14 @@ export type Categories =
    | CategoryProf
    | CategoryIndustrial;
 
-export interface ICatalog {
-   title: ViewName;
+export interface Catalog {
+   title: string;
+   titlePage: string;
    imgL: string;
    description: string;
    categories?: Categories[];
+   titleText?: string;
+   text?: string;
 }
 
 export interface Card {

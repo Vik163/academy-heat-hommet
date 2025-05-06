@@ -71,6 +71,7 @@
                      >
                         <button
                            id="Система сухого монтажа"
+                           type="button"
                            class="navbar__link"
                         >
                            Система <br />
@@ -82,6 +83,7 @@
                      >
                         <button
                            id="Профессиональный крепеж"
+                           type="button"
                            class="navbar__link"
                         >
                            Профессиональный <br />крепеж
@@ -90,14 +92,20 @@
                      <li
                         class="navbar__links-item navbar__links-item_type_view"
                      >
-                        <button id="Промышленный крепеж" class="navbar__link">
+                        <button
+                           type="button"
+                           id="Промышленный крепеж"
+                           class="navbar__link"
+                        >
                            Промышленный<br />крепеж
                         </button>
                      </li>
                      <li
                         class="navbar__links-item navbar__links-item_type_view"
                      >
-                        <button id="Хомуты" class="navbar__link">Хомуты</button>
+                        <button type="button" id="Хомуты" class="navbar__link">
+                           Хомуты
+                        </button>
                      </li>
                   </ul>
                   <div class="navbar__info">
@@ -275,21 +283,25 @@
                <div class="slider-item__info">
                   <h3 class="slider-item__title"></h3>
                   <p class="slider-item__description"></p>
-                  <a id="#" href="#" class="slider-item__link"> В каталог </a>
+                  <button id="#" type="button" class="slider-item__btn">
+                     В каталог
+                  </button>
                </div>
                <img class="slider-item__image" src="#" alt="" />
             </div>
          </li>
       </template>
-      <template id="card">
-         <li class="card">
-            <a id="#" class="card__link" href="#">
-               <div class="card__image-container">
-                  <img class="card__image" src="#" alt="" />
+      <template id="card-product">
+         <li class="card-product">
+            <div id="#" class="card-product__link">
+               <div class="card-product__image-container">
+                  <img class="card-product__image" src="#" alt="" />
                </div>
-               <h3 class="card__title"></h3
-            ></a>
-            <button id="#" type="button" class="card__btn">Узнать цену</button>
+               <h3 class="card-product__title"></h3>
+            </div>
+            <button id="#" type="button" class="card-product__btn">
+               Узнать цену
+            </button>
          </li>
       </template>
    </body>

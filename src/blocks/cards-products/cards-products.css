@@ -1,4 +1,4 @@
-.card {
+.card-product {
    width: 230px;
    height: 340px;
    position: relative;
@@ -11,7 +11,11 @@
    font-family: var(--font-int);
 }
 
-.card__image-container {
+.card-product__link {
+   cursor: pointer;
+}
+
+.card-product__image-container {
    width: 100%;
    height: 175px;
    background-color: var(--bg-primary-card-dark);
@@ -19,16 +23,16 @@
    justify-content: center;
    align-items: center;
 }
-.card__image {
+.card-product__image {
    height: 90%;
 }
-.card__title {
+.card-product__title {
    margin: 20px;
    font-size: var(--font-14);
    font-weight: var(--font-weight-medium);
    color: var(--color-text-accent);
 }
-.card__btn {
+.card-product__btn {
    width: 90%;
    height: var(--height-btn-card);
    font-size: var(--font-14);
