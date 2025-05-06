@@ -1,13 +1,13 @@
-import { clamps } from '@/utils/consts/catalog/clamps/clamps';
-import { drySystemMontage } from '@/utils/consts/catalog/dsm/dsm';
-import { industrialFasteners } from '@/utils/consts/catalog/industrial-fasteners/industrial-fasteners';
-import { profFasteners } from '@/utils/consts/catalog/prof-fasteners/prof-fasteners';
+import { clamps } from '@/utils/consts/products/clamps/clamps';
+import { drySystemMontage } from '@/utils/consts/products/dsm/dsm';
+import { industrialFasteners } from '@/utils/consts/products/industrial-fasteners/industrial-fasteners';
+import { profFasteners } from '@/utils/consts/products/prof-fasteners/prof-fasteners';
 import {
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_PRODUCT_ID,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
-import type { Category, ViewName, ViewProducts } from '@/utils/types/cards';
+import type { Categories, ViewName, ViewProducts } from '@/utils/types/cards';
 
 /**
  *  возвращает данные по view в localStorage
@@ -39,12 +39,13 @@ export const getDataByView = (): ViewProducts => {
  *   возвращает данные по category в localStorage
  */
 export const getDataByCategory = () => {
-   const typeProducts: ViewProducts = getDataByView();
-   const categoryProducts = localStorage.getItem(
+   const viewProducts: ViewProducts = getDataByView();
+   const categoriesProducts = localStorage.getItem(
       LOCALSTORAGE_CATEGORY_OF_PRODUCT,
-   )! as Category;
+   )! as Categories;
 
-   if (typeProducts[categoryProducts]) return typeProducts[categoryProducts];
+   if (viewProducts[categoriesProducts])
+      return viewProducts[categoriesProducts];
 };
 
 /**
@@ -53,7 +54,7 @@ export const getDataByCategory = () => {
 export const getDataById = () => {
    const categoryProducts = localStorage.getItem(
       LOCALSTORAGE_CATEGORY_OF_PRODUCT,
-   )! as Category;
+   )! as Categories;
    const idCard = localStorage.getItem(LOCALSTORAGE_PRODUCT_ID);
 
    if (categoryProducts) {

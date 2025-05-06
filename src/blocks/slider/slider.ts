@@ -1,12 +1,25 @@
 import { loadSrc } from '@/utils/lib/loadSrc/loadSrc';
-import { catalogs } from '../../utils/consts/catalog/catalog';
+import { catalogs } from '../../utils/consts/products/catalogs';
 import Splide from '@splidejs/splide';
 
 import '@splidejs/splide/css/core';
+import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
+import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
+import type { ViewName } from '@/utils/types/cards';
 
 const list = document.querySelector('.splide__list');
 const template = (document.querySelector('#slider-item') as HTMLTemplateElement)
    .content;
+
+const onClickLink = (e: Event) => {
+   e.preventDefault();
+   const link = e.currentTarget as HTMLAnchorElement;
+   const view = link.id as ViewName;
+
+   setLocalStorage(view, '', '');
+
+   redirectOnPage('catalog');
+};
 
 // построен на html-template
 export const setSlider = () => {
@@ -41,7 +54,10 @@ export const setSlider = () => {
          const link = container.querySelector(
             '.slider-item__link',
          ) as HTMLAnchorElement;
-         link.href = c.link;
+
+         link.id = `${c.title}`;
+
+         link.addEventListener('click', onClickLink);
       }
       // отображаем на странице
       list?.append(templateContainer);

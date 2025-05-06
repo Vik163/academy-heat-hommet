@@ -27,7 +27,9 @@
 }
 
 .navbar__link {
+   cursor: pointer;
    display: inline-block;
+   background-color: transparent;
    color: var(--color-text-light);
    text-align: center;
 }

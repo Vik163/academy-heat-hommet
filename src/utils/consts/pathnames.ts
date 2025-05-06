@@ -6,7 +6,7 @@ export const pathnameByView = {
    Хомуты: 'homuty',
 };
 
-export const pathnameByCategory = {
+export const pathnameByCategories = {
    'Система сухого монтажа': 'sistema-suhogo-montazha',
    'Промышленный крепеж': 'promyshlennyj-krepezh',
    'Профессиональный крепеж':

@@ -1,4 +1,3 @@
-import { getPathname } from '@/utils/lib/getPathname/getPathname';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import type { ViewName } from '@/utils/types/cards';
@@ -13,8 +12,7 @@ export const setNavbar = () => {
       setLocalStorage(title, '', '');
 
       // получает путь и переходит на страницу
-      const path = getPathname();
-      redirectOnPage('catalog', path);
+      redirectOnPage('catalog');
    };
 
    links.forEach((link) => {

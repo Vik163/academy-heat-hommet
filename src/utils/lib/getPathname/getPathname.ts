@@ -1,9 +1,9 @@
-import { pathnameByCategory, pathnameByView } from '@/utils/consts/pathnames';
+import { pathnameByCategories, pathnameByView } from '@/utils/consts/pathnames';
 import {
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
-import type { Category, ViewName } from '@/utils/types/cards';
+import type { Categories, ViewName } from '@/utils/types/cards';
 import { getDataById } from '../getDataFromStore/getDataFromStore';
 
 /**
@@ -11,20 +11,23 @@ import { getDataById } from '../getDataFromStore/getDataFromStore';
  */
 export const getPathname = () => {
    const view = localStorage.getItem(LOCALSTORAGE_TYPE_OF_PRODUCT) as ViewName;
-   const categoryStorage = localStorage.getItem(
+   const categoriesStorage = localStorage.getItem(
       LOCALSTORAGE_CATEGORY_OF_PRODUCT,
-   ) as Category;
+   ) as Categories;
 
    const pathnameView = pathnameByView[view];
-   const pathnameCategory = pathnameByCategory[categoryStorage];
+   const pathnameCategory = pathnameByCategories[categoriesStorage];
 
    const card = getDataById();
 
    if (card) {
       return card.pathname!;
    }
-   if (pathnameCategory) {
+   if (pathnameView && pathnameCategory) {
       return `${pathnameView}${pathnameCategory}`;
    }
-   return pathnameView;
+   if (pathnameView) {
+      return pathnameView;
+   }
+   return '';
 };

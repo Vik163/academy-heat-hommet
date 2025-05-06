@@ -16,7 +16,7 @@ export type CategoryDSM = 'Система сухого монтажа';
 export type CategoryProf = 'Профессиональный крепеж';
 export type CategoryIndustrial = 'Промышленный крепеж';
 
-export type Category =
+export type Categories =
    | CategoryClamps
    | CategoryDSM
    | CategoryProf
@@ -24,19 +24,19 @@ export type Category =
 
 export interface ICatalog {
    title: ViewName;
-   link: string;
    imgL: string;
    description: string;
+   categories?: Categories[];
 }
 
 export interface Card {
    cardId: string;
    type: ViewName;
    pathname?: string;
-   category?: Category;
+   category?: Categories;
    title: string;
    imgB: string;
    imgL: string;
 }
 
-export type ViewProducts = Partial<Record<Category, Card[]>>;
+export type ViewProducts = Partial<Record<Categories, Card[]>>;

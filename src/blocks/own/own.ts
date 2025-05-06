@@ -1,7 +1,7 @@
 import { ownProductionCards } from '@/utils/consts/own-production';
 import { handleCards } from '../cards-products/cards-products';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
-import type { Category, ViewName } from '@/utils/types/cards';
+import type { Categories, ViewName } from '@/utils/types/cards';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { getPathname } from '@/utils/lib/getPathname/getPathname';
 
@@ -13,13 +13,12 @@ export const setOwn = async () => {
       const link = e.currentTarget as HTMLAnchorElement;
       const arrBtnId = link.id.split('&');
       const view = arrBtnId[0] as ViewName;
-      const category = arrBtnId[1] as Category;
+      const category = arrBtnId[1] as Categories;
       const cardId = arrBtnId[2];
 
       setLocalStorage(view, category, cardId);
 
-      const path = getPathname();
-      redirectOnPage('catalog', path);
+      redirectOnPage('catalog');
    };
 
    handleCards(ownProductionBlock, ownProductionCards, onClickLink);

@@ -27,9 +27,30 @@
    align-items: center;
 }
 
+.header__container-center {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 15px;
+}
+
+.header__btn {
+   cursor: pointer;
+   font-family: var(--font-int);
+   font-weight: 700;
+   color: var(--color-text-light);
+   font-size: 15px;
+   width: 120px;
+   height: var(--height-btn-card);
+   position: relative;
+   background: var(--color-red);
+}
+
 .header__diller-container {
    display: flex;
+   height: 28px;
    align-items: flex-end;
+   margin-top: 3px;
 }
 
 .header__diller-info {
@@ -56,16 +77,9 @@
    font-size: 16px;
 }
 
-.header__btn {
-   font-family: var(--font-int);
-   font-weight: 700;
-   color: var(--color-text-light);
-   font-size: 15px;
+.header__btn_type_phone {
    width: 200px;
-   height: 45px;
    margin-left: 20px;
-   position: relative;
-   background: var(--color-red);
 }
 
 @keyframes onDown {
