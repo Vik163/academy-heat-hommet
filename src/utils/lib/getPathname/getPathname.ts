@@ -24,7 +24,7 @@ export const getPathname = () => {
       return card.pathname!;
    }
    if (pathnameView && pathnameCategory) {
-      return `${pathnameView}${pathnameCategory}`;
+      return `${pathnameView}/${pathnameCategory}`;
    }
    if (pathnameView) {
       return pathnameView;

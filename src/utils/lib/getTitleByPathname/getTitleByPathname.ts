@@ -4,18 +4,26 @@ import { getPathname } from '../getPathname/getPathname';
 export const getTitleByPathname = () => {
    const pathname = getPathname();
 
-   let path = '';
+   let view = '';
    let arr = [];
    if (pathname.includes('/')) {
       arr = pathname.split('/');
-      path = arr[arr.length - 1];
-   } else path = pathname;
+      view = arr[arr.length - 2];
+   } else view = pathname;
 
-   if (arr.length === 0 && path) {
+   if (view) {
       return Object.entries(pathnameByView).find(([key, value]) => {
-         if (value === path) {
+         if (value === view) {
             return key;
          }
       })![0];
-   } else return '';
+   }
+   // else if (arr.length === 2 && view) {
+   //    return Object.entries(pathnameByView).find(([key, value]) => {
+   //       if (value === view) {
+   //          return key;
+   //       }
+   //    })![0];
+   // }
+   else return '';
 };

@@ -37,10 +37,9 @@ export const handleCardsCatalog = (
             image.src = newSrc;
             image.alt = c.title;
 
-            //* === добавляет параметры товара в id кнопки ============
-            // const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
-            // const cardId = c.cardId ? `${c.cardId}` : '';
-            // link.id = `${c.type}&${category}${cardId}`;
+            //* === добавляет категорию товара в id кнопки ============
+            const category = c.title;
+            cardTemplate.id = category;
 
             cardTemplate.addEventListener('click', onClickLink);
          }
@@ -48,4 +47,22 @@ export const handleCardsCatalog = (
          // встраивает на странице
          list?.append(cardTemplate);
       });
+};
+
+/**
+ * Удаляет template карточки
+ */
+export const removeCardsCatalog = () => {
+   const nodesCatalog = document.querySelectorAll('.card-catalog');
+   const nodesCards = document.querySelectorAll('.card-product');
+   const nodes = nodesCatalog.length > 0 ? nodesCatalog : nodesCards;
+
+   const arr = new Array(nodes.length).fill(0);
+
+   arr.forEach(() => {
+      const catalog = document.querySelector('.card-catalog')!;
+      const card = document.querySelector('.card-product')!;
+      if (card) card.remove();
+      if (catalog) catalog.remove();
+   });
 };
