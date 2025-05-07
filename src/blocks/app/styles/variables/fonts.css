@@ -12,5 +12,8 @@
    --font-weight-norm: 400;
    --font-weight-medium: 500;
    --font-weight-bold: 700;
-   --font-weight-black: 700;
+   --font-weight-black: 900;
+
+   --font-title-30: var(--font-30) var(--font-mul);
+   --font-title-18: var(--font-18) var(--font-mul);
 }

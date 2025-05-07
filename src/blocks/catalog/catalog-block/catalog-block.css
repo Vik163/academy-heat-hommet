@@ -1,0 +1,19 @@
+.catalog-block {
+   width: var(--width-block-desktop);
+   display: flex;
+   flex-direction: column;
+}
+
+.catalog-block__title {
+   font: var(--font-title-30);
+   font-weight: var(--font-weight-bold);
+   margin-bottom: 35px;
+   text-transform: uppercase;
+}
+
+.cards {
+   width: var(--width-block-desktop);
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+}

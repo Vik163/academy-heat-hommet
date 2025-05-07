@@ -1,7 +1,7 @@
 import { loadSrc } from '@/utils/lib/loadSrc/loadSrc';
-import type { Card, Catalog } from '@/utils/types/cards';
+import type { Catalog } from '@/utils/types/cards';
 
-const list = document.querySelector('.catalog__list');
+const list = document.querySelector('.cards');
 const template = (
    document.querySelector('#card-catalog') as HTMLTemplateElement
 ).content;
@@ -16,12 +16,9 @@ export const handleCardsCatalog = (
    cards: Catalog[],
    onClickLink: (e: MouseEvent) => void,
 ) => {
-   console.log('i');
-
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const card = document.querySelector('.card-product')!;
-   console.log('card:', card);
    // если нет встроенных карт, встраивает
    if (!card)
       cards.forEach((c, i) => {

@@ -26,8 +26,8 @@ export interface Catalog {
    title: string;
    titlePage: string;
    imgL: string;
-   description: string;
-   categories?: Categories[];
+   description?: string;
+   categories?: Catalog[];
    titleText?: string;
    text?: string;
 }

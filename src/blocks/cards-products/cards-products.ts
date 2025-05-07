@@ -7,6 +7,52 @@ const template = (
    document.querySelector('#card-product') as HTMLTemplateElement
 ).content;
 
+const getCards = (
+   cards: Card[],
+   onClickLink: (e: MouseEvent) => void,
+   block?: Element,
+) => {
+   cards.forEach((c, i) => {
+      const cardTemplate = template
+         .querySelector('.card-product')
+         ?.cloneNode(true) as HTMLLIElement;
+
+      if (cardTemplate) {
+         const title = cardTemplate.querySelector('.card-product__title')!;
+         title.textContent = c.title;
+
+         const image = cardTemplate.querySelector(
+            '.card-product__image',
+         )! as HTMLImageElement;
+         image.src = c.imgL;
+         image.alt = c.title;
+
+         const link = cardTemplate.querySelector(
+            '.card-product__link',
+         ) as HTMLButtonElement;
+         //* === добавляет параметры товара в id кнопки ============
+         const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
+         const cardId = c.cardId ? `${c.cardId}` : '';
+         link.id = `${c.type}&${category}${cardId}`;
+
+         link.addEventListener('click', onClickLink);
+
+         const btn = cardTemplate.querySelector(
+            '.card-product__btn',
+         ) as HTMLButtonElement;
+
+         //* === слушатель на кнопку ============
+         // btn.addEventListener('click', onClickLink);
+      }
+
+      // встраивает на странице
+      list?.append(cardTemplate);
+
+      //* === запускает анимацию ==========
+      if (block) animationScrolling(cardTemplate, 'up');
+   });
+};
+
 /**
  * Универсальный блок для встраивания template карточки продукта.
  * Аргументами передются: блок - куда встраиваются, массив с картами
@@ -14,60 +60,24 @@ const template = (
  * В коллбек предается entry.isIntersection из observer. Встраиваются карты и запускается анимация
  */
 export const handleCards = (
-   block: Element,
    cards: Card[],
    onClickLink: (e: MouseEvent) => void,
+   block?: Element,
 ) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
-   const getCards: ObserveCallback = (intersection) => {
+   const getCardsObserver: ObserveCallback = (intersection) => {
       const card = document.querySelector('.card-product');
       // если нет встроенных карт, встраивает
-      if (!card && intersection)
-         cards.forEach((c, i) => {
-            const cardTemplate = template
-               .querySelector('.card-product')
-               ?.cloneNode(true) as HTMLLIElement;
+      console.log('cards:', cards);
 
-            if (cardTemplate) {
-               const title = cardTemplate.querySelector(
-                  '.card-product__title',
-               )!;
-               title.textContent = c.title;
-
-               const image = cardTemplate.querySelector(
-                  '.card-product__image',
-               )! as HTMLImageElement;
-               image.src = c.imgL;
-               image.alt = c.title;
-
-               const link = cardTemplate.querySelector(
-                  '.card-product__link',
-               ) as HTMLButtonElement;
-               //* === добавляет параметры товара в id кнопки ============
-               const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
-               const cardId = c.cardId ? `${c.cardId}` : '';
-               link.id = `${c.type}&${category}${cardId}`;
-
-               link.addEventListener('click', onClickLink);
-
-               const btn = cardTemplate.querySelector(
-                  '.card-product__btn',
-               ) as HTMLButtonElement;
-
-               //* === слушатель на кнопку ============
-               // btn.addEventListener('click', onClickLink);
-            }
-
-            // встраивает на странице
-            list?.append(cardTemplate);
-
-            //* === запускает анимацию ==========
-            animationScrolling(cardTemplate, 'up');
-         });
+      const intersect = block ? intersection : true;
+      if (!card && intersect) getCards(cards, onClickLink, block);
    };
    //* ---------------------------------------------
 
    //* ======= ставлю наблюдателя =============
-   observeElement(block, getCards);
+   if (block) {
+      observeElement(block, getCardsObserver);
+   } else getCards(cards, onClickLink, block);
 };

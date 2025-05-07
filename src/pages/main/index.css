@@ -19,19 +19,19 @@
 
 /*! === главная страница ==============*/
 /* === hommet ==============*/
-@import url(../../blocks/hommet/hommet.css);
+@import url(../../blocks/index/hommet/hommet.css);
 
 /* === бегущая строка ==============*/
-@import url(../../blocks/marquee/marquee.css);
+@import url(../../blocks/index/marquee/marquee.css);
 
 /* === слайдер ==============*/
-@import url(../../blocks/slider/slider.css);
+@import url(../../blocks/index/slider/slider.css);
 
 /* === собственное производство ==============*/
-@import url(../../blocks/own/own.css);
+@import url(../../blocks/index/own/own.css);
 
 /* === собственное производство ==============*/
-@import url(../../blocks/clamps/clamps.css);
+@import url(../../blocks/index/clamps/clamps.css);
 
 /* === карточки товаров ==============*/
 @import url(../../blocks/cards-products/cards-products.css);

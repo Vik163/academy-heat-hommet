@@ -3,9 +3,11 @@ import { getPathname } from '@/utils/lib/getPathname/getPathname';
 import './catalog.css';
 import { catalog } from '@/utils/consts/products/catalogs';
 import { getTitleByPathname } from '@/utils/lib/getTitleByPathname/getTitleByPathname';
-import { handleCardsCatalog } from '@/blocks/cards-catalog/cards-catalog';
+import { handleCardsCatalog } from '@/blocks/catalog/cards-catalog/cards-catalog';
+import { handleCards } from '@/blocks/cards-products/cards-products';
+import { getDataByView } from '@/utils/lib/getDataFromStore/getDataFromStore';
 
-const titlePage = document.querySelector('.catalog__title')!;
+const titlePage = document.querySelector('.catalog-block__title')!;
 
 const pathname = getPathname();
 
@@ -25,11 +27,19 @@ const onClick = (e: MouseEvent) => {
 
 const handlePage = () => {
    const page = getDataCatalog();
+   console.log('page:', page);
    if (page) {
       titlePage.textContent = page.titlePage;
-   }
 
-   handleCardsCatalog(catalog, onClick);
+      if (page.categories) {
+         handleCardsCatalog(page.categories, onClick);
+      } else {
+         const obj = getDataByView();
+         const data = Object.values(obj)[0];
+         console.log('data:', data);
+         handleCards(data, onClick);
+      }
+   } else handleCardsCatalog(catalog, onClick);
 };
 
 handlePage();

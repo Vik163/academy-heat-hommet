@@ -1,8 +1,8 @@
 import { animationScrolling } from '@/utils/lib/animationScrolling/animationScrolling';
 import './index.css';
 import lozad from '@/utils/lib/lozad/lozad';
-import { setSlider } from '@/blocks/slider/slider';
-import { setOwn } from '@/blocks/own/own';
+import { setSlider } from '@/blocks/index/slider/slider';
+import { setOwn } from '@/blocks/index/own/own';
 import { setHeader } from '@/blocks/header/header';
 
 //TODO для разрабтки ===========================

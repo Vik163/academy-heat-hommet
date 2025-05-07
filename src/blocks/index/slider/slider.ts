@@ -1,5 +1,5 @@
 import { loadSrc } from '@/utils/lib/loadSrc/loadSrc';
-import { catalog } from '../../utils/consts/products/catalogs';
+import { catalog } from '../../../utils/consts/products/catalogs';
 import Splide from '@splidejs/splide';
 
 import '@splidejs/splide/css/core';
@@ -42,7 +42,7 @@ export const setSlider = () => {
          const description = container.querySelector(
             '.slider-item__description',
          )!;
-         description.textContent = c.description;
+         description.textContent = c.description!;
 
          const image = container.querySelector(
             '.slider-item__image',

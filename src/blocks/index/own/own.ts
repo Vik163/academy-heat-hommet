@@ -1,5 +1,5 @@
 import { ownProductionCards } from '@/utils/consts/own-production';
-import { handleCards } from '../cards-products/cards-products';
+import { handleCards } from '../../cards-products/cards-products';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import type { Categories, ViewName } from '@/utils/types/cards';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
@@ -20,5 +20,5 @@ export const setOwn = async () => {
       redirectOnPage('catalog');
    };
 
-   handleCards(ownProductionBlock, ownProductionCards, onClickLink);
+   handleCards(ownProductionCards, onClickLink, ownProductionBlock);
 };
