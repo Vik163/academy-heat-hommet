@@ -56,9 +56,9 @@ const onClick = (e: MouseEvent) => {
    const view = getTitleByPathname() as ViewName;
    setLocalStorage(view, categoryName, '');
 
-   if (__IS_DEV__) {
-      changeUrl();
-   }
+   // if (__IS_DEV__) {
+   changeUrl();
+   // }
 
    const categoryProducts = page.categories?.find(
       (cat) => cat.title === categoryName,
