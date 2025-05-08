@@ -1,3 +1,4 @@
+import { changeUrl } from '@/utils/lib/changeUrl/changeUrl';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import type { ViewName } from '@/utils/types/cards';
@@ -8,11 +9,14 @@ export const setNavbar = () => {
    const onClick = (e: Event, title: ViewName) => {
       e.preventDefault();
 
+      const path = location.pathname;
+      console.log('path:', path);
+
       // localStorage
       setLocalStorage(title, '', '');
 
       // получает путь и переходит на страницу
-      redirectOnPage('catalog');
+      path.includes('catalog') ? changeUrl() : redirectOnPage('catalog');
    };
 
    links.forEach((link) => {

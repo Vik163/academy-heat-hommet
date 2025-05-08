@@ -1,4 +1,6 @@
-export const pathnameByView = {
+import { Categories, ViewName } from '../types/cards';
+
+export const pathnameByView: Record<ViewName, string> = {
    'Система сухого монтажа': 'sistema-suhogo-montazha',
    'Промышленный крепеж': 'promyshlennyj-krepezh',
    'Профессиональный крепеж':
@@ -6,7 +8,7 @@ export const pathnameByView = {
    Хомуты: 'homuty',
 };
 
-export const pathnameByCategories = {
+export const pathnameByCategories: Record<Categories, string> = {
    'Система сухого монтажа': 'sistema-suhogo-montazha',
    'Промышленный крепеж': 'promyshlennyj-krepezh',
    'Профессиональный крепеж':

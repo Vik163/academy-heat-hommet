@@ -14,20 +14,20 @@ export const getPathname = () => {
    const categoriesStorage = localStorage.getItem(
       LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    ) as Categories;
-
-   const pathnameView = pathnameByView[view];
    const pathnameCategory = pathnameByCategories[categoriesStorage];
+   const pathnameView = pathnameByView[view];
 
    const card = getDataById();
 
    if (card) {
       return card.pathname!;
    }
+   if (pathnameView && !pathnameCategory) {
+      return pathnameView;
+   }
    if (pathnameView && pathnameCategory) {
       return `${pathnameView}/${pathnameCategory}`;
    }
-   if (pathnameView) {
-      return pathnameView;
-   }
+
    return '';
 };

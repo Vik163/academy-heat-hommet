@@ -1,10 +1,10 @@
 import { getPathname } from '../getPathname/getPathname';
 
-export const redirectOnPage = (page?: 'catalog' | 'contacts') => {
+export const redirectOnPage = (page?: 'catalog' | 'index') => {
    const path = getPathname();
 
-   // console.log('page:', page);
    const addressPage = page ? page : 'catalog';
+   console.log('redirectOnPage:', addressPage);
 
    const address = __IS_DEV__
       ? `${page}.html`

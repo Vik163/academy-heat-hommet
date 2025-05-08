@@ -7,7 +7,10 @@ import { setHeader } from '@/blocks/header/header';
 
 //TODO для разрабтки ===========================
 if (__IS_DEV__ && location.pathname !== '/') {
-   location.href = `/catalog.html`;
+   const locationPath = location.pathname;
+   locationPath === '/index.html'
+      ? window.history.pushState(null, '', '/')
+      : (location.href = `/catalog.html`);
 }
 
 setHeader();
