@@ -1,6 +1,6 @@
 import { getPathname } from '../getPathname/getPathname';
 
-export const redirectOnPage = (page?: 'catalog' | '') => {
+export const redirectOnPage = (page?: 'catalog' | '/') => {
    const path = getPathname();
 
    const addressPage = page ? page : 'catalog';

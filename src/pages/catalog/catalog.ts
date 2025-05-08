@@ -72,5 +72,5 @@ logo?.addEventListener('click', function (e: Event) {
    e.preventDefault();
    setLocalStorage('', '', '');
    window.history.pushState(null, '', '/');
-   redirectOnPage('');
+   redirectOnPage('/');
 });
