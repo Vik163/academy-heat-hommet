@@ -1,6 +1,5 @@
 import { changeUrl } from '@/utils/lib/changeUrl/changeUrl';
 import './catalog.css';
-import { getNameByPathname } from '@/utils/lib/getNameByPathname/getNameByPathname';
 import {
    setLocalStorage,
    setLocalStorageByPathname,

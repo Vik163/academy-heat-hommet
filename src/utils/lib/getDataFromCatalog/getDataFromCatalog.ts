@@ -1,11 +1,13 @@
 import { catalog } from '@/utils/consts/products/catalogs';
-import { getNameByPathname } from '../getNameByPathname/getNameByPathname';
+import { getNameByLocalStorage } from '../getNameByPathname/getNameByPathname';
 
 /**
- *  Возвращает объект из каталога по виду продукта, полученного из pathname (localStorage)
+ *  Возвращает объект из каталога по виду продукта,
+ * по полученному объекту со свойствами {view, category} (имена на русском языке или undefined),
+ * в зависимости от адресной строки (localStorage)
  */
 export function getDataFromCatalog() {
-   const { viewName, categoryName } = getNameByPathname();
+   const { viewName, categoryName } = getNameByLocalStorage();
    if (categoryName) {
       const view = catalog.find((item) =>
          item.categories?.find((c) => c.title === categoryName),

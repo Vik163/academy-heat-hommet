@@ -20,7 +20,9 @@ export const setLocalStorage = (
 };
 
 /**
- *  устанавливает данные товаров в localstorage
+ *  работает на слушателе 'popstate' - стрелки истории браузера
+ *  устанавливает группы товаров в localstorage по группам в адресной строке
+ *  если групп в адресной строке нет, то localstorage пустой (для перехода на главную страницу)
  */
 export const setLocalStorageByPathname = () => {
    const locationPath = location.pathname;
