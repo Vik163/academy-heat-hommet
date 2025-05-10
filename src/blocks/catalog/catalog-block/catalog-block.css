@@ -11,7 +11,7 @@
    text-transform: uppercase;
 }
 
-.cards {
+.catalog-block__list {
    width: var(--width-block-desktop);
    display: flex;
    flex-wrap: wrap;

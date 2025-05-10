@@ -9,7 +9,7 @@
    margin-bottom: 25px;
    width: 400px;
 }
-.clamps__container {
+.clamps__list {
    width: 100%;
    display: flex;
    flex-wrap: wrap;
