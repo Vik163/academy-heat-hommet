@@ -3,11 +3,11 @@ import { getPathname } from '../getPathname/getPathname';
 import { Categories, ViewName } from '@/utils/types/cards';
 
 interface Data {
-   viewName: ViewName;
+   viewName?: ViewName;
    categoryName?: Categories;
 }
 
-const getName = (path: string, group: 'category' | 'view') => {
+export const getNameFromList = (path: string, group: 'category' | 'view') => {
    return Object.entries(
       group === 'view' ? pathnameByView : pathnameByCategories,
    ).find(([key, value]) => {
@@ -17,7 +17,7 @@ const getName = (path: string, group: 'category' | 'view') => {
    })![0];
 };
 
-export const getCategoriesByPathname = (): Data => {
+export const getNameByPathname = (): Data => {
    const pathname = getPathname();
 
    let viewPath = '';
@@ -30,13 +30,16 @@ export const getCategoriesByPathname = (): Data => {
    } else viewPath = pathname;
 
    if (categoryPath) {
-      const categoryName = getName(categoryPath, 'category') as Categories;
-      const viewName = getName(viewPath, 'view') as ViewName;
+      const categoryName = getNameFromList(
+         categoryPath,
+         'category',
+      ) as Categories;
+      const viewName = getNameFromList(viewPath, 'view') as ViewName;
 
       return { viewName, categoryName };
-   } else {
-      const viewName = getName(viewPath, 'view') as ViewName;
+   } else if (viewPath) {
+      const viewName = getNameFromList(viewPath, 'view') as ViewName;
 
       return { viewName, categoryName: undefined };
-   }
+   } else return { viewName: undefined, categoryName: undefined };
 };
