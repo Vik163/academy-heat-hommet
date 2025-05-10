@@ -24,7 +24,7 @@
 }
 
 .slider-item__container_color_light {
-   background-color: var(--bg-primary-card-dark);
+   background-color: var(--bg-primary-card);
    color: var(--color-title);
 }
 
