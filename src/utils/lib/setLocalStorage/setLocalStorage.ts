@@ -3,8 +3,8 @@ import {
    LOCALSTORAGE_PRODUCT_ID,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
-import type { Categories, ViewName } from '@/utils/types/cards';
-import { getNameFromList } from '../getNameByPathname/getNameByPathname';
+import type { Categories, ViewName } from '@/utils/types/catalog';
+import { getNameFromList } from '../getNamesGroup/getNamesGroup';
 
 /**
  *  устанавливает данные товаров в localstorage

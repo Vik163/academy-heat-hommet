@@ -1,5 +1,5 @@
 import { catalog } from '@/utils/consts/products/catalogs';
-import { Catalog } from '@/utils/types/cards';
+import type { Catalog } from '@/utils/types/catalog';
 import {
    handleCardsCatalog,
    removeCardsCatalog,
@@ -7,6 +7,12 @@ import {
 import { getDataByView } from '../getDataFromStore/getDataFromStore';
 import { handleCards } from '@/blocks/cards-products/cards-products';
 
+/**
+ * Обновляет карточки каталога или товаров (template)
+ * Перед обновлением удаляет (template)
+ * @param obj - карточка каталога
+ * @param onClick - транзит из handleCards или handleCardsCatalog
+ */
 export const updateCards = (obj: Catalog, onClick: (e: MouseEvent) => void) => {
    if (obj) {
       if (obj.categories) {

@@ -1,4 +1,5 @@
-import type { Card, CategoryIndustrial } from '@/utils/types/cards';
+import type { Card } from '@/utils/types/cards';
+import type { CategoryIndustrial } from '@/utils/types/catalog';
 
 export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
    'Промышленный крепеж': [

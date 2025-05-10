@@ -1,7 +1,7 @@
-import type { Catalog, Categories } from '@/utils/types/cards';
+import type { Catalog, Categories } from '@/utils/types/catalog';
 import { updateCards } from '../updateCards/updateCards';
 import { getDataFromCatalog } from '../getDataFromCatalog/getDataFromCatalog';
-import { getNameByLocalStorage } from '../getNameByPathname/getNameByPathname';
+import { getNameByLocalStorage } from '../getNamesGroup/getNamesGroup';
 import { setLocalStorage } from '../setLocalStorage/setLocalStorage';
 import { changeUrl } from '../changeUrl/changeUrl';
 import { redirectOnPage } from '../redirectOnPage/redirectOnPage';

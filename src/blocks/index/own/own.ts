@@ -1,7 +1,7 @@
 import { ownProductionCards } from '@/utils/consts/own-production';
 import { handleCards } from '../../cards-products/cards-products';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
-import type { Categories, ViewName } from '@/utils/types/cards';
+import type { Categories, ViewName } from '@/utils/types/catalog';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 
 const ownProductionBlock = document.querySelector('.own')!;

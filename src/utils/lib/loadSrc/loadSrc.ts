@@ -6,6 +6,11 @@ function getNameFile(str: string) {
    return address;
 }
 
+/**
+ * Предварительная загрузка изображений (webpack) через require
+ * @param src - название файла
+ * @returns url, который вставляется в src
+ */
 export const loadSrc = (src: string) => {
    //* -- data-srcset -------------------
    if (src.includes(' ')) {

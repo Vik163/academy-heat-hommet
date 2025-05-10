@@ -1,4 +1,4 @@
-import { Categories, ViewName } from '../types/cards';
+import { Categories, ViewName } from '../types/catalog';
 
 export const pathnameByView: Record<ViewName, string> = {
    'Система сухого монтажа': 'sistema-suhogo-montazha',

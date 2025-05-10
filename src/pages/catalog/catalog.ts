@@ -4,7 +4,6 @@ import {
    setLocalStorage,
    setLocalStorageByPathname,
 } from '@/utils/lib/setLocalStorage/setLocalStorage';
-import type { Categories } from '@/utils/types/cards';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { setNavbar } from '@/blocks/navbar/navbar';
 import { updatePage } from '@/utils/lib/updatePage/updatePage';

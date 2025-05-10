@@ -5,7 +5,7 @@ import Splide from '@splidejs/splide';
 import '@splidejs/splide/css/core';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
-import type { ViewName } from '@/utils/types/cards';
+import type { ViewName } from '@/utils/types/catalog';
 
 const list = document.querySelector('.splide__list');
 const template = (document.querySelector('#slider-item') as HTMLTemplateElement)

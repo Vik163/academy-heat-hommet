@@ -7,10 +7,10 @@ import {
    LOCALSTORAGE_PRODUCT_ID,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
-import type { Categories, ViewName, ViewProducts } from '@/utils/types/cards';
+import type { Categories, ViewName, ViewProducts } from '@/utils/types/catalog';
 
 /**
- *  возвращает данные по view в localStorage
+ *  возвращает view по данным в localStorage
  */
 export const getDataByView = (): ViewProducts => {
    const typeProducts = localStorage.getItem(
@@ -36,7 +36,7 @@ export const getDataByView = (): ViewProducts => {
 };
 
 /**
- *   возвращает данные по category в localStorage
+ *   возвращает category по данным в localStorage
  */
 export const getDataByCategory = () => {
    const viewProducts: ViewProducts = getDataByView();

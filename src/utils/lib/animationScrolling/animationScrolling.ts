@@ -21,6 +21,11 @@ const toggleClass: ObserveCallback = (entry, el: Element, direction: Dir) => {
    el.classList.toggle(classByDirections(direction), entry.isIntersecting);
 };
 
+/**
+ * Добавляет или удаляет класс css
+ * @param el - Элемент
+ * @param direction - направление "right" | "left" | "up" | "down"
+ */
 export const animationScrolling = (el: Element, direction: Dir) => {
    observeElement(el, (intersection) =>
       toggleClass(intersection, el, direction),

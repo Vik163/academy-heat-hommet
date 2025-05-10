@@ -3,7 +3,6 @@ import {
    observeElement,
 } from '@/utils/lib/observer/observer';
 import { setNavbar } from '../navbar/navbar';
-import type { ViewName } from '@/utils/types/cards';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 
@@ -24,7 +23,6 @@ const handleHeader: ObserveCallback = (entry) => {
 export const setHeader = () => {
    const onClick = (title: string) => {
       // localStorage
-      console.log('title:', title);
       if (title) {
          setLocalStorage('', '', '');
 

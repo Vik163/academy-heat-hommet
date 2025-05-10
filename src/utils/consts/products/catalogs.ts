@@ -1,4 +1,4 @@
-import type { Catalog } from '../../types/cards';
+import type { Catalog } from '../../types/catalog';
 
 export const catalog: Catalog[] = [
    {

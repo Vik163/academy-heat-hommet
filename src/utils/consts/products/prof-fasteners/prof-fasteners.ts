@@ -1,4 +1,5 @@
-import type { Card, CategoryProf } from '@/utils/types/cards';
+import type { Card } from '@/utils/types/cards';
+import type { CategoryProf } from '@/utils/types/catalog';
 
 export const profFasteners: Record<CategoryProf, Card[]> = {
    'Профессиональный крепеж': [

@@ -1,5 +1,5 @@
 import { catalog } from '@/utils/consts/products/catalogs';
-import { getNameByLocalStorage } from '../getNameByPathname/getNameByPathname';
+import { getNameByLocalStorage } from '../getNamesGroup/getNamesGroup';
 
 /**
  *  Возвращает объект из каталога по виду продукта,

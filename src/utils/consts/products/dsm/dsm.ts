@@ -1,4 +1,5 @@
-import type { Card, CategoryDSM } from '@/utils/types/cards';
+import type { Card } from '@/utils/types/cards';
+import type { CategoryDSM } from '@/utils/types/catalog';
 
 export const drySystemMontage: Record<CategoryDSM, Card[]> = {
    'Система сухого монтажа': [

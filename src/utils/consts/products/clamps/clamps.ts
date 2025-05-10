@@ -1,4 +1,6 @@
-import type { Card, CategoryClamps } from '@/utils/types/cards';
+import type { Card } from '@/utils/types/cards';
+import type { CategoryClamps } from '@/utils/types/catalog';
+
 import { clampsPipes } from './clamps-pipes';
 import { clampsSplinker } from './clamps-sprinkler';
 import { clampsStainless } from './clamps-stainless';

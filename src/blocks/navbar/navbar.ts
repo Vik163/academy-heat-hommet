@@ -2,7 +2,7 @@ import { changeUrl } from '@/utils/lib/changeUrl/changeUrl';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import { updatePage } from '@/utils/lib/updatePage/updatePage';
-import type { ViewName } from '@/utils/types/cards';
+import type { ViewName } from '@/utils/types/catalog';
 
 const links = document.querySelectorAll('.navbar__link');
 
@@ -17,8 +17,6 @@ export const setNavbar = () => {
 
       // получает путь и переходит на страницу
       if (path.includes('catalog')) {
-         console.log('path:', path);
-
          changeUrl();
          updatePage();
       } else redirectOnPage('catalog');

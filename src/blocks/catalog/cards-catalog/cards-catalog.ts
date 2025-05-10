@@ -1,5 +1,5 @@
 import { loadSrc } from '@/utils/lib/loadSrc/loadSrc';
-import type { Catalog } from '@/utils/types/cards';
+import type { Catalog } from '@/utils/types/catalog';
 
 const list = document.querySelector('.cards');
 const template = (

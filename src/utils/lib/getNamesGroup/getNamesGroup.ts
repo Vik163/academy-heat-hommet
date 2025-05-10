@@ -1,5 +1,5 @@
 import { pathnameByCategories, pathnameByView } from '@/utils/consts/pathnames';
-import type { Categories, ViewName } from '@/utils/types/cards';
+import type { Categories, ViewName } from '@/utils/types/catalog';
 import {
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_TYPE_OF_PRODUCT,

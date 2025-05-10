@@ -3,11 +3,11 @@ import {
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
-import type { Categories, ViewName } from '@/utils/types/cards';
+import type { Categories, ViewName } from '@/utils/types/catalog';
 import { getDataById } from '../getDataFromStore/getDataFromStore';
 
 /**
- *  Возвращает pathname (английск) по переданным данным в localStorage
+ *  Возвращает pathname (английск) по данным в localStorage
  */
 export const getPathname = () => {
    const view = localStorage.getItem(LOCALSTORAGE_TYPE_OF_PRODUCT) as ViewName;

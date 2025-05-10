@@ -1,13 +1,15 @@
+import type { Routes } from '@/utils/types/routes';
 import { getPathname } from '../getPathname/getPathname';
 
-export const redirectOnPage = (page?: 'catalog' | '/') => {
+/**
+ * Направляет на указанную в параметре страницу
+ * @param page - роут страницы
+ */
+export const redirectOnPage = (page: Routes) => {
    const path = getPathname();
-
-   const addressPage = page ? page : 'catalog';
-   console.log('redirectOnPage:', addressPage);
 
    const address = __IS_DEV__
       ? `${page}`
-      : `https://academy-heat-hommet.vercel.app/${addressPage}/${path}`;
+      : `https://academy-heat-hommet.vercel.app/${page}/${path}`;
    window.location.href = address;
 };
