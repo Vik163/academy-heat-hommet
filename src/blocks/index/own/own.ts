@@ -10,6 +10,7 @@ export const setOwn = async () => {
    const onClickLink = (e: MouseEvent) => {
       e.preventDefault();
       const link = e.currentTarget as HTMLButtonElement;
+      console.log('link:', link);
       const arrBtnId = link.id.split('&');
       const view = arrBtnId[0] as ViewName;
       const category = arrBtnId[1] as Categories;

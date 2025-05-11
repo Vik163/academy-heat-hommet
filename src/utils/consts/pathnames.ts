@@ -1,23 +1,21 @@
 import { Categories, ViewName } from '../types/catalog';
+import { CategoryNames, ViewNames } from './categoriesNames';
 
 export const pathnameByView: Record<ViewName, string> = {
-   'Система сухого монтажа': 'sistema-suhogo-montazha',
-   'Промышленный крепеж': 'promyshlennyj-krepezh',
-   'Профессиональный крепеж':
-      'professionalnyj-krepezh-k-inzhenernoj-santehnike',
-   Хомуты: 'homuty',
+   [ViewNames.SYSTEM_DRY]: 'sistema-suhogo-montazha',
+   [ViewNames.INDUSTRIAL_FAST]: 'promyshlennyj-krepezh',
+   [ViewNames.PROF_FAST]: 'professionalnyj-krepezh-k-inzhenernoj-santehnike',
+   [ViewNames.CLAMPS]: 'homuty',
 };
 
 export const pathnameByCategories: Record<Categories, string> = {
-   'Система сухого монтажа': 'sistema-suhogo-montazha',
-   'Промышленный крепеж': 'promyshlennyj-krepezh',
-   'Профессиональный крепеж':
-      'professionalnyj-krepezh-k-inzhenernoj-santehnike',
-   'Хомуты трубные': 'homuty-trubnye',
-   'Хомуты спринклерные': 'homuty-sprinklernye',
-   'Хомуты из нержавеющей стали': 'homuty-iz-nerzhavejki',
-   'Хомуты для водосточных систем и дымоходов':
-      'homuty-dlya-vodostochnyh-sistem',
-   'Хомуты для систем вентиляции': 'homuty-dlya-sistem-ventilyacii',
-   'Крепеж для SML-систем': 'homuty-dlya-truboprovodnyh-sistem',
+   [ViewNames.SYSTEM_DRY]: 'sistema-suhogo-montazha',
+   [ViewNames.INDUSTRIAL_FAST]: 'promyshlennyj-krepezh',
+   [ViewNames.PROF_FAST]: 'professionalnyj-krepezh-k-inzhenernoj-santehnike',
+   [CategoryNames.CLAMPS_PIPE]: 'homuty-trubnye',
+   [CategoryNames.CLAMPS_SPRINKLER]: 'homuty-sprinklernye',
+   [CategoryNames.CLAMPS_STAINLESS]: 'homuty-iz-nerzhavejki',
+   [CategoryNames.CLAMPS_DRAINAGE]: 'homuty-dlya-vodostochnyh-sistem',
+   [CategoryNames.CLAMPS_VENT]: 'homuty-dlya-sistem-ventilyacii',
+   [CategoryNames.CLAMPS_SML]: 'homuty-dlya-truboprovodnyh-sistem',
 };

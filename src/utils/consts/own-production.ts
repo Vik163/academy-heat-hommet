@@ -12,6 +12,7 @@ export const ownProductionCards: Card[] = [
    {
       cardId: '4_2',
       type: 'Хомуты',
+      category: 'Хомуты трубные',
       title: 'Усиленный хомут с уплотнением 1 1/2” (47-53мм)',
       imgL: 'https://hommet.ru/media/hommet_cache/8f/e7/8fe7d34d803730ef385b67578c25b30d.webp',
       imgB: 'https://hommet.ru/media/uploads/хомуты/ilk_(convert.io).webp',
@@ -47,6 +48,7 @@ export const ownProductionCards: Card[] = [
    {
       cardId: '4_4',
       type: 'Хомуты',
+      category: 'Хомуты трубные',
       title: 'Хомут для сверхтяжелой нагрузки 2 1/2” (d73-80мм)',
       imgL: 'https://hommet.ru/media/hommet_cache/b8/81/b88110bcb09f1bdb2e54690d1bede2f8.webp',
       imgB: 'https://hommet.ru/media/uploads/хомуты/1_хомуты_с_уплотнением_для_сверх_тяжелой_нагрузки_440.webp',
@@ -54,6 +56,7 @@ export const ownProductionCards: Card[] = [
    {
       cardId: '4_5',
       type: 'Хомуты',
+      category: 'Хомуты для систем вентиляции',
       title: 'Вентиляционный хомут с резиновым уплотнением с гайкой М8 315',
       imgL: 'https://hommet.ru/media/hommet_cache/d1/66/d166dba2cca8f66439a83a2d2c803cc6.webp',
       imgB: 'https://hommet.ru/media/uploads/хомуты/вентиляционный_хомут_с_резиновым_уплотнением_с_гайкой_м8.webp',

@@ -31,9 +31,11 @@ const getCards = (
             '.card-product__link',
          ) as HTMLButtonElement;
          //* === добавляет параметры товара в id кнопки ============
-         const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
+         // const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
+         // const cardId = c.cardId ? `${c.cardId}` : '';
+         // link.id = `${c.type}&${category}${cardId}`;
          const cardId = c.cardId ? `${c.cardId}` : '';
-         link.id = `${c.type}&${category}${cardId}`;
+         link.id = cardId;
 
          link.addEventListener('click', onClickLink);
 
