@@ -59,14 +59,8 @@ export const getDataById = () => {
 
    if (categoryProducts) {
       const category = getDataByCategory();
-      console.log('category:', category);
       if (category)
          if (idCard) {
-            console.log('idCard:', idCard);
-            console.log(
-               'category):',
-               category.find((card) => card.cardId === idCard),
-            );
             return category.find((card) => card.cardId === idCard);
          }
    }

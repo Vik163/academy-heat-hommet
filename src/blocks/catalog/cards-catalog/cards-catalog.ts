@@ -14,7 +14,7 @@ const template = (
  */
 export const handleCardsCatalog = (
    cards: Catalog[],
-   onClickLink: (e: MouseEvent) => void,
+   onClickLink: (e: MouseEvent, type: 'product' | 'category') => void,
 ) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
@@ -41,7 +41,9 @@ export const handleCardsCatalog = (
             const category = c.title;
             cardTemplate.id = category;
 
-            cardTemplate.addEventListener('click', onClickLink);
+            cardTemplate.addEventListener('click', (e) =>
+               onClickLink(e, 'category'),
+            );
          }
 
          // встраивает на странице

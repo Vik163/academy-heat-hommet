@@ -18,7 +18,6 @@ export const getPathname = () => {
    const pathnameView = pathnameByView[view];
 
    const card = getDataById();
-   console.log('card:', card);
 
    if (card) {
       return card.pathname!;

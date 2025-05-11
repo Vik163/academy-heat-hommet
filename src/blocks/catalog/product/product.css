@@ -1,0 +1,7 @@
+.product {
+   display: none;
+}
+
+.product_active {
+   display: block;
+}

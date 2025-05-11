@@ -5,6 +5,10 @@ import {
 } from '@/utils/consts/storage';
 import type { Categories, ViewName } from '@/utils/types/catalog';
 import { getNameFromList } from '../getNamesGroup/getNamesGroup';
+import {
+   cardIdByCategoryName,
+   cardIdByViewName,
+} from '@/utils/consts/cardIdByNames';
 
 /**
  *  устанавливает данные товаров в localstorage
@@ -52,4 +56,18 @@ export const setLocalStorageByPathname = () => {
    } else if (arrPathname.length === 1) {
       setLocalStorage(viewName as ViewName, '', '');
    } else setLocalStorage('', '', '');
+};
+
+/**
+ * Устанавливает по id катрочки view, category и cardId в localStorage
+ * @param id - id карточки
+ */
+export const setLocalStorageByCardId = (id: string) => {
+   const arrBtnId = id.split('_');
+   const view = cardIdByViewName[arrBtnId[0]] as ViewName;
+   const categoryIndex = `${arrBtnId[0]}_${arrBtnId[1]}`;
+   const category = cardIdByCategoryName[categoryIndex] as Categories;
+   const cardId = id;
+
+   setLocalStorage(view, category, cardId);
 };

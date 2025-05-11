@@ -6,7 +6,8 @@ import {
 } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { setNavbar } from '@/blocks/navbar/navbar';
-import { updatePage } from '@/utils/lib/updatePage/updatePage';
+import { updatePageCatalog } from '@/utils/lib/updatePageCatalog/updatePageCatalog';
+import { setProduct } from '@/blocks/catalog/product/product';
 
 const card = document.querySelector('.card-catalog');
 const logo = document.querySelector('.logo');
@@ -17,13 +18,15 @@ if (__IS_DEV__) {
 
 setNavbar();
 
+setProduct();
+
 // --- первоначальное обновление ---------------
-if (!card) updatePage();
+if (!card) updatePageCatalog();
 
 // --- переход по стрелкам браузера --------------
 window.addEventListener('popstate', () => {
    setLocalStorageByPathname();
-   updatePage();
+   updatePageCatalog();
 });
 
 // ------- переход на главную страницу -----------------

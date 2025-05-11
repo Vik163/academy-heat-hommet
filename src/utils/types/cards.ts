@@ -6,6 +6,6 @@ export interface Card {
    pathname?: string;
    category?: Categories;
    title: string;
-   imgB: string;
-   imgL: string;
+   imgB?: string;
+   imgL?: string;
 }

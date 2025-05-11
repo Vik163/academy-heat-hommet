@@ -13,7 +13,10 @@ import { handleCards } from '@/blocks/cards-products/cards-products';
  * @param obj - карточка каталога
  * @param onClick - транзит из handleCards или handleCardsCatalog
  */
-export const updateCards = (obj: Catalog, onClick: (e: MouseEvent) => void) => {
+export const updateCards = (
+   obj: Catalog,
+   onClick: (e: MouseEvent, type: 'product' | 'category') => void,
+) => {
    if (obj) {
       if (obj.categories) {
          removeCardsCatalog();

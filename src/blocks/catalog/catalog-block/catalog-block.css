@@ -4,6 +4,10 @@
    flex-direction: column;
 }
 
+.catalog-block_inactive {
+   display: none;
+}
+
 .catalog-block__title {
    font: var(--font-title-30);
    font-weight: var(--font-weight-bold);

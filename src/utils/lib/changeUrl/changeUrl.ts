@@ -17,7 +17,6 @@ export const changeUrl = (page?: 'catalog') => {
    const locationPath = location.pathname;
 
    const pathname = getPathname();
-   console.log('pathname:', pathname);
    const arrPathname = pathname.split('/');
    const viewProducts = arrPathname[0];
 

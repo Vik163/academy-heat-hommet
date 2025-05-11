@@ -9,7 +9,7 @@ const template = (
 
 const getCards = (
    cards: Card[],
-   onClickLink: (e: MouseEvent) => void,
+   onClickLink: (e: MouseEvent, type: 'product' | 'category') => void,
    block?: Element,
 ) => {
    cards.forEach((c, i) => {
@@ -21,11 +21,13 @@ const getCards = (
          const title = cardTemplate.querySelector('.card-product__title')!;
          title.textContent = c.title;
 
-         const image = cardTemplate.querySelector(
-            '.card-product__image',
-         )! as HTMLImageElement;
-         image.src = c.imgL;
-         image.alt = c.title;
+         if (c.imgL) {
+            const image = cardTemplate.querySelector(
+               '.card-product__image',
+            )! as HTMLImageElement;
+            image.src = c.imgL;
+            image.alt = c.title;
+         }
 
          const link = cardTemplate.querySelector(
             '.card-product__link',
@@ -37,7 +39,7 @@ const getCards = (
          const cardId = c.cardId ? `${c.cardId}` : '';
          link.id = cardId;
 
-         link.addEventListener('click', onClickLink);
+         link.addEventListener('click', (e) => onClickLink(e, 'product'));
 
          const btn = cardTemplate.querySelector(
             '.card-product__btn',
@@ -63,7 +65,7 @@ const getCards = (
  */
 export const handleCards = (
    cards: Card[],
-   onClickLink: (e: MouseEvent) => void,
+   onClickLink: (e: MouseEvent, type: 'product' | 'category') => void,
    block?: Element,
 ) => {
    //* ==== template ================================

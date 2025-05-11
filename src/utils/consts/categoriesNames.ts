@@ -6,6 +6,9 @@ export enum ViewNames {
 }
 
 export enum CategoryNames {
+   SYSTEM_DRY = 'Система сухого монтажа',
+   INDUSTRIAL_FAST = 'Промышленный крепеж',
+   PROF_FAST = 'Профессиональный крепеж',
    CLAMPS_PIPE = 'Хомуты трубные',
    CLAMPS_SPRINKLER = 'Хомуты спринклерные',
    CLAMPS_STAINLESS = 'Хомуты из нержавеющей стали',

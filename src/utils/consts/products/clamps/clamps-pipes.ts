@@ -1,24 +1,24 @@
 import type { Card } from '@/utils/types/cards';
 
-const clampMediumB =
+export const clampMediumB =
    'https://hommet.ru/media/uploads/хомуты/средней_нагрузки.webp';
-const clampMediumL =
+export const clampMediumL =
    'https://hommet.ru/media/hommet_cache/a4/d2/a4d2ebfe55f43428d4e72d9e11eb7978.webp';
 const clampHeavyL =
    'https://hommet.ru/media/hommet_cache/de/69/de69dfe2cf1ffcfec65267af156c2d49.webp';
 const clampHeavyB =
    'https://hommet.ru/media/uploads/хомуты/1_хомуты_с_уплотнением_для_тяжелой_нагрузки_330.webp';
-const clampSuperHeavyL =
+export const clampSuperHeavyL =
    'https://hommet.ru/media/hommet_cache/b8/81/b88110bcb09f1bdb2e54690d1bede2f8.webp';
-const clampSuperHeavyB =
+export const clampSuperHeavyB =
    'https://hommet.ru/media/uploads/хомуты/1_хомуты_с_уплотнением_для_сверх_тяжелой_нагрузки_440.webp';
 const clampReinforcedL =
    'https://hommet.ru/media/hommet_cache/b8/81/b88110bcb09f1bdb2e54690d1bede2f8.webp';
 const clampReinforcedB =
    'https://hommet.ru/media/uploads/хомуты/1_хомуты_с_уплотнением_для_сверх_тяжелой_нагрузки_440.webp';
-const clampReinforcedSealL =
+export const clampReinforcedSealL =
    'https://hommet.ru/media/hommet_cache/8f/e7/8fe7d34d803730ef385b67578c25b30d.webp';
-const clampReinforcedSealB =
+export const clampReinforcedSealB =
    'https://hommet.ru/media/uploads/хомуты/ilk_(convert.io).webp';
 
 export const clampsPipes: Card[] = [

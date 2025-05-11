@@ -26,8 +26,8 @@
 /* === карточки каталога ==============*/
 @import url(../../blocks/catalog/cards-catalog/cards-catalog.css);
 
-/* === слайдер ==============*/
-/* @import url(../../blocks/slider/slider.css); */
+/* === продукт ==============*/
+@import url(../../blocks/catalog/product/product.css);
 
 /* === собственное производство ==============*/
 /* @import url(../../blocks/own/own.css); */
