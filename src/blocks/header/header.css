@@ -27,12 +27,12 @@
    align-items: center;
 }
 
-.header__container-center {
+/* .header__container-center {
    display: flex;
    justify-content: space-between;
    align-items: flex-start;
    gap: 15px;
-}
+} */
 
 .header__btn {
    cursor: pointer;
