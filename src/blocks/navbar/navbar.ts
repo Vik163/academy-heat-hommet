@@ -10,16 +10,17 @@ export const setNavbar = () => {
    const onClick = (e: Event, title: ViewName) => {
       e.preventDefault();
 
-      const path = location.pathname;
+      // const path = location.pathname;
 
       // localStorage
       setLocalStorage(title, '', '');
 
       // получает путь и переходит на страницу
-      if (path.includes('catalog')) {
-         changeUrl();
-         updatePageCatalog();
-      } else redirectOnPage('catalog');
+      redirectOnPage('catalog');
+      // if (path.includes('catalog')) {
+      //    changeUrl();
+      //    updatePageCatalog();
+      // } else redirectOnPage('catalog');
    };
 
    links.forEach((link) => {

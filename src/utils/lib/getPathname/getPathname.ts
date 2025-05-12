@@ -21,13 +21,9 @@ export const getPathname = () => {
 
    if (card) {
       return card.pathname!;
-   }
-   if (pathnameView && !pathnameCategory) {
+   } else if (pathnameView && !pathnameCategory) {
       return pathnameView;
-   }
-   if (pathnameView && pathnameCategory) {
+   } else if (pathnameView && pathnameCategory) {
       return `${pathnameView}/${pathnameCategory}`;
-   }
-
-   return '';
+   } else return '';
 };
