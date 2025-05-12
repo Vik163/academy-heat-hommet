@@ -7,6 +7,7 @@ import type { ViewName } from '@/utils/types/catalog';
 const links = document.querySelectorAll('.navbar__link');
 
 export const setNavbar = () => {
+   // перезагружаю страницы принудительно. Лучше работает история браузера
    const onClick = (e: Event, title: ViewName) => {
       e.preventDefault();
 

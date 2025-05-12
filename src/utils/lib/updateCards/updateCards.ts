@@ -1,11 +1,18 @@
 import { catalog } from '@/utils/consts/products/catalogs';
-import type { Catalog } from '@/utils/types/catalog';
+import type { Catalog, Categories, ViewName } from '@/utils/types/catalog';
 import {
    handleCardsCatalog,
    removeCardsCatalog,
 } from '@/blocks/catalog/cards-catalog/cards-catalog';
-import { getDataByView } from '../getDataFromStore/getDataFromStore';
+import {
+   getDataByCategory,
+   getDataByView,
+} from '../getDataFromStore/getDataFromStore';
 import { handleCards } from '@/blocks/cards-products/cards-products';
+import {
+   LOCALSTORAGE_CATEGORY_OF_PRODUCT,
+   LOCALSTORAGE_TYPE_OF_PRODUCT,
+} from '@/utils/consts/storage';
 
 /**
  * Обновляет карточки каталога или товаров (template)
@@ -23,9 +30,19 @@ export const updateCards = (
          handleCardsCatalog(obj.categories, onClick);
       } else {
          const obj = getDataByView();
-         const data = Object.values(obj)[0];
+
+         const categoryProducts = localStorage.getItem(
+            LOCALSTORAGE_CATEGORY_OF_PRODUCT,
+         )! as Categories;
+
+         const typeProducts = localStorage.getItem(
+            LOCALSTORAGE_TYPE_OF_PRODUCT,
+         ) as ViewName;
+
+         const data = obj[categoryProducts || typeProducts];
+
          removeCardsCatalog();
-         handleCards(data, onClick);
+         handleCards(data!, onClick);
       }
    } else handleCardsCatalog(catalog, onClick);
 };

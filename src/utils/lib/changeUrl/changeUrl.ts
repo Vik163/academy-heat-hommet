@@ -17,20 +17,15 @@ export const changeUrl = (page?: 'catalog') => {
    const locationPath = location.pathname;
 
    const pathname = getPathname();
-   console.log('pathname:', pathname);
    const arrPathname = pathname.split('/');
-   console.log('arrPathname:', arrPathname);
    const viewProducts = arrPathname[0];
 
    let path = '';
    if (locationPath.includes(`${viewProducts}/`)) {
       path = arrPathname[1];
    } else path = pathname;
-   console.log('path:', path);
 
    const newURL = page ? `catalog/${path}` : path;
 
-   console.log('newURL:', newURL);
    window.history.pushState(null, '', newURL);
-   console.log('locationPath:', locationPath);
 };
