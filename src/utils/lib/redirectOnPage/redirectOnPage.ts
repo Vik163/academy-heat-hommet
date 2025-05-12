@@ -8,12 +8,12 @@ import { getPathname } from '../getPathname/getPathname';
 export const redirectOnPage = (page: Routes) => {
    const path = getPathname();
    console.log('path:', path);
-   const pathPage = path === 'catalog' ? '/catalog' : path;
+   const pathPage = path === 'catalog' ? '' : path;
    console.log('pathPage:', pathPage);
 
    const address = __IS_DEV__
       ? pathPage
-      : `https://academy-heat-hommet.vercel.app/${page}/${path}`;
+      : `https://academy-heat-hommet.vercel.app/${page}/${pathPage}`;
    console.log('address:', address);
    window.location.href = address;
 };
