@@ -14,7 +14,7 @@ export const setNavbar = () => {
       // const path = location.pathname;
 
       // localStorage
-      setLocalStorage(title, '', '');
+      setLocalStorage('catalog', title, '', '');
 
       // получает путь и переходит на страницу
       redirectOnPage('catalog');

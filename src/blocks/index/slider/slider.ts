@@ -16,7 +16,7 @@ const onClickLink = (e: Event) => {
    const link = e.currentTarget as HTMLAnchorElement;
    const view = link.id as ViewName;
 
-   setLocalStorage(view, '', '');
+   setLocalStorage('catalog', view, '', '');
 
    redirectOnPage('catalog');
 };

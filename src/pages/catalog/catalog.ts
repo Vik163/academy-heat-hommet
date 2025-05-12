@@ -8,6 +8,7 @@ import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { setNavbar } from '@/blocks/navbar/navbar';
 import { updatePageCatalog } from '@/utils/lib/updatePageCatalog/updatePageCatalog';
 import { setProduct } from '@/blocks/catalog/product/product';
+import { setBreadCrumbs } from '@/blocks/catalog/bread-crumbs/bread-crumbs';
 
 const card = document.querySelector('.card-catalog');
 const logo = document.querySelector('.logo');
@@ -20,6 +21,8 @@ setNavbar();
 
 setProduct();
 
+setBreadCrumbs();
+
 // --- первоначальное обновление ---------------
 if (!card) updatePageCatalog();
 
@@ -29,10 +32,10 @@ window.addEventListener('popstate', () => {
    updatePageCatalog();
 });
 
-// ------- переход на главную страницу -----------------
-logo?.addEventListener('click', function (e: Event) {
-   e.preventDefault();
-   setLocalStorage('', '', '');
-   window.history.pushState(null, '', '/');
-   redirectOnPage('/');
-});
+// // ------- переход на главную страницу -----------------
+// logo?.addEventListener('click', function (e: Event) {
+//    e.preventDefault();
+//    setLocalStorage('', '', '');
+//    window.history.pushState(null, '', '/');
+//    redirectOnPage('/');
+// });

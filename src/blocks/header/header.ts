@@ -24,7 +24,7 @@ export const setHeader = () => {
    const onClick = (title: string) => {
       // localStorage
       if (title) {
-         setLocalStorage('', '', '');
+         setLocalStorage('catalog', '', '', '');
 
          // получает путь и переходит на страницу
          redirectOnPage('catalog');

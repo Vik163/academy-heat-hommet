@@ -27,5 +27,5 @@ export const changeUrl = (page?: 'catalog') => {
 
    const newURL = page ? `catalog/${path}` : path;
 
-   window.history.pushState(null, '', newURL);
+   window.history.pushState(null, '', newURL || '/catalog');
 };

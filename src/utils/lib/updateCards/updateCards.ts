@@ -21,8 +21,8 @@ import {
  * @param onClick - транзит из handleCards или handleCardsCatalog
  */
 export const updateCards = (
-   obj: Catalog,
    onClick: (e: MouseEvent, type: 'product' | 'category') => void,
+   obj?: Catalog,
 ) => {
    if (obj) {
       if (obj.categories) {
@@ -44,5 +44,8 @@ export const updateCards = (
          removeCardsCatalog();
          handleCards(data!, onClick);
       }
-   } else handleCardsCatalog(catalog, onClick);
+   } else {
+      removeCardsCatalog();
+      handleCardsCatalog(catalog, onClick);
+   }
 };

@@ -2,3 +2,49 @@
    width: var(--width-block-desktop);
    padding: 35px 0;
 }
+
+.bread-crumbs__list {
+   display: flex;
+   align-items: flex-end;
+   gap: 15px;
+   height: 20px;
+}
+
+.bread-crumbs__item {
+   display: flex;
+   align-items: flex-end;
+   gap: 15px;
+}
+
+.bread-crumbs__item:nth-of-type(3) {
+   display: none;
+}
+.bread-crumbs__item:nth-of-type(4) {
+   display: none;
+}
+.bread-crumbs__item_active {
+   display: flex !important;
+}
+
+.bread-crumbs__link {
+   font-family: var(--font-int);
+   font-size: var(--font-16);
+   font-weight: var(--font-weight-bold);
+   color: var(--bg-primary-color-dark);
+   pointer-events: none;
+   cursor: default;
+}
+
+.bread-crumbs__link_active {
+   text-transform: uppercase;
+   cursor: pointer;
+   pointer-events: all;
+}
+
+.bread-crumbs__arrow {
+   display: block;
+   background-image: url(../../../assets/icons/arrow-crumbs.svg);
+   background-size: 100% 100%;
+   width: 18px;
+   height: 18px;
+}
