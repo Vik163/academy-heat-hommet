@@ -17,7 +17,6 @@ const linkView = linkBlockView?.querySelector('.bread-crumbs__link');
 const linkCategory = linkBlockCategory?.querySelector('.bread-crumbs__link');
 
 export const updateBreadCrumbs = () => {
-   console.log('updateBreadCrumbs');
    const typeProducts = localStorage.getItem(
       LOCALSTORAGE_TYPE_OF_PRODUCT,
    ) as ViewName;
@@ -36,8 +35,11 @@ export const updateBreadCrumbs = () => {
       linkView?.classList.remove('bread-crumbs__link_active');
    }
    if (categoriesProducts && linkCategory) {
-      linkCategory.textContent = categoriesProducts;
-      linkBlockCategory?.classList.add('bread-crumbs__item_active');
+      if (typeProducts !== categoriesProducts) {
+         linkCategory.textContent = categoriesProducts;
+         linkBlockCategory?.classList.add('bread-crumbs__item_active');
+      }
+
       linkView?.classList.add('bread-crumbs__link_active');
    }
    if (productId && linkCategory) {
@@ -52,14 +54,29 @@ export const setBreadCrumbs = () => {
 
       redirectOnPage('catalog');
    };
-   const clickView = () => {
-      console.log('view');
+
+   const clickView = (e: Event) => {
+      e.preventDefault();
+      const target = e.target as HTMLElement;
+      const title = target.textContent;
+      setLocalStorage('catalog', title as ViewName, '', '');
+
+      redirectOnPage('catalog');
    };
-   const clickCategory = () => {
-      console.log('category');
+
+   const clickCategory = (e: Event) => {
+      e.preventDefault();
+      const typeProducts = localStorage.getItem(
+         LOCALSTORAGE_TYPE_OF_PRODUCT,
+      ) as ViewName;
+      const target = e.target as HTMLElement;
+      const title = target.textContent;
+      setLocalStorage('catalog', typeProducts, title as Categories, '');
+
+      redirectOnPage('catalog');
    };
 
    linkCatalog?.addEventListener('click', (e) => clickCatalog(e));
-   linkView?.addEventListener('click', clickView);
-   linkCategory?.addEventListener('click', clickCategory);
+   linkView?.addEventListener('click', (e) => clickView(e));
+   linkCategory?.addEventListener('click', (e) => clickCategory(e));
 };

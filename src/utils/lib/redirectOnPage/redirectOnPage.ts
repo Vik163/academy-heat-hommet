@@ -7,9 +7,7 @@ import { getPathname } from '../getPathname/getPathname';
  */
 export const redirectOnPage = (page: Routes) => {
    const path = getPathname();
-   console.log('path:', path);
    const pathPage = path === 'catalog' ? '' : path;
-   console.log('pathPage:', pathPage);
 
    const address = __IS_DEV__
       ? pathPage
