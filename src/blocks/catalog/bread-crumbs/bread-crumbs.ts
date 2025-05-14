@@ -25,6 +25,10 @@ export const updateBreadCrumbs = () => {
 
    const productId = localStorage.getItem(LOCALSTORAGE_PRODUCT_ID)!;
 
+   if (!typeProducts) {
+      linkBlockView?.classList.remove('bread-crumbs__item_active');
+      linkCatalog?.classList.remove('bread-crumbs__link_active');
+   }
    if (typeProducts && linkView) {
       linkView.textContent = typeProducts;
       linkBlockView?.classList.add('bread-crumbs__item_active');
@@ -45,35 +49,35 @@ export const updateBreadCrumbs = () => {
    } else linkCategory?.classList.remove('bread-crumbs__link_active');
 };
 
+const clickView = (e: Event) => {
+   e.preventDefault();
+   const target = e.target as HTMLElement;
+   const title = target.textContent;
+   setLocalStorage('catalog', title as ViewName, '', '');
+
+   redirectOnPage('catalog');
+};
+
+const clickCategory = (e: Event) => {
+   e.preventDefault();
+   const typeProducts = localStorage.getItem(
+      LOCALSTORAGE_TYPE_OF_PRODUCT,
+   ) as ViewName;
+   const target = e.target as HTMLElement;
+   const title = target.textContent;
+   setLocalStorage('catalog', typeProducts, title as Categories, '');
+
+   redirectOnPage('catalog');
+};
+
+const clickCatalog = (e: Event) => {
+   e.preventDefault();
+   setLocalStorage('catalog', '', '', '');
+
+   redirectOnPage('catalog');
+};
+
 export const setBreadCrumbs = () => {
-   const clickCatalog = (e: Event) => {
-      e.preventDefault();
-      setLocalStorage('catalog', '', '', '');
-
-      redirectOnPage('catalog');
-   };
-
-   const clickView = (e: Event) => {
-      e.preventDefault();
-      const target = e.target as HTMLElement;
-      const title = target.textContent;
-      setLocalStorage('catalog', title as ViewName, '', '');
-
-      redirectOnPage('catalog');
-   };
-
-   const clickCategory = (e: Event) => {
-      e.preventDefault();
-      const typeProducts = localStorage.getItem(
-         LOCALSTORAGE_TYPE_OF_PRODUCT,
-      ) as ViewName;
-      const target = e.target as HTMLElement;
-      const title = target.textContent;
-      setLocalStorage('catalog', typeProducts, title as Categories, '');
-
-      redirectOnPage('catalog');
-   };
-
    linkCatalog?.addEventListener('click', (e) => clickCatalog(e));
    linkView?.addEventListener('click', (e) => clickView(e));
    linkCategory?.addEventListener('click', (e) => clickCategory(e));

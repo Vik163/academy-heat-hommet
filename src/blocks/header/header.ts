@@ -1,7 +1,4 @@
-import {
-   type ObserveCallback,
-   observeElement,
-} from '@/utils/lib/observer/observer';
+import { type ObserveCallback, observer } from '@/utils/lib/observer/observer';
 import { setNavbar } from '../navbar/navbar';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
@@ -27,6 +24,6 @@ export const setHeader = () => {
    };
 
    btn?.addEventListener('click', onClick);
-   observeElement(mainObserver, handleHeader);
+   observer(mainObserver, handleHeader);
    setNavbar();
 };

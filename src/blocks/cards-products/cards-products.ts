@@ -1,5 +1,5 @@
 import { animationScrolling } from '@/utils/lib/animationScrolling/animationScrolling';
-import { ObserveCallback, observeElement } from '@/utils/lib/observer/observer';
+import { ObserveCallback, observer } from '@/utils/lib/observer/observer';
 import type { Card } from '@/utils/types/cards';
 
 const list = document.querySelector('.cards');
@@ -68,12 +68,13 @@ export const handleCards = (
    onClickLink: (e: MouseEvent, type: 'product' | 'category') => void,
    block?: Element,
 ) => {
+   console.log('cards:', cards);
+
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const getCardsObserver: ObserveCallback = (intersection) => {
       const card = document.querySelector('.card-product');
       // если нет встроенных карт, встраивает
-      console.log('cards:', cards);
 
       const intersect = block ? intersection : true;
       if (!card && intersect) getCards(cards, onClickLink, block);
@@ -82,6 +83,6 @@ export const handleCards = (
 
    //* ======= ставлю наблюдателя =============
    if (block) {
-      observeElement(block, getCardsObserver);
+      observer(block, getCardsObserver);
    } else getCards(cards, onClickLink, block);
 };

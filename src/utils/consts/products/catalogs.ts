@@ -1,5 +1,8 @@
 import type { Catalog } from '../../types/catalog';
 
+export const titleCatalog =
+   'КАТАЛОГ ПРОДУКЦИИ ПРОИЗВОДСТВЕННОЙ КОМПАНИИ ХОММЕТ';
+
 export const catalog: Catalog[] = [
    {
       title: 'Система сухого монтажа',

@@ -1,4 +1,4 @@
-import { ObserveCallback, observeElement } from '../observer/observer';
+import { ObserveCallback, observer } from '../observer/observer';
 
 type Dir = 'right' | 'left' | 'up' | 'down';
 
@@ -17,7 +17,12 @@ const classByDirections = (dir: Dir) => {
    }
 };
 
-const toggleClass: ObserveCallback = (entry, el: Element, direction: Dir) => {
+const toggleClass: ObserveCallback = (
+   entry,
+   isLoaded,
+   el: Element,
+   direction: Dir,
+) => {
    el.classList.toggle(classByDirections(direction), entry.isIntersecting);
 };
 
@@ -27,8 +32,8 @@ const toggleClass: ObserveCallback = (entry, el: Element, direction: Dir) => {
  * @param direction - направление "right" | "left" | "up" | "down"
  */
 export const animationScrolling = (el: Element, direction: Dir) => {
-   observeElement(el, (intersection) =>
-      toggleClass(intersection, el, direction),
+   observer(el, (intersection, isLoaded) =>
+      toggleClass(intersection, isLoaded, el, direction),
    );
 
    // const observerAnimation = new IntersectionObserver((entries: any[]) => {

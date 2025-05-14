@@ -39,9 +39,10 @@ export const setLocalStorageByPathname = () => {
 
    const arrPathname = locationPath.slice(1).split('/').slice(1); // убираю /catalog
 
-   const viewName = arrPathname[0]
-      ? (getNameFromList(arrPathname[0], 'view') as ViewName)
-      : undefined;
+   const viewName =
+      arrPathname[0] && arrPathname[0] !== 'catalog' // arrPathname[0] !== 'catalog - для dev-server
+         ? (getNameFromList(arrPathname[0], 'view') as ViewName)
+         : undefined;
    const categoryName = arrPathname[1]
       ? (getNameFromList(arrPathname[1], 'category') as Categories)
       : undefined;
@@ -58,7 +59,7 @@ export const setLocalStorageByPathname = () => {
          setLocalStorage('catalog', viewName!, categoryName!, '');
       }
    } else if (arrPathname.length === 1) {
-      setLocalStorage('catalog', viewName as ViewName, '', '');
+      setLocalStorage('catalog', (viewName as ViewName) || '', '', '');
    } else setLocalStorage('', '', '', '');
 };
 

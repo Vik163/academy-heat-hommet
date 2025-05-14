@@ -1,7 +1,6 @@
 import { changeUrl } from '@/utils/lib/changeUrl/changeUrl';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
-import { updatePageCatalog } from '@/utils/lib/updatePageCatalog/updatePageCatalog';
 import type { ViewName } from '@/utils/types/catalog';
 
 const links = document.querySelectorAll('.navbar__link');

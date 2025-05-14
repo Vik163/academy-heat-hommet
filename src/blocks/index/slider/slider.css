@@ -1,6 +1,7 @@
 .slider {
    width: var(--width-block-desktop);
    position: relative;
+   padding-bottom: 40px;
 }
 
 .slider-item {
