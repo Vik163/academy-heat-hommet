@@ -68,8 +68,6 @@ export const handleCards = (
    onClickLink?: (e: MouseEvent, type: 'product' | 'category') => void,
    block?: Element,
 ) => {
-   console.log('cards:', cards);
-
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const getCardsObserver: ObserveCallback = (intersection) => {

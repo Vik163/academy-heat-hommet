@@ -6,6 +6,8 @@ import {
 } from '@/blocks/catalog/cards-catalog/cards-catalog';
 import { handlePaginationData } from '@/blocks/catalog/pagination/pagination';
 
+const paginationBlock = document.querySelector('.pagination')!;
+
 /**
  * Обновляет карточки каталога или товаров (template)
  * Перед обновлением удаляет (template)
@@ -20,9 +22,11 @@ export const updateCards = (
       if (obj.categories) {
          removeCardsCatalog();
          handleCardsCatalog(obj.categories, onClick);
+         // При откате назад класс не удаляется (не перезагружается страница)
+         paginationBlock.classList.remove('pagination_active');
       } else {
          removeCardsCatalog();
-         handlePaginationData();
+         handlePaginationData(onClick);
       }
    } else {
       removeCardsCatalog();

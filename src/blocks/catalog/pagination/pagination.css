@@ -16,6 +16,8 @@
 .pagination__btn {
    width: 36px;
    height: 36px;
+   font-family: var(--font-int);
+   font-weight: var(--font-weight-medium);
    background-color: transparent;
    color: var(--color-red);
    border: 1px solid var(--color-btn-border);
