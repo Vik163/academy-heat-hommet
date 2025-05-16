@@ -1,0 +1,45 @@
+.pagination {
+   padding: 20px 0;
+   display: none;
+   gap: 10px;
+}
+.pagination_active {
+   display: flex;
+}
+
+.pagination__container {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}
+
+.pagination__btn {
+   width: 36px;
+   height: 36px;
+   background-color: transparent;
+   color: var(--color-red);
+   border: 1px solid var(--color-btn-border);
+   cursor: pointer;
+}
+
+.pagination__btn-arrow {
+   background-image: url(../../../assets/icons/arrow-red.svg);
+   background-size: 60% 60%;
+   background-repeat: no-repeat;
+   background-position: center;
+   pointer-events: all;
+}
+
+.pagination__btn-arrow_inactive {
+   opacity: 0.2;
+   pointer-events: none;
+}
+
+.pagination__btn-arrow-left {
+   transform: rotate(180deg);
+}
+
+.pagination__btn_active {
+   background-color: var(--color-red);
+   color: var(--bg-primary-color-light);
+}

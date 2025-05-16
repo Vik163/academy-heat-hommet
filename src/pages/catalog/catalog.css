@@ -32,8 +32,8 @@
 /* === собственное производство ==============*/
 /* @import url(../../blocks/own/own.css); */
 
-/* === собственное производство ==============*/
-/* @import url(../../blocks/clamps/clamps.css); */
+/* === пагинация ==============*/
+@import url(../../blocks/catalog/pagination/pagination.css);
 
 /* === карточки товаров ==============*/
 @import url(../../blocks/cards-products/cards-products.css);

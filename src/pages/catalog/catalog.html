@@ -157,6 +157,17 @@
                   КАТАЛОГ ПРОДУКЦИИ ПРОИЗВОДСТВЕННОЙ КОМПАНИИ ХОММЕТ
                </h1>
                <ul class="catalog-block__list cards"></ul>
+               <section class="pagination">
+                  <button
+                     type="button"
+                     class="pagination__btn pagination__btn-arrow pagination__btn-arrow-left"
+                  ></button>
+                  <ul class="pagination__container"></ul>
+                  <button
+                     type="button"
+                     class="pagination__btn pagination__btn-arrow pagination__btn-arrow-right"
+                  ></button>
+               </section>
             </section>
             <section class="product">
                <h2 class="product__title"></h2>
@@ -164,6 +175,18 @@
             </section>
          </main>
       </div>
+
+      <!--* ====== Tempalates =============== -->
+      <template id="pagination-item">
+         <li class="pagination__item">
+            <button
+               class="pagination__btn"
+               type="button"
+               aria-label="#"
+               aria-selected="#"
+            ></button>
+         </li>
+      </template>
       <template id="card-catalog">
          <li id="#" class="card-catalog">
             <h3 class="card-catalog__title"></h3>

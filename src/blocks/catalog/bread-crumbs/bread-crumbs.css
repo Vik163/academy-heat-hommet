@@ -26,6 +26,17 @@
    display: flex !important;
 }
 
+.bread-crumbs__arrow,
+svg {
+   display: block;
+   background-image: url(../../../assets/icons/arrow-red.svg);
+   background-size: 100% 100%;
+   width: 18px;
+   height: 18px;
+   color: red;
+   fill: red;
+}
+
 .bread-crumbs__link {
    font-family: var(--font-int);
    font-size: var(--font-16);
@@ -41,10 +52,11 @@
    pointer-events: all;
 }
 
-.bread-crumbs__arrow {
+/* .bread-crumbs__arrow {
    display: block;
    background-image: url(../../../assets/icons/arrow-crumbs.svg);
    background-size: 100% 100%;
    width: 18px;
    height: 18px;
-}
+   fill: red;
+} */

@@ -65,7 +65,7 @@ const getCards = (
  */
 export const handleCards = (
    cards: Card[],
-   onClickLink: (e: MouseEvent, type: 'product' | 'category') => void,
+   onClickLink?: (e: MouseEvent, type: 'product' | 'category') => void,
    block?: Element,
 ) => {
    console.log('cards:', cards);
@@ -77,12 +77,14 @@ export const handleCards = (
       // если нет встроенных карт, встраивает
 
       const intersect = block ? intersection : true;
-      if (!card && intersect) getCards(cards, onClickLink, block);
+      if (!card && intersect) getCards(cards, onClickLink!, block);
    };
    //* ---------------------------------------------
 
    //* ======= ставлю наблюдателя =============
    if (block) {
       observer(block, getCardsObserver);
-   } else getCards(cards, onClickLink, block);
+   } else {
+      getCards(cards, onClickLink!, block);
+   }
 };

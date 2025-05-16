@@ -2,7 +2,14 @@
  * https://github.com/ApoorvSaxena/lozad.js
  * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
 
+//! для webpack
 import { loadSrc } from '../loadSrc/loadSrc';
+
+interface LozadElement extends HTMLImageElement {
+   load: (element?: LozadElement) => void;
+   loaded: (element?: LozadElement) => void;
+   poster: string | null;
+}
 
 /**
  * Detect IE browser
@@ -12,9 +19,10 @@ import { loadSrc } from '../loadSrc/loadSrc';
 const isIE = typeof document !== 'undefined' && document.documentMode;
 
 const defaultConfig = {
+   root: undefined,
    rootMargin: '0px',
    threshold: 0,
-   load(element) {
+   load(element: LozadElement) {
       if (element.nodeName.toLowerCase() === 'picture') {
          let img = element.querySelector('img');
          let append = false;
@@ -25,12 +33,12 @@ const defaultConfig = {
          }
 
          if (isIE && element.getAttribute('data-iesrc')) {
-            const newSrc = loadSrc(element.getAttribute('data-iesrc'));
+            const newSrc = loadSrc(element.getAttribute('data-iesrc')!);
             img.src = newSrc;
          }
 
          if (element.getAttribute('data-alt')) {
-            img.alt = element.getAttribute('data-alt');
+            img.alt = element.getAttribute('data-alt')!;
          }
 
          if (append) {
@@ -43,13 +51,13 @@ const defaultConfig = {
          !element.getAttribute('data-src')
       ) {
          if (element.children) {
-            const childs = element.children;
-            let childSrc;
+            const childs: HTMLCollection = element.children;
+            let childSrc: string;
             for (let i = 0; i <= childs.length - 1; i++) {
-               childSrc = childs[i].getAttribute('data-src');
-               const newSrc = loadSrc(childSrc);
+               childSrc = childs[i].getAttribute('data-src')!;
+               const newSrc: string = loadSrc(childSrc);
                if (childSrc && newSrc) {
-                  childs[i].src = newSrc;
+                  (childs[i] as HTMLImageElement).src = newSrc;
                }
             }
 
@@ -62,13 +70,13 @@ const defaultConfig = {
       }
 
       if (element.getAttribute('data-src')) {
-         const newSrc = loadSrc(element.getAttribute('data-src'));
+         const newSrc = loadSrc(element.getAttribute('data-src')!);
 
          element.src = newSrc;
       }
 
       if (element.getAttribute('data-srcset')) {
-         const newSrc = loadSrc(element.getAttribute('data-srcset'));
+         const newSrc = loadSrc(element.getAttribute('data-srcset')!);
 
          element.setAttribute('srcset', newSrc);
       }
@@ -77,14 +85,14 @@ const defaultConfig = {
       if (element.getAttribute('data-background-delimiter')) {
          backgroundImageDelimiter = element.getAttribute(
             'data-background-delimiter',
-         );
+         )!;
       }
 
       if (element.getAttribute('data-background-image')) {
-         element.style.backgroundImage = `url('${element.getAttribute('data-background-image').split(backgroundImageDelimiter).join("'),url('")}')`;
+         element.style.backgroundImage = `url('${element.getAttribute('data-background-image')!.split(backgroundImageDelimiter).join("'),url('")}')`;
       } else if (element.getAttribute('data-background-image-set')) {
          const imageSetLinks = element //TODO =========== background-image ===============
-            .getAttribute('data-background-image-set')
+            .getAttribute('data-background-image-set')!
             .split(backgroundImageDelimiter);
          let firstUrlLink =
             imageSetLinks[0].substr(0, imageSetLinks[0].indexOf(' ')) ||
@@ -105,41 +113,50 @@ const defaultConfig = {
       }
 
       if (element.getAttribute('data-toggle-class')) {
-         element.classList.toggle(element.getAttribute('data-toggle-class'));
+         element.classList.toggle(element.getAttribute('data-toggle-class')!);
       }
    },
-   loaded() {},
+   loaded(i: LozadElement) {},
 };
 
-function markAsLoaded(element) {
-   element.setAttribute('data-loaded', true);
+function markAsLoaded(element: Element) {
+   element.setAttribute('data-loaded', 'true');
 }
 
-function preLoad(element) {
+function preLoad(element: LozadElement) {
    if (element.getAttribute('data-placeholder-background')) {
       element.style.background = element.getAttribute(
          'data-placeholder-background',
-      );
+      )!;
    }
 }
 
-const isLoaded = (element) => element.getAttribute('data-loaded') === 'true';
+const isLoaded = (element: Element) =>
+   element.getAttribute('data-loaded') === 'true';
 
-const onIntersection = (load, loaded) => (entries, observer) => {
-   entries.forEach((entry) => {
-      if (entry.intersectionRatio > 0 || entry.isIntersecting) {
-         observer.unobserve(entry.target);
+const onIntersection =
+   (
+      load: (element: LozadElement) => void,
+      loaded: (element: LozadElement) => void,
+   ) =>
+   (
+      entries: IntersectionObserverEntry[],
+      observer: { unobserve: (arg0: Element) => void },
+   ) => {
+      entries.forEach((entry) => {
+         if (entry.intersectionRatio > 0 || entry.isIntersecting) {
+            observer.unobserve(entry.target);
 
-         if (!isLoaded(entry.target)) {
-            load(entry.target);
-            markAsLoaded(entry.target);
-            loaded(entry.target);
+            if (!isLoaded(entry.target)) {
+               load(entry.target as LozadElement);
+               markAsLoaded(entry.target);
+               loaded(entry.target as LozadElement);
+            }
          }
-      }
-   });
-};
+      });
+   };
 
-const getElements = (selector, root = document) => {
+const getElements = (selector: any, root = document) => {
    if (selector instanceof Element) {
       return [selector];
    }
@@ -157,7 +174,7 @@ function lozad(selector = '.lozad', options = {}) {
       defaultConfig,
       options,
    );
-   let observer;
+   let observer: IntersectionObserver;
 
    if (typeof window !== 'undefined' && window.IntersectionObserver) {
       observer = new IntersectionObserver(onIntersection(load, loaded), {
@@ -191,7 +208,7 @@ function lozad(selector = '.lozad', options = {}) {
             loaded(elements[i]);
          }
       },
-      triggerLoad(element) {
+      triggerLoad(element: LozadElement) {
          if (isLoaded(element)) {
             return;
          }
@@ -200,6 +217,7 @@ function lozad(selector = '.lozad', options = {}) {
          markAsLoaded(element);
          loaded(element);
       },
+      //@ts-ignore
       observer,
    };
 }
