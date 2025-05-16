@@ -16,4 +16,5 @@
 
    --font-title-30: var(--font-30) var(--font-mul);
    --font-title-18: var(--font-18) var(--font-mul);
+   --font-button-14: var(--font-14) var(--font-int);
 }

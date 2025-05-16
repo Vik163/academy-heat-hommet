@@ -19,8 +19,6 @@ if (__IS_DEV__) {
 
 setNavbar();
 
-setProduct();
-
 setBreadCrumbs();
 
 /**
@@ -35,10 +33,9 @@ export const updatePageCatalog = () => {
       redirectOnPage('/');
    } else if (card) {
       productBlock.classList.add('product_active');
-      const titleProduct = productBlock.querySelector('.product__title')!;
-      titleProduct.textContent = card.title;
-
       catalogBlock.classList.add('catalog-block_inactive');
+
+      setProduct(card);
    } else {
       productBlock.classList.remove('product_active');
       catalogBlock.classList.remove('catalog-block_inactive');

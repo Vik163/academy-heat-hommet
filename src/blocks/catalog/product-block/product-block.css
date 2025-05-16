@@ -1,7 +1,40 @@
 .product {
    display: none;
+   width: var(--width-block-desktop);
 }
 
 .product_active {
    display: block;
+}
+
+.product__title {
+   font: var(--font-title-30);
+   font-weight: var(--font-weight-bold);
+   text-transform: uppercase;
+   padding: 20px 0;
+}
+
+.product__image {
+   width: 590px;
+   height: 590px;
+   background-color: var(--bg-primary-card);
+}
+
+.product__container {
+   display: flex;
+   align-items: flex-end;
+   gap: 30px;
+}
+
+.product__btn {
+   width: 200px;
+   height: var(--height-btn-card);
+   font: var(--font-button-14);
+   background-color: var(--color-red);
+   color: var(--color-text-light);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   cursor: pointer;
 }
