@@ -1,8 +1,9 @@
 import type { Card } from '@/utils/types/cards';
 
-const clampL =
-   'https://hommet.ru/media/hommet_cache/8e/ca/8eca63e28cb7a4ae3489b299fd220916.png';
-const clampB = 'https://hommet.ru/media/products/images/2.png';
+const clampL = [
+   'https://hommet.ru/media/hommet_cache/8e/ca/8eca63e28cb7a4ae3489b299fd220916.png',
+];
+const clampB = ['https://hommet.ru/media/products/images/2.png'];
 
 export const clampsDrainageSystems: Card[] = [
    {

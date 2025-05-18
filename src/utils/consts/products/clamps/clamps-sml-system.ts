@@ -1,11 +1,13 @@
 import type { Card } from '@/utils/types/cards';
 
-const clampL =
-   'https://hommet.ru/media/hommet_cache/00/01/0001068e9e342b7b4b0932d8671c453a.png';
-const clampB = 'https://hommet.ru/media/products/images/5_KgO64Nl.png';
-const clamp2L =
-   'https://hommet.ru/media/hommet_cache/e9/3e/e93e0ed3489939c0941f6355446778c4.webp';
-const clamp2B = 'https://hommet.ru/media/products/images/SML.webp';
+const clampL = [
+   'https://hommet.ru/media/hommet_cache/00/01/0001068e9e342b7b4b0932d8671c453a.png',
+];
+const clampB = ['https://hommet.ru/media/products/images/5_KgO64Nl.png'];
+const clamp2L = [
+   'https://hommet.ru/media/hommet_cache/e9/3e/e93e0ed3489939c0941f6355446778c4.webp',
+];
+const clamp2B = ['https://hommet.ru/media/products/images/SML.webp'];
 
 export const clampsSMLSystem: Card[] = [
    {

@@ -1,8 +1,9 @@
 import type { Card } from '@/utils/types/cards';
 
-const clampL =
-   'https://hommet.ru/media/hommet_cache/2a/6a/2a6a710084c73787075d18491f389b90.png';
-const clampB = 'https://hommet.ru/media/products/images/nerzh_KpCprAy.png';
+const clampL = [
+   'https://hommet.ru/media/hommet_cache/2a/6a/2a6a710084c73787075d18491f389b90.png',
+];
+const clampB = ['https://hommet.ru/media/products/images/nerzh_KpCprAy.png'];
 export const clampsStainless: Card[] = [
    {
       cardId: '4_3_1',

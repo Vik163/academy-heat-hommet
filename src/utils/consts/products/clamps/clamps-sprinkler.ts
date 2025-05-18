@@ -1,9 +1,11 @@
 import type { Card } from '@/utils/types/cards';
 
-const clampL =
-   'https://hommet.ru/media/hommet_cache/3d/02/3d029a3eff96c54a5c40f2a19b67f350.webp';
-const clampB =
-   'https://hommet.ru/media/uploads/хомуты/усиленный_спринклерный_хомут_с_гайкой_.webp';
+const clampL = [
+   'https://hommet.ru/media/hommet_cache/3d/02/3d029a3eff96c54a5c40f2a19b67f350.webp',
+];
+const clampB = [
+   'https://hommet.ru/media/uploads/хомуты/усиленный_спринклерный_хомут_с_гайкой_.webp',
+];
 
 export const clampsSprinkler: Card[] = [
    {

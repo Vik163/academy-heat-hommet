@@ -25,7 +25,7 @@ const getCards = (
             const image = cardTemplate.querySelector(
                '.card-product__image',
             )! as HTMLImageElement;
-            image.src = c.imgL;
+            image.src = c.imgL[0];
             image.alt = c.title;
          }
 

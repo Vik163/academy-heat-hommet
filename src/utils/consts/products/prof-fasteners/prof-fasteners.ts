@@ -1,17 +1,22 @@
 import type { Card } from '@/utils/types/cards';
 import type { CategoryProf } from '@/utils/types/catalog';
 
-export const hairpinL =
-   'https://hommet.ru/media/hommet_cache/d8/6d/d86d91fa857142218529428bd9895101.png';
-export const hairpinB = 'https://hommet.ru/media/uploads/хомуты/шпил.png';
-export const washerReinforceL =
-   'https://hommet.ru/media/hommet_cache/58/06/58069c9ebe154b34f8a342014b28cc01.webp';
-export const washerReinforceB =
-   'https://hommet.ru/media/products/images/аи_convert.io.webp';
-export const washerSaddleL =
-   'https://hommet.ru/media/hommet_cache/e7/73/e773d3256a553b3a33d7957c77cdd7cf.png';
-export const washerSaddleB =
-   'https://hommet.ru/media/products/images/7_I3sJDS6.png';
+export const hairpinL = [
+   'https://hommet.ru/media/hommet_cache/d8/6d/d86d91fa857142218529428bd9895101.png',
+];
+export const hairpinB = ['https://hommet.ru/media/uploads/хомуты/шпил.png'];
+export const washerReinforceL = [
+   'https://hommet.ru/media/hommet_cache/58/06/58069c9ebe154b34f8a342014b28cc01.webp',
+];
+export const washerReinforceB = [
+   'https://hommet.ru/media/products/images/аи_convert.io.webp',
+];
+export const washerSaddleL = [
+   'https://hommet.ru/media/hommet_cache/e7/73/e773d3256a553b3a33d7957c77cdd7cf.png',
+];
+export const washerSaddleB = [
+   'https://hommet.ru/media/products/images/7_I3sJDS6.png',
+];
 
 export const profFasteners: Record<CategoryProf, Card[]> = {
    'Профессиональный крепеж': [
@@ -138,31 +143,43 @@ export const profFasteners: Record<CategoryProf, Card[]> = {
          cardId: '3_1_18',
          title: 'Шина монтажная 2м',
          pathname: 'product/shina-montazhnaia-analog-mupro-1000mm-50mm-3mm',
-         imgL: 'https://hommet.ru/media/hommet_cache/4f/e5/4fe5d396ff8c18e7d452aaea5bd11040.webp',
-         imgB: 'https://hommet.ru/media/uploads/хомуты/shina-montazhnaya_(convert.io).webp',
+         imgL: [
+            'https://hommet.ru/media/hommet_cache/4f/e5/4fe5d396ff8c18e7d452aaea5bd11040.webp',
+         ],
+         imgB: [
+            'https://hommet.ru/media/uploads/хомуты/shina-montazhnaya_(convert.io).webp',
+         ],
       },
       {
          cardId: '3_1_19',
          title: 'Шина монтажная 1м',
          pathname: 'product/shina-montazhnaia-analog-mupro-1000mm-50mm-3mm',
-         imgL: 'https://hommet.ru/media/hommet_cache/4f/e5/4fe5d396ff8c18e7d452aaea5bd11040.webp',
-         imgB: 'https://hommet.ru/media/uploads/хомуты/shina-montazhnaya_(convert.io).webp',
+         imgL: [
+            'https://hommet.ru/media/hommet_cache/4f/e5/4fe5d396ff8c18e7d452aaea5bd11040.webp',
+         ],
+         imgB: [
+            'https://hommet.ru/media/uploads/хомуты/shina-montazhnaya_(convert.io).webp',
+         ],
       },
       {
          cardId: '3_1_20',
          title: 'Уплотнитель виброизоляционный для STRUT-профиля 28/28',
          pathname:
             'product/uplotnitel-vibroizoliatsionnyi-dlia-strut-profilia-28-28',
-         imgL: 'https://hommet.ru/media/hommet_cache/23/9b/239b3e7fd06acbbf6c69e459d59d910d.png',
-         imgB: 'https://hommet.ru/media/products/images/upl.png',
+         imgL: [
+            'https://hommet.ru/media/hommet_cache/23/9b/239b3e7fd06acbbf6c69e459d59d910d.png',
+         ],
+         imgB: ['https://hommet.ru/media/products/images/upl.png'],
       },
       {
          cardId: '3_1_21',
          title: 'Уплотнитель виброизоляционный для STRUT-профиля 41/41',
          pathname:
             'product/uplotnitel-vibroizoliatsionnyi-dlia-strut-profilia-28-28',
-         imgL: 'https://hommet.ru/media/hommet_cache/23/9b/239b3e7fd06acbbf6c69e459d59d910d.png',
-         imgB: 'https://hommet.ru/media/products/images/upl.png',
+         imgL: [
+            'https://hommet.ru/media/hommet_cache/23/9b/239b3e7fd06acbbf6c69e459d59d910d.png',
+         ],
+         imgB: ['https://hommet.ru/media/products/images/upl.png'],
       },
    ],
 };

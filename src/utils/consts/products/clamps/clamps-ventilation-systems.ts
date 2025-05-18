@@ -1,16 +1,23 @@
 import type { Card } from '@/utils/types/cards';
 
-const clampL =
-   'https://hommet.ru/media/hommet_cache/34/6f/346f5b9d798d8de1c8d9ecce021f9f18.png';
-const clampB = 'https://hommet.ru/media/products/images/4_DrblOM1_vY6ICGb.png';
-const clamp2L =
-   'https://hommet.ru/media/hommet_cache/e3/db/e3db8f4681502638fca92ce0239cc20a.webp';
-const clamp2B =
-   'https://hommet.ru/media/uploads/хомуты/вентиляционный_хомут_с_резиновым_уплотнением_без_гаек.webp';
-const clamp3L =
-   'https://hommet.ru/media/hommet_cache/d1/66/d166dba2cca8f66439a83a2d2c803cc6.webp';
-const clamp3B =
-   'https://hommet.ru/media/uploads/хомуты/вентиляционный_хомут_с_резиновым_уплотнением_с_гайкой_м8.webp';
+const clampL = [
+   'https://hommet.ru/media/hommet_cache/34/6f/346f5b9d798d8de1c8d9ecce021f9f18.png',
+];
+const clampB = [
+   'https://hommet.ru/media/products/images/4_DrblOM1_vY6ICGb.png',
+];
+const clamp2L = [
+   'https://hommet.ru/media/hommet_cache/e3/db/e3db8f4681502638fca92ce0239cc20a.webp',
+];
+const clamp2B = [
+   'https://hommet.ru/media/uploads/хомуты/вентиляционный_хомут_с_резиновым_уплотнением_без_гаек.webp',
+];
+const clamp3L = [
+   'https://hommet.ru/media/hommet_cache/d1/66/d166dba2cca8f66439a83a2d2c803cc6.webp',
+];
+const clamp3B = [
+   'https://hommet.ru/media/uploads/хомуты/вентиляционный_хомут_с_резиновым_уплотнением_с_гайкой_м8.webp',
+];
 
 export const clampsVentilationSystems: Card[] = [
    {
