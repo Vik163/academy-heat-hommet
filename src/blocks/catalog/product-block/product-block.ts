@@ -2,6 +2,14 @@ import type { Card } from '@/utils/types/cards';
 import lightGallery from 'lightgallery';
 import 'lightgallery/css/lightgallery.css';
 
+const lg = document.getElementById('animated-thumbnails-gallery')!;
+const plugin = lightGallery(lg);
+
+/**
+ * Монтирует страницу продукта
+ * Создает экземпляр lightGallery и вешает на нее слушатель lgBeforeOpen в которм обновляет ее экземпляр
+ * @param card - карточка продукта
+ */
 export const setProduct = (card: Card) => {
    const productBlock = document.querySelector('.product')!;
 
@@ -15,15 +23,12 @@ export const setProduct = (card: Card) => {
    const img = document.querySelector('.modal__image') as HTMLImageElement;
    img.src = card.imgL!;
    img.alt = card.title;
+};
 
-   lightGallery(document.getElementById('animated-thumbnails-gallery')!, {
-      // plugins: [lgThumbnail],
-      // addClass: 'lg-custom-thumbnails',
-      // // Remove the starting animations.
-      // // This can be done by overriding CSS as well
-      // appendThumbnailsTo: '.lg-outer',
-   });
-
+// событие срабатывает перед открытием https://www.lightgalleryjs.com/docs/events/
+lg.addEventListener('lgBeforeOpen', function (e) {
+   plugin.refresh(); // обновляет экземпляр галереи
+   // меняю принудительно стили оверлея
    const bg = document.querySelector('.lg-backdrop') as HTMLDivElement;
    bg.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-};
+});
