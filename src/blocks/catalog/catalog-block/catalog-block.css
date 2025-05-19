@@ -19,7 +19,7 @@
    width: var(--width-block-desktop);
    display: flex;
    flex-wrap: wrap;
-   gap: 15px;
+   gap: 10px;
 }
 
 .catalog__description {

@@ -27,15 +27,15 @@
    height: 90%;
 }
 .card-product__title {
-   margin: 20px;
+   margin: 20px 25px 20px 10px;
    font-size: var(--font-14);
    font-weight: var(--font-weight-medium);
    color: var(--color-text-accent);
 }
 .card-product__btn {
-   width: 90%;
+   width: 85%;
    height: var(--height-btn-card);
-   font-size: var(--font-int-14);
+   font-size: var(--font-button-14);
    background-color: var(--color-red);
    color: var(--color-text-light);
    display: flex;
