@@ -8,4 +8,5 @@ export interface Card {
    title: string;
    imgB?: string[];
    imgL?: string[];
+   description?: string;
 }
