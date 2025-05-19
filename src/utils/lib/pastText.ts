@@ -1,18 +1,56 @@
-const addText = (tag: string, block: Element, text: string) => {
+const addText = (
+   tag: string,
+   block: Element,
+   text: string,
+   place: 'product' | 'catalog',
+) => {
    const el = document.createElement(tag);
-   el.classList.add(`product__description-${tag}`);
-   el.textContent = text.replace(`<${tag}>`, '');
    block.append(el);
+   el.classList.add(`${place}__description-${tag}`);
+   el.textContent = text.replace(`<${tag}>`, '');
 };
 
-export const pastText = (block: Element, text: string) => {
+export const pastText = (
+   block: Element,
+   text: string,
+   place: 'product' | 'catalog',
+) => {
    block.querySelectorAll('p')!.forEach((p) => p.remove());
    block.querySelectorAll('h4')!.forEach((p) => p.remove());
    const arrTexts = text.split(/\n/);
    arrTexts.forEach((text) => {
+      // теги добавляются только спереди
       if (text.startsWith('<p>')) {
-         addText('p', block, text);
+         // тег <span> добавляется с двух сторон (образец <p><span>Усиленные хомуты<span/> разработаны)
+         if (text.includes('<span>')) {
+            // сразу встраиваю тег <р>
+            const el = document.createElement('p');
+            block.append(el);
+            el.classList.add(`${place}__description-p`);
+            // убираю разделитель <p>
+            const textP = text.replace(`<p>`, '');
+            // делит по конечному тегу <span/>
+            const arrTextP = textP.split('</span>');
+            arrTextP.forEach((itemText) => {
+               // если начинается с начального тега <span>, то добавляет к классу span-select, иначе добавляет span
+               if (itemText.startsWith('<span>')) {
+                  const newSpan = itemText.replace(`<span>`, '');
+                  addText('span-select', el, newSpan, place);
+               } else {
+                  addText('span', el, itemText, place);
+               }
+            });
+         } else addText('p', block, text, place);
+      }
+      if (text.startsWith('<ul>')) {
+         addText('ul', block, text, place);
+      }
+      if (text.startsWith('<li>')) {
+         addText('li', block, text, place);
+      }
+      if (text.startsWith('<h4>')) {
+         addText('h4', block, text, place);
       }
    });
-   console.log('arr:', arrTexts);
+   // console.log('arr:', arrTexts);
 };

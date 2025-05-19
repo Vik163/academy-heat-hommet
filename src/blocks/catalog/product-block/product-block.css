@@ -56,7 +56,7 @@
 .product__info {
    display: flex;
    gap: 30px;
-   margin-bottom: 80px;
+   margin-bottom: 78px;
 }
 
 .product__btn {
@@ -73,7 +73,7 @@
 }
 
 .product__description {
-   color: var(--color-text-accent);
+   color: var(--color-text-description);
 }
 
 .product__description_inactive {
@@ -81,7 +81,7 @@
 }
 
 .product__description-title {
-   font: var(--font-title-30);
+   font: var(--font-title-28);
    text-transform: uppercase;
    margin-bottom: 30px;
 }
@@ -90,5 +90,9 @@
    font: var(--font-int-18);
    line-height: 30px;
    font-weight: var(--font-weight-medium);
-   margin-bottom: 25px;
+   margin-top: 25px;
+}
+
+.product__description-p:nth-of-type(1) {
+   margin-top: 0;
 }

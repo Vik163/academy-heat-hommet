@@ -33,7 +33,7 @@ export const setProduct = (card: Card) => {
 
    handleImagesView(card);
    if (card.description) {
-      pastText(productDescription, card.description);
+      pastText(productDescription, card.description, 'product');
       productDescription.classList.remove('product__description_inactive');
    } else productDescription.classList.add('product__description_inactive');
 };

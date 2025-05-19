@@ -9,8 +9,10 @@ import {
 import { getDataFromCatalog } from '@/utils/lib/getDataFromCatalog';
 import { updateCards } from '@/utils/lib/updateCards';
 import { updateBreadCrumbs } from '../bread-crumbs/bread-crumbs';
+import { pastText } from '@/utils/lib/pastText';
 
 const catalogBlock = document.querySelector('.catalog-block')!;
+const catalogDescription = catalogBlock.querySelector('.catalog__description')!;
 const titleCatalogElement = catalogBlock.querySelector(
    '.catalog-block__title',
 )!;
@@ -54,6 +56,7 @@ export const updateCatalogBlock = (updatePageCatalog: () => void) => {
 
    if (!view) {
       const cardCatalog = document.querySelector('#Профессиональный крепеж')!;
+      catalogDescription.classList.remove('catalog__description_active');
       titleCatalogElement.textContent = titleCatalog;
       if (!cardCatalog)
          updateCards(
@@ -63,7 +66,19 @@ export const updateCatalogBlock = (updatePageCatalog: () => void) => {
    } else {
       const obj: Catalog = category! || view!;
       titleCatalogElement.textContent = obj.titlePage;
+
       updateCards((e, type) => onClickCard(e, type, updatePageCatalog)!, obj);
+
+      if (obj.titlePage) {
+         catalogDescription.classList.add('catalog__description_active');
+         const titleDescription = catalogDescription.querySelector(
+            '.catalog__description-title',
+         )!;
+         titleDescription.textContent = obj.titleText!;
+
+         if (obj.text && catalogDescription)
+            pastText(catalogDescription, obj.text, 'catalog');
+      } else catalogDescription.classList.remove('catalog__description_active');
    }
 
    updateBreadCrumbs();
