@@ -22,6 +22,7 @@ export const updateCards = (
       if (obj.categories) {
          removeCardsCatalog();
          handleCardsCatalog(obj.categories, onClick);
+
          // При откате назад класс не удаляется (не перезагружается страница)
          paginationBlock.classList.remove('pagination_active');
       } else {
@@ -29,6 +30,8 @@ export const updateCards = (
          handlePaginationData(onClick);
       }
    } else {
+      paginationBlock.classList.remove('pagination_active');
+
       removeCardsCatalog();
       handleCardsCatalog(catalog, onClick);
    }
