@@ -1,8 +1,10 @@
 import type { Card } from '@/utils/types/cards';
 import 'lightgallery/css/lightgallery.css';
-import { handleImagesView } from './lib/handleImagesView/handleImagesView';
+import { handleImagesView } from './lib/handleImagesView';
+import { pastText } from '@/utils/lib/pastText';
 
 const productInfoBlock = document.querySelector('.product__info')!;
+const productDescription = document.querySelector('.product__description')!;
 const newImg = document.querySelector(
    '.product__image-add',
 ) as HTMLImageElement;
@@ -30,6 +32,10 @@ export const setProduct = (card: Card) => {
    currentCard = card;
 
    handleImagesView(card);
+   if (card.description) {
+      pastText(productDescription, card.description);
+      productDescription.classList.remove('product__description_inactive');
+   } else productDescription.classList.add('product__description_inactive');
 };
 
 productInfoBlock.addEventListener('click', clickProductBlock);

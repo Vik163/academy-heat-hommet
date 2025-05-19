@@ -1,5 +1,5 @@
 import type { Routes } from '@/utils/types/routes';
-import { getPathname } from '../getPathname/getPathname';
+import { getPathname } from './getPathname';
 
 /**
  * Направляет на указанную в параметре страницу

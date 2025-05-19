@@ -1,7 +1,5 @@
-import { type ObserveCallback, observer } from '@/utils/lib/observer/observer';
+import { type ObserveCallback, observer } from '@/utils/lib/observer';
 import { setNavbar } from '../navbar/navbar';
-import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
-import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
 
 const headerBlock = document.querySelector('.header')!;
 const mainObserver = document.querySelector('.main__observer')!;

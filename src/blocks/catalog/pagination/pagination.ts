@@ -1,7 +1,7 @@
 import { handleCards } from '@/blocks/cards-products/cards-products';
 import { limit } from '@/utils/consts/paginate';
 import { mountPaginationButtons } from '@/blocks/catalog/pagination/lib/mountPaginationButtons/mountPaginationButtons';
-import { getDataByView } from '@/utils/lib/getDataFromStore/getDataFromStore';
+import { getDataByView } from '@/utils/lib/getDataFromStore';
 import {
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_TYPE_OF_PRODUCT,

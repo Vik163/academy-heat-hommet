@@ -1,4 +1,4 @@
-import { loadSrc } from '@/utils/lib/loadSrc/loadSrc';
+import { loadSrc } from '@/utils/lib/loadSrc';
 import type { Catalog } from '@/utils/types/catalog';
 
 const list = document.querySelector('.cards');

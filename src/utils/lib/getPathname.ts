@@ -5,7 +5,7 @@ import {
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
 import type { Categories, ViewName } from '@/utils/types/catalog';
-import { getDataById } from '../getDataFromStore/getDataFromStore';
+import { getDataById } from './getDataFromStore';
 
 /**
  *  Возвращает pathname (английск) по данным в localStorage

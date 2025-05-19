@@ -1,13 +1,13 @@
-import { changeUrl } from '@/utils/lib/changeUrl/changeUrl';
+import { changeUrl } from '@/utils/lib/changeUrl';
 import './catalog.css';
-import { setLocalStorageByPathname } from '@/utils/lib/setLocalStorage/setLocalStorage';
+import { setLocalStorageByPathname } from '@/utils/lib/setLocalStorage';
 import { setNavbar } from '@/blocks/navbar/navbar';
 import { setProduct } from '@/blocks/catalog/product-block/product-block';
 import { setBreadCrumbs } from '@/blocks/catalog/bread-crumbs/bread-crumbs';
 import { updateCatalogBlock } from '@/blocks/catalog/catalog-block/catalog-block';
 import { LOCALSTORAGE_CATALOG } from '@/utils/consts/storage';
-import { getDataById } from '@/utils/lib/getDataFromStore/getDataFromStore';
-import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
+import { getDataById } from '@/utils/lib/getDataFromStore';
+import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 
 const catalogBlock = document.querySelector('.catalog-block')!;
 const productBlock = document.querySelector('.product')!;

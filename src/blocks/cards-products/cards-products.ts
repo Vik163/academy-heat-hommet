@@ -1,5 +1,5 @@
-import { animationScrolling } from '@/utils/lib/animationScrolling/animationScrolling';
-import { ObserveCallback, observer } from '@/utils/lib/observer/observer';
+import { animationScrolling } from '@/utils/lib/animationScrolling';
+import { ObserveCallback, observer } from '@/utils/lib/observer';
 import type { Card } from '@/utils/types/cards';
 
 const list = document.querySelector('.cards');

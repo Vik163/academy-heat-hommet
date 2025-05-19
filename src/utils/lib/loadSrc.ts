@@ -18,7 +18,7 @@ export const loadSrc = (src: string) => {
          .split(' ')
          .map((str) =>
             /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i.test(str)
-               ? require('../../../assets/images/' + getNameFile(str))
+               ? require('../../assets/images/' + getNameFile(str))
                : str,
          )
          .join(' ');
@@ -27,5 +27,5 @@ export const loadSrc = (src: string) => {
    }
 
    //* -- data-src --- srcset ----------------
-   return require('../../../' + src);
+   return require('../../' + src);
 };

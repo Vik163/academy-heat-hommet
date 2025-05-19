@@ -35,7 +35,7 @@
 .card-product__btn {
    width: 90%;
    height: var(--height-btn-card);
-   font-size: var(--font-button-14);
+   font-size: var(--font-int-14);
    background-color: var(--color-red);
    color: var(--color-text-light);
    display: flex;

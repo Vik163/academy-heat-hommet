@@ -1,4 +1,4 @@
-import { ObserveCallback, observer } from '../observer/observer';
+import { ObserveCallback, observer } from './observer';
 
 type Dir = 'right' | 'left' | 'up' | 'down';
 

@@ -1,6 +1,6 @@
 //* ----- убирает .html в адрессной строке для разработки--------------------------
 
-import { getPathname } from '../getPathname/getPathname';
+import { getPathname } from './getPathname';
 
 /**
  * для dev-server.

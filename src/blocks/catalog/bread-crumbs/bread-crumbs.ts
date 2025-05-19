@@ -3,8 +3,8 @@ import {
    LOCALSTORAGE_PRODUCT_ID,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
-import { redirectOnPage } from '@/utils/lib/redirectOnPage/redirectOnPage';
-import { setLocalStorage } from '@/utils/lib/setLocalStorage/setLocalStorage';
+import { redirectOnPage } from '@/utils/lib/redirectOnPage';
+import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 import type { Categories, ViewName } from '@/utils/types/catalog';
 
 const linkCatalog = document.querySelector('#bread-crumbs-link-catalog');

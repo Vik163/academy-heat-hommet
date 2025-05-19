@@ -1,4 +1,4 @@
-import { Card } from '@/utils/types/cards';
+import type { Card } from '@/utils/types/cards';
 
 import lightGallery from 'lightgallery';
 import 'lightgallery/css/lightgallery.css';
@@ -70,6 +70,7 @@ export const handleImagesView = (card: Card, link?: string) => {
          }
       });
    } else {
+      newImg.classList.remove('product__image-add_active');
    }
 };
 

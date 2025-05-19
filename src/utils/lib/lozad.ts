@@ -3,7 +3,7 @@
  * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
 
 //! для webpack
-import { loadSrc } from '../loadSrc/loadSrc';
+import { loadSrc } from './loadSrc';
 
 interface LozadElement extends HTMLImageElement {
    load: (element?: LozadElement) => void;

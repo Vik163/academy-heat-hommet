@@ -1,13 +1,13 @@
 import { titleCatalog } from '@/utils/consts/products/catalogs';
-import { changeUrl } from '@/utils/lib/changeUrl/changeUrl';
-import { getNameByLocalStorage } from '@/utils/lib/getNamesGroup/getNamesGroup';
+import { changeUrl } from '@/utils/lib/changeUrl';
+import { getNameByLocalStorage } from '@/utils/lib/getNamesGroup';
 import type { Catalog, Categories, ViewName } from '@/utils/types/catalog';
 import {
    setLocalStorage,
    setLocalStorageByCardId,
-} from '@/utils/lib/setLocalStorage/setLocalStorage';
-import { getDataFromCatalog } from '@/utils/lib/getDataFromCatalog/getDataFromCatalog';
-import { updateCards } from '@/utils/lib/updateCards/updateCards';
+} from '@/utils/lib/setLocalStorage';
+import { getDataFromCatalog } from '@/utils/lib/getDataFromCatalog';
+import { updateCards } from '@/utils/lib/updateCards';
 import { updateBreadCrumbs } from '../bread-crumbs/bread-crumbs';
 
 const catalogBlock = document.querySelector('.catalog-block')!;
