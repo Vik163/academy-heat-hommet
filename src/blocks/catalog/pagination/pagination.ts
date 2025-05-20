@@ -47,13 +47,11 @@ function getPaginateData() {
  * Раскидивает каточки
  * @param onClick - функция клика карточки (транзит)
  */
-export const handlePaginationCards = (
-   onClick: (e: MouseEvent, type: 'product' | 'category') => void,
-) => {
+export const handlePaginationCards = () => {
    const { cards } = getPaginateData();
 
    removeCardsCatalog();
-   handleCards(cards, onClick);
+   handleCards(cards);
 
    window.scrollTo({
       top: 0,
@@ -81,29 +79,27 @@ const increasePage = () => {
 
 /**
  * Управляет видимостью всего блока и навешивает слушатели на кнопки
- * @param onClick - функция клика карточки (транзит)
  */
-export const handlePaginationData = (
-   onClick: (e: MouseEvent, type: 'product' | 'category') => void,
-) => {
+export const handlePaginationData = () => {
    const { totalItems, cardsAll } = getPaginateData();
 
    if (totalItems > limit) {
-      leftArrow?.addEventListener('click', decreasePage);
-      rightArrow?.addEventListener('click', increasePage);
-
-      if (!paginationBlock.classList.contains('pagination_active'))
+      if (!paginationBlock.classList.contains('pagination_active')) {
          buttons = mountPaginationButtons(totalItems);
+      }
 
       buttons.map((btn) => {
          btn.addEventListener('click', (e: Event) => clickBtnPage(e));
       });
 
-      handleButtons(numPage, pagesAll, buttons, onClick);
+      handleButtons(numPage, pagesAll, buttons);
 
       paginationBlock.classList.add('pagination_active');
    } else {
       paginationBlock.classList.remove('pagination_active');
-      handleCards(cardsAll, onClick);
+      handleCards(cardsAll);
    }
 };
+
+leftArrow?.addEventListener('click', decreasePage);
+rightArrow?.addEventListener('click', increasePage);

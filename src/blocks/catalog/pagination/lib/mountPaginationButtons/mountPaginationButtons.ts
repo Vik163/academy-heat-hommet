@@ -15,6 +15,12 @@ export const mountPaginationButtons = (
       '.pagination__container',
    )!;
 
+   // удаляет старые при монтировании новых
+   const btns = document.querySelectorAll('.pagination__item');
+   if (btns.length > 0) {
+      btns.forEach((btn) => btn.remove());
+   }
+
    pagesAll = Math.ceil(totalItems / limit);
    buttonsVisible = pagesAll < countButtons ? pagesAll : countButtons;
 

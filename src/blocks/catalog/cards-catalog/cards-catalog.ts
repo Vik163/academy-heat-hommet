@@ -12,10 +12,7 @@ const template = (
  * Запускается наблюдатель для ленивой загрузки (последняя строчка кода). Аргументы: блок за которым наблюдает и коллбек
  * В коллбек предается entry.isIntersection из observer. Встраиваются карты и запускается анимация
  */
-export const handleCardsCatalog = (
-   cards: Catalog[],
-   onClickLink: (e: MouseEvent, type: 'product' | 'category') => void,
-) => {
+export const handleCardsCatalog = (cards: Catalog[]) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const card = document.querySelector('.card-product')!;
@@ -29,6 +26,7 @@ export const handleCardsCatalog = (
          if (cardTemplate) {
             const title = cardTemplate.querySelector('.card-catalog__title')!;
             title.textContent = c.title;
+            title.id = c.title;
 
             const image = cardTemplate.querySelector(
                '.card-catalog__image',
@@ -36,14 +34,11 @@ export const handleCardsCatalog = (
             const newSrc = loadSrc(c.imgL);
             image.src = newSrc;
             image.alt = c.title;
+            image.id = c.title;
 
             //* === добавляет категорию товара в id кнопки ============
             const category = c.title;
             cardTemplate.id = category;
-
-            cardTemplate.addEventListener('click', (e) =>
-               onClickLink(e, 'category'),
-            );
          }
 
          // встраивает на странице

@@ -31,13 +31,11 @@ const getNumFirstBtn = с();
  * @param nPage - номер выбранной страницы
  * @param pAll - всего страницы
  * @param buttons - количество смонтированных кнопок
- * @param onClick - функция клика карточки (транзит)
  */
 export const handleButtons = (
    nPage: number,
    pAll: number,
    buttons: HTMLButtonElement[],
-   onClick?: (e: MouseEvent, type: 'product' | 'category') => void,
 ) => {
    numPage = nPage;
    pagesAll = pAll;
@@ -60,7 +58,7 @@ export const handleButtons = (
       const isSelected = el.getAttribute('aria-selected');
       if (isSelected === 'true') {
          el.classList.add('pagination__btn_active');
-         handlePaginationCards(onClick!);
+         handlePaginationCards();
       } else {
          el.classList.remove('pagination__btn_active');
       }

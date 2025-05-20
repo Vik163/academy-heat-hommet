@@ -7,46 +7,39 @@ const template = (
    document.querySelector('#card-product') as HTMLTemplateElement
 ).content;
 
-const getCards = (
-   cards: Card[],
-   onClickLink: (e: MouseEvent, type: 'product' | 'category') => void,
-   block?: Element,
-) => {
+const getCards = (cards: Card[], block?: Element) => {
    cards.forEach((c, i) => {
       const cardTemplate = template
          .querySelector('.card-product')
          ?.cloneNode(true) as HTMLLIElement;
 
       if (cardTemplate) {
+         const cardId = c.cardId ? `${c.cardId}` : '';
+         cardTemplate.id = cardId;
+
          const title = cardTemplate.querySelector('.card-product__title')!;
          title.textContent = c.title;
+         title.id = cardId;
 
          if (c.imgL) {
+            const imageContainer = cardTemplate.querySelector(
+               '.card-product__image-container',
+            )!;
+            imageContainer.id = cardId;
+
             const image = cardTemplate.querySelector(
                '.card-product__image',
             )! as HTMLImageElement;
             image.src = c.imgL[0];
             image.alt = c.title;
+            image.id = cardId;
          }
 
          const link = cardTemplate.querySelector(
             '.card-product__link',
          ) as HTMLButtonElement;
          //* === добавляет параметры товара в id кнопки ============
-         // const category = c.category ? `${c.category}&` : '&'; //! & - разделитель
-         // const cardId = c.cardId ? `${c.cardId}` : '';
-         // link.id = `${c.type}&${category}${cardId}`;
-         const cardId = c.cardId ? `${c.cardId}` : '';
          link.id = cardId;
-
-         link.addEventListener('click', (e) => onClickLink(e, 'product'));
-
-         const btn = cardTemplate.querySelector(
-            '.card-product__btn',
-         ) as HTMLButtonElement;
-
-         //* === слушатель на кнопку ============
-         // btn.addEventListener('click', onClickLink);
       }
 
       // встраивает на странице
@@ -63,11 +56,7 @@ const getCards = (
  * Запускается наблюдатель для ленивой загрузки (последняя строчка кода). Аргументы: блок за которым наблюдает и коллбек
  * В коллбек предается entry.isIntersection из observer. Встраиваются карты и запускается анимация
  */
-export const handleCards = (
-   cards: Card[],
-   onClickLink?: (e: MouseEvent, type: 'product' | 'category') => void,
-   block?: Element,
-) => {
+export const handleCards = (cards: Card[], block?: Element) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const getCardsObserver: ObserveCallback = (intersection) => {
@@ -75,7 +64,7 @@ export const handleCards = (
       // если нет встроенных карт, встраивает
 
       const intersect = block ? intersection : true;
-      if (!card && intersect) getCards(cards, onClickLink!, block);
+      if (!card && intersect) getCards(cards, block);
    };
    //* ---------------------------------------------
 
@@ -83,6 +72,6 @@ export const handleCards = (
    if (block) {
       observer(block, getCardsObserver);
    } else {
-      getCards(cards, onClickLink!, block);
+      getCards(cards, block);
    }
 };
