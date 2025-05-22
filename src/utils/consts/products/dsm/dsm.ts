@@ -25,8 +25,7 @@ export const drySystemMontage: Record<CategoryDSM, Card[]> = {
       {
          cardId: '1_1_1',
          title: 'Регулируемая планка для водоразеток Хоммет',
-         pathname:
-            'product/product/reguliruemaia-planka-dlia-vodorazetok-khommet',
+         pathname: 'product/reguliruemaia-planka-dlia-vodorazetok-khommet',
          imgL: undefined,
          imgB: undefined,
          description: `<p>Подходит для всех известных производителей водорозеток, любых систем монтажа. Не требует дополнительных инструментов.

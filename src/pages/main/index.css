@@ -35,3 +35,6 @@
 
 /* === карточки товаров ==============*/
 @import url(../../blocks/cards-products/cards-products.css);
+
+/* === сертификаты ==============*/
+@import url(../../blocks/sertificats/sertificats.css);

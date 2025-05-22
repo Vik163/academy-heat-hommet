@@ -21,19 +21,19 @@ const getCards = (cards: Card[], block?: Element) => {
          title.textContent = c.title;
          title.id = cardId;
 
-         if (c.imgL) {
-            const imageContainer = cardTemplate.querySelector(
-               '.card-product__image-container',
-            )!;
-            imageContainer.id = cardId;
+         const imageContainer = cardTemplate.querySelector(
+            '.card-product__image-container',
+         )!;
+         imageContainer.id = cardId;
 
-            const image = cardTemplate.querySelector(
-               '.card-product__image',
-            )! as HTMLImageElement;
+         const image = cardTemplate.querySelector(
+            '.card-product__image',
+         )! as HTMLImageElement;
+         if (c.imgL) {
             image.src = c.imgL[0];
             image.alt = c.title;
-            image.id = cardId;
          }
+         image.id = cardId;
 
          const link = cardTemplate.querySelector(
             '.card-product__link',

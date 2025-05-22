@@ -10,6 +10,11 @@ const newImg = document.querySelector(
 ) as HTMLImageElement;
 let currentCard: Card;
 
+const setTitle = () => {
+   const titleProduct = document.querySelector('.product__title')!;
+   titleProduct.textContent = currentCard.title;
+};
+
 function clickProductBlock(e: Event) {
    const target = e.target as HTMLImageElement;
 
@@ -18,8 +23,10 @@ function clickProductBlock(e: Event) {
       const arrLinks = currentCard.imgL!;
       if (arrLinks.length! > index + 1) {
          newImg.src = arrLinks[index + 1];
+         setTitle();
          handleImagesView(currentCard, arrLinks[index]);
       } else {
+         setTitle();
          newImg.src = arrLinks[index - 1];
          handleImagesView(currentCard, arrLinks[index]);
       }
@@ -31,6 +38,7 @@ function clickProductBlock(e: Event) {
 export const setProduct = (card: Card) => {
    currentCard = card;
 
+   setTitle();
    handleImagesView(card);
    if (card.description) {
       pastText(productDescription, card.description, 'product');

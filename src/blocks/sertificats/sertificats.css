@@ -1,0 +1,81 @@
+.sertificats {
+   display: none;
+}
+
+.sertificats_active {
+   display: block;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: auto;
+   background-color: #545454;
+   z-index: 1000;
+}
+
+.lg-custom-thumbnails > .lg-outer {
+   width: auto;
+   right: 100px;
+   left: 10px;
+}
+.lg-custom-thumbnails > .lg-backdrop {
+   background-color: var(--bg-overlay);
+}
+
+.lg-thumb-outer {
+   left: auto;
+   top: 0;
+   width: 100px;
+   bottom: 0;
+   position: fixed;
+   right: 0;
+
+   max-height: none;
+
+   background-color: transparent;
+   padding: 20px 15px 20px 5px;
+   overflow-y: auto;
+   /* z-index: 1100; */
+}
+
+.lg-thumb-item {
+   opacity: 0.8;
+   overflow: hidden;
+   margin-bottom: 8px;
+   transition: 0.12s ease;
+   cursor: pointer;
+}
+
+.lg-thumb-item:hover {
+   transition: 0.12s ease;
+   opacity: 1;
+   transform: scale(1.03);
+}
+
+.lg-thumb-item + .active {
+   opacity: 1;
+}
+
+.lg-thumb {
+   width: 100% !important;
+}
+
+.lg-sub-html {
+   min-width: 100%;
+
+   color: white;
+   text-align: start !important;
+
+   background-image: none !important;
+}
+
+.lg-zoom-in:after {
+   content: '\e311';
+}
+.lg-zoom-out:after {
+   content: '\e312';
+}
+
+.lg-object {
+   width: auto !important;
+}
