@@ -8,6 +8,7 @@ const template = (
 ).content;
 
 const getCards = (cards: Card[], block?: Element) => {
+   const currentList = block ? block.querySelector('.cards') : list;
    cards.forEach((c, i) => {
       const cardTemplate = template
          .querySelector('.card-product')
@@ -43,7 +44,7 @@ const getCards = (cards: Card[], block?: Element) => {
       }
 
       // встраивает на странице
-      list?.append(cardTemplate);
+      currentList?.append(cardTemplate);
 
       //* === запускает анимацию ==========
       if (block) animationScrolling(cardTemplate, 'up');
@@ -60,11 +61,15 @@ export const handleCards = (cards: Card[], block?: Element) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const getCardsObserver: ObserveCallback = (intersection) => {
-      const card = document.querySelector('.card-product');
+      const currentCard = block
+         ? block.querySelector('.card-product')
+         : document.querySelector('.card-product');
+
+      // const card = document.querySelector('.card-product');
       // если нет встроенных карт, встраивает
 
       const intersect = block ? intersection : true;
-      if (!card && intersect) getCards(cards, block);
+      if (!currentCard && intersect) getCards(cards, block);
    };
    //* ---------------------------------------------
 

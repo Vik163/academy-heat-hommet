@@ -5,6 +5,7 @@ import { setSlider } from '@/blocks/index/slider/slider';
 import { setOwn } from '@/blocks/index/own/own';
 import { setHeader } from '@/blocks/header/header';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage';
+import { setSDM } from '@/blocks/index/sdm/sdm';
 
 function init() {
    // === ленивая загрузка фотографий ==========
@@ -40,4 +41,6 @@ setSlider();
 window.onload = function () {
    // === собственное производство =====
    setOwn();
+
+   setSDM();
 };
