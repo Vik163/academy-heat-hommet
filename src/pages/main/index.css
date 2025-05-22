@@ -30,8 +30,11 @@
 /* === собственное производство ==============*/
 @import url(../../blocks/index/own/own.css);
 
-/* === собственное производство ==============*/
-@import url(../../blocks/index/clamps/clamps.css);
+/* === системы ==============*/
+@import url(../../blocks/index/systems/systems.css);
+
+/* === система сухого монтажа ==============*/
+@import url(../../blocks/index/sdm/sdm.css);
 
 /* === карточки товаров ==============*/
 @import url(../../blocks/cards-products/cards-products.css);

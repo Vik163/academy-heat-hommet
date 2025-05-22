@@ -9,7 +9,7 @@
 }
 
 .product__title {
-   font: var(--font-title-30);
+   font: var(--font-mul-30);
    font-weight: var(--font-weight-bold);
    text-transform: uppercase;
    margin-bottom: 40px;
@@ -53,7 +53,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   font: var(--font-title-18);
+   font: var(--font-mul-18);
    background-color: var(--bg-primary-card);
 }
 
@@ -95,7 +95,7 @@
 }
 
 .product__description-title {
-   font: var(--font-title-28);
+   font: var(--font-mul-28);
    text-transform: uppercase;
    margin-bottom: 30px;
 }

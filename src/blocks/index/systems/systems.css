@@ -1,0 +1,42 @@
+.systems {
+   width: var(--width-block-desktop);
+   display: flex;
+   gap: 30px;
+}
+
+.systems__item {
+   width: 380px;
+   height: 440px;
+   padding: 50px 30px;
+   color: var(--color-text-light);
+}
+
+.systems__item_type_profile {
+   background-image: url(../../../assets/images/system-profile.jpg);
+}
+.systems__item_type_image {
+   background-image: url(../../../assets/images/no-system.jpg);
+}
+.systems__item_type_clamps {
+   background-image: url(../../../assets/images/system-clamps.jpg);
+}
+
+.systems__item-title {
+   font: var(--font-mul-22);
+   text-transform: uppercase;
+   margin-bottom: 15px;
+}
+
+.systems__item-subtitle {
+   width: 240px;
+   font: var(--font-int-14);
+   font-size: 15px;
+   line-height: 18px;
+   font-weight: var(--font-weight-medium);
+   margin-bottom: 53px;
+}
+
+.systems__item-link {
+   font: var(--font-int-16);
+   color: inherit;
+}

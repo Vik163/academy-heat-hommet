@@ -1,0 +1,35 @@
+.sdm {
+   width: var(--width-block-desktop);
+}
+
+.sdm__container {
+   display: flex;
+   width: 100%;
+   gap: 40px;
+}
+
+.sdm__container-info {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 25px;
+}
+
+.sdm__title {
+   font: var(--font-mul-30);
+   font-weight: 700;
+   width: 400px;
+   text-transform: uppercase;
+}
+
+.sdm__subtitle {
+   font: var(--font-int-18);
+   font-weight: var(--font-weight-medium);
+}
+
+.sdm__list {
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px 12px;
+}
