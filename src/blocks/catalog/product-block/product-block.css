@@ -110,3 +110,8 @@
 .product__description-p:nth-of-type(1) {
    margin-top: 0;
 }
+
+/* меняет фон в галереи */
+.lg-backdrop {
+   background-color: var(--bg-overlay) !important;
+}

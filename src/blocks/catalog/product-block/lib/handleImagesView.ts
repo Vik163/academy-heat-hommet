@@ -2,14 +2,11 @@ import type { Card } from '@/utils/types/cards';
 
 import lightGallery from 'lightgallery';
 import 'lightgallery/css/lightgallery.css';
-import mediumZoom from 'lightgallery/plugins/mediumZoom';
 
 const lg = document.getElementById('animated-thumbnails-gallery')!;
 
 const plugin = lightGallery(lg, {
-   plugins: [mediumZoom],
-   backgroundColor: 'rgba(0, 0, 0, 0.9)',
-   getCaptionFromTitleOrAlt: false,
+   allowMediaOverlap: true, // увеличивает изображение на всю высоту экрана
 });
 
 const productBlock = document.querySelector('.product')!;
@@ -82,9 +79,4 @@ export const handleImagesView = (card: Card, link?: string) => {
 // событие срабатывает перед открытием https://www.lightgalleryjs.com/docs/events/
 lg.addEventListener('lgBeforeOpen', function (e) {
    plugin.refresh(); // обновляет экземпляр галереи
-
-   // // меняю принудительно стили оверлея
-   // const bg = document.querySelector('.lg-backdrop') as HTMLDivElement;
-   // bg.classList.add('backdrop_active');
-   // bg.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
 });
