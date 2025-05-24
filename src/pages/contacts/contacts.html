@@ -12,6 +12,7 @@
          content='Компания "Хоммет" - надежный производитель крепежных изделий, который предлагает широкий ассортимент продукции. Мы гарантируем высокое качество и долговечность каждой детали, что делает нас востребованными на рынке. Надежность и инновации — основные принципы нашей работы, которые позволяют удовлетворять потребности клиентов.'
       />
       <link rel="icon" href="../../assets/icons/logo.png" />
+
       <title>Крепежные изделия и профили</title>
    </head>
 
@@ -109,88 +110,43 @@
                </div>
             </nav>
          </header>
-         <main class="main">
-            <div class="bread-crumbs">
-               <ul class="bread-crumbs__list">
-                  <li class="bread-crumbs__item">
-                     <a
-                        class="bread-crumbs__link bread-crumbs__link_active"
-                        href="/"
-                        >ГЛАВНАЯ</a
-                     >
-                  </li>
-                  <li class="bread-crumbs__item">
-                     <span class="bread-crumbs__arrow"></span>
-                     <a
-                        id="bread-crumbs-link-catalog"
-                        class="bread-crumbs__link"
-                        href="#"
-                        >Каталог</a
-                     >
-                  </li>
-                  <li id="bread-crumbs-view" class="bread-crumbs__item">
-                     <span class="bread-crumbs__arrow"></span>
-                     <a
-                        id="bread-crumbs-link-view"
-                        class="bread-crumbs__link"
-                        href="#"
-                     ></a>
-                  </li>
-                  <li id="bread-crumbs-category" class="bread-crumbs__item">
-                     <span class="bread-crumbs__arrow"></span>
-                     <a
-                        id="bread-crumbs-link-category"
-                        class="bread-crumbs__link"
-                        href="#"
-                     ></a>
-                  </li>
-               </ul>
-            </div>
-            <section class="catalog-block">
-               <h1 class="catalog-block__title">
-                  КАТАЛОГ ПРОДУКЦИИ ПРОИЗВОДСТВЕННОЙ КОМПАНИИ ХОММЕТ
-               </h1>
-               <ul class="catalog-block__list cards"></ul>
-               <section class="pagination">
-                  <button
-                     type="button"
-                     class="pagination__btn pagination__btn-arrow pagination__btn-arrow-left"
-                  ></button>
-                  <ul class="pagination__container"></ul>
-                  <button
-                     type="button"
-                     class="pagination__btn pagination__btn-arrow pagination__btn-arrow-right"
-                  ></button>
-               </section>
-               <div class="catalog__description">
-                  <h3 class="catalog__description-title"></h3>
-               </div>
-            </section>
-            <section class="product">
-               <h2 class="product__title"></h2>
-               <div class="product__container">
-                  <div
-                     class="product__image-container"
-                     id="animated-thumbnails-gallery"
-                  >
-                     <a
-                        class="modal__image"
-                        data-src="#"
-                        data-lg-size="1000-1000"
-                     >
-                        <img class="product__image" src="#" />
-                     </a>
-                  </div>
-                  <div class="product__info">
-                     <img class="product__image-add" alt="img2" src="#" />
 
-                     <button class="product__btn" type="button">
-                        Узнать цену
-                     </button>
+         <main class="main">
+            <section id="contacts" class="contacts app__contacts">
+               <h1 class="contacts__title">Контакты</h1>
+               <div class="contacts__container">
+                  <div class="contacts__info-container">
+                     <div class="contacts__info">
+                        <h3 class="contacts__info-title">
+                           Инженерный центр Академия тепла
+                        </h3>
+                        <div
+                           class="contacts__text-container contacts__text-container_type_phone"
+                        >
+                           <span>+7 (846) 354-66-30,  +7 (917) 014-11-69</span>
+                        </div>
+                        <p class="contacts__schedule">
+                           Работаем:<br />
+                           Понедельник - Пятница - с 8.30-18.30
+                           <br />Суббота - с 8.30-17.00<br />
+                           Воскресенье - с 8.30-14.00
+                        </p>
+                        <div
+                           class="contacts__text-container contacts__text-container_type_email"
+                        >
+                           <span>actepla@yandex.ru</span>
+                        </div>
+                        <div
+                           class="contacts__text-container contacts__text-container_type_address"
+                        >
+                           <span
+                              >г. Новокуйбышевск, ул. Молодогвардейская, д.
+                              4</span
+                           >
+                        </div>
+                     </div>
                   </div>
-                  <div class="product__description">
-                     <h3 class="product__description-title">Описание</h3>
-                  </div>
+                  <div id="map" class="contacts__map"></div>
                </div>
             </section>
             <section class="sertificats">
@@ -200,36 +156,41 @@
                ></div>
             </section>
          </main>
+         <footer class="footer"></footer>
       </div>
 
       <!--* ====== Tempalates =============== -->
-      <template id="pagination-item">
-         <li class="pagination__item">
-            <button
-               class="pagination__btn"
-               type="button"
-               aria-label="#"
-               aria-selected="#"
-            ></button>
-         </li>
-      </template>
-      <template id="card-catalog">
-         <li id="#" class="card-catalog">
-            <h3 id="#" class="card-catalog__title"></h3>
-            <img id="#" class="card-catalog__image" src="#" alt="" />
+      <template id="slider-item">
+         <li class="splide__slide slider-item">
+            <div class="slider-item__container">
+               <div class="slider-item__info">
+                  <h3 class="slider-item__title"></h3>
+                  <p class="slider-item__description"></p>
+                  <button id="#" type="button" class="slider-item__btn">
+                     В каталог
+                  </button>
+               </div>
+               <img class="slider-item__image" src="#" alt="" />
+            </div>
          </li>
       </template>
       <template id="card-product">
-         <li id="#" class="card-product">
+         <li class="card-product">
             <div id="#" class="card-product__link">
-               <div id="#" class="card-product__image-container">
-                  <img id="#" class="card-product__image" src="#" alt="" />
+               <div class="card-product__image-container">
+                  <img class="card-product__image" src="#" alt="" />
                </div>
-               <h3 id="#" class="card-product__title"></h3>
+               <h3 class="card-product__title"></h3>
             </div>
             <button id="#" type="button" class="card-product__btn">
                Узнать цену
             </button>
+         </li>
+      </template>
+      <template id="card-catalog">
+         <li id="#" class="card-catalog">
+            <h3 class="card-catalog__title"></h3>
+            <img class="card-catalog__image" src="#" alt="" />
          </li>
       </template>
    </body>

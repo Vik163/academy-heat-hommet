@@ -8,6 +8,7 @@
    --font-18: 18px;
    --font-20: 20px;
    --font-22: 22px;
+   --font-24: 24px;
    --font-28: 28px;
    --font-30: 30px;
 
@@ -18,6 +19,7 @@
 
    --font-mul-30: var(--font-30) var(--font-mul);
    --font-mul-28: var(--font-28) var(--font-mul);
+   --font-mul-24: var(--font-24) var(--font-mul);
    --font-mul-22: var(--font-22) var(--font-mul);
    --font-mul-18: var(--font-18) var(--font-mul);
    --font-int-18: var(--font-18) var(--font-int);

@@ -7,10 +7,18 @@ import { getPathname } from './getPathname';
  */
 export const redirectOnPage = (page: Routes) => {
    const path = getPathname();
-   const pathPage = path === 'catalog' ? '' : path === '' ? '/' : path;
+   console.log('path:', path);
+   const getUrl = () => {
+      if (page === 'contacts') return '/contacts.html';
+      return '';
+   };
+   console.log('getUrl():', getUrl());
+   const pathPage = getUrl() || (path === '' ? '/' : path);
+   console.log('pathPage:', pathPage);
 
    const address = __IS_DEV__
       ? pathPage
       : `https://academy-heat-hommet.vercel.app/${page}/${pathPage}`;
+   console.log('address:', address);
    window.location.href = address;
 };

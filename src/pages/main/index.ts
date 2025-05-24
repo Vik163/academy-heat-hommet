@@ -18,9 +18,11 @@ function init() {
    //TODO для разрабтки ===========================
    if (__IS_DEV__ && location.pathname !== '/') {
       const locationPath = location.pathname;
-      locationPath === '/index.html'
-         ? window.history.pushState(null, '', '/')
-         : (location.href = `/catalog.html`);
+      if (locationPath === '/index.html') {
+         window.history.pushState(null, '', '/');
+      } else if (locationPath === '/contacts') {
+         location.href = `/contacts.html`;
+      } else location.href = `/catalog.html`;
    }
 
    // === анимация при скролле вправо ================================

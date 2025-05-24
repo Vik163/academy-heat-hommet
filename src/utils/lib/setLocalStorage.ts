@@ -1,5 +1,5 @@
 import {
-   LOCALSTORAGE_CATALOG,
+   LOCALSTORAGE_PAGE,
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_PRODUCT_ID,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
@@ -15,12 +15,12 @@ import {
  *  устанавливает данные товаров в localstorage
  */
 export const setLocalStorage = (
-   catalog: 'catalog' | '',
+   page: 'catalog' | '/' | 'contacts',
    view: ViewName | '',
    categories: Categories | '',
    cardId: string,
 ) => {
-   localStorage.setItem(LOCALSTORAGE_CATALOG, catalog);
+   localStorage.setItem(LOCALSTORAGE_PAGE, page);
    localStorage.setItem(LOCALSTORAGE_TYPE_OF_PRODUCT, view);
    localStorage.setItem(LOCALSTORAGE_CATEGORY_OF_PRODUCT, categories);
    localStorage.setItem(LOCALSTORAGE_PRODUCT_ID, cardId);
@@ -47,6 +47,7 @@ export const setLocalStorageByPathname = () => {
       ? (getNameFromList(arrPathname[1], 'category') as Categories)
       : undefined;
 
+   console.log('Pathname:', arrPathname);
    if (arrPathname.length > 1) {
       if (arrPathname[0] === 'product') {
          setLocalStorage(
@@ -60,7 +61,7 @@ export const setLocalStorageByPathname = () => {
       }
    } else if (arrPathname.length === 1) {
       setLocalStorage('catalog', (viewName as ViewName) || '', '', '');
-   } else setLocalStorage('', '', '', '');
+   } else setLocalStorage('/', '', '', '');
 };
 
 /**

@@ -62,7 +62,7 @@
                         <a
                            id="Система сухого монтажа"
                            href="#"
-                           class="navbar__link link"
+                           class="navbar__link"
                         >
                            Система <br />
                            сухого монтажа
@@ -74,7 +74,7 @@
                         <a
                            id="Профессиональный крепеж"
                            href="#"
-                           class="navbar__link link"
+                           class="navbar__link"
                         >
                            Профессиональный <br />крепеж
                         </a>
@@ -85,7 +85,7 @@
                         <a
                            href="#"
                            id="Промышленный крепеж"
-                           class="navbar__link link"
+                           class="navbar__link"
                         >
                            Промышленный<br />крепеж
                         </a>
@@ -93,16 +93,18 @@
                      <li
                         class="navbar__links-item navbar__links-item_type_view"
                      >
-                        <a href="#" id="Хомуты" class="navbar__link link">
+                        <a href="#" id="Хомуты" class="navbar__link">
                            Хомуты
                         </a>
                      </li>
                   </ul>
                   <div class="navbar__info">
-                     <a href="#" id="Сертификаты" class="navbar__link link">
+                     <a href="#" id="sertificats" class="navbar__link">
                         Сертификаты
                      </a>
-                     <a href="#" class="navbar__link"> Контакты </a>
+                     <a href="#" id="contacts" class="navbar__link">
+                        Контакты
+                     </a>
                   </div>
                </div>
             </nav>
@@ -146,7 +148,7 @@
             <div class="marquee">
                <ul class="marquee__content">
                   <li class="marquee__content-item">
-                     >Система сухого монтажа Хоммет - это монтажный профиль и
+                     Система сухого монтажа Хоммет - это монтажный профиль и
                      крепеж к нему
                   </li>
                   <li class="marquee__content-item">
@@ -165,43 +167,29 @@
                </ul>
 
                <ul aria-hidden="true" class="marquee__content">
-                  <li>
-                     <a class="marquee__link" href="#"
-                        >Система сухого монтажа Хоммет - это монтажный профиль и
-                        крепеж к нему</a
-                     >
+                  <li class="marquee__content-item">
+                     Система сухого монтажа Хоммет - это монтажный профиль и
+                     крепеж к нему
                   </li>
-                  <li>
-                     <a class="marquee__link" href="https://hommet.ru/"
-                        >Аналог систем TECE и VIEGA</a
-                     >
+                  <li class="marquee__content-item">
+                     Аналог систем TECE и VIEGA
                   </li>
-                  <li>
-                     <a class="marquee__link" href="#">Простота в установке</a>
+                  <li class="marquee__content-item">Простота в установке</li>
+                  <li class="marquee__content-item">
+                     Высокие эксплуатационные характеристики
                   </li>
-                  <li>
-                     <a class="marquee__link" href="#"
-                        >Высокие эксплуатационные характеристики</a
-                     >
+                  <li class="marquee__content-item">
+                     Гарантия долговечности и надежности
                   </li>
-                  <li>
-                     <a class="marquee__link" href="https://hommet.ru/"
-                        >Гарантия долговечности и надежности</a
-                     >
+                  <li class="marquee__content-item">
+                     Оптимальное соотношение цены и качества
                   </li>
-                  <li>
-                     <a class="marquee__link" href="#"
-                        >Оптимальное соотношение цены и качества</a
-                     >
-                  </li>
-                  <!-- <li>
-                     <a class="marquee__link" href="https://hommet.ru/"
-                        >ХОММЕТ</a
-                     >
-                  </li> -->
                </ul>
             </div>
-            <section class="slider splide" aria-labelledby="carousel-heading">
+            <section
+               class="slider app__slider splide"
+               aria-labelledby="carousel-heading"
+            >
                <div class="splide__track slider__track">
                   <ul class="splide__list slider__list"></ul>
                </div>
@@ -216,30 +204,32 @@
                <ul class="own__list cards"></ul>
             </section>
             <section class="systems">
-               <div class="systems__item systems__item_type_profile">
-                  <h3 class="systems__item-title">
-                     Системы профилей для монтажа
-                  </h3>
-                  <p class="systems__item-subtitle">
-                     Одни из востребованных видов крепежных изделий, широко
-                     применяемых в строительстве, промышленности и в быту
-                  </p>
-                  <a class="systems__item-link" href="catalog.html"
-                     >В каталог</a
-                  >
-               </div>
-               <div class="systems__item systems__item_type_image"></div>
-               <div class="systems__item systems__item_type_clamps">
-                  <h3 class="systems__item-title">
-                     Системы хомутов в комплекте
-                  </h3>
-                  <p class="systems__item-subtitle">
-                     Мы предлагаем изделия, способные выдерживать различные
-                     нагрузки для любых инженерных систем
-                  </p>
-                  <a class="systems__item-link" href="catalog.html"
-                     >В каталог</a
-                  >
+               <div class="systems__container">
+                  <div class="systems__item systems__item_type_profile">
+                     <h3 class="systems__item-title">
+                        Системы профилей для монтажа
+                     </h3>
+                     <p class="systems__item-subtitle">
+                        Одни из востребованных видов крепежных изделий, широко
+                        применяемых в строительстве, промышленности и в быту
+                     </p>
+                     <a class="systems__item-link" href="catalog.html"
+                        >В каталог</a
+                     >
+                  </div>
+                  <div class="systems__item systems__item_type_image"></div>
+                  <div class="systems__item systems__item_type_clamps">
+                     <h3 class="systems__item-title">
+                        Системы хомутов в комплекте
+                     </h3>
+                     <p class="systems__item-subtitle">
+                        Мы предлагаем изделия, способные выдерживать различные
+                        нагрузки для любых инженерных систем
+                     </p>
+                     <a class="systems__item-link" href="catalog.html"
+                        >В каталог</a
+                     >
+                  </div>
                </div>
             </section>
             <section class="sdm app__sdm">
@@ -252,7 +242,7 @@
                      </p>
                   </div>
                   <picture
-                     class="lozad"
+                     class="lozad sdm__image-container"
                      data-iesrc="../../assets/images/sistem.png"
                      data-alt=""
                   >

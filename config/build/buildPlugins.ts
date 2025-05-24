@@ -4,16 +4,20 @@ import { BuildOptions } from '../types/config'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import dotenv from 'dotenv';
 
 
 export const buildPlugins = (options: BuildOptions) => {
   const { isDev, paths } = options
   const isProd = !isDev; 
+     dotenv.config();
+     const urlMap = `https://api-maps.yandex.ru/v3/?apikey=${process.env.YA_MAP_KEY}&lang=ru_RU`;
 
 
   const plugins = [
     // пробрасывает глобальные переменные
     new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
       __IS_DEV__: JSON.stringify(isDev)
     }),
     // отображения отчетов о ходе выполнения во время компиляции
@@ -29,6 +33,12 @@ export const buildPlugins = (options: BuildOptions) => {
       inject: true,
       filename: 'catalog.html',
       chunks: ['catalog']
+    }),
+    new HtmlWebpackPlugin({
+      template: paths.contacts,
+      inject: true,
+      filename: 'contacts.html',
+      chunks: ['contacts'],
     }),
     // обработка типов отдельно при загрузке
     new ForkTsCheckerWebpackPlugin({

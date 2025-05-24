@@ -4,9 +4,10 @@
 
 .sdm__container {
    display: flex;
+   align-items: flex-end;
    width: 100%;
-   gap: 40px;
-   margin-bottom: 100px;
+   gap: 230px;
+   margin-bottom: 60px;
 }
 
 .sdm__container-info {
@@ -14,6 +15,7 @@
    flex-direction: column;
    justify-content: center;
    gap: 25px;
+   margin-bottom: 20px;
 }
 
 .sdm__title {
@@ -26,6 +28,10 @@
 .sdm__subtitle {
    font: var(--font-int-18);
    font-weight: var(--font-weight-medium);
+}
+
+.sdm__image-container {
+   margin-right: 100px;
 }
 
 .sdm__list {

@@ -8,9 +8,14 @@ export default (env: BuildEnv) => {
    const paths: BuildPaths = {
       entryMain: path.resolve(__dirname, './src/pages/main/index.ts'),
       entryCatalog: path.resolve(__dirname, './src/pages/catalog/catalog.ts'),
+      entryContacts: path.resolve(
+         __dirname,
+         './src/pages/contacts/contacts.ts',
+      ),
       build: path.resolve(__dirname, 'build'),
       main: path.resolve(__dirname, './src/pages/main/index.html'),
       catalog: path.resolve(__dirname, './src/pages/catalog/catalog.html'),
+      contacts: path.resolve(__dirname, './src/pages/contacts/contacts.html'),
       src: path.resolve(__dirname, 'src'),
    };
 

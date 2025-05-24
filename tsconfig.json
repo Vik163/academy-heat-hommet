@@ -15,9 +15,14 @@
       // Для абсолютного импорта
       "baseUrl": ".",
       // яндекс карты
-      "typeRoots": ["./types", "./node_modules/@types"],
+      "typeRoots": [
+         "./types",
+         "./node_modules/@types",
+         "./node_modules/@yandex/ymaps3-types"
+      ],
       "paths": {
-         "@/*": ["./src/*"] // 12_5 2min
+         "@/*": ["./src/*"], // 12_5 2min
+         "ymaps3": ["./node_modules/@yandex/ymaps3-types"]
       },
 
       // esModuleInterop позволяет работать с пакетами, которые используют

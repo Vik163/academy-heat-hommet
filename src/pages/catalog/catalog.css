@@ -29,9 +29,6 @@
 /* === продукт ==============*/
 @import url(../../blocks/catalog/product-block/product-block.css);
 
-/* === собственное производство ==============*/
-/* @import url(../../blocks/own/own.css); */
-
 /* === пагинация ==============*/
 @import url(../../blocks/catalog/pagination/pagination.css);
 

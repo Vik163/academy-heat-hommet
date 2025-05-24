@@ -13,7 +13,7 @@ import { getPathname } from './getPathname';
  * @param page - добавляется только когда надо перейти на страницу catalog
  */
 
-export const changeUrl = (page?: 'catalog') => {
+export const changeUrl = (page?: 'catalog' | 'contacts') => {
    const locationPath = location.pathname;
 
    const pathname = getPathname();
@@ -25,7 +25,17 @@ export const changeUrl = (page?: 'catalog') => {
       path = arrPathname[1];
    } else path = pathname;
 
-   const newURL = page ? `catalog/${path}` : path;
+   const getUrl = () => {
+      if (page === 'catalog' && path !== 'contacts') {
+         return `catalog/${path}`;
+      } else if (page === 'contacts') {
+         return '/contacts';
+      } else {
+         return 'catalog';
+      }
+   };
+
+   const newURL = getUrl() || path;
 
    window.history.pushState(null, '', newURL || '/catalog');
 };

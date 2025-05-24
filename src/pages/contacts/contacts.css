@@ -1,0 +1,25 @@
+@import url(../../blocks/app/styles/variables/colors.css);
+@import url(../../blocks/app/styles/variables/sizes.css);
+@import url(../../blocks/app/styles/variables/fonts.css);
+@import url(../../blocks/app/styles/reset.css);
+@import url(../../assets/fonts/fonts.css);
+@import '@yandex/ymaps3-default-ui-theme/dist/esm/index.css';
+
+/* === app ==============*/
+@import url(../../blocks/app/styles/app.css);
+
+/* === logo ==============*/
+@import url(../../blocks/logo/logo.css);
+
+/* === header ==============*/
+@import url(../../blocks/header/header.css);
+@import url(../../blocks/navbar/navbar.css);
+
+/* === контакты==============*/
+@import url(../../blocks/contacts-block/contacts-block.css);
+
+/* === footer ==============*/
+@import url(../../blocks/footer/footer.css);
+
+/* === сертификаты ==============*/
+@import url(../../blocks/sertificats/sertificats.css);

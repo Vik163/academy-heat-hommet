@@ -4,29 +4,35 @@ import type { ViewName } from '@/utils/types/catalog';
 import { setSertificats } from '../sertificats/sertificats';
 
 const navbar = document.querySelector('.navbar')!;
-const links = navbar.querySelectorAll('.link');
+const links = navbar.querySelectorAll('.navbar__link');
 
 export const setNavbar = () => {
    // перезагружаю страницы принудительно. Лучше работает история браузера
-   const onClickLinkCatalog = (e: Event, title: ViewName) => {
-      e.preventDefault();
-
+   const onClickLinkCatalog = (title: ViewName) => {
       setLocalStorage('catalog', title, '', '');
 
       // получает путь и переходит на страницу
       redirectOnPage('catalog');
    };
 
-   const onClickLinkSertificats = (e: Event) => {
-      e.preventDefault();
+   const onClickLinkSertificats = () => {
       setSertificats();
+   };
+
+   const onClickLinkContacts = () => {
+      setLocalStorage('contacts', '', '', '');
+      redirectOnPage('contacts');
    };
 
    links.forEach((link) => {
       link.addEventListener('click', (e) => {
-         if (link.id === 'Сертификаты') {
-            onClickLinkSertificats(e);
-         } else onClickLinkCatalog(e, link.id as ViewName);
+         e.preventDefault();
+
+         if (link.id === 'sertificats') {
+            onClickLinkSertificats();
+         } else if (link.id === 'contacts') {
+            onClickLinkContacts();
+         } else onClickLinkCatalog(link.id as ViewName);
       });
    });
 };

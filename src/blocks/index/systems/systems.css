@@ -1,4 +1,9 @@
 .systems {
+   width: 100%;
+   background-color: var(--bg-primary-block);
+}
+.systems__container {
+   margin: 130px auto;
    width: var(--width-block-desktop);
    display: flex;
    gap: 30px;

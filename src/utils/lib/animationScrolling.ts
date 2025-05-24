@@ -23,7 +23,8 @@ const toggleClass: ObserveCallback = (
    el: Element,
    direction: Dir,
 ) => {
-   el.classList.toggle(classByDirections(direction), entry.isIntersecting);
+   if (!isLoaded)
+      el.classList.toggle(classByDirections(direction), entry.isIntersecting);
 };
 
 /**
