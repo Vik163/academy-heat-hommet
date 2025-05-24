@@ -6,6 +6,7 @@ import { getPathname } from './getPathname';
  * @param page - роут страницы
  */
 export const redirectOnPage = (page: Routes) => {
+   console.log('page:', page);
    const path = getPathname();
    console.log('path:', path);
    const getUrl = () => {
@@ -26,5 +27,5 @@ export const redirectOnPage = (page: Routes) => {
       ? pathPageDev
       : `https://academy-heat-hommet.vercel.app/${page}/${getPath()}`;
    console.log('address:', address);
-   window.location.href = address;
+   // window.location.href = address;
 };
