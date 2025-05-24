@@ -27,5 +27,5 @@ export const redirectOnPage = (page: Routes) => {
       ? pathPageDev
       : `https://academy-heat-hommet.vercel.app/${page}/${getPath()}`;
    console.log('address:', address);
-   // window.location.href = address;
+   window.location.href = address;
 };
