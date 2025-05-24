@@ -11,7 +11,6 @@ export const buildPlugins = (options: BuildOptions) => {
   const { isDev, paths } = options
   const isProd = !isDev; 
      dotenv.config();
-     const urlMap = `https://api-maps.yandex.ru/v3/?apikey=${process.env.YA_MAP_KEY}&lang=ru_RU`;
 
 
   const plugins = [
@@ -39,6 +38,12 @@ export const buildPlugins = (options: BuildOptions) => {
       inject: true,
       filename: 'contacts.html',
       chunks: ['contacts'],
+    }),
+    new HtmlWebpackPlugin({
+      template: paths.politic,
+      inject: true,
+      filename: 'politic.html',
+      chunks: ['politic'],
     }),
     // обработка типов отдельно при загрузке
     new ForkTsCheckerWebpackPlugin({

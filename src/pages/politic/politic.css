@@ -3,6 +3,7 @@
 @import url(../../blocks/app/styles/variables/fonts.css);
 @import url(../../blocks/app/styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
+@import '@yandex/ymaps3-default-ui-theme/dist/esm/index.css';
 
 /* === app ==============*/
 @import url(../../blocks/app/styles/app.css);
@@ -20,30 +21,10 @@
 @import url(../../blocks/header/header.css);
 @import url(../../blocks/navbar/navbar.css);
 
+/* === контакты==============*/
+
 /* === footer ==============*/
 @import url(../../blocks/footer/footer.css);
-
-/*! === главная страница ==============*/
-/* === hommet ==============*/
-@import url(../../blocks/index/hommet/hommet.css);
-
-/* === бегущая строка ==============*/
-@import url(../../blocks/index/marquee/marquee.css);
-
-/* === слайдер ==============*/
-@import url(../../blocks/index/slider/slider.css);
-
-/* === собственное производство ==============*/
-@import url(../../blocks/index/own/own.css);
-
-/* === системы ==============*/
-@import url(../../blocks/index/systems/systems.css);
-
-/* === система сухого монтажа ==============*/
-@import url(../../blocks/index/sdm/sdm.css);
-
-/* === карточки товаров ==============*/
-@import url(../../blocks/cards-products/cards-products.css);
 
 /* === сертификаты ==============*/
 @import url(../../blocks/sertificats/sertificats.css);

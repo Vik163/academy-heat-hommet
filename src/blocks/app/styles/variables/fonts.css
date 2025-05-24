@@ -22,6 +22,9 @@
    --font-mul-24: var(--font-24) var(--font-mul);
    --font-mul-22: var(--font-22) var(--font-mul);
    --font-mul-18: var(--font-18) var(--font-mul);
+   --font-mul-16: var(--font-16) var(--font-mul);
+
+   --font-int-22: var(--font-22) var(--font-int);
    --font-int-18: var(--font-18) var(--font-int);
    --font-int-16: var(--font-16) var(--font-int);
    --font-int-14: var(--font-14) var(--font-int);

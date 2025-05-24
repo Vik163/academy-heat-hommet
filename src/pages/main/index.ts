@@ -4,9 +4,12 @@ import lozad from '@/utils/lib/lozad';
 import { setSlider } from '@/blocks/index/slider/slider';
 import { setOwn } from '@/blocks/index/own/own';
 import { setHeader } from '@/blocks/header/header';
-import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 import { setSDM } from '@/blocks/index/sdm/sdm';
 import { setSystems } from '@/blocks/index/systems/systems';
+import { setFooter } from '@/blocks/footer/footer';
+
+const dateBlock = document.querySelector('.footer__date')!;
+const date = new Date().getFullYear();
 
 function init() {
    // === ленивая загрузка фотографий ==========
@@ -23,6 +26,8 @@ function init() {
          window.history.pushState(null, '', '/');
       } else if (locationPath === '/contacts') {
          location.href = `/contacts.html`;
+      } else if (locationPath === '/politic') {
+         location.href = `/politic.html`;
       } else location.href = `/catalog.html`;
    }
 
@@ -43,9 +48,13 @@ setSlider();
 
 setSystems();
 
+setFooter();
+
 window.onload = function () {
    // === собственное производство =====
    setOwn();
 
    setSDM();
+
+   dateBlock.textContent = date.toString();
 };

@@ -1,0 +1,112 @@
+.footer {
+   width: 100%;
+   background-color: var(--bg-primary-color-navbar-accent);
+   padding-top: 40px;
+   position: relative;
+}
+
+.footer::before {
+   content: '';
+   position: absolute;
+   width: 35%;
+   height: 20px;
+   background-color: var(--color-red);
+   right: 0;
+   top: 105px;
+}
+
+.footer::after {
+   content: '';
+   position: absolute;
+   width: 65%;
+   height: 20px;
+   background-color: var(--color-red);
+   left: 0;
+   top: 125px;
+}
+
+.footer__container {
+   width: var(--width-block-desktop);
+   margin: 0 auto;
+}
+
+.footer__container-logo {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 40px;
+}
+
+.footer__logo {
+   color: var(--bg-primary-color-light);
+}
+
+.footer__diller {
+   color: var(--bg-primary-color-light);
+}
+
+.footer__phone {
+   display: inline-block;
+   color: var(--bg-primary-color-light);
+   font: var(--font-int-22);
+   font-weight: var(--font-weight-bold);
+}
+
+.footer__links-info-container {
+   width: 100%;
+   background-color: var(--bg-primary-color-dark);
+   padding-top: 50px;
+   padding-bottom: 15px;
+}
+
+.footer__links-info {
+   width: var(--width-block-desktop);
+   height: 100px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font: var(--font-int-14);
+   font-weight: var(--font-weight-medium);
+   padding-bottom: 10px;
+   border-bottom: 1px solid var(--bg-primary-grey);
+}
+
+.footer__schedule {
+   color: var(--bg-primary-color-light);
+   height: 100px;
+}
+
+.footer__links-column {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   height: 100%;
+}
+
+.footer__link {
+   cursor: pointer;
+   display: inline-block;
+   background-color: transparent;
+   color: var(--color-text-light);
+}
+
+.footer__link:hover {
+   color: var(--bg-primary-card);
+}
+
+.footer__link_type_politic {
+   color: rgb(251, 51, 51);
+   font-weight: var(--font-weight-bold);
+}
+
+.footer__date {
+   display: inline-block;
+   width: var(--width-block-desktop);
+   font: var(--font-int-14);
+   font-weight: var(--font-weight-bold);
+   color: var(--color-btn-border);
+   text-align: center;
+   margin-top: 15px;
+}

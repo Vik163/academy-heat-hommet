@@ -1,0 +1,28 @@
+.nav-links__list {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   gap: 50px;
+}
+
+.nav-links__item {
+   height: 100%;
+}
+
+.nav-links__link {
+   cursor: pointer;
+   display: inline-block;
+   background-color: transparent;
+   color: var(--color-text-light);
+   text-align: center;
+}
+
+.nav-links__info {
+   display: flex;
+   gap: 40px;
+   font: inherit;
+}
+
+.nav-links__link:hover {
+   color: rgb(234, 234, 234);
+}

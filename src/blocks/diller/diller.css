@@ -1,0 +1,23 @@
+.diller {
+   display: flex;
+   height: 28px;
+   align-items: flex-end;
+   margin-top: 3px;
+}
+
+.diller__info {
+   display: flex;
+   align-items: flex-end;
+   font-family: var(--font-int);
+   font-weight: 700;
+   font-size: 18px;
+}
+
+.diller__link {
+   height: 28px;
+}
+
+.diller__icon {
+   width: 90px;
+   height: 28px;
+}

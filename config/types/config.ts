@@ -8,10 +8,12 @@ export interface BuildEnv {
 export interface BuildPaths {
    entryMain: string;
    entryCatalog: string;
+   entryPolitic: string;
    entryContacts: string;
    build: string;
    main: string;
    catalog: string;
+   politic: string;
    contacts: string;
    src: string;
    favicon?: string;

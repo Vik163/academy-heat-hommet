@@ -1,5 +1,6 @@
 //* ----- убирает .html в адрессной строке для разработки--------------------------
 
+import { Routes } from '../types/routes';
 import { getPathname } from './getPathname';
 
 /**
@@ -13,7 +14,8 @@ import { getPathname } from './getPathname';
  * @param page - добавляется только когда надо перейти на страницу catalog
  */
 
-export const changeUrl = (page?: 'catalog' | 'contacts') => {
+export const changeUrl = (page?: Routes) => {
+   console.log('page:', page);
    const locationPath = location.pathname;
 
    const pathname = getPathname();
@@ -29,10 +31,12 @@ export const changeUrl = (page?: 'catalog' | 'contacts') => {
    } else path = pathname;
 
    const getUrl = () => {
-      if (page === 'catalog' && path !== 'contacts') {
+      if (page === 'catalog' && path !== 'contacts' && path !== 'politic') {
          return `catalog/${path}`;
       } else if (page === 'contacts') {
          return '/contacts';
+      } else if (page === 'politic') {
+         return '/politic';
       } else {
          return '';
       }

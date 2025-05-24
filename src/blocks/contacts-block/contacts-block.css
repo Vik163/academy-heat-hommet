@@ -1,6 +1,7 @@
 .contacts {
    width: 100%;
-   padding: 100px 0;
+   padding-top: 150px;
+   padding-bottom: 200px;
 }
 
 .contacts__title {

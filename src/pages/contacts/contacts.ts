@@ -9,13 +9,14 @@ import {
    YMapDefaultSchemeLayer,
 } from '@yandex/ymaps3-types';
 import { MAIN_COORD, ZOOM } from '@/utils/consts/main';
-const contactsBlock = document.querySelector('#contacts')!;
+import { setFooter } from '@/blocks/footer/footer';
 
 if (__IS_DEV__) {
    changeUrl('contacts');
 }
 
 setNavbar();
+setFooter();
 
 const LOCATION: YMapLocationRequest = {
    center: MAIN_COORD,

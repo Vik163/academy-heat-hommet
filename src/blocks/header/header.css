@@ -27,13 +27,6 @@
    align-items: center;
 }
 
-/* .header__container-center {
-   display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
-   gap: 15px;
-} */
-
 .header__btn {
    cursor: pointer;
    font-family: var(--font-int);
@@ -44,30 +37,6 @@
    height: var(--height-btn-card);
    position: relative;
    background: var(--color-red);
-}
-
-.header__diller-container {
-   display: flex;
-   height: 28px;
-   align-items: flex-end;
-   margin-top: 3px;
-}
-
-.header__diller-info {
-   display: flex;
-   align-items: flex-end;
-   font-family: var(--font-int);
-   font-weight: 700;
-   font-size: 18px;
-}
-
-.header__diller-link {
-   height: 28px;
-}
-
-.header__diller-icon {
-   width: 90px;
-   height: 28px;
 }
 
 .header__phone {

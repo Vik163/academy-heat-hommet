@@ -17,7 +17,8 @@ export const buildWebpackConfig = (
     entry: {
       main: paths.entryMain,
       catalog: paths.entryCatalog,
-      contacts: paths.entryContacts
+      contacts: paths.entryContacts,
+      politic: paths.entryPolitic
     },
     output: {
       path: paths.build,
