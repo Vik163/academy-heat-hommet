@@ -35,13 +35,12 @@ const map = new YMap(
    ],
 );
 
-// map.addChild(new YMapDefaultSchemeLayer({}));
-
 async function main() {
    await ymaps3.ready; // waiting for the main JS API to load.
 
-   const { YMapGeolocationControl, YMapZoomControl, YMapDefaultMarker } =
-      await import('@yandex/ymaps3-default-ui-theme');
+   const { YMapZoomControl, YMapDefaultMarker } = await import(
+      '@yandex/ymaps3-default-ui-theme'
+   );
 
    const controls = new YMapControls({ position: 'left' });
    controls.addChild(
@@ -54,7 +53,7 @@ async function main() {
          coordinates: MAIN_COORD,
          title: `Академия Тепла`,
          color: 'red',
-         size: 'micro',
+         size: 'small',
          iconName: 'fallback',
       }),
    );
