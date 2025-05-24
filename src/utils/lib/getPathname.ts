@@ -1,6 +1,5 @@
 import { pathnameByCategories, pathnameByView } from '@/utils/consts/pathnames';
 import {
-   LOCALSTORAGE_PAGE,
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_TYPE_OF_PRODUCT,
 } from '@/utils/consts/storage';
@@ -15,7 +14,6 @@ export const getPathname = () => {
    const categoriesStorage = localStorage.getItem(
       LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    ) as Categories;
-   const pageStorage = localStorage.getItem(LOCALSTORAGE_PAGE);
 
    const pathnameCategory = pathnameByCategories[categoriesStorage];
    const pathnameView = pathnameByView[view];
@@ -28,7 +26,5 @@ export const getPathname = () => {
       return pathnameView;
    } else if (pathnameView && pathnameCategory) {
       return `${pathnameView}/${pathnameCategory}`;
-   } else if (!pathnameView && pageStorage) {
-      return pageStorage;
    } else return '';
 };

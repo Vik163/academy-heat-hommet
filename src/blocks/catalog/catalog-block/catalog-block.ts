@@ -11,7 +11,6 @@ import { updateCards } from '@/utils/lib/updateCards';
 import { updateBreadCrumbs } from '../bread-crumbs/bread-crumbs';
 import { pastText } from '@/utils/lib/pastText';
 import { getDataById } from '@/utils/lib/getDataFromStore';
-import { LOCALSTORAGE_PAGE } from '@/utils/consts/storage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import { setProduct } from '../product-block/product-block';
 
@@ -29,11 +28,7 @@ const titleCatalogElement = catalogBlock.querySelector(
  */
 export const updatePageCatalog = () => {
    const card = getDataById();
-   const catalog = localStorage.getItem(LOCALSTORAGE_PAGE);
 
-   // if (!catalog) {
-   //    // redirectOnPage('/');
-   // } else
    if (card) {
       productBlock.classList.add('product_active');
       catalogBlock.classList.add('catalog-block_inactive');

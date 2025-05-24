@@ -14,26 +14,19 @@ import { getPathname } from './getPathname';
  */
 
 export const changeUrl = (page?: 'catalog' | 'contacts') => {
-   console.log('page:', page);
    const locationPath = location.pathname;
-   console.log('locationPath:', locationPath);
 
    const pathname = getPathname();
+
    const arrPathname = pathname.split('/');
-   console.log('arrPathname:', arrPathname);
-   console.log('pathname:', pathname);
 
    const viewProducts = Boolean(arrPathname[0]) ? arrPathname[0] : null;
 
    let path = '';
-   console.log(
-      '`${viewProducts}/`:',
-      locationPath.includes(`${viewProducts}/`),
-   );
+
    if (viewProducts && locationPath.includes(`${viewProducts}/`)) {
       path = arrPathname[1];
    } else path = pathname;
-   console.log('path:', path);
 
    const getUrl = () => {
       if (page === 'catalog' && path !== 'contacts') {
@@ -45,9 +38,7 @@ export const changeUrl = (page?: 'catalog' | 'contacts') => {
       }
    };
 
-   console.log('getUrl():', getUrl());
    const newURL = getUrl() || path;
-   console.log('newURL:', newURL);
 
    window.history.pushState(null, '', newURL || '/catalog');
 };
