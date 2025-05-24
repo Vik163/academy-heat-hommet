@@ -54,7 +54,7 @@ async function main() {
          coordinates: MAIN_COORD,
          title: `Академия Тепла`,
          color: 'red',
-         size: 'normal',
+         size: 'micro',
          iconName: 'fallback',
       }),
    );
