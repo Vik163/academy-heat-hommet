@@ -13,11 +13,12 @@ export const redirectOnPage = (page: Routes) => {
       return '';
    };
    console.log('getUrl():', getUrl());
-   const pathPage = getUrl() || (path === '' ? '/' : path);
+   const pathPageDev = getUrl() || (path === '' ? '/' : path);
+   const pathPage = path === '' ? '/' : path;
    console.log('pathPage:', pathPage);
 
    const address = __IS_DEV__
-      ? pathPage
+      ? pathPageDev
       : `https://academy-heat-hommet.vercel.app/${page}/${pathPage}`;
    console.log('address:', address);
    window.location.href = address;
