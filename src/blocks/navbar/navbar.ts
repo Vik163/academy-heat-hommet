@@ -9,7 +9,7 @@ const links = navbar.querySelectorAll('.navbar__link');
 export const setNavbar = () => {
    // перезагружаю страницы принудительно. Лучше работает история браузера
    const onClickLinkCatalog = (title: ViewName) => {
-      setLocalStorage('catalog', title, '', '');
+      setLocalStorage(title, '', '');
 
       // получает путь и переходит на страницу
       redirectOnPage('catalog');
@@ -20,7 +20,7 @@ export const setNavbar = () => {
    };
 
    const onClickLinkContacts = () => {
-      setLocalStorage('contacts', '', '', '');
+      setLocalStorage('', '', '');
       redirectOnPage('contacts');
    };
 

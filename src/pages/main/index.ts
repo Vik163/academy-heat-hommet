@@ -6,6 +6,7 @@ import { setOwn } from '@/blocks/index/own/own';
 import { setHeader } from '@/blocks/header/header';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 import { setSDM } from '@/blocks/index/sdm/sdm';
+import { setSystems } from '@/blocks/index/systems/systems';
 
 function init() {
    // === ленивая загрузка фотографий ==========
@@ -13,7 +14,7 @@ function init() {
    observerLazy.observe();
 
    // устанавливаю по умолчанию каталог, чтобы по ссылке из html сразу туда перейти
-   if (location.pathname === '/') setLocalStorage('catalog', '', '', '');
+   // if (location.pathname === '/') setLocalStorage('catalog', '', '', '');
 
    //TODO для разрабтки ===========================
    if (__IS_DEV__ && location.pathname !== '/') {
@@ -39,6 +40,8 @@ setHeader();
 
 // === слайдер =====
 setSlider();
+
+setSystems();
 
 window.onload = function () {
    // === собственное производство =====

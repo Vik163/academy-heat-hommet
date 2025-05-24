@@ -43,37 +43,3 @@ export const getNameByLocalStorage = (): Data => {
       return { viewName, categoryName: undefined };
    } else return { viewName: undefined, categoryName: undefined };
 };
-// export const getNameByPathname = (): Data => {
-//    const pathname = getPathname();
-//       const view = localStorage.getItem(LOCALSTORAGE_TYPE_OF_PRODUCT) as ViewName;
-//       const categoriesStorage = localStorage.getItem(
-//          LOCALSTORAGE_CATEGORY_OF_PRODUCT,
-//       ) as Categories;
-//       const pathnameCategory = pathnameByCategories[categoriesStorage];
-//       const pathnameView = pathnameByView[view];
-
-//       const card = getDataById();
-
-//    let viewPath = '';
-//    let categoryPath = '';
-//    let arr = [];
-//    if (pathname.includes('/')) {
-//       arr = pathname.split('/');
-//       viewPath = arr[arr.length - 2];
-//       categoryPath = arr[arr.length - 1];
-//    } else viewPath = pathname;
-
-//    if (categoryPath) {
-//       const categoryName = getNameFromList(
-//          categoryPath,
-//          'category',
-//       ) as Categories;
-//       const viewName = getNameFromList(viewPath, 'view') as ViewName;
-
-//       return { viewName, categoryName };
-//    } else if (viewPath) {
-//       const viewName = getNameFromList(viewPath, 'view') as ViewName;
-
-//       return { viewName, categoryName: undefined };
-//    } else return { viewName: undefined, categoryName: undefined };
-// };

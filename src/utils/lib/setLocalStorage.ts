@@ -15,12 +15,10 @@ import {
  *  устанавливает данные товаров в localstorage
  */
 export const setLocalStorage = (
-   page: 'catalog' | '/' | 'contacts',
    view: ViewName | '',
    categories: Categories | '',
    cardId: string,
 ) => {
-   localStorage.setItem(LOCALSTORAGE_PAGE, page);
    localStorage.setItem(LOCALSTORAGE_TYPE_OF_PRODUCT, view);
    localStorage.setItem(LOCALSTORAGE_CATEGORY_OF_PRODUCT, categories);
    localStorage.setItem(LOCALSTORAGE_PRODUCT_ID, cardId);
@@ -47,21 +45,20 @@ export const setLocalStorageByPathname = () => {
       ? (getNameFromList(arrPathname[1], 'category') as Categories)
       : undefined;
 
-   console.log('Pathname:', arrPathname);
    if (arrPathname.length > 1) {
       if (arrPathname[0] === 'product') {
          setLocalStorage(
-            'catalog',
+            // 'catalog',
             view as ViewName,
             category as Categories,
             arrPathname[1],
          );
       } else {
-         setLocalStorage('catalog', viewName!, categoryName!, '');
+         setLocalStorage(viewName!, categoryName!, '');
       }
    } else if (arrPathname.length === 1) {
-      setLocalStorage('catalog', (viewName as ViewName) || '', '', '');
-   } else setLocalStorage('/', '', '', '');
+      setLocalStorage((viewName as ViewName) || '', '', '');
+   } else setLocalStorage('', '', '');
 };
 
 /**
@@ -75,5 +72,5 @@ export const setLocalStorageByCardId = (id: string) => {
    const category = cardIdByCategoryName[categoryIndex] as Categories;
    const cardId = id;
 
-   setLocalStorage('catalog', view, category, cardId);
+   setLocalStorage(view, category, cardId);
 };

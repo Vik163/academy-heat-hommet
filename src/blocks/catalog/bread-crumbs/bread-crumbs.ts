@@ -53,7 +53,7 @@ const clickView = (e: Event) => {
    e.preventDefault();
    const target = e.target as HTMLElement;
    const title = target.textContent;
-   setLocalStorage('catalog', title as ViewName, '', '');
+   setLocalStorage(title as ViewName, '', '');
 
    redirectOnPage('catalog');
 };
@@ -65,14 +65,14 @@ const clickCategory = (e: Event) => {
    ) as ViewName;
    const target = e.target as HTMLElement;
    const title = target.textContent;
-   setLocalStorage('catalog', typeProducts, title as Categories, '');
+   setLocalStorage(typeProducts, title as Categories, '');
 
    redirectOnPage('catalog');
 };
 
 const clickCatalog = (e: Event) => {
    e.preventDefault();
-   setLocalStorage('catalog', '', '', '');
+   setLocalStorage('', '', '');
 
    redirectOnPage('catalog');
 };

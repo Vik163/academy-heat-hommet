@@ -31,9 +31,10 @@ export const updatePageCatalog = () => {
    const card = getDataById();
    const catalog = localStorage.getItem(LOCALSTORAGE_PAGE);
 
-   if (!catalog) {
-      redirectOnPage('/');
-   } else if (card) {
+   // if (!catalog) {
+   //    // redirectOnPage('/');
+   // } else
+   if (card) {
       productBlock.classList.add('product_active');
       catalogBlock.classList.add('catalog-block_inactive');
 
@@ -51,11 +52,11 @@ function onClickCard(cardId: string, type?: 'category') {
 
       // если нет viewName, значит открыт главный каталог и в id передается вид продукта
       if (viewName) {
-         setLocalStorage('catalog', viewName!, cardId as Categories, '');
+         setLocalStorage(viewName!, cardId as Categories, '');
       } else {
          const view = cardId as ViewName;
 
-         setLocalStorage('catalog', view, '', '');
+         setLocalStorage(view, '', '');
       }
    } else {
       setLocalStorageByCardId(cardId);
