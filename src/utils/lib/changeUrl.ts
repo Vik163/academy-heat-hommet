@@ -15,7 +15,6 @@ import { getPathname } from './getPathname';
  */
 
 export const changeUrl = (page?: Routes) => {
-   console.log('page:', page);
    const locationPath = location.pathname;
 
    const pathname = getPathname();

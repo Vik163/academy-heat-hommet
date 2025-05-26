@@ -21,10 +21,13 @@
 @import url(../../blocks/header/header.css);
 @import url(../../blocks/navbar/navbar.css);
 
-/* === контакты==============*/
+@import url(../../blocks/politic-block/politic-block.css);
 
 /* === footer ==============*/
 @import url(../../blocks/footer/footer.css);
 
 /* === сертификаты ==============*/
 @import url(../../blocks/sertificats/sertificats.css);
+
+/* === модалка ==============*/
+@import url(../../blocks/modal-call/modal-call.css);

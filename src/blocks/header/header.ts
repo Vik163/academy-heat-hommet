@@ -1,5 +1,6 @@
 import { type ObserveCallback, observer } from '@/utils/lib/observer';
 import { setNavbar } from '../navbar/navbar';
+import { setModalCall } from '../modal-call/modal-call';
 
 const headerBlock = document.querySelector('.header')!;
 const mainObserver = document.querySelector('.main__observer')!;
@@ -17,11 +18,12 @@ const handleHeader: ObserveCallback = (entry) => {
 
 export const setHeader = () => {
    const onClick = () => {
-      console.log('onClickHeader:');
-      // localStorage
+      setModalCall();
    };
 
    btn?.addEventListener('click', onClick);
+
    observer(mainObserver, handleHeader);
+
    setNavbar();
 };

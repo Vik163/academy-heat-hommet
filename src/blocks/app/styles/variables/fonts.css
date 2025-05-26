@@ -28,4 +28,5 @@
    --font-int-18: var(--font-18) var(--font-int);
    --font-int-16: var(--font-16) var(--font-int);
    --font-int-14: var(--font-14) var(--font-int);
+   --font-int-12: var(--font-12) var(--font-int);
 }

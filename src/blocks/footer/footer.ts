@@ -6,6 +6,8 @@ import { Routes } from '@/utils/types/routes';
 
 const footer = document.querySelector('.footer')!;
 const links = footer.querySelectorAll('.footer__link');
+const dateBlock = document.querySelector('.footer__date')!;
+const date = new Date().getFullYear();
 
 export const setFooter = () => {
    // перезагружаю страницы принудительно. Лучше работает история браузера
@@ -21,8 +23,6 @@ export const setFooter = () => {
    };
 
    const onClickLinkPage = (page: Routes) => {
-      console.log('page:', page);
-      setLocalStorage('', '', '');
       redirectOnPage(page);
    };
 
@@ -39,4 +39,6 @@ export const setFooter = () => {
          } else onClickLinkCatalog(link.id as ViewName);
       });
    });
+
+   dateBlock.textContent = date.toString();
 };

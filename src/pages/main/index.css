@@ -47,3 +47,6 @@
 
 /* === сертификаты ==============*/
 @import url(../../blocks/sertificats/sertificats.css);
+
+/* === модалка ==============*/
+@import url(../../blocks/modal-call/modal-call.css);

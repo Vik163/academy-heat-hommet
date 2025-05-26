@@ -10,12 +10,16 @@ import {
 } from '@yandex/ymaps3-types';
 import { MAIN_COORD, ZOOM } from '@/utils/consts/main';
 import { setFooter } from '@/blocks/footer/footer';
+import { setHeader } from '@/blocks/header/header';
+import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 
 if (__IS_DEV__) {
    changeUrl('contacts');
 }
 
-setNavbar();
+setLocalStorage('', '', '');
+
+setHeader();
 setFooter();
 
 const LOCATION: YMapLocationRequest = {

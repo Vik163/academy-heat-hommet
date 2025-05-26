@@ -18,5 +18,10 @@
    --color-text-dark: #333;
    --color-text-description: #333;
    --color-card-border: #d9d9de;
+   --color-input-border: #474747;
    --color-btn-border: #bebec2;
+
+   --main-elements-color: #df0923;
+   --white-color: #fff;
+   --accent-color-400: #2363d1;
 }
