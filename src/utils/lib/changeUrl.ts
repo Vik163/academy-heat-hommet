@@ -30,12 +30,19 @@ export const changeUrl = (page?: Routes) => {
    } else path = pathname;
 
    const getUrl = () => {
-      if (page === 'catalog' && path !== 'contacts' && path !== 'politic') {
+      if (
+         page === 'catalog' &&
+         path !== 'contacts' &&
+         path !== 'politic' &&
+         path !== 'errors'
+      ) {
          return `catalog/${path}`;
       } else if (page === 'contacts') {
          return '/contacts';
       } else if (page === 'politic') {
          return '/politic';
+      } else if (page === 'errors') {
+         return '/errors';
       } else {
          return '';
       }

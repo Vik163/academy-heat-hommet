@@ -11,8 +11,8 @@ import { updateCards } from '@/utils/lib/updateCards';
 import { updateBreadCrumbs } from '../bread-crumbs/bread-crumbs';
 import { pastText } from '@/utils/lib/pastText';
 import { getDataById } from '@/utils/lib/getDataFromStore';
-import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import { setProduct } from '../product-block/product-block';
+import { setModalCall } from '@/blocks/modal-call/modal-call';
 
 const productBlock = document.querySelector('.product')!;
 const catalogBlock = document.querySelector('.catalog-block')!;
@@ -100,7 +100,9 @@ export const updateCatalogBlock = () => {
 cards.addEventListener('click', function (e: Event) {
    const target = e.target as HTMLElement;
 
-   if (target.className.includes('catalog')) {
+   if (target.tagName.toLowerCase() === 'button') {
+      setModalCall(target.id);
+   } else if (target.className.includes('catalog')) {
       onClickCard(target.id, 'category');
    } else onClickCard(target.id);
 });

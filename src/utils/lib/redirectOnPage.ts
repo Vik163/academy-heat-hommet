@@ -9,7 +9,12 @@ export const redirectOnPage = (page: Routes) => {
    const path = getPathname();
 
    const getPath = () => {
-      if (path === 'contacts' || path === 'catalog' || path === 'politic')
+      if (
+         path === 'contacts' ||
+         path === 'catalog' ||
+         path === 'politic' ||
+         path === 'error'
+      )
          return '';
       return path;
    };

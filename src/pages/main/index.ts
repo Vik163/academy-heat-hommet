@@ -26,6 +26,8 @@ function init() {
          location.href = `/contacts.html`;
       } else if (locationPath === '/politic') {
          location.href = `/politic.html`;
+      } else if (locationPath === '/errors') {
+         location.href = `/errors.html`;
       } else location.href = `/catalog.html`;
    }
 

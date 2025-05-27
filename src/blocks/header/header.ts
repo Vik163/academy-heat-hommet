@@ -23,7 +23,7 @@ export const setHeader = () => {
 
    btn?.addEventListener('click', onClick);
 
-   observer(mainObserver, handleHeader);
+   if (mainObserver) observer(mainObserver, handleHeader);
 
    setNavbar();
 };

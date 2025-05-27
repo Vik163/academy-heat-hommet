@@ -38,9 +38,15 @@ const getCards = (cards: Card[], block?: Element) => {
 
          const link = cardTemplate.querySelector(
             '.card-product__link',
-         ) as HTMLButtonElement;
+         ) as HTMLElement;
          //* === добавляет параметры товара в id кнопки ============
          link.id = cardId;
+
+         const btn = cardTemplate.querySelector(
+            '.card-product__btn',
+         ) as HTMLElement;
+         //* === добавляет параметры товара в id кнопки ============
+         btn.id = c.title;
       }
 
       // встраивает на странице

@@ -1,0 +1,44 @@
+@import url(../../blocks/app/styles/variables/colors.css);
+@import url(../../blocks/app/styles/variables/sizes.css);
+@import url(../../blocks/app/styles/variables/fonts.css);
+@import url(../../blocks/app/styles/reset.css);
+@import url(../../assets/fonts/fonts.css);
+
+/* === app ==============*/
+@import url(../../blocks/app/styles/app.css);
+
+/* === logo ==============*/
+@import url(../../blocks/logo/logo.css);
+
+/* === diller ==============*/
+@import url(../../blocks/diller/diller.css);
+
+/* === nav-links ==============*/
+@import url(../../blocks/nav-links/nav-links.css);
+
+/* === header ==============*/
+@import url(../../blocks/header/header.css);
+@import url(../../blocks/navbar/navbar.css);
+
+.errors {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 200px;
+   background: var(--bg-primary-card);
+}
+
+.errors__text {
+   font: var(--font-int-28);
+   color: var(--color-red);
+}
+
+.errors__link {
+   font: var(--font-int-16);
+   color: var(--color-text-dark);
+   padding: 5px 30px;
+   border: 1px solid var(--color-red);
+}

@@ -3,6 +3,7 @@ import { handleCards } from '../../cards-products/cards-products';
 import { setLocalStorageByCardId } from '@/utils/lib/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import { ObserveCallback, observer } from '@/utils/lib/observer';
+import { setModalCall } from '@/blocks/modal-call/modal-call';
 
 const ownProductionBlock = document.querySelector('.own')!;
 const cards = ownProductionBlock.querySelector('.own__list')!;
@@ -30,5 +31,7 @@ export const setOwn = async () => {
 cards.addEventListener('click', function (e: Event) {
    const target = e.target as HTMLElement;
 
-   onClickLink(target.id);
+   if (target.tagName.toLowerCase() === 'button') {
+      setModalCall(target.id);
+   } else onClickLink(target.id);
 });

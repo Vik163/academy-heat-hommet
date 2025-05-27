@@ -1,1 +1,1 @@
-export type Routes = 'catalog' | '/' | 'contacts' | 'politic';
+export type Routes = 'catalog' | '/' | 'contacts' | 'politic' | 'errors';
