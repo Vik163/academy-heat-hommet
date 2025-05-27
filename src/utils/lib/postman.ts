@@ -39,7 +39,11 @@ const handleSubmit = (
          )
          .then((data) => {
             console.log('data:', data);
-            if (data.status === 200) callback('success');
+            if (data.status === 200) {
+               console.log('data: 200');
+
+               callback('success');
+            }
          })
          .catch((error) => {
             // if (error) callback('error');
