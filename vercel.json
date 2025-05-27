@@ -2,6 +2,7 @@
    "rewrites": [
       { "source": "/catalog(.*)", "destination": "/catalog.html" },
       { "source": "/contacts(.*)", "destination": "/contacts.html" },
+      { "source": "/errors(.*)", "destination": "/errors.html" },
       { "source": "/politic(.*)", "destination": "/politic.html" }
    ]
 }

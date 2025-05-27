@@ -26,8 +26,6 @@ const handleSubmit = async (
       message: nameProduct ? nameProduct : '',
    };
 
-   console.log('data:', data);
-
    if (copyemail) {
       console.log('spam');
    } else {
