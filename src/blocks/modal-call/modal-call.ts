@@ -84,7 +84,7 @@ export const setModalCall = (nameProduct?: string) => {
                Заказать обратный <br />
                звонок              
             </h3>
-            <p class="modal-call__subtitle">Заполните поля ниже и наш менеджер свяжется с Вами</p>
+            <p class="modal-call__subtitle modal-call__subtitle-info">Заполните поля ниже и наш менеджер свяжется с Вами</p>
             `;
    const requestPriceHtml = `
             <h3 class="modal-call__title">
