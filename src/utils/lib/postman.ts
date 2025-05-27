@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 
-const handleSubmit = async (
+const handleSubmit = (
    e: SubmitEvent,
    form: HTMLFormElement,
    callback: (answer: 'loading' | 'success' | 'error') => void,
@@ -23,13 +23,14 @@ const handleSubmit = async (
       title,
       phone,
       name,
-      message: nameProduct ? nameProduct : '',
+      message: nameProduct ? nameProduct : 'Заказ на обратный звонок',
    };
+   console.log('data:', data);
 
    if (copyemail) {
       console.log('spam');
    } else {
-      await emailjs
+      emailjs
          .send(
             serviceId,
             templateId,
@@ -37,6 +38,7 @@ const handleSubmit = async (
             process.env.EMAIL_SERVICE_PUBLIC_KEY,
          )
          .then((data) => {
+            console.log('data:', data);
             if (data.status === 200) callback('success');
          })
          .catch(() => {
