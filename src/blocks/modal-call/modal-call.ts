@@ -45,10 +45,13 @@ const confirmSend = (answer: 'loading' | 'success' | 'error') => {
    } else if (answer === 'success') {
       const form = content.querySelector('.form')!;
       const title = content.querySelector('.modal-call__subtitle-info')!;
-      const nameProduct = content.querySelector('.modal-call__name-product')!;
       title.textContent = 'Сообщение отправлено! Наш менеджер свяжется с Вами.';
+
+      const nameProduct = content.querySelector('.modal-call__name-product')!;
       if (nameProduct) nameProduct.remove();
+
       form.remove();
+
       spinner.classList.remove('spinner_active');
    } else {
       // --- ошибка --------
@@ -84,6 +87,7 @@ export const setModalCall = (nameProduct?: string) => {
                Заказать обратный <br />
                звонок              
             </h3>
+            <p class="modal-call__subtitle modal-call__subtitle-product"></p>
             <p class="modal-call__subtitle modal-call__subtitle-info">Заполните поля ниже и наш менеджер свяжется с Вами</p>
             `;
    const requestPriceHtml = `

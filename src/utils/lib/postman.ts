@@ -25,7 +25,6 @@ const handleSubmit = (
       name,
       message: nameProduct ? nameProduct : 'Заказ на обратный звонок',
    };
-   console.log('data:', data);
 
    if (copyemail) {
       console.log('spam');
@@ -38,15 +37,10 @@ const handleSubmit = (
             process.env.EMAIL_SERVICE_PUBLIC_KEY,
          )
          .then((data) => {
-            console.log('data:', data);
-            if (data.status === 200) {
-               console.log('data: 200');
-
-               callback('success');
-            }
+            if (data.status === 200) callback('success');
          })
          .catch((error) => {
-            // if (error) callback('error');
+            if (error) callback('error');
          });
    }
 };
