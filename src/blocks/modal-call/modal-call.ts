@@ -35,7 +35,6 @@ function closeModalByKeydown(e: KeyboardEvent) {
 }
 
 const confirmSend = (answer: 'loading' | 'success' | 'error') => {
-   console.log('answer:', answer);
    const content = document.querySelector('.modal-call__content')!;
    const spinner = document.querySelector('.spinner')!;
    // --- spinner ------------
