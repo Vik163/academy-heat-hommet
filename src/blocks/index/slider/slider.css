@@ -55,6 +55,7 @@
    text-align: center;
    line-height: var(--height-btn-card);
    color: var(--color-text-light);
+   cursor: pointer;
 }
 
 .slider__arrows {
