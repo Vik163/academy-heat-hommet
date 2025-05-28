@@ -23,15 +23,22 @@
    justify-content: center;
    align-items: center;
 }
+
 .card-product__image {
    height: 90%;
 }
+
+.card-product__no-image {
+   padding: 20% 20%;
+}
+
 .card-product__title {
    margin: 15px 10px;
    font-size: var(--font-14);
    font-weight: var(--font-weight-medium);
    color: var(--color-text-accent);
 }
+
 .card-product__btn {
    width: 85%;
    height: var(--height-btn-card);

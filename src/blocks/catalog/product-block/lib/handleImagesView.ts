@@ -1,3 +1,4 @@
+import { loadSrc } from '@/utils/lib/loadSrc';
 import type { Card } from '@/utils/types/cards';
 
 import lightGallery from 'lightgallery';
@@ -73,7 +74,11 @@ export const handleImagesView = (card: Card, link?: string) => {
       } else {
          newImg.classList.remove('product__image-add_active');
       }
-   } else img.classList.add('product__image-no-img');
+   } else {
+      // Заглушка "нет изображения"
+      img.classList.add('product__image-no-img');
+      img.src = loadSrc('#');
+   }
 };
 
 // событие срабатывает перед открытием https://www.lightgalleryjs.com/docs/events/

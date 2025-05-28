@@ -43,18 +43,8 @@
    display: none;
 }
 
-.product__image-no-img::after {
-   content: 'Изображение временно отсутствует';
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font: var(--font-mul-18);
-   background-color: var(--bg-primary-card);
+.product__image-no-img {
+   padding: 200px 160px;
 }
 
 .product__image-add_active {

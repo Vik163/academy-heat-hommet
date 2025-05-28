@@ -32,10 +32,16 @@ const getCards = (cards: Card[], block?: Element) => {
             '.card-product__image',
          )! as HTMLImageElement;
          if (c.imgL) {
+            image.classList.remove('card-product__no-image');
+
             //* --- ленивая загрузка --------------------
             image.setAttribute('data-src', c.imgL[0]);
             image.alt = c.title;
-         } else image.setAttribute('data-src', '#');
+         } else {
+            // заглушка "нет изображения"
+            image.setAttribute('data-src', '#');
+            image.classList.add('card-product__no-image');
+         }
 
          image.id = cardId;
 

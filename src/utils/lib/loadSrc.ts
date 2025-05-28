@@ -14,7 +14,7 @@ function getNameFile(str: string) {
  */
 export const loadSrc = (src: string) => {
    if (src === '#') {
-      return;
+      return require('../../assets/images/no-image.png');
    }
    if (src.startsWith('http')) {
       return src;

@@ -2,6 +2,7 @@ import type { Card } from '@/utils/types/cards';
 import 'lightgallery/css/lightgallery.css';
 import { handleImagesView } from './lib/handleImagesView';
 import { pastText } from '@/utils/lib/pastText';
+import { setModalCall } from '@/blocks/modal-call/modal-call';
 
 const productInfoBlock = document.querySelector('.product__info')!;
 const productDescription = document.querySelector('.product__description')!;
@@ -31,7 +32,7 @@ function clickProductBlock(e: Event) {
          handleImagesView(currentCard, arrLinks[index]);
       }
    } else {
-      console.log('button:');
+      setModalCall(currentCard.title);
    }
 }
 
