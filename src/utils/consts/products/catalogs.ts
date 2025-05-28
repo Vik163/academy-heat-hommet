@@ -14,7 +14,7 @@ export const catalog: Catalog[] = [
    {
       title: 'Система сухого монтажа',
       titlePage: 'Хоммет: Система сухого монтажа от производителя',
-      imgL: 'assets/images/sistem.png',
+      imgL: 'assets/images/system.jpg',
       description:
          'Углеродистая сталь и цинковое покрытие обеспечивает изделиям прочность и долговечность',
       titleText: 'Купить систему сухого монтажа от производителя',

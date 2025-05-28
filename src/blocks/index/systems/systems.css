@@ -17,13 +17,13 @@
 }
 
 .systems__item_type_profile {
-   background-image: url(../../../assets/images/system-profile.jpg);
+   background-image: url(../../../assets/images/system-profile.png);
 }
 .systems__item_type_image {
    background-image: url(../../../assets/images/no-system.jpg);
 }
 .systems__item_type_clamps {
-   background-image: url(../../../assets/images/system-clamps.jpg);
+   background-image: url(../../../assets/images/system-clamps.png);
 }
 
 .systems__item-title {
