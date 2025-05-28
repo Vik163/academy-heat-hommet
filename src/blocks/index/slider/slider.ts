@@ -13,12 +13,14 @@ const template = (document.querySelector('#slider-item') as HTMLTemplateElement)
 
 const onClickLink = (e: Event) => {
    e.preventDefault();
-   const link = e.currentTarget as HTMLAnchorElement;
-   const view = link.id as ViewName;
+   const target = e.target as HTMLAnchorElement;
+   if (target.tagName.toLowerCase() === 'button') {
+      const view = target.id as ViewName;
 
-   setLocalStorage(view, '', '');
+      setLocalStorage(view, '', '');
 
-   redirectOnPage('catalog');
+      redirectOnPage('catalog');
+   }
 };
 
 // построен на html-template
@@ -56,8 +58,6 @@ export const setSlider = () => {
          ) as HTMLButtonElement;
 
          btn.id = `${c.title}`;
-
-         btn.addEventListener('click', onClickLink);
       }
       // отображаем на странице
       list?.append(templateContainer);
@@ -81,4 +81,6 @@ export const setSlider = () => {
          // next: 'splide__arrow--next your-class-next',
       },
    }).mount();
+
+   list?.addEventListener('click', onClickLink);
 };
