@@ -8,10 +8,18 @@ function getNameFile(str: string) {
 
 /**
  * Предварительная загрузка изображений (webpack) через require
- * @param src - название файла
- * @returns url, который вставляется в src
+ * @param src -  url (html); если '#' - отменяет, начинается с http - возвращает без изменений, остальные преобразует
+ * @returns url
+ * ../../ - вложенность от loadSrc к папке assets
  */
 export const loadSrc = (src: string) => {
+   if (src === '#') {
+      return;
+   }
+   if (src.startsWith('http')) {
+      return src;
+   }
+
    //* -- data-srcset -------------------
    if (src.includes(' ')) {
       const newSrc = src
@@ -25,7 +33,9 @@ export const loadSrc = (src: string) => {
 
       return newSrc;
    }
+   //* -- shortSrc только папки (assets/images/file.png)------------
+   const shortSrc = src.split('/').slice(-3).join('/');
 
-   //* -- data-src --- srcset ----------------
-   return require('../../' + src);
+   //* -- data-src --- srcset ---------------
+   return require('../../' + shortSrc);
 };

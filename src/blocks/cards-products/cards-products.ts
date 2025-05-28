@@ -1,4 +1,5 @@
 import { animationScrolling } from '@/utils/lib/animationScrolling';
+import lozad from '@/utils/lib/lozad';
 import { ObserveCallback, observer } from '@/utils/lib/observer';
 import type { Card } from '@/utils/types/cards';
 
@@ -31,9 +32,11 @@ const getCards = (cards: Card[], block?: Element) => {
             '.card-product__image',
          )! as HTMLImageElement;
          if (c.imgL) {
-            image.src = c.imgL[0];
+            //* --- ленивая загрузка --------------------
+            image.setAttribute('data-src', c.imgL[0]);
             image.alt = c.title;
-         }
+         } else image.setAttribute('data-src', '#');
+
          image.id = cardId;
 
          const link = cardTemplate.querySelector(
@@ -55,6 +58,10 @@ const getCards = (cards: Card[], block?: Element) => {
       //* === запускает анимацию ==========
       if (block) animationScrolling(cardTemplate, 'up');
    });
+
+   //* --- устанавливает наблюдателя ленивой загрузки изображений по их классу
+   const observer = lozad('.card-product__image');
+   observer.observe();
 };
 
 /**
@@ -62,6 +69,7 @@ const getCards = (cards: Card[], block?: Element) => {
  * Аргументами передются: блок - куда встраиваются, массив с картами
  * Запускается наблюдатель для ленивой загрузки (последняя строчка кода). Аргументы: блок за которым наблюдает и коллбек
  * В коллбек предается entry.isIntersection из observer. Встраиваются карты и запускается анимация
+ * -- ленивая загрузка изображений
  */
 export const handleCards = (cards: Card[], block?: Element) => {
    //* ==== template ================================

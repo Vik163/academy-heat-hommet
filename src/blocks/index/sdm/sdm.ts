@@ -1,4 +1,4 @@
-import { drySystemMontage } from '@/utils/consts/products/dsm/dsm';
+import { drySystemMontage } from '@/utils/consts/products/sdmData/sdmData';
 import { handleCards } from '../../cards-products/cards-products';
 import { setLocalStorageByCardId } from '@/utils/lib/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';

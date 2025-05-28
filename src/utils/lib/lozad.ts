@@ -1,7 +1,3 @@
-/*! lozad.js - v1.16.0 - 2020-09-06
- * https://github.com/ApoorvSaxena/lozad.js
- * Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
-
 //! для webpack
 import { loadSrc } from './loadSrc';
 
@@ -12,7 +8,9 @@ interface LozadElement extends HTMLImageElement {
 }
 
 /**
- * Detect IE browser
+ * Подогнанный под webpack с функцией loadSrc (предварительной загрузкой url)
+ * для IE в теге picture ставится аттрибут data-iesrc с прямой ссылкой
+ * В тегах  source - ставятся в аттрибут srcset прямые ссылки до изображения
  * @const {boolean}
  * @private
  */
@@ -33,8 +31,7 @@ const defaultConfig = {
          }
 
          if (isIE && element.getAttribute('data-iesrc')) {
-            const newSrc = loadSrc(element.getAttribute('data-iesrc')!);
-            img.src = newSrc;
+            img.src = element.getAttribute('data-iesrc')!;
          }
 
          if (element.getAttribute('data-alt')) {
@@ -89,7 +86,9 @@ const defaultConfig = {
       }
 
       if (element.getAttribute('data-background-image')) {
-         element.style.backgroundImage = `url('${element.getAttribute('data-background-image')!.split(backgroundImageDelimiter).join("'),url('")}')`;
+         const newSrc = loadSrc(element.getAttribute('data-background-image')!);
+         const url = `url('${newSrc.split(backgroundImageDelimiter).join("'),url('")}')`;
+         element.style.backgroundImage = url;
       } else if (element.getAttribute('data-background-image-set')) {
          const imageSetLinks = element //TODO =========== background-image ===============
             .getAttribute('data-background-image-set')!

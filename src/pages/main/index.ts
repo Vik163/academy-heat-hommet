@@ -7,7 +7,6 @@ import { setHeader } from '@/blocks/header/header';
 import { setSDM } from '@/blocks/index/sdm/sdm';
 import { setSystems } from '@/blocks/index/systems/systems';
 import { setFooter } from '@/blocks/footer/footer';
-import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 
 function init() {
    // === ленивая загрузка фотографий ==========

@@ -116,7 +116,7 @@
                </div>
                <picture
                   class="lozad hommet__image-container"
-                  data-iesrc="../../assets/images/sistem.png"
+                  data-iesrc="../../assets/images/main.png"
                   data-alt=""
                >
                   <source
@@ -131,10 +131,6 @@
                      srcset=".assets/images/big_1.png"
                      media="(min-width: 320px)"
                   /> -->
-                  <img
-                     class="hommet__image"
-                     src="../../assets/images/prom.png"
-                  />
                </picture>
             </section>
             <div class="marquee">
@@ -197,7 +193,10 @@
             </section>
             <section class="systems">
                <div class="systems__container">
-                  <div class="systems__item systems__item_type_profile">
+                  <div
+                     class="lozad systems__item"
+                     data-background-image="../../assets/images/system-profile.png"
+                  >
                      <h3 class="systems__item-title">
                         Системы профилей для монтажа
                      </h3>
@@ -207,8 +206,14 @@
                      </p>
                      <a class="systems__item-link" href="#">В каталог</a>
                   </div>
-                  <div class="systems__item systems__item_type_image"></div>
-                  <div class="systems__item systems__item_type_clamps">
+                  <div
+                     class="lozad systems__item"
+                     data-background-image="../../assets/images/no-system.jpg"
+                  ></div>
+                  <div
+                     class="lozad systems__item"
+                     data-background-image="../../assets/images/system-clamps.png"
+                  >
                      <h3 class="systems__item-title">
                         Системы хомутов в комплекте
                      </h3>
@@ -231,7 +236,7 @@
                   </div>
                   <picture
                      class="lozad sdm__image-container"
-                     data-iesrc="../../assets/images/system.jpg"
+                     data-iesrc="../../assets/images/sdm.jpg"
                      data-alt=""
                   >
                      <source
@@ -242,10 +247,6 @@
                      srcset=".assets/images/ma_1.png"
                      media="(min-width: 980px)"
                   /> -->
-                     <img
-                        class="sdm__image"
-                        src="../../assets/images/prom.png"
-                     />
                   </picture>
                </div>
                <ul class="sdm__list cards"></ul>
@@ -357,11 +358,12 @@
             </div>
          </li>
       </template>
+      <!--* Ставлю ленивую загрузку (cards-products.ts)-->
       <template id="card-product">
          <li class="card-product">
             <div id="#" class="card-product__link">
                <div class="card-product__image-container">
-                  <img class="card-product__image" src="#" alt="" />
+                  <img class="card-product__image" alt="" />
                </div>
                <h3 class="card-product__title"></h3>
             </div>

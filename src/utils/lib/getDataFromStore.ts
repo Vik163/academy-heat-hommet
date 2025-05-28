@@ -1,5 +1,5 @@
 import { clamps } from '@/utils/consts/products/clamps/clamps';
-import { drySystemMontage } from '@/utils/consts/products/dsm/dsm';
+import { drySystemMontage } from '@/utils/consts/products/sdmData/sdmData';
 import { industrialFasteners } from '@/utils/consts/products/industrial-fasteners/industrial-fasteners';
 import { profFasteners } from '@/utils/consts/products/prof-fasteners/prof-fasteners';
 import {
