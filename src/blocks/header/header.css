@@ -4,13 +4,12 @@
    left: 0;
    width: 100%;
    height: var(--height-header);
-   background-color: var(--bg-primary-color);
    padding-top: 18px;
    display: flex;
    flex-direction: column;
    align-items: center;
    gap: 18px;
-   z-index: 100;
+   z-index: var(--index-header-100);
 }
 
 .header_active {
@@ -29,26 +28,22 @@
 
 .header__btn {
    cursor: pointer;
-   font-family: var(--font-int);
-   font-weight: 700;
+   font: var(--font-int-15-bold);
    color: var(--color-text-light);
-   font-size: 15px;
-   width: 120px;
+   width: 200px;
+   margin-left: 20px;
    height: var(--height-btn-card);
    position: relative;
    background: var(--color-red);
 }
 
-.header__phone {
-   font-family: var(--font-mul);
-   color: var(--color-text-accent);
-   font-weight: 900;
-   font-size: 16px;
+.header__btn-menu {
+   display: none;
 }
 
-.header__btn_type_phone {
-   width: 200px;
-   margin-left: 20px;
+.header__phone {
+   font: var(--font-mul-16-black);
+   color: var(--color-text-accent);
 }
 
 @keyframes onDown {
@@ -57,5 +52,69 @@
    }
    100% {
       transform: translateY(0);
+   }
+}
+
+@media (max-width: 1100px) {
+   .header {
+      height: var(--height-header-note);
+      padding-top: 10px;
+   }
+
+   .header__container {
+      padding: 0 40px;
+   }
+
+   .header__btn {
+      display: none;
+   }
+}
+
+@media (max-width: 800px) {
+   .header {
+      height: var(--height-header-pad);
+   }
+}
+
+@media (max-width: 750px) {
+   .header {
+      height: var(--height-header-mobile);
+      box-shadow: 0 1px 4px 0 var(--bg-primary-color-dark);
+   }
+
+   .header__container {
+      padding: 0 var(--padding-mobile-nav);
+   }
+
+   .header__btn-menu {
+      display: flex;
+      background: no-repeat center/75% url(../../assets/icons/icon-menu.svg);
+      width: 36px;
+      height: 36px;
+   }
+
+   .header__btn-menu_type_close {
+      background: no-repeat center/75% url(../../assets/icons/close.svg);
+   }
+
+   .header__phone-container {
+      position: absolute;
+      bottom: calc(-100vh + 100px);
+      left: var(--padding-mobile-nav);
+      z-index: var(--index-navbar-105);
+      transform: translateX(-100vw);
+      transition: 0.3s;
+   }
+
+   .header__phone-container_type_mobile {
+      transform: translateX(0);
+      transition: 0.3s;
+   }
+
+   .header__btn {
+      display: block;
+      font: var(--font-int-15-bold);
+      margin-left: 0;
+      margin-top: 20px;
    }
 }

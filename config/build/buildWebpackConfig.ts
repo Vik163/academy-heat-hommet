@@ -5,6 +5,7 @@ import { buildLoaders } from './buildLoaders'
 import { buildResolvers } from './buildResolvers'
 import { buildDevServer } from './buildDevServer'
 import { BuildOptions } from '../types/config';
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 export const buildWebpackConfig = (
   options: BuildOptions
@@ -48,5 +49,21 @@ export const buildWebpackConfig = (
           })`
       ]
     },
-  }
+    optimization: {
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+           options: {
+             plugins: [
+               ['jpegtran', { progressive: true }],
+               ['optipng', { optimizationLevel: 5 }],
+               ['svgo', { name: 'preset-default' }],
+             ],
+           },
+         },
+       }),
+     ],
+   },
+  };
 }

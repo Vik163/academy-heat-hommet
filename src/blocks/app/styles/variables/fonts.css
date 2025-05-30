@@ -2,8 +2,12 @@
    --font-mul: 'Mulish';
    --font-int: 'Inter';
 
+   --font-10: 10px;
+   --font-11: 11px;
    --font-12: 12px;
+   --font-13: 13px;
    --font-14: 14px;
+   --font-15: 15px;
    --font-16: 16px;
    --font-18: 18px;
    --font-20: 20px;
@@ -17,6 +21,12 @@
    --font-weight-bold: 700;
    --font-weight-black: 900;
 
+   --font-mul-30-black: var(--font-weight-black) var(--font-30) var(--font-mul);
+   --font-mul-16-black: var(--font-weight-black) var(--font-16) var(--font-mul);
+   --font-mul-16-bold: var(--font-weight-bold) var(--font-16) var(--font-mul);
+   --font-mul-14-bold: var(--font-weight-bold) var(--font-14) var(--font-mul);
+   --font-mul-13-bold: var(--font-weight-bold) var(--font-13) var(--font-mul);
+   --font-mul-12-bold: var(--font-weight-bold) var(--font-12) var(--font-mul);
    --font-mul-30: var(--font-30) var(--font-mul);
    --font-mul-28: var(--font-28) var(--font-mul);
    --font-mul-24: var(--font-24) var(--font-mul);
@@ -24,6 +34,9 @@
    --font-mul-18: var(--font-18) var(--font-mul);
    --font-mul-16: var(--font-16) var(--font-mul);
 
+   --font-int-15-bold: var(--font-weight-bold) var(--font-15) var(--font-int);
+   --font-int-14-bold: var(--font-weight-bold) var(--font-14) var(--font-int);
+   --font-int-18-bold: var(--font-weight-bold) var(--font-18) var(--font-int);
    --font-int-28: var(--font-28) var(--font-int);
    --font-int-22: var(--font-22) var(--font-int);
    --font-int-18: var(--font-18) var(--font-int);

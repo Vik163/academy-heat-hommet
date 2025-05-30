@@ -32,3 +32,23 @@
    font-size: 16px;
    letter-spacing: 0.7px;
 }
+
+@media (max-width: 800px) {
+   .logo {
+      width: 140px;
+   }
+
+   .logo__icon {
+      width: 20px;
+      height: 20px;
+   }
+
+   .logo__text {
+      font-size: 8px;
+   }
+
+   .logo__name {
+      font-size: 13px;
+      letter-spacing: 0.5px;
+   }
+}

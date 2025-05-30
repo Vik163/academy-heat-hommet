@@ -1,6 +1,7 @@
 @import url(../../blocks/app/styles/variables/colors.css);
 @import url(../../blocks/app/styles/variables/sizes.css);
 @import url(../../blocks/app/styles/variables/fonts.css);
+@import url(../../blocks/app/styles/variables/z-index.css);
 @import url(../../blocks/app/styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
 
@@ -18,6 +19,7 @@
 
 /* === header ==============*/
 @import url(../../blocks/header/header.css);
+
 @import url(../../blocks/navbar/navbar.css);
 
 /* === footer ==============*/
@@ -32,6 +34,7 @@
 
 /* === слайдер ==============*/
 @import url(../../blocks/index/slider/slider.css);
+@import url(../../blocks/index/slider/slider-adapt.css);
 
 /* === собственное производство ==============*/
 @import url(../../blocks/index/own/own.css);

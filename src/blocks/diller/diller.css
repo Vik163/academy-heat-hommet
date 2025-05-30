@@ -8,16 +8,35 @@
 .diller__info {
    display: flex;
    align-items: flex-end;
-   font-family: var(--font-int);
-   font-weight: 700;
-   font-size: 18px;
+   font: var(--font-int-18-bold);
 }
 
 .diller__link {
-   height: 28px;
+   height: 100%;
 }
 
 .diller__icon {
    width: 90px;
-   height: 28px;
+   height: 100%;
+}
+
+@media (max-width: 800px) {
+   .diller {
+      height: 24px;
+      margin-top: 3px;
+   }
+
+   .diller__info {
+      font: var(--font-int-14-bold);
+   }
+
+   .diller__icon {
+      width: 80px;
+   }
+}
+
+@media (max-width: 750px) {
+   .diller {
+      display: none;
+   }
 }

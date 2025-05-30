@@ -26,3 +26,35 @@
 .nav-links__link:hover {
    color: rgb(234, 234, 234);
 }
+
+@media (max-width: 800px) {
+   .nav-links__list {
+      gap: 30px;
+   }
+
+   .nav-links__link {
+      text-align: start;
+   }
+
+   .nav-links__info {
+      gap: 20px;
+   }
+}
+
+@media (max-width: 750px) {
+   .nav-links__list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+   }
+
+   .nav-links__link {
+      color: var(--color-text-dark);
+      text-align: start;
+   }
+
+   .nav-links__info {
+      flex-direction: column;
+      gap: 20px;
+   }
+}

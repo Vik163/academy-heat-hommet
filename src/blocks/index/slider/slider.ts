@@ -6,10 +6,28 @@ import '@splidejs/splide/css/core';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import type { ViewName } from '@/utils/types/catalog';
+import { mobileSize } from '@/utils/consts/adaptive';
+import { detectMobile } from '@/utils/lib/detectMobile';
+
+const { isMobile } = detectMobile();
+
+let visibleSlides = 2;
 
 const list = document.querySelector('.splide__list');
 const template = (document.querySelector('#slider-item') as HTMLTemplateElement)
    .content;
+
+function changeMobile(e: MediaQueryListEvent, splide: Splide) {
+   const arrows = document.querySelector('.splide__arrows');
+   if (e.matches) {
+      visibleSlides = 1;
+      arrows?.classList.add('slider__arrows_inactive');
+   } else {
+      visibleSlides = 2;
+      arrows?.classList.remove('slider__arrows_inactive');
+   }
+   splide.refresh();
+}
 
 const onClickLink = (e: Event) => {
    e.preventDefault();
@@ -63,24 +81,30 @@ export const setSlider = () => {
       list?.append(templateContainer);
    });
 
+   const classes: Record<string, string> = {
+      arrows: isMobile
+         ? 'splide__arrows  slider__arrows_inactive'
+         : 'splide__arrows  slider__arrows',
+      arrow: 'splide__arrow slider__arrow',
+   };
+
    // включаю слайдер
-   new Splide('.splide', {
+   const splide = new Splide('.splide', {
       autoWidth: true,
       autoplay: true,
       type: 'loop',
       interval: 5000, // интервал перемещения
       speed: 1500, // transition
-      perPage: 2, // количество отображаемых слайдов
+      perPage: visibleSlides, // количество отображаемых слайдов
       perMove: 1, // количество перемещаемых слайдов
       focus: 0,
       omitEnd: true,
-      classes: {
-         arrows: 'splide__arrows slider__arrows',
-         arrow: 'splide__arrow slider__arrow',
-         // prev: 'splide__arrow--prev your-class-prev',
-         // next: 'splide__arrow--next your-class-next',
-      },
+      classes,
    }).mount();
 
    list?.addEventListener('click', onClickLink);
+
+   window
+      .matchMedia(`(max-width: ${mobileSize})`)
+      .addEventListener('change', (e) => changeMobile(e, splide));
 };
