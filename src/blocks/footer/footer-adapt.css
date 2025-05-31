@@ -193,6 +193,7 @@
    .footer__diller {
       top: 78px;
       height: 40px;
+      justify-content: center;
    }
 
    .footer__diller-info {
@@ -227,23 +228,6 @@
    }
 
    .footer__links-column:nth-of-type(3) {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      grid-column: span 2;
       width: 81.5%;
-      height: auto;
-   }
-
-   .footer__link {
-      line-height: 16px;
-   }
-
-   .footer__link_type_politic {
-      position: absolute;
-      text-align: center;
-      width: var(--width-block-mobile);
-      bottom: 55px;
-      left: calc((100vw - var(--width-block-mobile)) / 2);
    }
 }
