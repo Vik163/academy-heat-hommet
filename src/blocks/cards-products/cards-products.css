@@ -128,7 +128,7 @@
 
    .card-product__btn {
       width: 80%;
-      height: var(--height-btn-card-pad);
+      height: 25px;
       font: var(--font-int-12-medium);
       padding-left: 20px;
    }
