@@ -178,3 +178,72 @@
       left: calc((100vw - var(--width-block-mobile)) / 2);
    }
 }
+
+@media (max-width: 360px) {
+   .footer::before {
+      top: 55px;
+      height: 15px;
+   }
+
+   .footer::after {
+      top: 70px;
+      height: 15px;
+   }
+
+   .footer__diller {
+      top: 78px;
+      height: 40px;
+   }
+
+   .footer__diller-info {
+      font: var(--font-int-12-bold);
+   }
+
+   .footer__diller-icon {
+      width: 80px;
+   }
+
+   .footer__phone {
+      font: var(--font-int-14-bold);
+   }
+
+   .footer__links-info-container {
+      padding-top: 60px;
+   }
+
+   .footer__links-info {
+      width: 80%;
+      height: 160px;
+      grid-template-columns: 115px 100px;
+      gap: 16px;
+   }
+
+   .footer__schedule {
+      display: none;
+   }
+
+   .footer__links-column {
+      gap: 16px;
+   }
+
+   .footer__links-column:nth-of-type(3) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      grid-column: span 2;
+      width: 81.5%;
+      height: auto;
+   }
+
+   .footer__link {
+      line-height: 16px;
+   }
+
+   .footer__link_type_politic {
+      position: absolute;
+      text-align: center;
+      width: var(--width-block-mobile);
+      bottom: 55px;
+      left: calc((100vw - var(--width-block-mobile)) / 2);
+   }
+}

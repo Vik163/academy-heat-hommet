@@ -89,7 +89,7 @@
 
 @media (max-width: 750px) {
    .card-product {
-      max-width: 166px;
+      width: 49%;
       height: 240px;
       padding-bottom: 10px;
    }
@@ -113,7 +113,6 @@
 
 @media (max-width: 360px) {
    .card-product {
-      max-width: 147px;
       height: 220px;
       padding-bottom: 10px;
    }
