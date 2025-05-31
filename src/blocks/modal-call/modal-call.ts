@@ -106,7 +106,7 @@ export const setModalCall = (nameProduct?: string) => {
                   <form class="modal-call__form form">
                      <input type='text' name='copyemail' placeholder='Email для копии' defaultValue="" ></input>
                      <input class="form__input" type="name" name="username" placeholder="Имя" required />
-                     <input type="tel" id="inp-tel" minlength="18" maxlength="18" class="form__input" name="phone" placeholder="+7 (999) 999-99-99" required></input>
+                     <input type="tel" id="inp-tel" minlength="12" maxlength="18" class="form__input" name="phone" placeholder="+7 (999) 999-99-99" required></input>
                      <div class="form__checkbox checkbox">
                         <input type="checkbox" name="privacy-policy" id="privacy-callmeform" required autocomplete="off">
                         <label for="privacy-callmeform">
