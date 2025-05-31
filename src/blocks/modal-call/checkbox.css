@@ -53,3 +53,13 @@
    height: 100%;
    padding-left: 5px;
 }
+
+@media (max-width: 750px) {
+   .form__text-link {
+      display: inline-block;
+      font: var(--font-int-11-norm);
+      color: var(--color-red);
+      height: 100%;
+      padding-left: 5px;
+   }
+}

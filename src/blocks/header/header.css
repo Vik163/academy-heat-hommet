@@ -87,7 +87,7 @@
       padding: 0 var(--padding-mobile-nav);
    }
 
-   .diller__info {
+   .header__diller-info {
       display: none;
    }
 

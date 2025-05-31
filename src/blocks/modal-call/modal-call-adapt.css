@@ -1,0 +1,51 @@
+@import './checkbox.css';
+@import './spinner.css';
+
+@media (max-width: 1100px) {
+   .modal-call__content {
+      width: 500px;
+      padding: 50px;
+   }
+}
+
+@media (max-width: 800px) {
+   .modal-call__content {
+      width: 450px;
+      padding: 30px;
+   }
+}
+
+@media (max-width: 750px) {
+   .modal-call__content {
+      width: 300px;
+      padding: 20px;
+   }
+
+   .modal-call__close-btn {
+      top: 20px;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+   }
+   .modal-call__title {
+      font: var(--font-mul-20-black);
+      margin-bottom: 10px;
+   }
+
+   .modal-call__subtitle {
+      margin-bottom: 10px;
+      font: var(--font-int-12-norm);
+   }
+
+   .modal-call__subtitle-product {
+      font: var(--font-int-14-bold);
+   }
+
+   .form {
+      font: var(--font-int-14);
+   }
+
+   .form__input {
+      margin-bottom: 15px;
+   }
+}
