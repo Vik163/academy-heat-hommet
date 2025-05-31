@@ -110,3 +110,27 @@
       padding-left: 20px;
    }
 }
+
+@media (max-width: 360px) {
+   .card-product {
+      max-width: 147px;
+      height: 220px;
+      padding-bottom: 10px;
+   }
+
+   .card-product__image-container {
+      height: 110px;
+   }
+
+   .card-product__title {
+      margin: 6px 8px;
+      font: var(--font-int-12-medium);
+   }
+
+   .card-product__btn {
+      width: 80%;
+      height: var(--height-btn-card-pad);
+      font: var(--font-int-12-medium);
+      padding-left: 20px;
+   }
+}

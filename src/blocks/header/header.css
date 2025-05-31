@@ -104,7 +104,7 @@
 
    .header__phone-container {
       position: absolute;
-      bottom: calc(-100vh + 100px);
+      bottom: calc(-100vh + 150px);
       left: var(--padding-mobile-nav);
       z-index: var(--index-navbar-105);
       transform: translateX(-100vw);
