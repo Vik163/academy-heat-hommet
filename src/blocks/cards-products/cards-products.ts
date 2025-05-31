@@ -1,15 +1,14 @@
 import { animationScrolling } from '@/utils/lib/animationScrolling';
+import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
 import lozad from '@/utils/lib/lozad';
 import { ObserveCallback, observer } from '@/utils/lib/observer';
 import type { Card } from '@/utils/types/cards';
 
 const list = document.querySelector('.cards');
-const template = (
-   document.querySelector('#card-product') as HTMLTemplateElement
-).content;
+const template = ($id('card-product') as HTMLTemplateElement).content;
 
-const getCards = (cards: Card[], block?: Element) => {
-   const currentList = block ? block.querySelector('.cards') : list;
+const getCards = (cards: Card[], block?: HTMLElement) => {
+   const currentList = block ? $class('cards', block) : list;
    cards.forEach((c, i) => {
       const cardTemplate = template
          .querySelector('.card-product')
@@ -19,20 +18,22 @@ const getCards = (cards: Card[], block?: Element) => {
          const cardId = c.cardId ? `${c.cardId}` : '';
          cardTemplate.id = cardId;
 
-         const title = cardTemplate.querySelector('.card-product__title')!;
+         const title = $class('card-product__title', cardTemplate);
          title.textContent = c.title;
          title.id = cardId;
 
-         const imageContainer = cardTemplate.querySelector(
-            '.card-product__image-container',
-         )!;
+         const imageContainer = $class(
+            'card-product__image-container',
+            cardTemplate,
+         );
          imageContainer.id = cardId;
 
-         const image = cardTemplate.querySelector(
-            '.card-product__image',
-         )! as HTMLImageElement;
+         const image = $class(
+            'card-product__image',
+            cardTemplate,
+         ) as HTMLImageElement;
          if (c.imgL) {
-            image.classList.remove('card-product__no-image');
+            $remove('card-product__no-image', image);
 
             //* --- ленивая загрузка --------------------
             image.setAttribute('data-src', c.imgL[0]);
@@ -40,20 +41,17 @@ const getCards = (cards: Card[], block?: Element) => {
          } else {
             // заглушка "нет изображения"
             image.setAttribute('data-src', '#');
-            image.classList.add('card-product__no-image');
+            $add('card-product__no-image', image);
          }
 
          image.id = cardId;
 
-         const link = cardTemplate.querySelector(
-            '.card-product__link',
-         ) as HTMLElement;
+         const link = $class('card-product__link', cardTemplate);
          //* === добавляет параметры товара в id кнопки ============
          link.id = cardId;
 
-         const btn = cardTemplate.querySelector(
-            '.card-product__btn',
-         ) as HTMLElement;
+         const btn = $class('card-product__btn', cardTemplate);
+
          //* === добавляет параметры товара в id кнопки ============
          btn.id = c.title;
       }
@@ -77,13 +75,13 @@ const getCards = (cards: Card[], block?: Element) => {
  * В коллбек предается entry.isIntersection из observer. Встраиваются карты и запускается анимация
  * -- ленивая загрузка изображений
  */
-export const handleCards = (cards: Card[], block?: Element) => {
+export const handleCards = (cards: Card[], block?: HTMLElement) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const getCardsObserver: ObserveCallback = (intersection) => {
       const currentCard = block
-         ? block.querySelector('.card-product')
-         : document.querySelector('.card-product');
+         ? $class('card-product', block)
+         : $class('card-product');
 
       // const card = document.querySelector('.card-product');
       // если нет встроенных карт, встраивает

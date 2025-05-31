@@ -1,30 +1,31 @@
 import { type ObserveCallback, observer } from '@/utils/lib/observer';
 import { setNavbar } from '../navbar/navbar';
 import { setModalCall } from '../modal-call/modal-call';
+import { $add, $class, $remove, $toggle } from '@/utils/lib/getElement';
 
-const headerBlock = document.querySelector('.header')!;
-const mainObserver = document.querySelector('.main__observer')!;
-const phoneContainer = headerBlock.querySelector('.header__phone-container');
-const btn = headerBlock.querySelector('.header__btn');
-const btnMenu = headerBlock.querySelector('.header__btn-menu');
-const navbar = headerBlock.querySelector('.navbar');
-const navbarOverlay = headerBlock.querySelector('.navbar__overlay');
+const headerBlock = $class('header');
+const mainObserver = $class('main__observer');
+const phoneContainer = $class('header__phone-container', headerBlock);
+const btn = $class('header__btn', headerBlock);
+const btnMenu = $class('header__btn-menu', headerBlock);
+const navbar = $class('navbar', headerBlock);
+const navbarOverlay = $class('navbar__overlay', headerBlock);
 
 const handleHeader: ObserveCallback = (entry) => {
    if (!entry.isIntersecting) {
-      headerBlock.classList.add('header_active');
-      mainObserver.classList.add('main__observer_active');
+      $add('header_active', headerBlock);
+      $add('main__observer_active', mainObserver);
    } else {
-      headerBlock.classList.remove('header_active');
-      mainObserver.classList.remove('main__observer_active');
+      $remove('header_active', headerBlock);
+      $remove('main__observer_active', mainObserver);
    }
 };
 
 const onClickMenu = () => {
-   navbar?.classList.toggle('navbar_mobile');
-   btnMenu?.classList.toggle('header__btn-menu_type_close');
-   phoneContainer?.classList.toggle('header__phone-container_type_mobile');
-   navbarOverlay?.classList.toggle('navbar__overlay_active');
+   $toggle('navbar_mobile', navbar);
+   $toggle('header__btn-menu_type_close', btnMenu);
+   $toggle('header__phone-container_type_mobile', phoneContainer);
+   $toggle('navbar__overlay_active', navbarOverlay);
 };
 
 export const setHeader = () => {

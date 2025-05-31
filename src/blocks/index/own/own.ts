@@ -4,9 +4,10 @@ import { setLocalStorageByCardId } from '@/utils/lib/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import { ObserveCallback, observer } from '@/utils/lib/observer';
 import { setModalCall } from '@/blocks/modal-call/modal-call';
+import { $class } from '@/utils/lib/getElement';
 
-const ownProductionBlock = document.querySelector('.own')!;
-const cards = ownProductionBlock.querySelector('.own__list')!;
+const ownProductionBlock = $class('own');
+const cards = $class('own__list', ownProductionBlock);
 
 const onClickLink = (id: string) => {
    setLocalStorageByCardId(id);

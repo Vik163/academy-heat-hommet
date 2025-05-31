@@ -1,4 +1,5 @@
 import { sertificatsLinks } from '@/utils/consts/sertificats';
+import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
 import { loadSrc } from '@/utils/lib/loadSrc';
 import lightGallery from 'lightgallery';
 import 'lightgallery/css/lightgallery.css';
@@ -6,9 +7,9 @@ import type { LightGallery } from 'lightgallery/lightgallery';
 import thumbnails from 'lightgallery/plugins/thumbnail';
 import zoom from 'lightgallery/plugins/zoom';
 
-const sertificatsBlock = document.querySelector('.sertificats')!;
-const galleryList = document.querySelector('.sertificats__gallery')!;
-const lg = document.getElementById('customize-thumbnails-gallery')!;
+const sertificatsBlock = $class('sertificats');
+const galleryList = $class('sertificats__gallery');
+const lg = $id('customize-thumbnails-gallery');
 let plugin: LightGallery;
 
 export const setSertificats = () => {
@@ -47,14 +48,14 @@ export const setSertificats = () => {
       plugin.openGallery();
 
       setTimeout(() => {
-         sertificatsBlock?.classList.add('sertificats_active');
+         $add('sertificats_active', sertificatsBlock);
       }, 500);
    }
 };
 
 if (sertificatsBlock) {
    lg.addEventListener('lgBeforeClose', () => {
-      sertificatsBlock?.classList.remove('sertificats_active');
+      $remove('sertificats_active', sertificatsBlock);
    });
 
    lg.addEventListener('lgAfterClose', () => {

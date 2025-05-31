@@ -34,9 +34,3 @@
       width: 80px;
    }
 }
-
-@media (max-width: 750px) {
-   .diller {
-      display: none;
-   }
-}

@@ -36,17 +36,4 @@ export const animationScrolling = (el: Element, direction: Dir) => {
    observer(el, (intersection, isLoaded) =>
       toggleClass(intersection, isLoaded, el, direction),
    );
-
-   // const observerAnimation = new IntersectionObserver((entries: any[]) => {
-   //    entries.forEach((entry) => {
-   //       entry.target.classList.toggle(
-   //          classByDirections(direction),
-   //          entry.isIntersecting,
-   //       );
-   //    });
-   // });
-
-   // observerAnimation.observe(el);
 };
-
-// const options = { root: null, rootMargin: '0px', threshold: 1 };

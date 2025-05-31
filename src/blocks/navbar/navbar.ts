@@ -2,8 +2,9 @@ import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 import type { ViewName } from '@/utils/types/catalog';
 import { setSertificats } from '../sertificats/sertificats';
+import { $class } from '@/utils/lib/getElement';
 
-const navbar = document.querySelector('.navbar')!;
+const navbar = $class('navbar');
 const links = navbar.querySelectorAll('.nav-links__link');
 
 export const setNavbar = () => {

@@ -3,10 +3,11 @@ import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 import type { ViewName } from '@/utils/types/catalog';
 import { setSertificats } from '../sertificats/sertificats';
 import { Routes } from '@/utils/types/routes';
+import { $class } from '@/utils/lib/getElement';
 
-const footer = document.querySelector('.footer')!;
+const footer = $class('footer');
 const links = footer.querySelectorAll('.footer__link');
-const dateBlock = document.querySelector('.footer__date')!;
+const dateBlock = $class('footer__date')!;
 const date = new Date().getFullYear();
 
 export const setFooter = () => {

@@ -12,6 +12,7 @@ import { MAIN_COORD, ZOOM } from '@/utils/consts/main';
 import { setFooter } from '@/blocks/footer/footer';
 import { setHeader } from '@/blocks/header/header';
 import { setLocalStorage } from '@/utils/lib/setLocalStorage';
+import { $id } from '@/utils/lib/getElement';
 
 if (__IS_DEV__) {
    changeUrl('contacts');
@@ -28,7 +29,7 @@ const LOCATION: YMapLocationRequest = {
 };
 
 const map = new YMap(
-   document.getElementById('map')!,
+   $id('map'),
    {
       location: LOCATION,
    },

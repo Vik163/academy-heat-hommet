@@ -1,9 +1,5 @@
 .systems {
-   width: 100%;
-   background-color: var(--bg-primary-block);
-}
-.systems__container {
-   margin: 130px auto;
+   margin: 0 auto;
    width: var(--width-block-desktop);
    display: flex;
    gap: 30px;
@@ -34,4 +30,97 @@
 .systems__item-link {
    font: var(--font-int-16);
    color: inherit;
+}
+
+@media (max-width: 1100px) {
+   .systems {
+      width: var(--width-block-mobile);
+      gap: 8px;
+   }
+
+   .systems__item {
+      width: 315px;
+      height: 400px;
+   }
+
+   .systems__item-title {
+      font: var(--font-mul-20);
+      margin-bottom: 15px;
+   }
+
+   .systems__item-subtitle {
+      width: 240px;
+      font: var(--font-int-14-medium);
+      margin-bottom: 60px;
+   }
+}
+
+@media (max-width: 800px) {
+   .systems {
+      width: var(--width-block-mobile-min);
+      gap: 20px;
+   }
+
+   .systems__item {
+      width: 50%;
+      height: 340px;
+      padding: 30px;
+      background-size: 100% 115%;
+   }
+
+   .systems__item:nth-of-type(2) {
+      display: none;
+   }
+
+   .systems__item-title {
+      font: var(--font-mul-18);
+   }
+
+   .systems__item-subtitle {
+      width: 240px;
+      font: var(--font-int-13-norm);
+      letter-spacing: 0.4px;
+      margin-bottom: 60px;
+   }
+
+   .systems__item-link {
+      font: var(--font-int-16);
+      color: inherit;
+   }
+}
+
+@media (max-width: 750px) {
+   .systems {
+      flex-direction: column;
+
+      width: 100%;
+      gap: 0;
+   }
+
+   .systems__item {
+      width: 100%;
+      height: auto;
+      padding: 30px;
+      background-image: none !important;
+      background-color: var(--bg-primary-color-dark);
+      box-shadow: 0 -1px 3px 1px rgba(21, 20, 20, 0.544);
+   }
+
+   .systems__item:nth-of-type(2) {
+      display: none;
+   }
+
+   .systems__item:nth-of-type(3) {
+      background-color: var(--color-red);
+   }
+
+   .systems__item-subtitle {
+      width: 100%;
+      margin-bottom: 25px;
+   }
+
+   .systems__item-link {
+      font: var(--font-int-14);
+      color: inherit;
+   }
 }

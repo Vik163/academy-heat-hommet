@@ -1,10 +1,9 @@
+import { $class, $id } from '@/utils/lib/getElement';
 import { loadSrc } from '@/utils/lib/loadSrc';
 import type { Catalog } from '@/utils/types/catalog';
 
-const list = document.querySelector('.cards');
-const template = (
-   document.querySelector('#card-catalog') as HTMLTemplateElement
-).content;
+const list = $class('cards');
+const template = ($id('card-catalog') as HTMLTemplateElement).content;
 
 /**
  * Универсальный блок для встраивания template карточки продукта.
@@ -15,7 +14,7 @@ const template = (
 export const handleCardsCatalog = (cards: Catalog[]) => {
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
-   const card = document.querySelector('.card-product')!;
+   const card = $class('card-product');
    // если нет встроенных карт, встраивает
    if (!card)
       cards.forEach((c, i) => {
@@ -24,13 +23,14 @@ export const handleCardsCatalog = (cards: Catalog[]) => {
             ?.cloneNode(true) as HTMLLIElement;
 
          if (cardTemplate) {
-            const title = cardTemplate.querySelector('.card-catalog__title')!;
+            const title = $class('card-catalog__title', cardTemplate);
             title.textContent = c.title;
             title.id = c.title;
 
-            const image = cardTemplate.querySelector(
-               '.card-catalog__image',
-            )! as HTMLImageElement;
+            const image = $class(
+               'card-catalog__image',
+               cardTemplate,
+            ) as HTMLImageElement;
             const newSrc = loadSrc(c.imgL);
             image.src = newSrc;
             image.alt = c.title;
@@ -57,8 +57,8 @@ export const removeCardsCatalog = () => {
    const arr = new Array(nodes.length).fill(0);
 
    arr.forEach(() => {
-      const catalog = document.querySelector('.card-catalog')!;
-      const card = document.querySelector('.card-product')!;
+      const catalog = $class('card-catalog');
+      const card = $class('card-product');
       if (card) card.remove();
       if (catalog) catalog.remove();
    });

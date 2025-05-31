@@ -5,8 +5,9 @@ import {
    removeCardsCatalog,
 } from '@/blocks/catalog/cards-catalog/cards-catalog';
 import { handlePaginationData } from '@/blocks/catalog/pagination/pagination';
+import { $class, $remove } from './getElement';
 
-const paginationBlock = document.querySelector('.pagination')!;
+const paginationBlock = $class('pagination')!;
 
 /**
  * Обновляет карточки каталога или товаров (template)
@@ -20,13 +21,13 @@ export const updateCards = (obj?: Catalog) => {
          handleCardsCatalog(obj.categories);
 
          // При откате назад класс не удаляется (не перезагружается страница)
-         paginationBlock.classList.remove('pagination_active');
+         $remove('pagination_active', paginationBlock);
       } else {
          removeCardsCatalog();
          handlePaginationData();
       }
    } else {
-      paginationBlock.classList.remove('pagination_active');
+      $remove('pagination_active', paginationBlock);
 
       removeCardsCatalog();
       handleCardsCatalog(catalog);

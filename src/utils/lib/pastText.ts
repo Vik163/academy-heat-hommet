@@ -1,3 +1,5 @@
+import { $add } from './getElement';
+
 const addText = (
    tag: string,
    block: Element,
@@ -6,7 +8,7 @@ const addText = (
 ) => {
    const el = document.createElement(tag);
    block.append(el);
-   el.classList.add(`${place}__description-${tag}`);
+   $add(`${place}__description-${tag}`, el);
    el.textContent = text.replace(`<${tag}>`, '');
 };
 
@@ -26,7 +28,7 @@ export const pastText = (
             // сразу встраиваю тег <р>
             const el = document.createElement('p');
             block.append(el);
-            el.classList.add(`${place}__description-p`);
+            $add(`${place}__description-p`, el);
             // убираю разделитель <p>
             const textP = text.replace(`<p>`, '');
             // делит по конечному тегу <span/>
@@ -52,5 +54,4 @@ export const pastText = (
          addText('h4', block, text, place);
       }
    });
-   // console.log('arr:', arrTexts);
 };

@@ -87,6 +87,10 @@
       padding: 0 var(--padding-mobile-nav);
    }
 
+   .header__diller {
+      display: none;
+   }
+
    .header__btn-menu {
       display: flex;
       background: no-repeat center/75% url(../../assets/icons/icon-menu.svg);

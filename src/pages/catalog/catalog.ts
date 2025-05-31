@@ -6,8 +6,9 @@ import { setBreadCrumbs } from '@/blocks/catalog/bread-crumbs/bread-crumbs';
 import { updateCatalogBlock } from '@/blocks/catalog/catalog-block/catalog-block';
 import { setFooter } from '@/blocks/footer/footer';
 import { setHeader } from '@/blocks/header/header';
+import { $class } from '@/utils/lib/getElement';
 
-const card = document.querySelector('.card-catalog');
+const card = $class('card-catalog');
 
 if (__IS_DEV__) {
    changeUrl('catalog');

@@ -4,9 +4,10 @@ import { setLocalStorageByCardId } from '@/utils/lib/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import { ObserveCallback, observer } from '@/utils/lib/observer';
 import { setModalCall } from '@/blocks/modal-call/modal-call';
+import { $class } from '@/utils/lib/getElement';
 
-const sdmProductionBlock = document.querySelector('.sdm')!;
-const cards = sdmProductionBlock.querySelector('.sdm__list')!;
+const sdmProductionBlock = $class('sdm');
+const cards = $class('sdm__list', sdmProductionBlock);
 
 const onClickLink = (id: string) => {
    setLocalStorageByCardId(id);
@@ -33,6 +34,7 @@ export const setSDM = async () => {
 cards.addEventListener('click', function (e: Event) {
    const target = e.target as HTMLElement;
 
+   if (!target.id) return;
    if (target.tagName.toLowerCase() === 'button') {
       setModalCall(target.id);
    } else onClickLink(target.id);

@@ -9,17 +9,16 @@ import {
 import type { Categories, ViewName } from '@/utils/types/catalog';
 import { removeCardsCatalog } from '../cards-catalog/cards-catalog';
 import { handleButtons } from './lib/handlePaginationButtons/handlePaginationButtons';
+import { $add, $class, $contains, $remove } from '@/utils/lib/getElement';
 
 let numPage = 1;
 let pagesAll: number;
 let buttons: HTMLButtonElement[];
 let totalItems = 0;
 
-const paginationBlock = document.querySelector('.pagination')!;
-const leftArrow = paginationBlock.querySelector('.pagination__btn-arrow-left');
-const rightArrow = paginationBlock.querySelector(
-   '.pagination__btn-arrow-right',
-);
+const paginationBlock = $class('pagination');
+const leftArrow = $class('pagination__btn-arrow-left', paginationBlock);
+const rightArrow = $class('pagination__btn-arrow-right', paginationBlock);
 
 function getPaginateData() {
    const obj = getDataByView();
@@ -84,7 +83,7 @@ export const handlePaginationData = () => {
    const { totalItems, cardsAll } = getPaginateData();
 
    if (totalItems > limit) {
-      if (!paginationBlock.classList.contains('pagination_active')) {
+      if (!$contains('pagination_active', paginationBlock)) {
          buttons = mountPaginationButtons(totalItems);
       }
 
@@ -94,9 +93,9 @@ export const handlePaginationData = () => {
 
       handleButtons(numPage, pagesAll, buttons);
 
-      paginationBlock.classList.add('pagination_active');
+      $add('pagination_active', paginationBlock);
    } else {
-      paginationBlock.classList.remove('pagination_active');
+      $remove('pagination_active', paginationBlock);
       handleCards(cardsAll);
    }
 };

@@ -1,12 +1,13 @@
 import { LOCALSTORAGE_ERROR } from '@/utils/consts/storage';
+import { $add, $class, $contains, $id, $remove } from '@/utils/lib/getElement';
 import { handleNumberPhone } from '@/utils/lib/handleNumberPhone';
 import { setPostman } from '@/utils/lib/postman';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 
 function closeModal() {
-   const modal = document.querySelector('.modal-call')!;
+   const modal = $class('modal-call');
 
-   modal.classList.remove('modal-call_active');
+   $remove('modal-call_active', modal);
    modal?.removeEventListener('click', (e) => closeModalByClick(e));
 
    setTimeout(() => {
@@ -23,8 +24,8 @@ function closeModalByClick(e: Event) {
       redirectOnPage('politic');
    }
    if (
-      target.classList.contains('modal-call_active') ||
-      target.classList.contains('modal-call__close-btn')
+      $contains('modal-call_active', target) ||
+      $contains('modal-call__close-btn', target)
    )
       closeModal();
 }
@@ -35,23 +36,23 @@ function closeModalByKeydown(e: KeyboardEvent) {
 }
 
 const confirmSend = (answer: 'loading' | 'success' | 'error') => {
-   const content = document.querySelector('.modal-call__content')!;
-   const spinner = document.querySelector('.spinner')!;
+   const content = $class('modal-call__content');
+   const spinner = $class('spinner');
    // --- spinner ------------
    if (answer === 'loading') {
-      spinner.classList.add('spinner_active');
+      $add('spinner_active', spinner);
       // --- успешно ----------
    } else if (answer === 'success') {
-      const form = content.querySelector('.form')!;
-      const title = content.querySelector('.modal-call__subtitle-info')!;
+      const form = $class('form', content);
+      const title = $class('modal-call__subtitle-info', content);
       title.textContent = 'Сообщение отправлено! Наш менеджер свяжется с Вами.';
 
-      const nameProduct = content.querySelector('.modal-call__name-product')!;
+      const nameProduct = $class('.modal-call__name-product', content);
       if (nameProduct) nameProduct.remove();
 
       form.remove();
 
-      spinner.classList.remove('spinner_active');
+      $remove('spinner_active', spinner);
    } else {
       // --- ошибка --------
       localStorage.setItem(
@@ -65,10 +66,8 @@ const confirmSend = (answer: 'loading' | 'success' | 'error') => {
 
 // === управление кнопкой "отправить" через checkbox  =========
 function handleCheckbox() {
-   const checker = document.getElementById(
-      'privacy-callmeform',
-   )! as HTMLInputElement;
-   const btnSubmit = document.querySelector('.form__btn')! as HTMLButtonElement;
+   const checker = $id('privacy-callmeform') as HTMLInputElement;
+   const btnSubmit = $class('form__btn') as HTMLButtonElement;
 
    checker.onchange = function (e) {
       const box = e.target as HTMLInputElement;
@@ -121,12 +120,12 @@ export const setModalCall = (nameProduct?: string) => {
             </div>`;
 
    const parser = new DOMParser().parseFromString(modalHtml, 'text/html')!;
-   const modalBlock = parser.querySelector('.modal-call')!;
+   const modalBlock = parser.querySelector('.modal-call')! as HTMLElement;
 
    document.body.append(modalBlock);
 
    setTimeout(() => {
-      modalBlock.classList.add('modal-call_active');
+      $add('modal-call_active', modalBlock);
    }, 10);
 
    modalBlock?.addEventListener('click', (e) => closeModalByClick(e));

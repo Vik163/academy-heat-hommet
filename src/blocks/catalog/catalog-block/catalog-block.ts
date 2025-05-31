@@ -13,14 +13,13 @@ import { pastText } from '@/utils/lib/pastText';
 import { getDataById } from '@/utils/lib/getDataFromStore';
 import { setProduct } from '../product-block/product-block';
 import { setModalCall } from '@/blocks/modal-call/modal-call';
+import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
 
-const productBlock = document.querySelector('.product')!;
-const catalogBlock = document.querySelector('.catalog-block')!;
-const cards = catalogBlock.querySelector('.catalog-block__list')!;
-const catalogDescription = catalogBlock.querySelector('.catalog__description')!;
-const titleCatalogElement = catalogBlock.querySelector(
-   '.catalog-block__title',
-)!;
+const productBlock = $class('product');
+const catalogBlock = $class('catalog-block');
+const cards = $class('catalog-block__list', catalogBlock);
+const catalogDescription = $class('catalog__description', catalogBlock);
+const titleCatalogElement = $class('catalog-block__title', catalogBlock);
 
 /**
  *  обновление страницы: заголовок, карточки (пока catalog или товар)
@@ -30,13 +29,13 @@ export const updatePageCatalog = () => {
    const card = getDataById();
 
    if (card) {
-      productBlock.classList.add('product_active');
-      catalogBlock.classList.add('catalog-block_inactive');
+      $add('product_active', productBlock);
+      $add('catalog-block_inactive', catalogBlock);
 
       setProduct(card);
    } else {
-      productBlock.classList.remove('product_active');
-      catalogBlock.classList.remove('catalog-block_inactive');
+      $remove('product_active', productBlock);
+      $remove('catalog-block_inactive', catalogBlock);
    }
 };
 // --- при клике по карточке переходит по ссылке в ее содержимое (карточка продукта или категория каталога) ---
@@ -71,8 +70,8 @@ export const updateCatalogBlock = () => {
    const { view, category } = getDataFromCatalog()!;
 
    if (!view) {
-      const cardCatalog = document.querySelector('#Профессиональный крепеж')!;
-      catalogDescription.classList.remove('catalog__description_active');
+      const cardCatalog = $id('Профессиональный крепеж');
+      $remove('catalog__description_active', catalogDescription);
       titleCatalogElement.textContent = titleCatalog;
       if (!cardCatalog) updateCards(undefined);
    } else {
@@ -82,15 +81,16 @@ export const updateCatalogBlock = () => {
       updateCards(obj);
 
       if (obj.titlePage) {
-         catalogDescription.classList.add('catalog__description_active');
-         const titleDescription = catalogDescription.querySelector(
+         $add('catalog__description_active', catalogDescription);
+         const titleDescription = $class(
             '.catalog__description-title',
-         )!;
+            catalogDescription,
+         );
          titleDescription.textContent = obj.titleText!;
 
          if (obj.text && catalogDescription)
             pastText(catalogDescription, obj.text, 'catalog');
-      } else catalogDescription.classList.remove('catalog__description_active');
+      } else $remove('catalog__description_active', catalogDescription);
    }
 
    updateBreadCrumbs();

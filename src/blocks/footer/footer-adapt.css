@@ -1,0 +1,100 @@
+@media (max-width: 750px) {
+   .footer {
+      padding-top: 15px;
+      position: relative;
+   }
+
+   .footer::before {
+      top: 50px;
+   }
+
+   .footer::after {
+      top: 70px;
+   }
+
+   .footer__container {
+      width: var(--width-block-mobile);
+   }
+
+   .footer__container-logo {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+   }
+
+   .footer__diller {
+      position: absolute;
+      width: var(--width-block-mobile);
+      left: calc((100vw - var(--width-block-mobile)) / 2);
+      top: 80px;
+      height: 45px;
+      gap: 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--bg-primary-grey);
+   }
+
+   .footer__diller-icon {
+      width: 100px;
+   }
+
+   .footer__phone {
+      font: var(--font-int-16-bold);
+   }
+
+   .footer__links-info-container {
+      width: 100%;
+      padding-top: 75px;
+      padding-bottom: 15px;
+   }
+
+   .footer__links-info {
+      width: var(--width-block-mobile);
+      height: 150px;
+      display: grid;
+      align-items: start;
+      grid-template-columns: repeat(3, 115px);
+      grid-template-rows: repeat(2, 1fr);
+      font: var(--font-int-12-medium);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--bg-primary-grey);
+      gap: 16px 15px;
+   }
+
+   .footer__schedule {
+      grid-row: span 2;
+      width: 100px;
+      height: auto;
+      line-height: 16px;
+      font: var(--font-int-11-norm);
+   }
+
+   .footer__links-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: auto;
+   }
+
+   .footer__links-column:nth-of-type(3) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      grid-column: span 2;
+      width: 183px;
+      height: auto;
+   }
+
+   .footer__link {
+      line-height: 16px;
+   }
+
+   .footer__link_type_politic {
+      position: absolute;
+      text-align: center;
+      width: var(--width-block-mobile);
+      bottom: 55px;
+      left: calc((100vw - var(--width-block-mobile)) / 2);
+   }
+}

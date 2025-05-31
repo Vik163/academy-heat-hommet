@@ -3,16 +3,15 @@ import 'lightgallery/css/lightgallery.css';
 import { handleImagesView } from './lib/handleImagesView';
 import { pastText } from '@/utils/lib/pastText';
 import { setModalCall } from '@/blocks/modal-call/modal-call';
+import { $add, $class, $remove } from '@/utils/lib/getElement';
 
-const productInfoBlock = document.querySelector('.product__info')!;
-const productDescription = document.querySelector('.product__description')!;
-const newImg = document.querySelector(
-   '.product__image-add',
-) as HTMLImageElement;
+const productInfoBlock = $class('product__info');
+const productDescription = $class('product__description');
+const newImg = $class('product__image-add') as HTMLImageElement;
 let currentCard: Card;
 
 const setTitle = () => {
-   const titleProduct = document.querySelector('.product__title')!;
+   const titleProduct = $class('product__title');
    titleProduct.textContent = currentCard.title;
 };
 
@@ -43,8 +42,8 @@ export const setProduct = (card: Card) => {
    handleImagesView(card);
    if (card.description) {
       pastText(productDescription, card.description, 'product');
-      productDescription.classList.remove('product__description_inactive');
-   } else productDescription.classList.add('product__description_inactive');
+      $remove('product__description_inactive', productDescription);
+   } else $add('product__description_inactive', productDescription);
 };
 
 productInfoBlock.addEventListener('click', clickProductBlock);

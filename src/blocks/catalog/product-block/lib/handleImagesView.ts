@@ -1,19 +1,18 @@
+import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
 import { loadSrc } from '@/utils/lib/loadSrc';
 import type { Card } from '@/utils/types/cards';
 
 import lightGallery from 'lightgallery';
 import 'lightgallery/css/lightgallery.css';
 
-const lg = document.getElementById('animated-thumbnails-gallery')!;
+const lg = $id('animated-thumbnails-gallery');
 
 const plugin = lightGallery(lg, {
    allowMediaOverlap: true, // увеличивает изображение на всю высоту экрана
 });
 
-const productBlock = document.querySelector('.product')!;
-const newImg = productBlock.querySelector(
-   '.product__image-add',
-) as HTMLImageElement;
+const productBlock = $class('product');
+const newImg = $class('product__image-add', productBlock) as HTMLImageElement;
 let currentCard: Card;
 
 /**
@@ -25,18 +24,19 @@ let currentCard: Card;
 export const handleImagesView = (card: Card, link?: string) => {
    currentCard = card;
 
-   const img = document.querySelector('.product__image') as HTMLImageElement;
+   const img = $class('product__image') as HTMLImageElement;
 
    // если нет изображения показывает заглушку
    if (card.imgL) {
-      img.classList.remove('product__image-no-img'); // заглушка
+      $remove('product__image-no-img', img); // заглушка
 
       const arrImgBig = currentCard.imgB!;
       const arrImgSmall = currentCard.imgL!;
 
-      const imageProduct = productBlock.querySelector(
-         '.modal__image',
-      )! as HTMLLinkElement;
+      const imageProduct = $class(
+         'modal__image',
+         productBlock,
+      ) as HTMLLinkElement;
 
       const imgB = link ? arrImgBig[arrImgSmall.indexOf(link)] : arrImgBig[0];
       imageProduct.setAttribute('data-src', imgB);
@@ -46,25 +46,24 @@ export const handleImagesView = (card: Card, link?: string) => {
       if (arrImgSmall.length! > 1) {
          arrImgSmall.forEach((c, i) => {
             if (i > 0) {
-               if (!document.querySelector('.modal__image-add')) {
+               if (!$class('modal__image-add')) {
                   const newA = document.createElement('a');
-                  newA.classList.add('modal__image-add')!;
+                  $add('modal__image-add', newA);
                   newA.setAttribute('data-src', '');
                   newA.setAttribute('data-lg-size', '1000-1000');
                   lg.append(newA);
 
                   const newI = document.createElement('img');
-                  newI.classList.add('product__image_inactive')!;
+                  $add('product__image_inactive', newI);
                   newA.append(newI);
                }
 
                if (!link) {
-                  newImg.classList.add('product__image-add_active');
+                  $add('product__image-add_active', newImg);
                   newImg.src = card.imgL![i];
                }
 
-               const imageProductAdd =
-                  productBlock.querySelector('.modal__image-add')!;
+               const imageProductAdd = $class('modal__image-add', productBlock);
                if (c === link) {
                   const el = arrImgBig.find((e, ind) => i !== ind)!;
                   imageProductAdd.setAttribute('data-src', el);
@@ -72,7 +71,7 @@ export const handleImagesView = (card: Card, link?: string) => {
             }
          });
       } else {
-         newImg.classList.remove('product__image-add_active');
+         $remove('product__image-add_active', newImg);
       }
    } else {
       // Заглушка "нет изображения"

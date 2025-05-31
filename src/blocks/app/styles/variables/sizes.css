@@ -18,7 +18,8 @@
    --width-block-desktop: 1200px;
    --width-block-note: 1024px;
    --width-block-pad: 768px;
-   --width-block-mobile: 1200px;
+   --width-block-mobile: 94%;
+   --width-block-mobile-min: 90%;
 
    /* - padding ----- */
    --slider_padding: 30px;

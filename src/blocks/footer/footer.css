@@ -49,8 +49,7 @@
 .footer__phone {
    display: inline-block;
    color: var(--bg-primary-color-light);
-   font: var(--font-int-22);
-   font-weight: var(--font-weight-bold);
+   font: var(--font-int-22-bold);
 }
 
 .footer__links-info-container {
@@ -69,8 +68,7 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   font: var(--font-int-14);
-   font-weight: var(--font-weight-medium);
+   font: var(--font-int-14-medium);
    padding-bottom: 10px;
    border-bottom: 1px solid var(--bg-primary-grey);
 }
@@ -106,8 +104,7 @@
 .footer__date {
    display: inline-block;
    width: var(--width-block-desktop);
-   font: var(--font-int-14);
-   font-weight: var(--font-weight-bold);
+   font: var(--font-int-14-bold);
    color: var(--color-btn-border);
    text-align: center;
    margin-top: 15px;

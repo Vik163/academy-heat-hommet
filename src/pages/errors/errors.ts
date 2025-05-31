@@ -1,8 +1,9 @@
 import { LOCALSTORAGE_ERROR } from '@/utils/consts/storage';
 import './errors.css';
 import { setHeader } from '@/blocks/header/header';
+import { $class } from '@/utils/lib/getElement';
 
-const errorText = document.querySelector('.errors__text')!;
+const errorText = $class('errors__text');
 const text = localStorage.getItem(LOCALSTORAGE_ERROR);
 
 errorText.textContent = text;

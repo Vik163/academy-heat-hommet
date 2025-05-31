@@ -8,23 +8,23 @@ import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import type { ViewName } from '@/utils/types/catalog';
 import { mobileSize } from '@/utils/consts/adaptive';
 import { detectMobile } from '@/utils/lib/detectMobile';
+import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
 
 const { isMobile } = detectMobile();
 
 let visibleSlides = 2;
 
-const list = document.querySelector('.splide__list');
-const template = (document.querySelector('#slider-item') as HTMLTemplateElement)
-   .content;
+const list = $class('splide__list');
+const template = ($id('slider-item') as HTMLTemplateElement).content;
 
 function changeMobile(e: MediaQueryListEvent, splide: Splide) {
-   const arrows = document.querySelector('.splide__arrows');
+   const arrows = $class('splide__arrows');
    if (e.matches) {
       visibleSlides = 1;
-      arrows?.classList.add('slider__arrows_inactive');
+      $add('slider__arrows_inactive', arrows);
    } else {
       visibleSlides = 2;
-      arrows?.classList.remove('slider__arrows_inactive');
+      $remove('slider__arrows_inactive', arrows);
    }
    splide.refresh();
 }
@@ -48,32 +48,26 @@ export const setSlider = () => {
          .querySelector('.slider-item')
          ?.cloneNode(true) as HTMLLIElement;
 
-      const container = templateContainer.querySelector(
-         '.slider-item__container',
-      ) as HTMLElement;
+      const container = $class('slider-item__container', templateContainer);
 
-      if (i % 2 === 0)
-         container.classList.add('slider-item__container_color_light');
+      if (i % 2 === 0) $add('slider-item__container_color_light', container);
 
       if (container) {
-         const title = container.querySelector('.slider-item__title')!;
+         const title = $class('slider-item__title', container);
          title.textContent = c.title;
 
-         const description = container.querySelector(
-            '.slider-item__description',
-         )!;
+         const description = $class('slider-item__description', container);
          description.textContent = c.description!;
 
-         const image = container.querySelector(
-            '.slider-item__image',
-         )! as HTMLImageElement;
+         const image = $class(
+            'slider-item__image',
+            container,
+         ) as HTMLImageElement;
          const newSrc = loadSrc(c.imgL);
          image.src = newSrc;
          image.alt = c.title;
 
-         const btn = container.querySelector(
-            '.slider-item__btn',
-         ) as HTMLButtonElement;
+         const btn = $class('slider-item__btn', container) as HTMLButtonElement;
 
          btn.id = `${c.title}`;
       }
