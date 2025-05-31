@@ -97,6 +97,7 @@
 }
 
 .footer__link_type_politic {
+   width: 170px;
    color: rgb(251, 51, 51);
    font-weight: var(--font-weight-bold);
 }

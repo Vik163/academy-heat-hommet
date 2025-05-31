@@ -82,7 +82,7 @@
    .sdm__container {
       justify-content: space-between;
       gap: 0;
-      margin-bottom: 60px;
+      margin-bottom: 30px;
    }
 
    .sdm__container-info {
@@ -107,10 +107,6 @@
 @media (max-width: 750px) {
    .sdm {
       width: var(--width-block-mobile);
-   }
-
-   .sdm__container {
-      margin-bottom: 30px;
    }
 
    .sdm__container-info {

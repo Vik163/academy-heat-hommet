@@ -59,6 +59,7 @@
    --font-int-14-bold: var(--font-weight-bold) var(--font-14) var(--font-int);
    --font-int-16-bold: var(--font-weight-bold) var(--font-16) var(--font-int);
    --font-int-18-bold: var(--font-weight-bold) var(--font-18) var(--font-int);
+   --font-int-20-bold: var(--font-weight-bold) var(--font-20) var(--font-int);
    --font-int-22-bold: var(--font-weight-bold) var(--font-22) var(--font-int);
    --font-int-28: var(--font-28) var(--font-int);
    --font-int-22: var(--font-22) var(--font-int);
