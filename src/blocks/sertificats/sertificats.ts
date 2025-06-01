@@ -42,6 +42,8 @@ export const setSertificats = () => {
          // zoom
          allowMediaOverlap: true,
          actualSize: true, // иконка лупы увеличивает до истинного размера
+         // showCloseIcon: true,
+         mobileSettings: { showCloseIcon: true },
          // showZoomInOutIcons: true, // отображет две лупы (+-)
          //scale: 0.5, // eсли две иконки, то указывает масштаб увеличения
       });

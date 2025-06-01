@@ -78,3 +78,23 @@
 .lg-object {
    width: auto !important;
 }
+
+@media (max-width: 800px) {
+   .lg-image {
+      max-height: 85vh !important;
+   }
+}
+@media (max-width: 750px) {
+   .lg-outer {
+      width: 95% !important;
+   }
+
+   .lg-image {
+      max-height: 85vh !important;
+   }
+
+   .lg-thumb-outer {
+      right: 0;
+      display: none;
+   }
+}

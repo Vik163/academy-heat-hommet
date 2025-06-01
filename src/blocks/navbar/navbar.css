@@ -45,7 +45,14 @@
    }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
+   .navbar__links {
+      gap: 40px;
+      font: var(--font-mul-11-bold);
+   }
+}
+
+@media (max-width: 550px) {
    .navbar {
       width: 80%;
       height: calc(100vh - (var(--height-header-mobile) + 2px));
@@ -78,5 +85,18 @@
       visibility: visible;
       opacity: 1;
       transition: 0.3s;
+   }
+}
+@media (orientation: landscape) and (max-width: 550px) {
+   .navbar {
+      width: 85%;
+      padding: 15px 25px;
+   }
+
+   .navbar__links {
+      flex-direction: row;
+      justify-content: flex-start;
+      font: var(--font-mul-12-bold);
+      gap: 70px;
    }
 }
