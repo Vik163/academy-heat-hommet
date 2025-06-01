@@ -46,6 +46,10 @@
    color: var(--bg-primary-color-light);
 }
 
+.footer__diller-line {
+   display: none;
+}
+
 .footer__phone {
    display: inline-block;
    color: var(--bg-primary-color-light);
