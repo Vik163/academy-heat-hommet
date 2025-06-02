@@ -20,7 +20,7 @@
       <div class="app">
          <header class="header">
             <div class="header__container">
-               <a class="logo" href="/">
+               <a class="logo" href="#">
                   <div class="logo__container">
                      <img
                         class="logo__icon"
@@ -31,7 +31,7 @@
                   <span class="logo__name">АКАДЕМИЯ ТЕПЛА</span>
                </a>
                <div class="header__diller diller">
-                  <span class="diller__info"
+                  <span class="header__diller-info diller__info"
                      >Официальный диллер компании &nbsp;</span
                   >
                   <a
@@ -46,13 +46,11 @@
                </div>
                <div class="header__phone-container">
                   <span class="header__phone">+7 (917) 014-11-69</span>
-                  <button
-                     type="button"
-                     class="header__btn header__btn_type_phone"
-                  >
+                  <button type="button" class="header__btn">
                      Запросить звонок
                   </button>
                </div>
+               <button type="button" class="header__btn-menu"></button>
             </div>
             <nav class="navbar">
                <div class="navbar__links nav-links">
@@ -101,6 +99,7 @@
                   </div>
                </div>
             </nav>
+            <div class="navbar__overlay"></div>
          </header>
 
          <main class="main">
@@ -133,8 +132,7 @@
                            class="contacts__text-container contacts__text-container_type_address"
                         >
                            <span
-                              >г. Новокуйбышевск, ул. Молодогвардейская, д.
-                              4</span
+                              >г. Новокуйбышевск, ул. Молодогвардейская 4</span
                            >
                         </div>
                      </div>
@@ -152,7 +150,7 @@
          <footer class="footer">
             <div class="footer__container">
                <div class="footer__container-logo">
-                  <a class="footer__logo logo" href="/">
+                  <a class="footer__logo logo" href="#">
                      <div class="logo__container">
                         <img
                            class="logo__icon"
@@ -163,7 +161,7 @@
                      <span class="logo__name">АКАДЕМИЯ ТЕПЛА</span>
                   </a>
                   <div class="footer__diller diller">
-                     <span class="diller__info"
+                     <span class="footer__diller-info diller__info"
                         >Официальный диллер компании &nbsp;</span
                      >
                      <a
@@ -171,11 +169,12 @@
                         href="https://hommet.ru/"
                         target="_blank"
                         ><img
-                           class="diller__icon"
+                           class="diller__icon footer__diller-icon"
                            src="../../assets/icons/hommet-logo.svg"
                            alt="Компания Хоммет"
                      /></a>
                   </div>
+                  <div class="footer__diller-line"></div>
                   <p class="footer__phone">+7 (917) 014-11-69</p>
                </div>
             </div>
@@ -224,8 +223,7 @@
                         id="politic"
                         class="footer__link footer__link_type_politic"
                      >
-                        Политика<br />
-                        персональных данных
+                        Политика персональных данных
                      </a>
                   </div>
                </div>

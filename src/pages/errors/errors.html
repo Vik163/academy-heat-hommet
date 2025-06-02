@@ -20,7 +20,7 @@
       <div class="app">
          <header class="header">
             <div class="header__container">
-               <a class="logo" href="/">
+               <a class="logo" href="#">
                   <div class="logo__container">
                      <img
                         class="logo__icon"
@@ -31,7 +31,7 @@
                   <span class="logo__name">АКАДЕМИЯ ТЕПЛА</span>
                </a>
                <div class="header__diller diller">
-                  <span class="diller__info"
+                  <span class="header__diller-info diller__info"
                      >Официальный диллер компании &nbsp;</span
                   >
                   <a
@@ -47,6 +47,7 @@
                <div class="header__phone-container">
                   <span class="header__phone">+7 (917) 014-11-69</span>
                </div>
+               <button type="button" class="header__btn-menu"></button>
             </div>
             <nav class="navbar">
                <div class="navbar__links nav-links">
@@ -86,12 +87,16 @@
                      </li>
                   </ul>
                   <div class="nav-links__info">
+                     <a href="#" id="sertificats" class="nav-links__link">
+                        Сертификаты
+                     </a>
                      <a href="#" id="contacts" class="nav-links__link">
                         Контакты
                      </a>
                   </div>
                </div>
             </nav>
+            <div class="navbar__overlay"></div>
          </header>
          <section class="errors">
             <p class="errors__text"></p>

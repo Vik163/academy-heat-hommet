@@ -6,7 +6,8 @@ import { $class } from '@/utils/lib/getElement';
 const errorText = $class('errors__text');
 const text = localStorage.getItem(LOCALSTORAGE_ERROR);
 
-errorText.textContent = text;
+errorText.textContent =
+   '               sdfffffddddddddddddddd dddddddddddddddddddd dddddddddddddddddddd';
 localStorage.removeItem(LOCALSTORAGE_ERROR);
 
 setHeader();

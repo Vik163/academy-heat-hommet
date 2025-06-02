@@ -47,7 +47,7 @@ const confirmSend = (answer: 'loading' | 'success' | 'error') => {
       const title = $class('modal-call__subtitle-info', content);
       title.textContent = 'Сообщение отправлено! Наш менеджер свяжется с Вами.';
 
-      const nameProduct = $class('.modal-call__name-product', content);
+      const nameProduct = $class('modal-call__name-product', content);
       if (nameProduct) nameProduct.remove();
 
       form.remove();

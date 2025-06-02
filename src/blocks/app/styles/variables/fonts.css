@@ -53,6 +53,8 @@
       var(--font-int);
    --font-int-14-medium: var(--font-weight-medium) var(--font-14)
       var(--font-int);
+   --font-int-15-medium: var(--font-weight-medium) var(--font-15)
+      var(--font-int);
    --font-int-16-medium: var(--font-weight-medium) var(--font-16)
       var(--font-int);
    --font-int-18-medium: var(--font-weight-medium) var(--font-18)
@@ -69,6 +71,8 @@
    --font-int-22: var(--font-22) var(--font-int);
    --font-int-18: var(--font-18) var(--font-int);
    --font-int-16: var(--font-16) var(--font-int);
+   --font-int-15: var(--font-15) var(--font-int);
    --font-int-14: var(--font-14) var(--font-int);
    --font-int-12: var(--font-12) var(--font-int);
+   --font-int-10: var(--font-10) var(--font-int);
 }

@@ -1,6 +1,7 @@
 @import url(../../blocks/app/styles/variables/colors.css);
 @import url(../../blocks/app/styles/variables/sizes.css);
 @import url(../../blocks/app/styles/variables/fonts.css);
+@import url(../../blocks/app/styles/variables/z-index.css);
 @import url(../../blocks/app/styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
 
@@ -39,6 +40,36 @@
 .errors__link {
    font: var(--font-int-16);
    color: var(--color-text-dark);
-   padding: 5px 30px;
-   border: 1px solid var(--color-red);
+   cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+   .errors {
+      gap: 150px;
+   }
+
+   .errors__text {
+      width: var(--width-block-mobile);
+      text-align: center;
+   }
+}
+
+@media (max-width: 800px) {
+   .errors {
+      gap: 120px;
+   }
+}
+
+@media (max-width: 750px) {
+   .errors {
+      gap: 70px;
+   }
+
+   .errors__text {
+      font: var(--font-int-22-bold);
+   }
+
+   .errors__link {
+      font: var(--font-int-14);
+   }
 }

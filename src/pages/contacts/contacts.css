@@ -1,6 +1,7 @@
 @import url(../../blocks/app/styles/variables/colors.css);
 @import url(../../blocks/app/styles/variables/sizes.css);
 @import url(../../blocks/app/styles/variables/fonts.css);
+@import url(../../blocks/app/styles/variables/z-index.css);
 @import url(../../blocks/app/styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
 @import '@yandex/ymaps3-default-ui-theme/dist/esm/index.css';
@@ -23,12 +24,15 @@
 
 /* === контакты==============*/
 @import url(../../blocks/contacts-block/contacts-block.css);
+@import url(../../blocks/contacts-block/contacts-block-adapt.css);
 
 /* === footer ==============*/
 @import url(../../blocks/footer/footer.css);
+@import url(../../blocks/footer/footer-adapt.css);
 
 /* === сертификаты ==============*/
 @import url(../../blocks/sertificats/sertificats.css);
 
 /* === модалка ==============*/
 @import url(../../blocks/modal-call/modal-call.css);
+@import url(../../blocks/modal-call/modal-call-adapt.css);

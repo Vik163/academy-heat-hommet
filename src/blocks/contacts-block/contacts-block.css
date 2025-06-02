@@ -1,18 +1,17 @@
 .contacts {
-   width: 100%;
-   padding-top: 150px;
-   padding-bottom: 200px;
+   width: var(--width-block-desktop);
+   padding-top: 90px;
+   padding-bottom: 150px;
 }
 
 .contacts__title {
-   font: var(--font-mul-30);
-   font-weight: var(--font-weight-medium);
+   font: var(--font-mul-30-bold);
    text-transform: uppercase;
    margin-bottom: 60px;
 }
 
 .contacts__container {
-   width: var(--width-block-desktop);
+   width: 100%;
    height: 370px;
    display: flex;
    justify-content: space-between;
@@ -20,7 +19,7 @@
 }
 
 .contacts__info-container {
-   width: 580px;
+   width: 49%;
    height: 100%;
    background: var(--bg-primary-color-navbar-accent);
    position: relative;
@@ -94,7 +93,7 @@
 
 .contacts__map {
    overflow: hidden;
-   width: 580px;
+   width: 49%;
    height: 100%;
    border: 1px solid var(--color-btn-border);
 }

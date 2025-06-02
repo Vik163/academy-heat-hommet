@@ -1,5 +1,6 @@
 @import url(../../blocks/app/styles/variables/colors.css);
 @import url(../../blocks/app/styles/variables/sizes.css);
+@import url(../../blocks/app/styles/variables/z-index.css);
 @import url(../../blocks/app/styles/variables/fonts.css);
 @import url(../../blocks/app/styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
@@ -22,6 +23,7 @@
 
 /* === footer ==============*/
 @import url(../../blocks/footer/footer.css);
+@import url(../../blocks/footer/footer-adapt.css);
 
 /*! === главная страница ==============*/
 /* === Хлебные крошки ==============*/
@@ -46,3 +48,4 @@
 
 /* === модалка ==============*/
 @import url(../../blocks/modal-call/modal-call.css);
+@import url(../../blocks/modal-call/modal-call-adapt.css);
