@@ -97,24 +97,6 @@
       line-height: 18px;
       margin-bottom: 10px;
    }
-
-   .ymaps3--hint-title {
-      font-family: var(--font-int);
-   }
-   .ymaps3x0--control__background {
-      background-color: transparent !important;
-      box-shadow: none !important;
-   }
-   .ymaps3x0--button {
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.245) !important;
-      width: 30px !important;
-      height: 30px !important;
-      padding: 3px !important;
-      border-radius: 0 !important;
-   }
-   .ymaps3--zoom-control {
-      gap: 5px;
-   }
 }
 
 @media (max-width: 750px) {
@@ -133,7 +115,7 @@
    }
 
    .contacts__container {
-      height: 390px;
+      height: 396px;
       flex-direction: column;
       gap: 8px;
    }
