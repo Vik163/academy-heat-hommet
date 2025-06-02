@@ -111,7 +111,7 @@
    }
 
    .header__container {
-      padding: 0 var(--padding-mobile-nav);
+      padding: 0 4%;
    }
 
    .header__diller-info {
