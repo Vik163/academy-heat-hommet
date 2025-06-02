@@ -13,7 +13,7 @@ import { pastText } from '@/utils/lib/pastText';
 import { getDataById } from '@/utils/lib/getDataFromStore';
 import { setProduct } from '../product-block/product-block';
 import { setModalCall } from '@/blocks/modal-call/modal-call';
-import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
+import { $add, $class, $remove } from '@/utils/lib/getElement';
 
 const productBlock = $class('product');
 const catalogBlock = $class('catalog-block');
@@ -70,10 +70,10 @@ export const updateCatalogBlock = () => {
    const { view, category } = getDataFromCatalog()!;
 
    if (!view) {
-      const cardCatalog = $id('Профессиональный крепеж');
       $remove('catalog__description_active', catalogDescription);
       titleCatalogElement.textContent = titleCatalog;
-      if (!cardCatalog) updateCards(undefined);
+
+      updateCards(undefined);
    } else {
       const obj: Catalog = category! || view!;
       titleCatalogElement.textContent = obj.titlePage;
@@ -83,7 +83,7 @@ export const updateCatalogBlock = () => {
       if (obj.titlePage) {
          $add('catalog__description_active', catalogDescription);
          const titleDescription = $class(
-            '.catalog__description-title',
+            'catalog__description-title',
             catalogDescription,
          );
          titleDescription.textContent = obj.titleText!;

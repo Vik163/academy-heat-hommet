@@ -1,7 +1,6 @@
 import { changeUrl } from '@/utils/lib/changeUrl';
 import './catalog.css';
 import { setLocalStorageByPathname } from '@/utils/lib/setLocalStorage';
-import { setNavbar } from '@/blocks/navbar/navbar';
 import { setBreadCrumbs } from '@/blocks/catalog/bread-crumbs/bread-crumbs';
 import { updateCatalogBlock } from '@/blocks/catalog/catalog-block/catalog-block';
 import { setFooter } from '@/blocks/footer/footer';
