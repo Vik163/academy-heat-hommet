@@ -1,4 +1,4 @@
-import { $add } from './getElement';
+import { $add, $class } from './getElement';
 
 const addText = (
    tag: string,
@@ -7,13 +7,23 @@ const addText = (
    place: 'product' | 'catalog',
 ) => {
    const el = document.createElement(tag);
-   block.append(el);
+
    $add(`${place}__description-${tag}`, el);
    el.textContent = text.replace(`<${tag}>`, '');
+
+   //* вставляю пробелы ------------------
+   if (tag === 'p') {
+      const gap = document.createElement('span');
+      $add(`${place}__gap-p`, gap);
+
+      el.prepend(gap);
+   }
+
+   block.append(el);
 };
 
 export const pastText = (
-   block: Element,
+   block: HTMLElement,
    text: string,
    place: 'product' | 'catalog',
 ) => {
@@ -27,6 +37,7 @@ export const pastText = (
          if (text.includes('<span>')) {
             // сразу встраиваю тег <р>
             const el = document.createElement('p');
+
             block.append(el);
             $add(`${place}__description-p`, el);
             // убираю разделитель <p>

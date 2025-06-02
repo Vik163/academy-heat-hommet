@@ -28,8 +28,11 @@
 /*! === главная страница ==============*/
 /* === Хлебные крошки ==============*/
 @import url(../../blocks/catalog/bread-crumbs/bread-crumbs.css);
+@import url(../../blocks/catalog/bread-crumbs/bread-crumbs-adapt.css);
+
 /* === каталог блок ==============*/
 @import url(../../blocks/catalog/catalog-block/catalog-block.css);
+@import url(../../blocks/catalog/catalog-block/catalog-block-adapt.css);
 
 /* === карточки каталога ==============*/
 @import url(../../blocks/catalog/cards-catalog/cards-catalog.css);

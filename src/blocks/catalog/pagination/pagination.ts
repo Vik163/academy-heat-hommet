@@ -1,5 +1,4 @@
 import { handleCards } from '@/blocks/cards-products/cards-products';
-import { limit } from '@/utils/consts/paginate';
 import { mountPaginationButtons } from '@/blocks/catalog/pagination/lib/mountPaginationButtons/mountPaginationButtons';
 import { getDataByView } from '@/utils/lib/getDataFromStore';
 import {
@@ -10,7 +9,13 @@ import type { Categories, ViewName } from '@/utils/types/catalog';
 import { removeCardsCatalog } from '../cards-catalog/cards-catalog';
 import { handleButtons } from './lib/handlePaginationButtons/handlePaginationButtons';
 import { $add, $class, $contains, $remove } from '@/utils/lib/getElement';
+import { getLimitPagination } from '@/utils/lib/getLimitPagination';
+import { mobileSize } from '@/utils/consts/adaptive';
+import { observer } from '@/utils/lib/observer';
 
+const isMobile = window.matchMedia(`(max-width: ${mobileSize})`).matches;
+
+const limit = getLimitPagination();
 let numPage = 1;
 let pagesAll: number;
 let buttons: HTMLButtonElement[];
@@ -19,6 +24,10 @@ let totalItems = 0;
 const paginationBlock = $class('pagination');
 const leftArrow = $class('pagination__btn-arrow-left', paginationBlock);
 const rightArrow = $class('pagination__btn-arrow-right', paginationBlock);
+
+const observerBlock = $class('paginate-observer');
+
+const arrowTop = $class('pagination__arrow-top-page');
 
 function getPaginateData() {
    const obj = getDataByView();
@@ -58,6 +67,20 @@ export const handlePaginationCards = () => {
    });
 };
 
+const handleLazyLoadCards = (entry: IntersectionObserverEntry) => {
+   if (entry.isIntersecting) {
+      const { cards } = getPaginateData();
+      handleCards(cards);
+
+      numPage = numPage + 1;
+
+      //* стрелка перемотки наверх =============
+      if (numPage > 3) {
+         $add('pagination__arrow-top-page_active', arrowTop);
+      }
+   }
+};
+
 const clickBtnPage = (e: Event) => {
    const btn = e.target as HTMLButtonElement;
    const numberBtn = +btn.textContent!;
@@ -82,7 +105,7 @@ const increasePage = () => {
 export const handlePaginationData = () => {
    const { totalItems, cardsAll } = getPaginateData();
 
-   if (totalItems > limit) {
+   if (totalItems > limit && !isMobile) {
       if (!$contains('pagination_active', paginationBlock)) {
          buttons = mountPaginationButtons(totalItems);
       }
@@ -94,6 +117,10 @@ export const handlePaginationData = () => {
       handleButtons(numPage, pagesAll, buttons);
 
       $add('pagination_active', paginationBlock);
+   } else if (isMobile) {
+      $remove('pagination_active', paginationBlock);
+
+      observer(observerBlock, handleLazyLoadCards);
    } else {
       $remove('pagination_active', paginationBlock);
       handleCards(cardsAll);
@@ -102,3 +129,10 @@ export const handlePaginationData = () => {
 
 leftArrow?.addEventListener('click', decreasePage);
 rightArrow?.addEventListener('click', increasePage);
+arrowTop?.addEventListener('click', function () {
+   $remove('pagination__arrow-top-page_active', arrowTop);
+   window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+   });
+});

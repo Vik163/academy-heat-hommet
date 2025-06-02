@@ -28,10 +28,6 @@ html {
    margin-bottom: 100px;
 }
 
-.app__own {
-   margin-bottom: 100px;
-}
-
 .app__sdm {
    margin: 80px 0;
 }
@@ -43,10 +39,6 @@ html {
 
    .app__slider {
       margin-bottom: 50px;
-   }
-
-   .app__own {
-      margin-bottom: 100px;
    }
 
    .app__sdm {
@@ -71,10 +63,6 @@ html {
 
    .app__slider {
       margin-bottom: 30px;
-   }
-
-   .app__own {
-      margin-bottom: 100px;
    }
 
    .app__sdm {

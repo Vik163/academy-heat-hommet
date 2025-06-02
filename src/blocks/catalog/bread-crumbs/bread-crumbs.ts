@@ -1,3 +1,4 @@
+import { mobileSize } from '@/utils/consts/adaptive';
 import {
    LOCALSTORAGE_CATEGORY_OF_PRODUCT,
    LOCALSTORAGE_PRODUCT_ID,
@@ -15,39 +16,20 @@ const linkBlockCategory = $id('bread-crumbs-category');
 const linkView = $class('bread-crumbs__link', linkBlockView);
 const linkCategory = $class('bread-crumbs__link', linkBlockCategory);
 
-export const updateBreadCrumbs = () => {
-   const typeProducts = localStorage.getItem(
-      LOCALSTORAGE_TYPE_OF_PRODUCT,
-   ) as ViewName;
+let isMobile = window.matchMedia(`(max-width: ${mobileSize})`).matches;
 
-   const categoriesProducts = localStorage.getItem(
-      LOCALSTORAGE_CATEGORY_OF_PRODUCT,
-   )! as Categories;
-
-   const productId = localStorage.getItem(LOCALSTORAGE_PRODUCT_ID)!;
-
-   if (!typeProducts) {
-      $remove('bread-crumbs__item_active', linkBlockView);
-      $remove('bread-crumbs__link_active', linkCatalog);
+const changeClassesLinkCategory = (
+   method: 'add' | 'remove',
+   item: HTMLElement,
+   link: HTMLElement,
+) => {
+   if (method === 'add') {
+      $add('bread-crumbs__item_active', item);
+      $add('bread-crumbs__link_active', link);
+   } else {
+      $remove('bread-crumbs__item_active', item);
+      $remove('bread-crumbs__link_active', link);
    }
-   if (typeProducts && linkView) {
-      linkView.textContent = typeProducts;
-      $add('bread-crumbs__item_active', linkBlockView);
-      $add('bread-crumbs__link_active', linkCatalog);
-      $remove('bread-crumbs__item_active', linkBlockCategory);
-      $remove('bread-crumbs__link_active', linkView);
-   }
-   if (categoriesProducts && linkCategory) {
-      if (typeProducts !== categoriesProducts) {
-         linkCategory.textContent = categoriesProducts;
-         $add('bread-crumbs__item_active', linkBlockCategory);
-      }
-
-      $add('bread-crumbs__link_active', linkView);
-   }
-   if (productId && linkCategory) {
-      $add('bread-crumbs__link_active', linkCategory);
-   } else $remove('bread-crumbs__link_active', linkCategory);
 };
 
 const clickView = (e: Event) => {
@@ -78,8 +60,56 @@ const clickCatalog = (e: Event) => {
    redirectOnPage('catalog');
 };
 
+export const updateBreadCrumbs = () => {
+   const typeProducts = localStorage.getItem(
+      LOCALSTORAGE_TYPE_OF_PRODUCT,
+   ) as ViewName;
+
+   const categoriesProducts = localStorage.getItem(
+      LOCALSTORAGE_CATEGORY_OF_PRODUCT,
+   )! as Categories;
+
+   const productId = localStorage.getItem(LOCALSTORAGE_PRODUCT_ID)!;
+
+   if (!typeProducts) {
+      changeClassesLinkCategory('remove', linkBlockView, linkCatalog);
+   }
+   if (typeProducts && linkView) {
+      linkView.textContent = typeProducts;
+      changeClassesLinkCategory('add', linkBlockView, linkCatalog);
+      changeClassesLinkCategory('remove', linkBlockCategory, linkView);
+   }
+   if (categoriesProducts && linkCategory && !isMobile) {
+      if (typeProducts !== categoriesProducts) {
+         linkCategory.textContent = categoriesProducts;
+         $add('bread-crumbs__item_active', linkBlockCategory);
+      }
+
+      $add('bread-crumbs__link_active', linkView);
+   }
+   if (productId && linkCategory) {
+      $add('bread-crumbs__link_active', linkCategory);
+   } else $remove('bread-crumbs__link_active', linkCategory);
+};
+
 export const setBreadCrumbs = () => {
    linkCatalog?.addEventListener('click', (e) => clickCatalog(e));
    linkView?.addEventListener('click', (e) => clickView(e));
    linkCategory?.addEventListener('click', (e) => clickCategory(e));
 };
+
+window.addEventListener('resize', function (e) {
+   isMobile = window.matchMedia(`(max-width: ${mobileSize})`).matches;
+
+   const categoriesProducts = localStorage.getItem(
+      LOCALSTORAGE_CATEGORY_OF_PRODUCT,
+   )! as Categories;
+
+   if (isMobile) {
+      changeClassesLinkCategory('remove', linkBlockCategory, linkView);
+   } else {
+      changeClassesLinkCategory('add', linkBlockCategory, linkView);
+
+      linkCategory.textContent = categoriesProducts;
+   }
+});

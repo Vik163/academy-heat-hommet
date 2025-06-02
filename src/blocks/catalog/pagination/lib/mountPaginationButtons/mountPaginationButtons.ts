@@ -1,9 +1,11 @@
-import { countButtons, limit } from '@/utils/consts/paginate';
+import { countButtons } from '@/utils/consts/paginate';
+import { getLimitPagination } from '@/utils/lib/getLimitPagination';
 
 let pagesAll: number;
 let buttonsVisible: number;
 
 const paginationBlock = document.querySelector('.pagination')!;
+const limit = getLimitPagination();
 
 export const mountPaginationButtons = (
    totalItems: number,

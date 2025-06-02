@@ -44,10 +44,11 @@ setSlider();
 
 setSystems();
 
+// === система сухого монтажа =====
+setSDM();
+
 setFooter();
 
-window.onload = function () {
-   // === собственное производство =====
-   setOwn();
-   setSDM();
-};
+// window.onload = function () {
+// setOwn();
+// };

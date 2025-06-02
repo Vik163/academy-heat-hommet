@@ -1,5 +1,5 @@
 .pagination {
-   padding: 20px 0;
+   padding-top: 20px;
    display: none;
    gap: 10px;
 }
@@ -16,8 +16,7 @@
 .pagination__btn {
    width: 36px;
    height: 36px;
-   font-family: var(--font-int);
-   font-weight: var(--font-weight-medium);
+   font: var(--font-int-16-medium);
    background-color: transparent;
    color: var(--color-red);
    border: 1px solid var(--color-btn-border);
@@ -44,4 +43,38 @@
 .pagination__btn_active {
    background-color: var(--color-red);
    color: var(--bg-primary-color-light);
+}
+
+.pagination__arrow-top-page {
+   display: none;
+   position: fixed;
+   bottom: 25px;
+   right: 20px;
+   width: 25px;
+   height: 25px;
+   background: no-repeat center/19px
+      url(../../../assets/icons/arrow-pagination.svg);
+   background-color: var(--bg-primary-color-navbar-accent);
+   transform: rotate(-90deg);
+   z-index: 100;
+}
+
+.pagination__arrow-top-page_active {
+   display: block;
+}
+
+@media (max-width: 750px) {
+   .pagination {
+      gap: 8px;
+   }
+
+   .pagination__container {
+      gap: 8px;
+   }
+
+   .pagination__btn {
+      width: 26px;
+      height: 26px;
+      font: var(--font-int-13-medium);
+   }
 }

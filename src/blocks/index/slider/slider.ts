@@ -7,10 +7,9 @@ import { setLocalStorage } from '@/utils/lib/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import type { ViewName } from '@/utils/types/catalog';
 import { mobileSize } from '@/utils/consts/adaptive';
-import { detectMobile } from '@/utils/lib/detectMobile';
 import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
 
-const { isMobile } = detectMobile();
+const isMobile = window.matchMedia(`(max-width: ${mobileSize})`).matches;
 
 let visibleSlides = 2;
 

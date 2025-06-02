@@ -23,16 +23,21 @@
    --font-weight-black: 900;
 
    --font-mul-30-black: var(--font-weight-black) var(--font-30) var(--font-mul);
-   --font-mul-16-black: var(--font-weight-black) var(--font-16) var(--font-mul);
    --font-mul-20-black: var(--font-weight-black) var(--font-20) var(--font-mul);
+   --font-mul-18-black: var(--font-weight-black) var(--font-18) var(--font-mul);
+   --font-mul-16-black: var(--font-weight-black) var(--font-16) var(--font-mul);
+   --font-mul-12-black: var(--font-weight-black) var(--font-12) var(--font-mul);
 
    --font-mul-30-bold: var(--font-weight-bold) var(--font-30) var(--font-mul);
    --font-mul-26-bold: var(--font-weight-bold) var(--font-26) var(--font-mul);
+   --font-mul-18-bold: var(--font-weight-bold) var(--font-18) var(--font-mul);
    --font-mul-16-bold: var(--font-weight-bold) var(--font-16) var(--font-mul);
    --font-mul-14-bold: var(--font-weight-bold) var(--font-14) var(--font-mul);
    --font-mul-13-bold: var(--font-weight-bold) var(--font-13) var(--font-mul);
    --font-mul-12-bold: var(--font-weight-bold) var(--font-12) var(--font-mul);
    --font-mul-11-bold: var(--font-weight-bold) var(--font-11) var(--font-mul);
+   --font-mul-10-bold: var(--font-weight-bold) var(--font-10) var(--font-mul);
+
    --font-mul-30: var(--font-30) var(--font-mul);
    --font-mul-28: var(--font-28) var(--font-mul);
    --font-mul-24: var(--font-24) var(--font-mul);
@@ -40,6 +45,9 @@
    --font-mul-20: var(--font-20) var(--font-mul);
    --font-mul-18: var(--font-18) var(--font-mul);
    --font-mul-16: var(--font-16) var(--font-mul);
+   --font-mul-15: var(--font-15) var(--font-mul);
+   --font-mul-11: var(--font-11) var(--font-mul);
+   --font-mul-10: var(--font-10) var(--font-mul);
 
    --font-int-13-norm: var(--font-weight-norm) var(--font-13) var(--font-int);
    --font-int-12-norm: var(--font-weight-norm) var(--font-12) var(--font-int);
@@ -60,7 +68,10 @@
    --font-int-18-medium: var(--font-weight-medium) var(--font-18)
       var(--font-int);
 
+   --font-int-10-bold: var(--font-weight-bold) var(--font-10) var(--font-int);
+   --font-int-11-bold: var(--font-weight-bold) var(--font-11) var(--font-int);
    --font-int-12-bold: var(--font-weight-bold) var(--font-12) var(--font-int);
+   --font-int-13-bold: var(--font-weight-bold) var(--font-13) var(--font-int);
    --font-int-15-bold: var(--font-weight-bold) var(--font-15) var(--font-int);
    --font-int-14-bold: var(--font-weight-bold) var(--font-14) var(--font-int);
    --font-int-16-bold: var(--font-weight-bold) var(--font-16) var(--font-int);
