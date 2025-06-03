@@ -153,6 +153,25 @@
    }
 }
 
+@media (orientation: landscape) and (max-width: 750px) {
+   /* .header {
+      transform: translateY(-90%);
+   } */
+
+   .main__observer {
+      display: none;
+   }
+
+   @keyframes onDown {
+      0% {
+         transform: translateY(0);
+      }
+      100% {
+         transform: translateY(-105%);
+      }
+   }
+}
+
 @media (orientation: landscape) and (max-width: 550px) {
    .header__phone-container {
       bottom: calc(-100vh + 133px);

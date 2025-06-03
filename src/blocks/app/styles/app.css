@@ -18,6 +18,7 @@ html {
    align-items: center;
    padding-top: var(--height-header);
    width: 100%;
+   animation: 0.6s ease 0s 1 onTop forwards;
 }
 
 .main__observer {
@@ -67,5 +68,16 @@ html {
 
    .app__sdm {
       margin: 40px 0;
+   }
+}
+
+@media (orientation: landscape) and (max-width: 750px) {
+   @keyframes onTop {
+      0% {
+         transform: translateY(0);
+      }
+      100% {
+         transform: translateY(-50px);
+      }
    }
 }

@@ -28,6 +28,8 @@
       height: 20px;
    }
    .modal-call__title {
+      margin-top: 30px;
+
       font: var(--font-mul-20-black);
       margin-bottom: 10px;
    }
