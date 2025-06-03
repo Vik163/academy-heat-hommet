@@ -9,6 +9,7 @@ const lg = $id('animated-thumbnails-gallery');
 
 const plugin = lightGallery(lg, {
    allowMediaOverlap: true, // увеличивает изображение на всю высоту экрана
+   mobileSettings: { showCloseIcon: true },
 });
 
 const productBlock = $class('product');

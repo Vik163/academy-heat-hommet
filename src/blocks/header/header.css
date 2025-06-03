@@ -91,7 +91,7 @@
    }
 
    .header__btn {
-      font: var(--font-int-11-bold);
+      font: var(--font-int-11-medium);
       width: 150px;
       margin-left: 0;
       height: 22px;
@@ -154,10 +154,6 @@
 }
 
 @media (orientation: landscape) and (max-width: 750px) {
-   /* .header {
-      transform: translateY(-90%);
-   } */
-
    .main__observer {
       display: none;
    }

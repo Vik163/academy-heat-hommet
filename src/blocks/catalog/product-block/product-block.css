@@ -9,8 +9,7 @@
 }
 
 .product__title {
-   font: var(--font-mul-30);
-   font-weight: var(--font-weight-bold);
+   font: var(--font-mul-30-bold);
    text-transform: uppercase;
    margin-bottom: 40px;
 }
@@ -22,7 +21,6 @@
 .product__image {
    display: block;
    width: 590px;
-   height: 590px;
    background-color: var(--bg-primary-card);
    cursor: pointer;
    float: left;
@@ -33,7 +31,6 @@
 
 .product__image-add {
    display: none;
-   height: 90px;
    width: 90px;
    border: 1px solid var(--color-red);
    cursor: pointer;
@@ -52,8 +49,7 @@
 }
 
 .modal__image {
-   width: 590px;
-   height: 590px;
+   width: 100%;
    transition: 0.3s;
 }
 
@@ -72,7 +68,6 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   padding: 20px;
    cursor: pointer;
 }
 
@@ -91,9 +86,8 @@
 }
 
 .product__description-p {
-   font: var(--font-int-18);
+   font: var(--font-int-18-medium);
    line-height: 30px;
-   font-weight: var(--font-weight-medium);
    margin-top: 25px;
 }
 

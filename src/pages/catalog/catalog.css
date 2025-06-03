@@ -39,6 +39,7 @@
 
 /* === продукт ==============*/
 @import url(../../blocks/catalog/product-block/product-block.css);
+@import url(../../blocks/catalog/product-block/product-block-adapt.css);
 
 /* === пагинация ==============*/
 @import url(../../blocks/catalog/pagination/pagination.css);

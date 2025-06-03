@@ -26,7 +26,8 @@ export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
             'https://hommet.ru/media/hommet_cache/45/cd/45cd81121db2b0210bac0fd3e0517473.webp',
          ],
          imgB: ['https://hommet.ru/media/uploads/хомуты/пт_(convert.io).webp'],
-         description: `<p>Нагрузка до 500кг${support}`,
+         description: `<p>Нагрузка до 500кг
+         ${support}`,
       },
       {
          cardId: '2_1_2',
@@ -36,7 +37,8 @@ export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
             'https://hommet.ru/media/hommet_cache/45/cd/45cd81121db2b0210bac0fd3e0517473.webp',
          ],
          imgB: ['https://hommet.ru/media/uploads/хомуты/пт_(convert.io).webp'],
-         description: `<p>Нагрузка до 1000кг${support}`,
+         description: `<p>Нагрузка до 1000кг 
+         ${support}`,
       },
       {
          cardId: '2_1_3',
@@ -46,7 +48,8 @@ export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
             'https://hommet.ru/media/hommet_cache/45/cd/45cd81121db2b0210bac0fd3e0517473.webp',
          ],
          imgB: ['https://hommet.ru/media/uploads/хомуты/пт_(convert.io).webp'],
-         description: `<p>Нагрузка до 1500кг${support}`,
+         description: `<p>Нагрузка до 1500кг
+         ${support}`,
       },
       {
          cardId: '2_1_4',

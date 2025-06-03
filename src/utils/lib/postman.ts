@@ -33,43 +33,26 @@ const handleSubmit = (
       name,
       message: nameProduct ? nameProduct : 'Заказ на обратный звонок',
    };
-   // // console.log('data:', data);
-   // fetch('https://api.smtp.bz/v1/smtp/send', {
-   //    method: 'POST',
-   //    headers: { Authorization: 'SGhquaIzOR0vIaJh5oU1kMsgNMkYnT66pdlJ' },
-   //    body: formData,
-   // }).then((data: any) => {
-   //    console.log('data:', data);
-   // });
-   //@ts-ignore
-   // Email.send({
-   //    Host: `connect.smtp.bz`,
-   //    Username: 'sender@email_address.com',
-   //    Password: 'Enter your password',
-   //    To: 'jsfoto116@yandex.ru',
-   //    From: 'sender@email_address.com',
-   //    Subject: 'Отправка письма через SMTP.BZ',
-   //    Body: 'Well that was easy!!',
 
-   if (copyemail) {
-      console.log('spam');
-   } else {
-      emailjs
-         .send(
-            serviceId,
-            templateId,
-            data,
-            process.env.EMAIL_SERVICE_PUBLIC_KEY,
-         )
-         .then((data) => {
-            console.log('data:', data);
-            if (data.status === 200) callback('success');
-         })
-         .catch((error) => {
-            console.log('error:', error);
-            // if (error) callback('error');
-         });
-   }
+   // if (copyemail) {
+   //    console.log('spam');
+   // } else {
+   //    emailjs
+   //       .send(
+   //          serviceId,
+   //          templateId,
+   //          data,
+   //          process.env.EMAIL_SERVICE_PUBLIC_KEY,
+   //       )
+   //       .then((data) => {
+   //          console.log('data:', data);
+   //          if (data.status === 200) callback('success');
+   //       })
+   //       .catch((error) => {
+   //          console.log('error:', error);
+   //          // if (error) callback('error');
+   //       });
+   // }
 };
 
 export const setPostman = (
