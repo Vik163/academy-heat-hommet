@@ -27,8 +27,6 @@ const rightArrow = $class('pagination__btn-arrow-right', paginationBlock);
 
 const observerBlock = $class('paginate-observer');
 
-const arrowTop = $class('pagination__arrow-top-page');
-
 function getPaginateData() {
    const obj = getDataByView();
 
@@ -73,11 +71,6 @@ const handleLazyLoadCards = (entry: IntersectionObserverEntry) => {
       handleCards(cards);
 
       numPage = numPage + 1;
-
-      //* стрелка перемотки наверх =============
-      if (numPage > 3) {
-         $add('pagination__arrow-top-page_active', arrowTop);
-      }
    }
 };
 
@@ -129,10 +122,3 @@ export const handlePaginationData = () => {
 
 leftArrow?.addEventListener('click', decreasePage);
 rightArrow?.addEventListener('click', increasePage);
-arrowTop?.addEventListener('click', function () {
-   $remove('pagination__arrow-top-page_active', arrowTop);
-   window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-   });
-});

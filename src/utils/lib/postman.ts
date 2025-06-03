@@ -66,7 +66,8 @@ const handleSubmit = (
             if (data.status === 200) callback('success');
          })
          .catch((error) => {
-            if (error) callback('error');
+            console.log('error:', error);
+            // if (error) callback('error');
          });
    }
 };
