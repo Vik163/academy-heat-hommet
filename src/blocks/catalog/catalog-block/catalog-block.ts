@@ -37,6 +37,8 @@ export const updatePageCatalog = () => {
       $remove('product_active', productBlock);
       $remove('catalog-block_inactive', catalogBlock);
    }
+
+   updateBreadCrumbs();
 };
 // --- при клике по карточке переходит по ссылке в ее содержимое (карточка продукта или категория каталога) ---
 // устанавливает данные в localStorage, меняет url в адресной строке, обновляет страницу
@@ -52,21 +54,18 @@ function onClickCard(cardId: string, type?: 'category') {
 
          setLocalStorage(view, '', '');
       }
+      updateCatalogBlock();
    } else {
       setLocalStorageByCardId(cardId);
       updatePageCatalog();
    }
    changeUrl();
-
-   updateCatalogBlock();
 }
-
 /**
  * Обновление карточек каталога
  * @param updatePageCatalog - функция обновления контента страницы catalog. Передается аргументом для вызова при клике карточки
  */
 export const updateCatalogBlock = () => {
-   updatePageCatalog();
    const { view, category } = getDataFromCatalog()!;
 
    if (!view) {
@@ -77,6 +76,8 @@ export const updateCatalogBlock = () => {
    } else {
       const obj: Catalog = category! || view!;
       titleCatalogElement.textContent = obj.titlePage;
+
+      console.log('updateCatalogBlock -> updateCards -> handlePaginationCards');
 
       updateCards(obj);
 
@@ -92,8 +93,7 @@ export const updateCatalogBlock = () => {
             pastText(catalogDescription, obj.text, 'catalog');
       } else $remove('catalog__description_active', catalogDescription);
    }
-
-   updateBreadCrumbs();
+   updatePageCatalog();
 };
 
 // делегирование событий (пришлось на все элементы карточек навесить id)

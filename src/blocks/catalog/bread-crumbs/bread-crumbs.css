@@ -1,6 +1,8 @@
 .bread-crumbs {
    width: var(--width-block-desktop);
-   padding: 40px 0;
+   height: var(--height-bread-crumbs);
+   display: flex;
+   align-items: center;
 }
 
 .bread-crumbs__list {

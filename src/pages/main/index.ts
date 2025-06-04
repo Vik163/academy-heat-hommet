@@ -48,7 +48,3 @@ setSystems();
 setSDM();
 
 setFooter();
-
-// window.onload = function () {
-// setOwn();
-// };

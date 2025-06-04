@@ -1,13 +1,13 @@
 @media (max-width: 1250px) {
    .bread-crumbs {
       width: var(--width-block-mobile);
-      padding: 30px 0;
+      height: var(--height-bread-crumbs-note);
    }
 }
 
 @media (max-width: 800px) {
    .bread-crumbs {
-      padding: 25px 0;
+      height: var(--height-bread-crumbs-pad);
    }
 
    .bread-crumbs__list {
@@ -32,7 +32,7 @@
 
 @media (max-width: 750px) {
    .bread-crumbs {
-      padding: 25px 0 15px;
+      height: var(--height-bread-crumbs-mobile);
    }
 
    .bread-crumbs__list {

@@ -4,7 +4,7 @@ import lozad from '@/utils/lib/lozad';
 import { ObserveCallback, observer } from '@/utils/lib/observer';
 import type { Card } from '@/utils/types/cards';
 
-const list = document.querySelector('.cards');
+const list = $class('cards');
 const template = ($id('card-product') as HTMLTemplateElement).content;
 
 const getCards = (cards: Card[], block?: HTMLElement) => {

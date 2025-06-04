@@ -1,11 +1,23 @@
 .product {
    display: none;
+   width: 100vw;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   background-color: var(--bg-primary-color);
+   z-index: 99;
+}
+
+.product__container {
    width: var(--width-block-desktop);
    padding-bottom: 40px;
+   margin: 0 auto;
 }
 
 .product_active {
    display: block;
+   height: calc(100vh - (var(--height-header) + var(--height-bread-crumbs)));
+   overflow-y: auto;
 }
 
 .product__title {
@@ -14,7 +26,7 @@
    margin-bottom: 40px;
 }
 
-.product__container {
+.product__container-info {
    width: 100%;
 }
 

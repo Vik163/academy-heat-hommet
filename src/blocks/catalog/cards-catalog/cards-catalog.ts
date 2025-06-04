@@ -1,9 +1,27 @@
-import { $class, $id } from '@/utils/lib/getElement';
+import { $class, $id, $remove } from '@/utils/lib/getElement';
 import { loadSrc } from '@/utils/lib/loadSrc';
 import type { Catalog } from '@/utils/types/catalog';
 
 const list = $class('cards');
 const template = ($id('card-catalog') as HTMLTemplateElement).content;
+
+/**
+ * Удаляет template карточки
+ */
+export const removeCardsCatalog = () => {
+   const nodesCatalog = document.querySelectorAll('.card-catalog');
+   const nodesCards = document.querySelectorAll('.card-product');
+   const nodes = nodesCatalog.length > 0 ? nodesCatalog : nodesCards;
+
+   const arr = new Array(nodes.length).fill(0);
+
+   arr.forEach(() => {
+      const catalog = $class('card-catalog');
+      const card = $class('card-product');
+      if (card) card.remove();
+      if (catalog) catalog.remove();
+   });
+};
 
 /**
  * Универсальный блок для встраивания template карточки продукта.
@@ -12,6 +30,11 @@ const template = ($id('card-catalog') as HTMLTemplateElement).content;
  * В коллбек предается entry.isIntersection из observer. Встраиваются карты и запускается анимация
  */
 export const handleCardsCatalog = (cards: Catalog[]) => {
+   const paginationBlock = $class('pagination')!;
+   removeCardsCatalog();
+   // При откате назад класс не удаляется (не перезагружается страница)
+   $remove('pagination_active', paginationBlock);
+
    //* ==== template ================================
    //* ==== выполняется при появлении блока и если нет встроенных элементов =============
    const card = $class('card-product');
@@ -44,22 +67,4 @@ export const handleCardsCatalog = (cards: Catalog[]) => {
          // встраивает на странице
          list?.append(cardTemplate);
       });
-};
-
-/**
- * Удаляет template карточки
- */
-export const removeCardsCatalog = () => {
-   const nodesCatalog = document.querySelectorAll('.card-catalog');
-   const nodesCards = document.querySelectorAll('.card-product');
-   const nodes = nodesCatalog.length > 0 ? nodesCatalog : nodesCards;
-
-   const arr = new Array(nodes.length).fill(0);
-
-   arr.forEach(() => {
-      const catalog = $class('card-catalog');
-      const card = $class('card-product');
-      if (card) card.remove();
-      if (catalog) catalog.remove();
-   });
 };

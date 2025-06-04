@@ -4,16 +4,25 @@
    --height-header-note: 127px;
    --height-header-pad: 115px;
    --height-header-mobile: 56px;
+
    --height-cnv-mobile: 352px;
+
    --height-slider_item: 275px;
    --height-slider_item-note: 245px;
    --height-slider_item-pad: 220px;
    --height-slider_item-mobile: 185px;
+
    --height-icon: 20px;
+
    --height-btn-card: 40px;
    --height-btn-card-note: 35px;
    --height-btn-card-pad: 30px;
    --height-btn-card-mobile: 25px;
+
+   --height-bread-crumbs: 80px;
+   --height-bread-crumbs-note: 80px;
+   --height-bread-crumbs-pad: 66px;
+   --height-bread-crumbs-mobile: 51px;
 
    /* - width ----- */
    --width-block-desktop: 1200px;

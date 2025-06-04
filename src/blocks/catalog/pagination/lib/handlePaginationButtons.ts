@@ -1,5 +1,5 @@
 import { countButtons } from '@/utils/consts/paginate';
-import { handlePaginationCards } from '../../pagination';
+import { handlePaginationCards } from './handlePaginationCards';
 
 const paginationBlock = document.querySelector('.pagination')!;
 const leftArrow = paginationBlock.querySelector('.pagination__btn-arrow-left');
@@ -58,7 +58,7 @@ export const handleButtons = (
       const isSelected = el.getAttribute('aria-selected');
       if (isSelected === 'true') {
          el.classList.add('pagination__btn_active');
-         handlePaginationCards();
+         handlePaginationCards(nPage);
       } else {
          el.classList.remove('pagination__btn_active');
       }
