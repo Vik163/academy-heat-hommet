@@ -1,8 +1,6 @@
 @media (max-width: 1250px) {
    .contacts {
       width: var(--width-block-mobile);
-      padding-top: 50px;
-      padding-bottom: 100px;
    }
 
    .contacts__title {
@@ -48,11 +46,6 @@
 }
 
 @media (max-width: 800px) {
-   .contacts {
-      padding-top: 30px;
-      padding-bottom: 50px;
-   }
-
    .contacts__title {
       font: var(--font-mul-26-bold);
       margin-bottom: 30px;
@@ -100,11 +93,6 @@
 }
 
 @media (max-width: 750px) {
-   .contacts {
-      padding-top: 20px;
-      padding-bottom: 30px;
-   }
-
    .contacts__title {
       font: var(--font-mul-20);
       margin-bottom: 15px;

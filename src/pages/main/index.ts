@@ -1,8 +1,7 @@
 import { animationScrolling } from '@/utils/lib/animationScrolling';
 import './index.css';
 import lozad from '@/utils/lib/lozad';
-import { setSlider } from '@/blocks/index/slider/slider';
-import { setOwn } from '@/blocks/index/own/own';
+import { setSlider } from '@/blocks/index/slider/scripts/slider';
 import { setHeader } from '@/blocks/header/header';
 import { setSDM } from '@/blocks/index/sdm/sdm';
 import { setSystems } from '@/blocks/index/systems/systems';

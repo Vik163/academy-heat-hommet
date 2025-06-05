@@ -1,7 +1,7 @@
 import { catalog } from '@/utils/consts/products/catalogs';
 import type { Catalog } from '@/utils/types/catalog';
-import { handleCardsCatalog } from '@/blocks/catalog/cards-catalog/cards-catalog';
-import { handlePaginationData } from '@/blocks/catalog/pagination/pagination';
+import { handlePaginationData } from '@/blocks/catalog/pagination/scripts/pagination';
+import { handleCardsCatalog } from '@/blocks/catalog/cards-catalog/scripts/cards-catalog';
 
 /**
  * Обновляет карточки каталога или товаров (template)

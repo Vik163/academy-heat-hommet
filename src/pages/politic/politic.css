@@ -1,13 +1,13 @@
-@import url(../../blocks/app/styles/variables/colors.css);
-@import url(../../blocks/app/styles/variables/sizes.css);
-@import url(../../blocks/app/styles/variables/fonts.css);
-@import url(../../blocks/app/styles/variables/z-index.css);
-@import url(../../blocks/app/styles/reset.css);
+@import url(../../styles/variables/colors.css);
+@import url(../../styles/variables/sizes.css);
+@import url(../../styles/variables/fonts.css);
+@import url(../../styles/variables/z-index.css);
+@import url(../../styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
 @import '@yandex/ymaps3-default-ui-theme/dist/esm/index.css';
 
-/* === app ==============*/
-@import url(../../blocks/app/styles/app.css);
+@import url(../../styles/app.css);
+@import url(../../styles/main.css);
 
 /* === logo ==============*/
 @import url(../../blocks/logo/logo.css);

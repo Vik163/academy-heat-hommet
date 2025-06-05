@@ -2,7 +2,6 @@
    width: var(--width-block-desktop);
    display: flex;
    flex-direction: column;
-   padding-bottom: 70px;
    overflow: auto;
    height: auto;
    position: relative;

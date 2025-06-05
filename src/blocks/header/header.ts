@@ -1,6 +1,6 @@
 import { type ObserveCallback, observer } from '@/utils/lib/observer';
 import { setNavbar } from '../navbar/navbar';
-import { setModalCall } from '../modal-call/modal-call';
+import { setModalCall } from '../modal-call/scripts/modal-call';
 import { $add, $class, $remove, $toggle } from '@/utils/lib/getElement';
 
 const headerBlock = $class('header');

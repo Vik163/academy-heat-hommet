@@ -1,5 +1,5 @@
 import { loadSrc } from '@/utils/lib/loadSrc';
-import { catalog } from '../../../utils/consts/products/catalogs';
+import { catalog } from '../../../../utils/consts/products/catalogs';
 import Splide from '@splidejs/splide';
 
 import '@splidejs/splide/css/core';
@@ -8,6 +8,7 @@ import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import type { ViewName } from '@/utils/types/catalog';
 import { mobileSize } from '@/utils/consts/adaptive';
 import { $add, $class, $id, $remove } from '@/utils/lib/getElement';
+import { changeMobile } from './changeMobile';
 
 const isMobile = window.matchMedia(`(max-width: ${mobileSize})`).matches;
 
@@ -16,17 +17,11 @@ let visibleSlides = 2;
 const list = $class('splide__list');
 const template = ($id('slider-item') as HTMLTemplateElement).content;
 
-function changeMobile(e: MediaQueryListEvent, splide: Splide) {
-   const arrows = $class('splide__arrows');
-   if (e.matches) {
-      visibleSlides = 1;
-      $add('slider__arrows_inactive', arrows);
-   } else {
-      visibleSlides = 2;
-      $remove('slider__arrows_inactive', arrows);
-   }
+const onChangeMobile = (e: MediaQueryListEvent, splide: Splide) => {
+   visibleSlides = changeMobile(e, visibleSlides) || visibleSlides;
+
    splide.refresh();
-}
+};
 
 const onClickLink = (e: Event) => {
    e.preventDefault();
@@ -99,5 +94,5 @@ export const setSlider = () => {
 
    window
       .matchMedia(`(max-width: ${mobileSize})`)
-      .addEventListener('change', (e) => changeMobile(e, splide));
+      .addEventListener('change', (e) => onChangeMobile(e, splide));
 };

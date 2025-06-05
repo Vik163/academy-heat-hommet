@@ -1,7 +1,5 @@
 .politic {
    width: var(--width-block-desktop);
-   margin: 0 auto;
-   padding: 80px 0;
 }
 
 .politic__title {
@@ -32,7 +30,6 @@
 @media (max-width: 1250px) {
    .politic {
       width: var(--width-block-mobile);
-      padding: 40px 0;
    }
 
    .politic__title {
@@ -46,10 +43,6 @@
 }
 
 @media (max-width: 800px) {
-   .politic {
-      padding: 30px 0;
-   }
-
    .politic__title {
       font: var(--font-mul-22);
       margin-bottom: 20px;
@@ -71,10 +64,6 @@
 }
 
 @media (max-width: 400px) {
-   .politic {
-      padding: 20px 0;
-   }
-
    .politic__title {
       font: var(--font-mul-16-bold);
       margin-bottom: 10px;

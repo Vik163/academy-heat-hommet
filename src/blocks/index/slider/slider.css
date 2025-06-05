@@ -20,7 +20,7 @@
    background-color: var(--bg-primary-color-dark);
    color: var(--color-text-light);
    font-family: var(--font-int);
-   font-weight: 500;
+   font-weight: var(--font-weight-medium);
 }
 
 .slider-item__container_color_light {
@@ -53,7 +53,6 @@
    margin-bottom: auto;
    background-color: var(--color-red);
    text-align: center;
-   line-height: var(--height-btn-card);
    color: var(--color-text-light);
    cursor: pointer;
 }

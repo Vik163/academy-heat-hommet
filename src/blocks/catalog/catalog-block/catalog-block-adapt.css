@@ -1,7 +1,6 @@
 @media (max-width: 1250px) {
    .catalog-block {
       width: var(--width-block-mobile);
-      padding-bottom: 60px;
    }
 
    .catalog-block__title {
@@ -20,10 +19,6 @@
 }
 
 @media (max-width: 800px) {
-   .catalog-block {
-      padding-bottom: 40px;
-   }
-
    .catalog-block__title {
       font: var(--font-mul-20);
       margin-bottom: 20px;
@@ -43,10 +38,6 @@
 }
 
 @media (max-width: 750px) {
-   .catalog-block {
-      padding-bottom: 30px;
-   }
-
    .catalog-block__title {
       font: var(--font-mul-16-bold);
       margin-bottom: 15px;

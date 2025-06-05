@@ -1,0 +1,13 @@
+html {
+   scroll-behavior: smooth;
+}
+
+.app {
+   max-width: 100vw;
+   min-height: 100vh;
+   background-color: var(--bg-primary-color);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+}

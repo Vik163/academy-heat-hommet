@@ -3,7 +3,7 @@ import { handleCards } from '../../cards-products/cards-products';
 import { setLocalStorageByCardId } from '@/utils/lib/setLocalStorage';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
 import { ObserveCallback, observer } from '@/utils/lib/observer';
-import { setModalCall } from '@/blocks/modal-call/modal-call';
+import { setModalCall } from '@/blocks/modal-call/scripts/modal-call';
 import { $class } from '@/utils/lib/getElement';
 
 const sdmProductionBlock = $class('sdm');

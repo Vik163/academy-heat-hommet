@@ -1,7 +1,5 @@
 .contacts {
    width: var(--width-block-desktop);
-   padding-top: 90px;
-   padding-bottom: 150px;
 }
 
 .contacts__title {

@@ -1,8 +1,8 @@
 import type { Card } from '@/utils/types/cards';
 import 'lightgallery/css/lightgallery.css';
-import { handleImagesView } from './lib/handleImagesView';
+import { handleImagesView } from './handleImagesView';
 import { pastText } from '@/utils/lib/pastText';
-import { setModalCall } from '@/blocks/modal-call/modal-call';
+import { setModalCall } from '@/blocks/modal-call/scripts/modal-call';
 import { $add, $class, $remove } from '@/utils/lib/getElement';
 
 const productInfoBlock = $class('product__info');

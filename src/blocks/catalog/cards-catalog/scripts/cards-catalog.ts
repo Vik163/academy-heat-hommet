@@ -1,27 +1,10 @@
 import { $class, $id, $remove } from '@/utils/lib/getElement';
 import { loadSrc } from '@/utils/lib/loadSrc';
 import type { Catalog } from '@/utils/types/catalog';
+import { removeCardsCatalog } from './removeCardsCatalog';
 
 const list = $class('cards');
 const template = ($id('card-catalog') as HTMLTemplateElement).content;
-
-/**
- * Удаляет template карточки
- */
-export const removeCardsCatalog = () => {
-   const nodesCatalog = document.querySelectorAll('.card-catalog');
-   const nodesCards = document.querySelectorAll('.card-product');
-   const nodes = nodesCatalog.length > 0 ? nodesCatalog : nodesCards;
-
-   const arr = new Array(nodes.length).fill(0);
-
-   arr.forEach(() => {
-      const catalog = $class('card-catalog');
-      const card = $class('card-product');
-      if (card) card.remove();
-      if (catalog) catalog.remove();
-   });
-};
 
 /**
  * Универсальный блок для встраивания template карточки продукта.

@@ -1,5 +1,5 @@
 import { handleCards } from '@/blocks/cards-products/cards-products';
-import { removeCardsCatalog } from '../../cards-catalog/cards-catalog';
+import { removeCardsCatalog } from '../../cards-catalog/scripts/removeCardsCatalog';
 import { getPaginateData } from './getPaginateData';
 
 /**

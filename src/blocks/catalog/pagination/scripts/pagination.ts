@@ -1,13 +1,13 @@
 import { handleCards } from '@/blocks/cards-products/cards-products';
-import { mountPaginationButtons } from '@/blocks/catalog/pagination/lib/mountPaginationButtons';
-import { removeCardsCatalog } from '../cards-catalog/cards-catalog';
-import { handleButtons } from './lib/handlePaginationButtons';
+import { mountPaginationButtons } from '@/blocks/catalog/pagination/scripts/mountPaginationButtons';
+import { handleButtons } from './handlePaginationButtons';
 import { $add, $class, $contains, $remove } from '@/utils/lib/getElement';
 import { getLimitPagination } from '@/utils/lib/getLimitPagination';
 import { mobileSize } from '@/utils/consts/adaptive';
 import { observer } from '@/utils/lib/observer';
-import { getPaginateData } from './lib/getPaginateData';
-import { handleLazyLoadCards } from './lib/handleLazyLoadCards';
+import { getPaginateData } from './getPaginateData';
+import { handleLazyLoadCards } from './handleLazyLoadCards';
+import { removeCardsCatalog } from '../../cards-catalog/scripts/removeCardsCatalog';
 
 let numPage = 1;
 let pagesAll: number;

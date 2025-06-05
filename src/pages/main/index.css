@@ -1,12 +1,12 @@
-@import url(../../blocks/app/styles/variables/colors.css);
-@import url(../../blocks/app/styles/variables/sizes.css);
-@import url(../../blocks/app/styles/variables/fonts.css);
-@import url(../../blocks/app/styles/variables/z-index.css);
-@import url(../../blocks/app/styles/reset.css);
+@import url(../../styles/variables/colors.css);
+@import url(../../styles/variables/sizes.css);
+@import url(../../styles/variables/fonts.css);
+@import url(../../styles/variables/z-index.css);
+@import url(../../styles/reset.css);
 @import url(../../assets/fonts/fonts.css);
 
-/* === app ==============*/
-@import url(../../blocks/app/styles/app.css);
+@import url(../../styles/app.css);
+@import url(../../styles/main.css);
 
 /* === logo ==============*/
 @import url(../../blocks/logo/logo.css);
@@ -36,9 +36,6 @@
 /* === слайдер ==============*/
 @import url(../../blocks/index/slider/slider.css);
 @import url(../../blocks/index/slider/slider-adapt.css);
-
-/* === собственное производство ==============*/
-@import url(../../blocks/index/own/own.css);
 
 /* === системы ==============*/
 @import url(../../blocks/index/systems/systems.css);
