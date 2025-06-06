@@ -34,6 +34,7 @@
    --font-mul-20-bold: var(--font-weight-bold) var(--font-20) var(--font-mul);
    --font-mul-18-bold: var(--font-weight-bold) var(--font-18) var(--font-mul);
    --font-mul-16-bold: var(--font-weight-bold) var(--font-16) var(--font-mul);
+   --font-mul-15-bold: var(--font-weight-bold) var(--font-15) var(--font-mul);
    --font-mul-14-bold: var(--font-weight-bold) var(--font-14) var(--font-mul);
    --font-mul-13-bold: var(--font-weight-bold) var(--font-13) var(--font-mul);
    --font-mul-12-bold: var(--font-weight-bold) var(--font-12) var(--font-mul);

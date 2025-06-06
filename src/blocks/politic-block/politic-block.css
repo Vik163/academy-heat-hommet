@@ -9,17 +9,16 @@
 }
 
 .politic__subtitle {
-   font: var(--font-int-16);
+   font: var(--font-int-16-medium);
 }
 
 .potitic__title-block {
-   font: var(--font-mul-18);
+   font: var(--font-mul-18-bold);
    margin: 50px 0 15px;
-   font-weight: var(--font-weight-medium);
 }
 
 .politic__text {
-   font: var(--font-int-16);
+   font: var(--font-int-16-medium);
    margin-bottom: 15px;
 }
 
@@ -48,38 +47,22 @@
       margin-bottom: 20px;
    }
 
-   .politic__subtitle {
-      font: var(--font-int-15-medium);
-   }
-
    .potitic__title-block {
       font: var(--font-mul-16-bold);
       margin: 25px 0 15px;
    }
 
    .politic__text {
-      font: var(--font-int-15-medium);
       margin-bottom: 10px;
    }
 }
 
 @media (max-width: 400px) {
    .politic__title {
-      font: var(--font-mul-16-bold);
       margin-bottom: 10px;
-   }
-
-   .politic__subtitle {
-      font: var(--font-int-13-medium);
    }
 
    .potitic__title-block {
-      font: var(--font-mul-14-bold);
       margin: 15px 0 10px;
-   }
-
-   .politic__text {
-      font: var(--font-int-13-medium);
-      margin-bottom: 10px;
    }
 }

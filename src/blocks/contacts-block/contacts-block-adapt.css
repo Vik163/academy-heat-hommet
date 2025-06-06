@@ -52,7 +52,14 @@
    }
 
    .contacts__container {
-      height: 240px;
+      flex-direction: column;
+
+      height: 545px;
+      gap: 10px;
+   }
+
+   .contacts__info-container {
+      width: 100%;
    }
 
    .contacts__info-container::after {
@@ -73,26 +80,29 @@
    }
 
    .contacts__info-title {
-      font: var(--font-mul-16);
+      font: var(--font-mul-20-bold);
       margin-bottom: 20px;
    }
 
    .contacts__text-container {
-      margin-bottom: 10px;
+      margin-bottom: 13px;
    }
 
    .contacts__text-container > span {
-      font: var(--font-int-12);
+      font: var(--font-int-15-medium);
    }
 
    .contacts__schedule {
-      font: var(--font-int-11-norm);
-      line-height: 18px;
+      line-height: 22px;
       margin-bottom: 10px;
+   }
+
+   .contacts__map {
+      width: 100%;
    }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 450px) {
    .contacts__title {
       font: var(--font-mul-20);
       margin-bottom: 15px;
@@ -103,8 +113,7 @@
    }
 
    .contacts__container {
-      height: 396px;
-      flex-direction: column;
+      height: 415px;
       gap: 8px;
    }
 
@@ -117,8 +126,8 @@
    }
 
    .contacts__info-title {
-      font: var(--font-mul-14-bold);
-      margin-bottom: 8px;
+      font: var(--font-mul-15-bold);
+      margin-bottom: 12px;
    }
 
    .contacts__text-container {
@@ -129,18 +138,14 @@
    }
 
    .contacts__text-container > span {
-      font: var(--font-int-11-norm);
+      font: var(--font-int-12-norm);
    }
 
    .contacts__schedule {
+      font: var(--font-int-12-norm);
       width: auto;
-      font: var(--font-int-10);
-      line-height: 16px;
+      line-height: 18px;
       margin-bottom: 8px;
-   }
-
-   .contacts__map {
-      width: 100%;
    }
 
    .ymaps3x0--button {
