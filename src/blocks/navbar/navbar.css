@@ -74,7 +74,7 @@
    .navbar__links {
       flex-direction: column;
       align-items: flex-start;
-      font: var(--font-mul-14-bold);
+      font: var(--font-mul-16-bold);
       gap: 50px;
    }
 

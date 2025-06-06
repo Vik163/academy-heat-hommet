@@ -114,6 +114,10 @@
       padding: 0 4%;
    }
 
+   .header__phone {
+      font: var(--font-mul-16-black);
+   }
+
    .header__diller-info {
       display: none;
    }
@@ -147,9 +151,9 @@
       display: block;
       margin-left: 0;
       margin-top: 15px;
-      height: 30px;
-      width: 170px;
-      font: var(--font-int-12-bold);
+      height: var(--height-btn-card-pad);
+      width: 180px;
+      font: var(--font-int-13-bold);
    }
 }
 
