@@ -5,6 +5,7 @@
    padding-top: var(--height-header);
    width: 100%;
    animation: 0.6s ease 0s 1 onTop forwards;
+   position: relative;
 }
 
 .main__observer {
