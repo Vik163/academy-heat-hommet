@@ -1,13 +1,8 @@
 .product {
-   /* display: none; */
    width: 100vw;
    height: 0;
-   /* position: absolute;
-   left: 0;
-   bottom: 0; */
    background-color: var(--bg-primary-color);
    z-index: 99;
-   /* height: calc(100vh - (var(--height-header) + var(--height-bread-crumbs))); */
    overflow-y: auto;
 }
 
@@ -18,7 +13,6 @@
 }
 
 .product_active {
-   /* display: block; */
    height: auto;
 }
 

@@ -4,6 +4,7 @@ import { handleImagesView } from './handleImagesView';
 import { pastText } from '@/utils/lib/pastText';
 import { setModalCall } from '@/blocks/modal-call/scripts/modal-call';
 import { $add, $class, $remove } from '@/utils/lib/getElement';
+import { onScrollTop } from '@/utils/lib/onScrollTop';
 
 const productInfoBlock = $class('product__info');
 const productDescription = $class('product__description');
@@ -39,7 +40,9 @@ export const setProduct = (card: Card) => {
    currentCard = card;
 
    setTitle();
+
    handleImagesView(card);
+
    if (card.description) {
       pastText(productDescription, card.description, 'product');
       $remove('product__description_inactive', productDescription);

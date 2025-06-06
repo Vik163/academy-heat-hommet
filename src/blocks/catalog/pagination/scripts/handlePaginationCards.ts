@@ -1,6 +1,7 @@
 import { handleCards } from '@/blocks/cards-products/cards-products';
 import { removeCardsCatalog } from '../../cards-catalog/scripts/removeCardsCatalog';
 import { getPaginateData } from './getPaginateData';
+import { onScrollTop } from '@/utils/lib/onScrollTop';
 
 /**
  * Раскидивает каточки
@@ -12,8 +13,5 @@ export const handlePaginationCards = (numPage: number) => {
    removeCardsCatalog();
    handleCards(cards);
 
-   window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-   });
+   onScrollTop();
 };

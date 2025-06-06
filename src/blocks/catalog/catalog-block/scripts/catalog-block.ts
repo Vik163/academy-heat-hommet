@@ -9,6 +9,7 @@ import { setModalCall } from '@/blocks/modal-call/scripts/modal-call';
 import { $class } from '@/utils/lib/getElement';
 import { updatePageCatalog } from './updatePageCatalog';
 import { updateCatalogBlock } from './updateCatalogBlock';
+import { onScrollTop } from '@/utils/lib/onScrollTop';
 
 const cards = $class('catalog-block__list');
 
@@ -32,6 +33,8 @@ function onClickCard(cardId: string, type?: 'category') {
       updatePageCatalog();
    }
    changeUrl();
+
+   onScrollTop();
 }
 
 export const setCatalog = () => {
