@@ -28,7 +28,7 @@
 .catalog__description {
    display: none;
    color: var(--color-text-description);
-   font: var(--font-int-14-medium);
+   font: var(--font-int-16-medium);
    line-height: 20px;
 }
 .catalog__description_active {

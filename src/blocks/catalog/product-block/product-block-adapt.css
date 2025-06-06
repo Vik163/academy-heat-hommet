@@ -78,11 +78,6 @@
       font: var(--font-mul-20);
       margin-bottom: 15px;
    }
-
-   .product__description-p {
-      font: var(--font-int-15-medium);
-      line-height: 21px;
-   }
 }
 
 @media (max-width: 650px) {
@@ -98,7 +93,6 @@
    }
 
    .product__title {
-      font: var(--font-mul-16-bold);
       margin-bottom: 20px;
    }
 
@@ -124,21 +118,5 @@
    .product__info {
       gap: 20px;
       margin-bottom: 35px;
-   }
-
-   .product__btn {
-      width: 150px;
-      height: var(--height-btn-card-mobile);
-      font: var(--font-int-11-medium);
-   }
-
-   .product__description-title {
-      font: var(--font-mul-15);
-      margin-bottom: 15px;
-   }
-
-   .product__description-p {
-      font: var(--font-int-13-medium);
-      line-height: 18px;
    }
 }

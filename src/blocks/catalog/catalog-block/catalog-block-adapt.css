@@ -29,7 +29,7 @@
    }
 
    .catalog__description-title {
-      font: var(--font-mul-20-black);
+      font: var(--font-mul-20-bold);
    }
 
    .catalog__description-h4 {
@@ -39,7 +39,6 @@
 
 @media (max-width: 750px) {
    .catalog-block__title {
-      font: var(--font-mul-16-bold);
       margin-bottom: 15px;
    }
 
@@ -50,20 +49,16 @@
    .catalog__description {
       width: var(--width-block-mobile);
       margin: 0 auto;
-      font: var(--font-int-13-medium);
-      line-height: 16px;
    }
 
    .catalog__description-title {
       margin: 20px 0 10px;
-
-      font: var(--font-mul-16-black);
-      text-transform: uppercase;
+      font: var(--font-mul-18-bold);
    }
 
    .catalog__description-h4 {
       margin-top: 15px;
-      font: var(--font-mul-16-black);
+      font: var(--font-mul-18-bold);
    }
    .catalog__description-p {
       margin-top: 10px;

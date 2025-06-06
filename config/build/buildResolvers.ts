@@ -8,6 +8,6 @@ export function buildResolvers (options: BuildOptions) {
     modules: [paths.src, 'node_modules'], // добавить каталог для поиска, который имеет приоритет над node_modules
     alias: {
       '@': paths.src
-    }
+    },
   }
 }

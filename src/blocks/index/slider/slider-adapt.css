@@ -9,15 +9,18 @@
 
    .slider-item__container {
       padding: var(--slider_padding-note);
-      gap: 25px;
+      gap: unset;
    }
 
    .slider-item__title {
-      font-size: var(--font-18);
+      position: absolute;
+      width: max-content;
+      font-size: var(--font-20);
    }
 
    .slider-item__description {
-      font-size: 14px;
+      margin-top: 35px;
+      font-size: var(--font-15);
    }
 
    .slider-item__image {
@@ -28,7 +31,7 @@
    .slider-item__btn {
       width: 140px;
       height: var(--height-btn-card-note);
-      font-size: 14px;
+      font-size: var(--font-14);
    }
 
    .slider__arrows {
@@ -47,16 +50,14 @@
 
    .slider-item__container {
       padding: var(--slider_padding-pad);
-      gap: 20px;
    }
 
    .slider-item__title {
-      font-size: var(--font-16);
-      margin-bottom: 15px;
+      font-size: var(--font-18);
    }
 
    .slider-item__description {
-      font-size: var(--font-12);
+      font-size: var(--font-14);
    }
 
    .slider-item__image {
@@ -88,40 +89,14 @@
    }
 
    .slider-item__container {
-      padding: 12px var(--slider_padding-pad);
-      gap: 20px;
-   }
-
-   .slider-item__title {
-      position: absolute;
-      width: max-content;
-      font-size: var(--font-16);
-      margin-bottom: 15px;
+      padding: 18px var(--slider_padding-pad);
    }
 
    .slider-item__description {
       margin-top: 30px;
    }
 
-   .slider-item__image {
-      width: 80px;
-      height: 80px;
-   }
-
-   .slider-item__btn {
-      width: 130px;
-      height: var(--height-btn-card-pad);
-   }
-
    .slider__arrows_inactive {
       display: none;
-   }
-}
-
-@media (max-width: 500px) {
-   .slider-item__btn {
-      width: 130px;
-      height: var(--height-btn-card-mobile);
-      font-size: var(--font-12);
    }
 }

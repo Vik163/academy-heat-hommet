@@ -50,9 +50,3 @@
       font-size: 14px;
    }
 }
-
-@media (max-width: 750px) {
-   .marquee__content-item {
-      font-size: 13px;
-   }
-}

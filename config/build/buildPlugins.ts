@@ -21,7 +21,7 @@ export const buildPlugins = (options: BuildOptions) => {
     }),
     // отображения отчетов о ходе выполнения во время компиляции
     new webpack.ProgressPlugin(),
-
+    
     new HtmlWebpackPlugin({
       template: paths.main,
       inject: true,
