@@ -68,12 +68,6 @@
       margin-bottom: 40px;
    }
 
-   .product__btn {
-      width: 170px;
-      height: var(--height-btn-card-pad);
-      font: var(--font-int-13-medium);
-   }
-
    .product__description-title {
       font: var(--font-mul-20);
       margin-bottom: 15px;
