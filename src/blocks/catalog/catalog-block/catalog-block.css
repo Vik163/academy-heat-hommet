@@ -10,6 +10,7 @@
 .catalog-block_inactive {
    height: 0;
    overflow: hidden;
+   margin: 0;
 }
 
 .catalog-block__title {
