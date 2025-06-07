@@ -1,5 +1,5 @@
-@import './checkbox.css';
-@import './spinner.css';
+/* @import './checkbox.css';
+@import './spinner.css'; */
 
 .modal-call {
    position: fixed;
@@ -23,9 +23,12 @@
 
 .modal-call__content {
    width: 600px;
-   padding: 70px 90px;
+   padding: 60px;
    background-color: var(--bg-primary-card);
    position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .modal-call__close-btn {
@@ -39,16 +42,30 @@
    background-color: transparent;
    cursor: pointer;
 }
+
 .modal-call__title {
-   font: var(--font-mul-30);
+   font: var(--font-mul-20-black);
    text-transform: uppercase;
    text-align: center;
-   margin-bottom: 20px;
+   /* margin-bottom: 20px; */
+}
+
+.modal-call__image {
+   width: 200px;
+   height: 200px;
+}
+
+.modal-call__phones {
+   font: var(--font-mul-22-black);
+   line-height: 36px;
+   text-align: center;
+   color: var(--color-red);
 }
 
 .modal-call__subtitle {
-   font: var(--font-int-14);
-   margin-bottom: 15px;
+   font: var(--font-int-18-bold);
+   line-height: 24px;
+   margin: 15px 0;
    text-align: center;
 }
 
@@ -58,7 +75,7 @@
    font-weight: var(--font-weight-bold);
 }
 
-.form {
+/* .form {
    width: 100%;
    font: var(--font-int-16);
 }
@@ -94,4 +111,4 @@ input[name='copyemail'] {
 .form__btn:disabled {
    opacity: 0.6;
    pointer-events: none;
-}
+} */

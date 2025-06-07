@@ -36,6 +36,9 @@ cards.addEventListener('click', function (e: Event) {
 
    if (!target.id) return;
    if (target.tagName.toLowerCase() === 'button') {
-      setModalCall(target.id);
+      const arrData = target.id.split('|');
+      const name = arrData[0];
+      const link = arrData[1];
+      setModalCall(name, link);
    } else onClickLink(target.id);
 });

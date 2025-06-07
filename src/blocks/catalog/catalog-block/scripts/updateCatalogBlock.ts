@@ -1,13 +1,12 @@
 import { getDataFromCatalog } from '@/utils/lib/getDataFromCatalog';
-import { $add, $class, $remove } from '@/utils/lib/getElement';
-import { pastText } from '@/utils/lib/pastText';
+import { $class } from '@/utils/lib/getElement';
 import { updateCards } from '@/utils/lib/updateCards';
 import type { Catalog } from '@/utils/types/catalog';
 import { updatePageCatalog } from './updatePageCatalog';
 import { titleCatalog } from '@/utils/consts/products/catalogs';
+import { pastHtml } from '@/utils/lib/pastHtml';
 
 const catalogBlock = $class('catalog-block');
-const catalogDescription = $class('catalog__description', catalogBlock);
 const titleCatalogElement = $class('catalog-block__title', catalogBlock);
 
 /**
@@ -18,7 +17,6 @@ export const updateCatalogBlock = () => {
    const { view, category } = getDataFromCatalog()!;
 
    if (!view) {
-      $remove('catalog__description_active', catalogDescription);
       titleCatalogElement.textContent = titleCatalog;
 
       updateCards(undefined);
@@ -28,17 +26,9 @@ export const updateCatalogBlock = () => {
 
       updateCards(obj);
 
-      if (obj.titlePage) {
-         $add('catalog__description_active', catalogDescription);
-         const titleDescription = $class(
-            'catalog__description-title',
-            catalogDescription,
-         );
-         titleDescription.textContent = obj.titleText!;
-
-         if (obj.text && catalogDescription)
-            pastText(catalogDescription, obj.text, 'catalog');
-      } else $remove('catalog__description_active', catalogDescription);
+      if (obj.text) {
+         pastHtml(obj.text, 'catalog__description', catalogBlock);
+      }
    }
    updatePageCatalog();
 };

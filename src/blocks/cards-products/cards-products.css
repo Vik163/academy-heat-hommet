@@ -42,6 +42,7 @@
    background-color: var(--color-red);
    color: var(--color-text-light);
    height: var(--height-btn-card);
+   font: var(--font-int-14-medium);
    display: flex;
    align-items: center;
    justify-content: flex-start;
@@ -103,7 +104,7 @@
 
 @media (max-width: 360px) {
    .card-product {
-      height: 250px;
+      height: 255px;
    }
 
    .card-product__image-container {

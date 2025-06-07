@@ -1,20 +1,28 @@
 import type { Card } from '@/utils/types/cards';
 import type { CategoryIndustrial } from '@/utils/types/catalog';
 
-const support = `<p>Опора применяется для подвески сетей трубопроводов и вентиляционных каналов снаружи зданий.
-<p>Предназначена для препятствия раскачиванию систем воздуховодов и трубопроводов  среднего и большого диаметров.
-<p>Установка опор допускается в зонах с перепадами температур и среднем уровнем коррозии, для высоко коррозийной среды может использоваться термодиффузия.
-<p>Простота сборки и установки.`;
+const support = `
+<p class="product__description-p">Опора применяется для подвески сетей трубопроводов и вентиляционных каналов снаружи зданий.</p>
+<p class="product__description-p">Предназначена для препятствия раскачиванию систем воздуховодов и трубопроводов  среднего и большого диаметров.</p>
+<p class="product__description-p">Установка опор допускается в зонах с перепадами температур и среднем уровнем коррозии, для высоко коррозийной среды может использоваться термодиффузия.</p>
+<p class="product__description-p">Простота сборки и установки.</p>
+`;
 
-const supportSlide = `<p>Скользящая опора предназначена для пластмассовых труб с большим линейным расширением, применяется  также при  потолочном монтаже, на стояках или для напольного монтажа.
-<p>Максимально рекомендуемая нагрузка-1000 Н. Сталь-08ПСю Покрытие- цинк 8-12мкр. Башмачок-капралон.`;
+const supportSlide = `
+<div class="product__description-texts">
+<p class="product__description-p">Скользящая опора предназначена для пластмассовых труб с большим линейным расширением, применяется  также при  потолочном монтаже, на стояках или для напольного монтажа.</p>
+<p class="product__description-p">Максимально рекомендуемая нагрузка-1000 Н. Сталь-08ПСю Покрытие- цинк 8-12мкр. Башмачок-капралон.</p>
+</div>`;
 
-const bracket = `<p>Кронштейн предназначен для крепления воздуховодов и элементов систем вентиляции.         
-<p>В сборе с виброизоляционной резиновой подушкой, которая поглощает вибрацию.
-<p>Внутреннее отверстие под шпильку диаметром 8–10 мм.
-<p>Толщина металла: 2,0 мм.
-<p>Изготовлен из стали ГОСТ 16523-97, ГОСТ 19904-90.
-<p>Гальванизирован для защиты от коррозии,  с гальванопокрытием толщиной 8-10 микрон.`;
+const bracket = `
+<div class="product__description-texts">
+<p class="product__description-p">Кронштейн предназначен для крепления воздуховодов и элементов систем вентиляции.</p>         
+<p class="product__description-p">В сборе с виброизоляционной резиновой подушкой, которая поглощает вибрацию.</p>
+<p class="product__description-p">Внутреннее отверстие под шпильку диаметром 8–10 мм.</p>
+<p class="product__description-p">Толщина металла: 2,0 мм.</p>
+<p class="product__description-p">Изготовлен из стали ГОСТ 16523-97, ГОСТ 19904-90.</p>
+<p class="product__description-p">Гальванизирован для защиты от коррозии,  с гальванопокрытием толщиной 8-10 микрон.</p>
+</div>`;
 
 export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
    'Промышленный крепеж': [
@@ -26,8 +34,11 @@ export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
             'https://hommet.ru/media/hommet_cache/45/cd/45cd81121db2b0210bac0fd3e0517473.webp',
          ],
          imgB: ['https://hommet.ru/media/uploads/хомуты/пт_(convert.io).webp'],
-         description: `<p>Нагрузка до 500кг
-         ${support}`,
+         description: `
+         <div class="product__description-texts">
+         <p class="product__description-p">Нагрузка до 500кг</p>
+         ${support}
+         </div>`,
       },
       {
          cardId: '2_1_2',
@@ -37,8 +48,11 @@ export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
             'https://hommet.ru/media/hommet_cache/45/cd/45cd81121db2b0210bac0fd3e0517473.webp',
          ],
          imgB: ['https://hommet.ru/media/uploads/хомуты/пт_(convert.io).webp'],
-         description: `<p>Нагрузка до 1000кг 
-         ${support}`,
+         description: `
+         <div class="product__description-texts">
+         <p class="product__description-p">Нагрузка до 1000кг</p>
+         ${support}
+         </div>`,
       },
       {
          cardId: '2_1_3',
@@ -48,8 +62,11 @@ export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
             'https://hommet.ru/media/hommet_cache/45/cd/45cd81121db2b0210bac0fd3e0517473.webp',
          ],
          imgB: ['https://hommet.ru/media/uploads/хомуты/пт_(convert.io).webp'],
-         description: `<p>Нагрузка до 1500кг
-         ${support}`,
+         description: `
+         <div class="product__description-texts">
+         <p class="product__description-p">Нагрузка до 1500кг</p>
+         ${support}
+         </div>`,
       },
       {
          cardId: '2_1_4',
@@ -81,10 +98,13 @@ export const industrialFasteners: Record<CategoryIndustrial, Card[]> = {
          imgB: [
             'https://hommet.ru/media/uploads/хомуты/3_универсальное_соединение_хоммет_440.webp',
          ],
-         description: `<p>Используется для соединения профиля Хоммет  под любым углом.
-<p>Блок из оцинкованной стали в сборе.
-<p>Толщина металла пластины-2мм.
-<p>Толщина металла зацепа-1 мм.`,
+         description: `
+         <div class="product__description-texts">
+<p class="product__description-p">Используется для соединения профиля Хоммет  под любым углом.</p>
+<p class="product__description-p">Блок из оцинкованной стали в сборе.</p>
+<p class="product__description-p">Толщина металла пластины-2мм.</p>
+<p class="product__description-p">Толщина металла зацепа-1 мм.</p>
+</div>`,
       },
       {
          cardId: '2_1_7',

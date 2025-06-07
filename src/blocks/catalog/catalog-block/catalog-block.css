@@ -27,13 +27,10 @@
 }
 
 .catalog__description {
-   display: none;
+   display: block;
    color: var(--color-text-description);
    font: var(--font-int-16-medium);
    line-height: 20px;
-}
-.catalog__description_active {
-   display: block;
 }
 
 .catalog__description-title {

@@ -83,14 +83,15 @@
    color: var(--color-text-description);
 }
 
-.product__description_inactive {
-   display: none;
-}
-
 .product__description-title {
    font: var(--font-mul-28);
    text-transform: uppercase;
    margin-bottom: 30px;
+}
+
+.product__description-h4 {
+   margin-top: 20px;
+   font: var(--font-mul-20-bold);
 }
 
 .product__description-p {

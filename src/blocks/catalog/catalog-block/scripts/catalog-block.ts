@@ -43,7 +43,10 @@ export const setCatalog = () => {
       const target = e.target as HTMLElement;
 
       if (target.tagName.toLowerCase() === 'button') {
-         setModalCall(target.id);
+         const arrData = target.id.split('|');
+         const name = arrData[0];
+         const link = arrData[1];
+         setModalCall(name, link);
       } else if (target.className.includes('catalog')) {
          onClickCard(target.id, 'category');
       } else onClickCard(target.id);

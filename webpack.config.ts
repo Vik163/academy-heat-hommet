@@ -9,7 +9,6 @@ export default (env: BuildEnv) => {
       entryMain: path.resolve(__dirname, './src/pages/main/index.ts'),
       entryCatalog: path.resolve(__dirname, './src/pages/catalog/catalog.ts'),
       entryPolitic: path.resolve(__dirname, './src/pages/politic/politic.ts'),
-      entryErrors: path.resolve(__dirname, './src/pages/errors/errors.ts'),
       entryContacts: path.resolve(
          __dirname,
          './src/pages/contacts/contacts.ts',
@@ -19,7 +18,6 @@ export default (env: BuildEnv) => {
       catalog: path.resolve(__dirname, './src/pages/catalog/catalog.html'),
       politic: path.resolve(__dirname, './src/pages/politic/politic.html'),
       contacts: path.resolve(__dirname, './src/pages/contacts/contacts.html'),
-      errors: path.resolve(__dirname, './src/pages/errors/errors.html'),
       src: path.resolve(__dirname, 'src'),
    };
 

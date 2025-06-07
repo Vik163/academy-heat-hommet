@@ -27,6 +27,13 @@
    align-items: center;
 }
 
+.header__phone-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2px;
+}
+
 .header__btn {
    cursor: pointer;
    font: var(--font-int-15-bold);
@@ -64,13 +71,6 @@
 
    .header__container {
       padding: 0 40px;
-   }
-
-   .header__phone-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
    }
 
    .header__btn {

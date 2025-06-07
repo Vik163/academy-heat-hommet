@@ -45,12 +45,6 @@ export const buildPlugins = (options: BuildOptions) => {
       filename: 'politic.html',
       chunks: ['politic'],
     }),
-    new HtmlWebpackPlugin({
-      template: paths.errors,
-      inject: true,
-      filename: 'errors.html',
-      chunks: ['errors'],
-    }),
     // обработка типов отдельно при загрузке
     new ForkTsCheckerWebpackPlugin({
       typescript: {

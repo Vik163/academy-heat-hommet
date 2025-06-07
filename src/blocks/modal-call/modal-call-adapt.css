@@ -1,24 +1,19 @@
-@import './checkbox.css';
-@import './spinner.css';
-
-@media (max-width: 1100px) {
+@media (max-width: 1250px) {
    .modal-call__content {
       width: 500px;
-      padding: 50px;
    }
 }
 
 @media (max-width: 800px) {
    .modal-call__content {
       width: 450px;
-      padding: 30px;
    }
 }
 
 @media (max-width: 750px) {
    .modal-call__content {
       width: 300px;
-      padding: 20px;
+      padding: 50px 20px 30px;
    }
 
    .modal-call__close-btn {
@@ -27,19 +22,28 @@
       width: 20px;
       height: 20px;
    }
-   .modal-call__title {
-      margin-top: 30px;
 
+   .modal-call__image {
+      width: 150px;
+      height: 150px;
+   }
+
+   .modal-call__title {
+      font: var(--font-mul-18-black);
+   }
+
+   .modal-call__phones {
       font: var(--font-mul-20-black);
-      margin-bottom: 10px;
+      line-height: 34px;
+      text-align: center;
    }
 
    .modal-call__subtitle {
-      margin-bottom: 10px;
-      font: var(--font-int-12-norm);
+      font: var(--font-int-16-bold);
+      line-height: 24px;
    }
 
-   .modal-call__subtitle-product {
+   /* .modal-call__subtitle-product {
       font: var(--font-int-14-bold);
    }
 
@@ -49,5 +53,5 @@
 
    .form__input {
       margin-bottom: 15px;
-   }
+   } */
 }

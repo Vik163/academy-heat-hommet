@@ -9,14 +9,12 @@ export interface BuildPaths {
    entryMain: string;
    entryCatalog: string;
    entryPolitic: string;
-   entryErrors: string;
    entryContacts: string;
    build: string;
    main: string;
    catalog: string;
    politic: string;
    contacts: string;
-   errors: string;
    src: string;
    favicon?: string;
 }

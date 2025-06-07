@@ -1,12 +1,10 @@
 import { type ObserveCallback, observer } from '@/utils/lib/observer';
 import { setNavbar } from '../navbar/navbar';
-import { setModalCall } from '../modal-call/scripts/modal-call';
 import { $add, $class, $remove, $toggle } from '@/utils/lib/getElement';
 
 const headerBlock = $class('header');
 const mainObserver = $class('main__observer');
 const phoneContainer = $class('header__phone-container', headerBlock);
-const btn = $class('header__btn', headerBlock);
 const btnMenu = $class('header__btn-menu', headerBlock);
 const navbar = $class('navbar', headerBlock);
 const navbarOverlay = $class('navbar__overlay', headerBlock);
@@ -29,7 +27,6 @@ const onClickMenu = () => {
 };
 
 export const setHeader = () => {
-   btn?.addEventListener('click', () => setModalCall());
    btnMenu?.addEventListener('click', onClickMenu);
    navbarOverlay?.addEventListener('click', onClickMenu);
 

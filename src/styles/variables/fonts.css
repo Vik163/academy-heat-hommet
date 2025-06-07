@@ -24,6 +24,7 @@
    --font-weight-black: 900;
 
    --font-mul-30-black: var(--font-weight-black) var(--font-30) var(--font-mul);
+   --font-mul-22-black: var(--font-weight-black) var(--font-22) var(--font-mul);
    --font-mul-20-black: var(--font-weight-black) var(--font-20) var(--font-mul);
    --font-mul-18-black: var(--font-weight-black) var(--font-18) var(--font-mul);
    --font-mul-16-black: var(--font-weight-black) var(--font-16) var(--font-mul);
@@ -31,6 +32,7 @@
 
    --font-mul-30-bold: var(--font-weight-bold) var(--font-30) var(--font-mul);
    --font-mul-26-bold: var(--font-weight-bold) var(--font-26) var(--font-mul);
+   --font-mul-22-bold: var(--font-weight-bold) var(--font-22) var(--font-mul);
    --font-mul-20-bold: var(--font-weight-bold) var(--font-20) var(--font-mul);
    --font-mul-18-bold: var(--font-weight-bold) var(--font-18) var(--font-mul);
    --font-mul-16-bold: var(--font-weight-bold) var(--font-16) var(--font-mul);

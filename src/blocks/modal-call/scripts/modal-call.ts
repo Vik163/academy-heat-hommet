@@ -1,9 +1,5 @@
 import { $add, $class, $contains, $remove } from '@/utils/lib/getElement';
-import { handleNumberPhone } from '@/utils/lib/handleNumberPhone';
-import { setPostman } from '@/utils/lib/postman';
 import { redirectOnPage } from '@/utils/lib/redirectOnPage';
-import { handleCheckbox } from './handleCheckbox';
-import { confirmSend } from './confirmSend';
 import { getHtml } from './getHtml';
 
 function closeModal() {
@@ -37,8 +33,8 @@ function closeModalByKeydown(e: KeyboardEvent) {
    if (e.key === 'Escape') closeModal();
 }
 
-export const setModalCall = (nameProduct?: string) => {
-   const modalHtml = getHtml(nameProduct);
+export const setModalCall = (nameProduct: string, link: string) => {
+   const modalHtml = getHtml(nameProduct, link);
 
    const parser = new DOMParser().parseFromString(modalHtml, 'text/html')!;
    const modalBlock = parser.querySelector('.modal-call')! as HTMLElement;
@@ -51,11 +47,11 @@ export const setModalCall = (nameProduct?: string) => {
 
    modalBlock?.addEventListener('click', (e) => closeModalByClick(e));
 
-   handleNumberPhone('inp-tel');
+   // handleNumberPhone('inp-tel');
 
-   handleCheckbox();
+   // handleCheckbox();
 
-   setPostman(confirmSend, nameProduct);
+   // setPostman(confirmSend, nameProduct);
 };
 
 document.addEventListener('keydown', (e) => closeModalByKeydown(e));

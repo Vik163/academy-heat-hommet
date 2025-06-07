@@ -53,7 +53,7 @@ const getCards = (cards: Card[], block?: HTMLElement) => {
          const btn = $class('card-product__btn', cardTemplate);
 
          //* === добавляет параметры товара в id кнопки ============
-         btn.id = c.title;
+         btn.id = `${c.title}|${c.imgL}`;
       }
 
       // встраивает на странице
