@@ -1,4 +1,4 @@
-import { $class } from '@/utils/lib/getElement';
+import { removeElement } from '@/utils/lib/removeElement';
 
 /**
  * Удаляет template карточки
@@ -11,9 +11,7 @@ export const removeCardsCatalog = () => {
    const arr = new Array(nodes.length).fill(0);
 
    arr.forEach(() => {
-      const catalog = $class('card-catalog');
-      const card = $class('card-product');
-      if (card) card.remove();
-      if (catalog) catalog.remove();
+      removeElement('card-product');
+      removeElement('card-catalog');
    });
 };

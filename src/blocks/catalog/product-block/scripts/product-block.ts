@@ -4,10 +4,15 @@ import { handleImagesView } from './handleImagesView';
 import { setModalCall } from '@/blocks/modal-call/scripts/modal-call';
 import { $class } from '@/utils/lib/getElement';
 import { pastHtml } from '@/utils/lib/pastHtml';
+import { removeElement } from '@/utils/lib/removeElement';
 
 const productInfoBlock = $class('product__info');
 const productDescription = $class('product__description');
 const newImg = $class('product__image-add') as HTMLImageElement;
+const titleDescription = $class(
+   'product__description-title',
+   productDescription,
+);
 let currentCard: Card;
 
 const setTitle = () => {
@@ -48,6 +53,9 @@ export const setProduct = (card: Card) => {
          'product__description-texts',
          productDescription,
       );
+   } else {
+      removeElement('product__description-texts');
+      titleDescription.textContent = '';
    }
 };
 
